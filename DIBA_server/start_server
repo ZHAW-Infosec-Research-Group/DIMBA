@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+java -classpath lib/hsqldb.jar:target/server-1.0-SNAPSHOT-jar-with-dependencies.jar ch.zhaw.securitylab.inbank.server.Server

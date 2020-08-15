@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/platforms.cmake",
+    "/home/gregory/Documents/vt2/DIBA/app/src/main/jni/CMakeLists.txt",
+    "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake"
+  ],
+  "cleanCommands": [
+    "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/vt2/DIBA/app/.cxx/cmake/release/x86\" clean"
+  ],
+  "buildTargetsCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/gregory/Documents/vt2/DIBA/app/.cxx/cmake/release/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Release-x86": {
+      "artifactName": "native-lib",
+      "buildCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/vt2/DIBA/app/.cxx/cmake/release/x86\" native-lib",
+      "abi": "x86",
+      "output": "/home/gregory/Documents/vt2/DIBA/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  }
+}

@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">DIBA</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_meta">Meta-Settings</string>
+    <string name="action_info">About the App</string>
+    <string name="action_sign_in">Create Account</string>
+    <string name="action_sign_cancel">Cancel</string>
+    <string name="action_sign_in_short">Create Account</string>
+
+    <string name="title_activity_landing">Landing Screen</string>
+    <string name="title_activity_login">Login</string>
+    <string name="root_detection">Root Detection</string>
+    <string name="title_activity_sign_in">Create Account</string>
+    <string name="title_activity_change">Change</string>
+    <string name="title_activity_auth_pay">Make a Payment</string>
+    <string name="title_activity_auth_pay_accept">Accept the Payment</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_auth_invest_list">Investments</string>
+    <string name="title_activity_auth_invest_wall">Pay for VIP package</string>
+    <string name="title_activity_auth_pay_slip_info">Payslip information</string>
+    <string name="title_activity_info">About the App</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="wall_text">
+        "To access this premium feature of DIBA, you have to become VIP. This will cost you only "
+        "200.- and can be purchased right here with the handy |Purchase VIP| button."
+    </string>
+    <string name="wall_vip">42IsTheAnswer</string>
+    <string name="salt">s@l7</string>
+    <string name="hash">38fdfd0abe632f5c4c43b7e96c515c7a92188f0f0d76388ab12f529e3852632c</string>
+    <string name="permission_lable_accept_payment">Pay Accept</string>
+    <string name="permission_description__accept_payment">Protects the Activity AuthPayAccept</string>
+    <string name="permission_lable_messages">Messages</string>
+    <string name="permission_description_messages">accesses the Message Screen of the APP DIBA</string>
+    <string name="about_the_app">
+        "Meta Settings:\n"
+        "The communication difficulty level and the ip address of the server can (and has to) be changed in this menu "
+        "reachable from the landing activity.\n"
+        "The Meta Settings are not part of the attackable app itself. Feel free to try, but there is no weakness
+        there.\n\n"
+    </string>
+    <bool name="is_2">false</bool>
+    <string name="about_the_app_subtitle">Insecure Banking, done the right way.</string>
+    <string name="about_the_app_intention">DIBA was created with the intention of feeling like any other banking app
+        you could find on the playstore,
+        with the key difference being that it is intentionally weak in its security.
+    </string>
+    <string name="about_the_app_training">In junction with the DIBAServer, it is a training opportunity for mobile
+        penetration testers that contains many android specific weaknesses in varying difficulty.
+        It can furthermore serve as a tool for educators, who want to create a curriculum for their students.
+    </string>
+    <string name="about_the_app_attacks">Most if not all parts of the app are attackable in some way, shape or form.
+        While some vulnerabilities might be exploitable from within the app, others need you to use tools or even write
+        your own malicious app.
+    </string>
+    <string name="about_the_app_runtitle">How to use the app.</string>
+    <string name="about_the_app_run_text">Run an instance of the DIBAServer on your PC, as long as it has internet
+        connectivity
+        you should be fine. Be aware that if your cellphone and server are not in the same network, you might have to
+        port forward
+        the port 8443 for it to work. Now you must fetch the ip address of your server with ifconfig (or simmilar) and
+        adjust IP in the metasettings of DIBA.
+    </string>
+    <string name="about_the_app_run_communication">
+        While the communication between the client (app) and server are not the main focus of DIBAs security, you can
+        adjust the difficulty level of the communication security to test your knowledge in ssl/tls and certificates.
+    </string>
+    <string name="about_the_app_metatitle">About the Metasettings</string>
+    <string name="about_the_app_meta_text">The Metasettings screen is not ment to be attacked.
+        Currently there are three settings you can change to your liking:
+    </string>
+    <string name="about_the_app_meta_text_ip">1) IP, change this field to the IP of your DIBAServer to make the app
+        functional.
+    </string>
+    <string name="about_the_app_meta_text_difficulty">2) Difficulty, as mentioned above, change to see if you could
+        break
+        the communication even on different levels. Note that Difficulty REALLY_HARD has no known weakness.
+    </string>
+    <string name="about_the_app_meta_text_timeout">3) Timeout, the amount of milliseconds till the connection times
+        out.
+    </string>
+
+    <string name="payslip_info_load">
+        "Next to the load button, there is a field where you can enter the name or path of the file to load "
+        "from the SD-Card. The base path is the root folder of your SD-Card. This is the folder that is shown "
+        "when you connect your phone to the PC or use the SD-Card directly with a device."
+    </string>
+    <string name="payslip_info_save">
+        "Next to the save button, there is a field where you can enter the name or path of the file to save "
+        "to the SD-Card. The base path is the same as when loading a file."
+    </string>
+    <string name="payslip_info_sample">
+        "The Load Sample button needs little description, it loads a payslip that can be adjusted and saved."
+    </string>
+    <string name="payslip_info_back">
+        "When returning to the payment screen and a payslip was loaded, the text will appear on that screen as well."
+    </string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyz</string>
+    <string name="title_activity_auth_stock">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+</resources>

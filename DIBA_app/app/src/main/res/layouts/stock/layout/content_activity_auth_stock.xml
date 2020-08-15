@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_activity_auth_stock"
+    tools:context="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStock">
+
+        <TextView
+            android:id="@+id/textRealTimeData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Real-time Stock Market Data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/currentTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="5dp"
+            android:text="USD/CHF"
+            android:textAlignment="textStart"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRealTimeData" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textRealTimeData"></com.github.mikephil.charting.charts.LineChart>
+
+        <com.github.mikephil.charting.charts.CandleStickChart
+            android:id="@+id/candleStick"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineChart"></com.github.mikephil.charting.charts.CandleStickChart>
+
+        <TextView
+            android:id="@+id/priceTitle"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="44dp"
+            android:text="Price\n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candleStick" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:text="118"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.106"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/priceTitle" />
+
+
+        <TextView
+            android:id="@+id/changeTitle"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="24dp"
+            android:text="24h Change"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/candleStick" />
+        <TextView
+            android:id="@+id/change"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:text="\t +4.5%"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changeTitle" />
+
+        <TextView
+            android:id="@+id/highestTitle"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Monthly highest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/highest"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:text="123"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.109"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/highestTitle" />
+
+        <TextView
+            android:id="@+id/lowestTitle"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="12dp"
+            android:text="Monthly lowest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/lowest"
+            android:layout_width="131dp"
+            android:layout_height="20dp"
+            android:text="99"
+            android:textAlignment="viewEnd"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lowestTitle" />
+
+        <TextView
+            android:id="@+id/otherCandle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:padding="5dp"
+            android:text="More"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/highest" />
+
+        <ListView
+            android:id="@+id/currentList"
+            android:layout_width="413dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/otherCandle">
+        </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
