@@ -160,9 +160,9 @@ public class DIBA extends Application {
         super.onCreate();
 
         // Create database
-        investmentDb = Room.databaseBuilder(this, InvestmentDb.class, NAME_DB_INVESTMENT).build();
-        messageDB = new MessageDB(this);
+        investmentDb   = Room.databaseBuilder(this, InvestmentDb.class, NAME_DB_INVESTMENT).build();
         metasettingsDb = Room.databaseBuilder(this, MetasettingsDb.class, NAME_DB_METASETTINGS).build();
+        messageDB      = new MessageDB(this);
 
         // Encrypted payment DB
         final byte[] secret = loadsecret().getBytes();

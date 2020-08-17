@@ -42,7 +42,7 @@ rule C_SHARED_LIBRARY_LINKER__native-lib
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/gregory/Documents/vt2/DIBA/app/src/main/jni -B/home/gregory/Documents/vt2/DIBA/app/.cxx/cmake/release/armeabi-v7a
+  command = /home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/cmake -H/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni -B/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/armeabi-v7a
   description = Re-running CMake...
   generator = 1
 

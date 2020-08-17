@@ -4,3 +4,9 @@ CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varch
 CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)
 CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))
 CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
+/*C6*/SET SCHEMA PUBLIC
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',124,'SFr',124)
+COMMIT
+/*C7*/SET SCHEMA PUBLIC
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',22,'SFr',22)
+COMMIT

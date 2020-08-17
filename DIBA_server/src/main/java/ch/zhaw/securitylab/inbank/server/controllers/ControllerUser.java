@@ -89,7 +89,6 @@ public class ControllerUser extends ControllerParent {
 
 	public boolean isValidCode(String code) {
 		if (this.otps.containsKey(code)) {
-			// TODO: CHECK 5 minutes expiration limit
 			LocalDateTime dateTime = LocalDateTime.now();
 			String pattern = "yyyy-MM-dd HH:mm:ss";
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
@@ -128,7 +127,6 @@ public class ControllerUser extends ControllerParent {
   							.toString();
 		String code = OTP.substring(0,6);
 		this.otps.put(code,dt);
-		System.out.println("THEEE CODEE IS   .... here....--->>>    "+code);
 		return code;
 	}
 

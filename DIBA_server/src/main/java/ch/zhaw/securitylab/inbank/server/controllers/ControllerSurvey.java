@@ -28,7 +28,7 @@ public class ControllerSurvey extends ControllerParent {
 								+ "	</head>"
 								+ "	<body style='font-family:arial;color:#3c3c3c'>"
 								+ "		<div class='container' style='width:80%;margin:50px auto;'>"
-								+ "     <img src='images/DIBA_logo2.png'/>
+								+ "     <img src='images/DIBA_logo2.png'/>"
 								+ "		<h1>Welcome to DIBA</h1>"
 								+ "		<p>You recently open an account IBAN:<a id='iban'>CH48123456789</a></br>"
 								+ "		Complete the customer survey and win a special prize!</p>"
@@ -97,7 +97,7 @@ public class ControllerSurvey extends ControllerParent {
 	};
 
 	public static Handler handleSurveyGetAction = context -> {
-		String     m   = fetchJSON(context,"comment");
+		String m = fetchJSON(context,"comment");
 
 		//MySQLHelper db = new MySQLHelper();
 		//db.getDatabaseConnection();

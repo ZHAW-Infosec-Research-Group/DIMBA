@@ -6,8 +6,7 @@ import ch.zhaw.securitylab.DIBA.R;
 /**
  * The main pay activity shows all payments and routes to the other payment related activities.
  */
-public class ActivityAuthPay extends PayUpdatableList
-{
+public class ActivityAuthPay extends PayUpdatableList {
 	// -------------------------------------------- //
 	// CONSTRUCT & CREATE
 	// -------------------------------------------- //

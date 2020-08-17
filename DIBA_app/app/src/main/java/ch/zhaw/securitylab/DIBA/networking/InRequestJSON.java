@@ -20,7 +20,7 @@ public class InRequestJSON extends JsonObjectRequest {
     @Override
     public Map<String, String> getHeaders() {
         HashMap<String, String> headers = new HashMap<String, String>();
-        headers.put("Content-Type", "application/json");
+//        headers.put("Content-Type", "application/json");
         String jwt = DIBA.get().getJwt();
         if (jwt != null) {
             headers.put("Authorization", "Bearer: " + jwt);

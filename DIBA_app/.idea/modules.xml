@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DIBA.iml" filepath="$PROJECT_DIR$/.idea/modules/DIBA.iml" group="DIBA" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DIBA-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DIBA-app.iml" group="DIBA/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DIBA_app.iml" filepath="$PROJECT_DIR$/.idea/modules/DIBA_app.iml" group="DIBA_app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DIBA_app-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DIBA_app-app.iml" group="DIBA_app/app" />
       <module fileurl="file://$PROJECT_DIR$/InBank.iml" filepath="$PROJECT_DIR$/InBank.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
