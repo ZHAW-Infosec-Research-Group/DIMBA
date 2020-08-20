@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import static io.javalin.apibuilder.ApiBuilder.after;
 import static io.javalin.apibuilder.ApiBuilder.get;
 import static io.javalin.apibuilder.ApiBuilder.post;
+import io.javalin.http.staticfiles.Location;
 
 
 public class Server {
@@ -39,7 +40,10 @@ public class Server {
 		
 		Javalin app = Javalin.create(config -> {
             config.server(SecureServerFactory::makeSecure);
-            //config.addStaticFiles("./public");
+            //config.addStaticFiles("public/index.html",Location.EXTERNAL);
+            //config.addStaticFiles("public/style.css", Location.EXTERNAL);
+            //config.addStaticFiles("public/main.js",   Location.EXTERNAL);
+
         }).start();
 
 		// Add SSL context and HTTP configurations

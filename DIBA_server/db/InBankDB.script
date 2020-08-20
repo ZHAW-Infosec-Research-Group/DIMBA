@@ -28,7 +28,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 3280
+SET FILES CHECK 6172
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -52,6 +52,17 @@ SET SCHEMA PUBLIC
 INSERT INTO COMMENT VALUES('ciao')
 INSERT INTO COMMENT VALUES('good service!')
 INSERT INTO COMMENT VALUES('ff')
+INSERT INTO COMMENT VALUES('fdsafasd')
+INSERT INTO COMMENT VALUES('fdsfsda')
+INSERT INTO COMMENT VALUES('eeeeeeeeeeeeee')
+INSERT INTO COMMENT VALUES('fsdfsdsfsd')
+INSERT INTO COMMENT VALUES('ciaooooo!!!!')
+INSERT INTO COMMENT VALUES('eeetttggggg')
+INSERT INTO COMMENT VALUES('yyyyyyyyyyyyyyyyyyyyyyyyyyy')
+INSERT INTO COMMENT VALUES('eerfdsvdfbgfnmyj,uil7iyurenwaerswfbnhmjg,lireyurtegafvbnhmj,lirukeyjrthagdvbzngmhj,gilrutkeyjrth')
+INSERT INTO COMMENT VALUES('fdsfffffffffffffffffffffffffffvkdsjnflksdjfsdflsdkjfskldfjsd\u000adfsdf\u000asd\u000afsd\u000afsd\u000afsdddeeeeeeeeeeeeeeeelfkdlkj cicoijfoidsflsdkjf dlfkjdslfkjsdfl dsjflsd')
+INSERT INTO COMMENT VALUES('eerfdsvdfbgfnmyj,uil7iyurenwaerswfbnhmjg,lireyurtegafvbnhmj,lirukeyjrthagdvbzngmhj,gilrutkeyjrth\u000a')
+INSERT INTO COMMENT VALUES('ciao qua tutto ok!! li come va? state bene? o male? perche seno facciamo la spesa?!!!!')
 INSERT INTO INVESTMENT VALUES('greggggggg@gg.com',1640154891,'123','SFr','123')
 INSERT INTO INVESTMENT VALUES('greg23@gmail.com',1641498581,'666','SFr','666')
 INSERT INTO INVESTMENT VALUES('blublu@tutu.com',-1185203487,'1','SFr','1')
@@ -88,6 +99,8 @@ INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'SFr',1)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'SFr',1)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'SFr',1)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',123,'SFr',123)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',124,'SFr',124)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',22,'SFr',22)
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')

@@ -115,7 +115,7 @@ public class ControllerLogin extends ControllerParent {
 
 		// Send sms to emulator
 		try {
-			String code = ControllerUser.get().generateCode(owner,target,amountString,currency);
+			String code = ControllerUser.get().generateCode();
 			Server.logger.info("SMS CODE --->>>  "+code);
 			String dt   = ControllerUser.get().getDatetimeFromCode(code);
 			//Process process = Runtime.getRuntime().exec("adb emu sms send 0041793332211 Payment received at "+otp+"\n");

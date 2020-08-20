@@ -7,6 +7,7 @@ import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
@@ -69,15 +70,22 @@ public class ActivitySurvey extends AppCompatActivity {
             System.out.println(response.body().string());
         }
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            onBackPressed();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
     @Override
     public void onBackPressed() {
-        if (surveyView.canGoBack()) {
-//          surveyView.goBack();
-            Intent intent = new Intent(this, ActivityAuthMain.class);
-            TaskStackBuilder.create(this)
-                    .addNextIntent(intent)
-                    .startActivities();
-        }
+		Intent intent = new Intent(this, ActivityAuthMain.class);
+		TaskStackBuilder.create(this)
+				.addNextIntent(intent)
+				.startActivities();
     }
 }

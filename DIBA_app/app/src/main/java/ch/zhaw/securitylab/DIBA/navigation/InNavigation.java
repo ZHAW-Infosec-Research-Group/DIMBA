@@ -59,12 +59,10 @@ public abstract class InNavigation implements NavigationView.OnNavigationItemSel
 		Class<?> clazz = this.getClassForId(id);
 		Bundle bundle = this.getBundleForId(id);
 		
-		if (clazz != null)
-		{
+		if (clazz != null) {
 			Intent intent = new Intent(activity, clazz).putExtras(bundle);
 			
-			if (Arrays.asList(WITH_PARENT).contains(clazz))
-			{
+			if (Arrays.asList(WITH_PARENT).contains(clazz)) {
 				TaskStackBuilder.create(activity)
 					.addParentStack(clazz)
 					.addNextIntent(intent)
