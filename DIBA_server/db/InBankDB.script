@@ -28,7 +28,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 6172
+SET FILES CHECK 6244
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -63,6 +63,9 @@ INSERT INTO COMMENT VALUES('eerfdsvdfbgfnmyj,uil7iyurenwaerswfbnhmjg,lireyurtega
 INSERT INTO COMMENT VALUES('fdsfffffffffffffffffffffffffffvkdsjnflksdjfsdflsdkjfskldfjsd\u000adfsdf\u000asd\u000afsd\u000afsd\u000afsdddeeeeeeeeeeeeeeeelfkdlkj cicoijfoidsflsdkjf dlfkjdslfkjsdfl dsjflsd')
 INSERT INTO COMMENT VALUES('eerfdsvdfbgfnmyj,uil7iyurenwaerswfbnhmjg,lireyurtegafvbnhmj,lirukeyjrthagdvbzngmhj,gilrutkeyjrth\u000a')
 INSERT INTO COMMENT VALUES('ciao qua tutto ok!! li come va? state bene? o male? perche seno facciamo la spesa?!!!!')
+INSERT INTO COMMENT VALUES('ciao come va sul telefono?')
+INSERT INTO COMMENT VALUES('<script>alert("buuuuu")</script>')
+INSERT INTO COMMENT VALUES('ahahah')
 INSERT INTO INVESTMENT VALUES('greggggggg@gg.com',1640154891,'123','SFr','123')
 INSERT INTO INVESTMENT VALUES('greg23@gmail.com',1641498581,'666','SFr','666')
 INSERT INTO INVESTMENT VALUES('blublu@tutu.com',-1185203487,'1','SFr','1')

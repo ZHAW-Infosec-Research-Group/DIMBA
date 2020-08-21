@@ -25,7 +25,7 @@ public class FragmentSurvey extends DialogFragment {
     public static FragmentSurvey newInstance() {
         FragmentSurvey fragment = new FragmentSurvey();
         Bundle args = new Bundle();
-        String m = "Please take part of the survey. Your experience is important to us.";
+        String m = "Please take part of the survey. Your opinion is important to us.";
         args.putString("MESSAGE", m);;
         fragment.setArguments(args);
         return fragment;

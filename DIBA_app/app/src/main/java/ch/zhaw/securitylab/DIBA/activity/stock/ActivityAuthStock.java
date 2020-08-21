@@ -204,7 +204,7 @@ public class ActivityAuthStock extends ActivityDIBAAbstract implements AdapterVi
             }
 
             Random rand = new Random();
-            int randomNum = rand.nextInt(10) ;
+            int randomNum = rand.nextInt(2) ;
             data.addEntry(new Entry(set.getEntryCount(), event.values[0] + randomNum), 0);
 
             if (set.getEntryCount() >= 20) {

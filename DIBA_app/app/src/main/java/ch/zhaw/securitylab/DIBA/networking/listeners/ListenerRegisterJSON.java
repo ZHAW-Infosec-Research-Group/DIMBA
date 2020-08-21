@@ -14,7 +14,7 @@ import ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain;
 import ch.zhaw.securitylab.DIBA.helpers.Extras;
 
 
-public class ListenerLoginRegisterJSON extends ListenerAbstractJSON {
+public class ListenerRegisterJSON extends ListenerAbstractJSON {
 
     // -------------------------------------------- //
     // FIELDS
@@ -27,7 +27,7 @@ public class ListenerLoginRegisterJSON extends ListenerAbstractJSON {
     // CONSTRUCT
     // -------------------------------------------- //
 
-    public ListenerLoginRegisterJSON(AppCompatActivity activity) {
+    public ListenerRegisterJSON(AppCompatActivity activity) {
         this.activity = activity;
     }
 
@@ -50,6 +50,7 @@ public class ListenerLoginRegisterJSON extends ListenerAbstractJSON {
         diba.setJwt(jwtToken);
 
         Intent intent = new Intent(activity, ActivityAuthMain.class);
+        intent.putExtra("firstLogin", true);
         TaskStackBuilder.create(activity)
                 .addNextIntent(intent)
                 .startActivities();
@@ -58,6 +59,6 @@ public class ListenerLoginRegisterJSON extends ListenerAbstractJSON {
     @Override
     protected String getRequestResource()
     {
-        return "login in / creating an account";
+        return "Creating an account";
     }
 }

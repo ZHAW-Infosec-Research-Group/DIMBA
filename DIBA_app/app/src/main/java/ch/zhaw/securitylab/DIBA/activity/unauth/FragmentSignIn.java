@@ -10,14 +10,13 @@ import ch.zhaw.securitylab.DIBA.R;
 import ch.zhaw.securitylab.DIBA.activity.FragmentDIBAAbstract;
 import ch.zhaw.securitylab.DIBA.helpers.TaskCredentials;
 import ch.zhaw.securitylab.DIBA.networking.ConnectionBuilder;
-import ch.zhaw.securitylab.DIBA.networking.listeners.ListenerLoginRegisterJSON;
+import ch.zhaw.securitylab.DIBA.networking.listeners.ListenerRegisterJSON;
 
 /**
  * The sign in fragment lets the user create an account and logs them in. Routes to the main authenticated
  * activity on success.
  */
-public class FragmentSignIn extends FragmentDIBAAbstract
-{
+public class FragmentSignIn extends FragmentDIBAAbstract {
 	// -------------------------------------------- //
 	// CONSTRUCT & CREATE
 	// -------------------------------------------- //
@@ -51,7 +50,7 @@ public class FragmentSignIn extends FragmentDIBAAbstract
 		protected Boolean doInBackground(Void... params) {
 			DIBA.get().setUserName(email);
 			ConnectionBuilder.create()
-					.listenerJSON(new ListenerLoginRegisterJSON(context))
+					.listenerJSON(new ListenerRegisterJSON(context))
 					.data("email", email)
 					.data("password", password)
 					.url("/register")

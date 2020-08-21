@@ -38,13 +38,12 @@ public class ActivityAuthMain extends ActivityDIBAAbstract {
 		super.onCreate(savedInstanceState);
 
 		//Show survey link if new user
-//		preferences = context.getSharedPreferences("rootDetPreferences", Context.MODE_PRIVATE);
-//		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, false)) {
+		Intent intent = getIntent();
+		if (intent.getBooleanExtra("firstLogin", false) == true) {
 			FragmentManager fm = getSupportFragmentManager();
 			FragmentSurvey alertDialog = FragmentSurvey.newInstance();
 			alertDialog.show(fm, "fragment_alert");
-//		}
-
+		}
 
 		button(onFetchBalance(), R.id.mainBalanceFetch, R.id.mainImageBalance);
 		button(ActivityAuthPay.class, R.id.mainGoPayment, R.id.mainImagePay);

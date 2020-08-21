@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,8 @@ import ch.zhaw.securitylab.DIBA.helpers.Extras;
 import ch.zhaw.securitylab.DIBA.helpers.RememberMe;
 import ch.zhaw.securitylab.DIBA.helpers.TaskCredentials;
 import ch.zhaw.securitylab.DIBA.networking.ConnectionBuilder;
-import ch.zhaw.securitylab.DIBA.networking.listeners.ListenerLoginRegisterJSON;
+import ch.zhaw.securitylab.DIBA.networking.listeners.ListenerLoginJSON;
+import ch.zhaw.securitylab.DIBA.networking.listeners.ListenerRegisterJSON;
 
 /**
  * The login fragment handles the login procedure and routes to the main authenticated screen on success.
@@ -120,7 +120,7 @@ public class FragmentLogin extends FragmentDIBAAbstract {
 			DIBA.get().setUserName(email);
 
 			ConnectionBuilder.create()
-					.listenerJSON(new ListenerLoginRegisterJSON(context))
+					.listenerJSON(new ListenerLoginJSON(context))
 					.data("email", email)
 					.data("password", password)
 					.url("/login")

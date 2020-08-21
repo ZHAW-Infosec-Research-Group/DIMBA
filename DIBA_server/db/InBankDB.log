@@ -1,27 +1,12 @@
-/*C6*/SET SCHEMA PUBLIC
-CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255))
-CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))
-CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)
-CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))
-CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
 /*C8*/SET SCHEMA PUBLIC
 CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255))
 CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))
 CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)
 CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))
 CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
-/*C10*/SET SCHEMA PUBLIC
-INSERT INTO COMMENT VALUES('ciao come va sul telefono?')
+/*C14*/SET SCHEMA PUBLIC
+INSERT INTO USER VALUES('newgreg@mail.com','ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f')
 COMMIT
-/*C11*/SET SCHEMA PUBLIC
-INSERT INTO COMMENT VALUES('<script>alert("buuuuu")</script>')
-COMMIT
-/*C13*/SET SCHEMA PUBLIC
-CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255))
-CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))
-CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)
-CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))
-CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
-/*C15*/SET SCHEMA PUBLIC
-INSERT INTO COMMENT VALUES('ahahah')
+/*C18*/SET SCHEMA PUBLIC
+INSERT INTO USER VALUES('supernewUser@magic.com','ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f')
 COMMIT
