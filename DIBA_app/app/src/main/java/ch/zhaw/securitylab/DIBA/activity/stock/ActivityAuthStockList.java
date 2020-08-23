@@ -20,6 +20,7 @@ public class ActivityAuthStockList extends ActivityDIBAAbstract implements Adapt
     private SharedPreferences defaultPreferences;
     private ListView stockListView;
     private ListView forexListView;
+    private ListView forexValuesView;
     private ListView commodityListView;
     private String[] stockNames;
     private String[] forexNames;
@@ -35,13 +36,21 @@ public class ActivityAuthStockList extends ActivityDIBAAbstract implements Adapt
 
         defaultPreferences = PreferenceManager.getDefaultSharedPreferences(DIBA.get());
 
-        runOnUiThread(() ->
-        {
-            forexNames = new String[]{"USD/CHF\t +1,4%", "CHF/EUR\t +0.2%", "EUR/USD\t -1%"};
+        runOnUiThread(() -> {
+            forexNames = new String[]{"USD/CHF                                                      + 1.2%",
+                                      "CHF/EUR                                                      + 0.1%",
+                                      "EUR/USD                                                      - 0.7%"};
             addList(forexListView,forexNames, R.id.ForexList);
-            commodityNames = new String[]{"Crude Oil", "Gold", "Corn", "Natural Gas"};
+
+            commodityNames = new String[]{
+                                      "Crude Oil                                                       - 0.1%",
+                                      "Gold                                                                + 0.5%",
+                                      "Gas                                                                 + 4.5%"};
             addList(commodityListView,commodityNames, R.id.CommodityList);
-            stockNames = new String[]{"APPL", "GOOGL", "MSFT"};
+
+            stockNames = new String[]{"APPL                                                               + 0.3%",
+                                      "GOOGL                                                           + 0.3%",
+                                      "MSFT                                                              + 0.8%"};
             addList(stockListView,stockNames, R.id.StockList);
         });
     }

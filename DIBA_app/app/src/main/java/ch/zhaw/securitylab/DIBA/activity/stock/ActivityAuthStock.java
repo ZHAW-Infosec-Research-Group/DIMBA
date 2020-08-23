@@ -124,8 +124,6 @@ public class ActivityAuthStock extends ActivityDIBAAbstract implements AdapterVi
         lineChart.getXAxis().setDrawGridLines(false);
         lineChart.setDrawBorders(false);
 
-
-
         startPlot();
 
 
@@ -156,20 +154,6 @@ public class ActivityAuthStock extends ActivityDIBAAbstract implements AdapterVi
         datasets.add(set1);
         CandleData data = new CandleData(datasets);
         candleStick.setData(data);
-
-
-
-        //////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////       LIST                               /////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////
-        runOnUiThread(() ->
-        {
-            currentNames = new String[]{"USD/CHF\t +1,4%", "CHF/EUR\t +0.2%", "EUR/USD\t -1%"};
-            currentListView = findViewById(R.id.currentList);
-            ArrayAdapter<String> stockAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, currentNames);
-            currentListView.setAdapter(stockAdapter);
-            currentListView.setOnItemClickListener(this);
-        });
     }
 
     private void startPlot() {

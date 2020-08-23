@@ -43,7 +43,7 @@
 
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStock"
-            android:label="CandleStick Chart"
+            android:label="Real-time stock market data"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockList"
             android:theme="@style/AppTheme.NoActionBar" />
 

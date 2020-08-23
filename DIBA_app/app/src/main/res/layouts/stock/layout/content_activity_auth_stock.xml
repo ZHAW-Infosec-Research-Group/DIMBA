@@ -14,31 +14,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Real-time Stock Market Data"
+            android:textColor="#666"
+            android:textSize="12pt"
+            android:text="USD/CHF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/currentTag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:padding="5dp"
-            android:text="USD/CHF"
-            android:textAlignment="textStart"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.066"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textRealTimeData" />
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/lineChart"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,9 +46,11 @@
         <TextView
             android:id="@+id/priceTitle"
             android:layout_width="131dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="44dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:textSize="10pt"
             android:text="Price\n"
+            android:textColor="?attr/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +64,7 @@
             android:textStyle="bold"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
             app:layout_constraintHorizontal_bias="0.106"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/priceTitle" />
@@ -81,10 +73,12 @@
         <TextView
             android:id="@+id/changeTitle"
             android:layout_width="131dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:textSize="10pt"
             android:text="24h Change"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="?attr/colorPrimaryDark"
             app:layout_constraintHorizontal_bias="0.789"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/candleStick" />
@@ -94,6 +88,7 @@
             android:layout_height="20dp"
             android:text="\t +4.5%"
             android:textSize="16dp"
+            android:layout_marginTop="20dp"
             android:textStyle="bold"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,9 +99,11 @@
         <TextView
             android:id="@+id/highestTitle"
             android:layout_width="131dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="12dp"
-            android:text="Monthly highest"
+            android:layout_height="30dp"
+            android:textSize="10pt"
+            android:layout_marginTop="20dp"
+            android:textColor="?attr/colorPrimaryDark"
+            android:text="High"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +116,7 @@
             android:text="123"
             android:textSize="16dp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             android:textAlignment="viewEnd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.109"
@@ -128,9 +126,11 @@
         <TextView
             android:id="@+id/lowestTitle"
             android:layout_width="131dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="12dp"
-            android:text="Monthly lowest"
+            android:layout_height="30dp"
+            android:textSize="10pt"
+            android:layout_marginTop="20dp"
+            android:text="Low"
+            android:textColor="?attr/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.789"
             app:layout_constraintStart_toStartOf="parent"
@@ -141,6 +141,7 @@
             android:layout_width="131dp"
             android:layout_height="20dp"
             android:text="99"
+            android:layout_marginTop="20dp"
             android:textAlignment="viewEnd"
             android:textSize="16dp"
             android:textStyle="bold"
@@ -148,27 +149,5 @@
             app:layout_constraintHorizontal_bias="0.789"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lowestTitle" />
-
-        <TextView
-            android:id="@+id/otherCandle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:padding="5dp"
-            android:text="More"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/highest" />
-
-        <ListView
-            android:id="@+id/currentList"
-            android:layout_width="413dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/otherCandle">
-        </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
