@@ -128,9 +128,10 @@ If you want to build the app and/or the server from scratch you can do so. The f
 If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. If you want to contribute you can do so by cloning the repository and creating a pull request with your changes. 
 
 ## Authors
-The app was mainly written as part of their bachelor thesis by
-+ Benjamin Heusser, student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
-+ Savin Niederer, student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
+The app was mainly developed as part of student theses by
++ Benjamin Heusser, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
++ Savin Niederer, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
++ Gregory Banfi, MSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
 
 Some further publishing work was done by
 + [Olivier Favre](https://www.zhaw.ch/en/about-us/person/favr/), research assistant at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
