@@ -14,3 +14,7 @@ For usabiliy reasons, DIBA provides a *Remember me* functionality so that during
 
 **Goal:** Get the password of *h@cker* from the device assuming you don't know it.
 
+### 3: SQL injection is not only a server-side issue (easy)
+The *Messages* functionality allows to send and receive messages to/from the bank. The messages are cached locally on the device so that they can be viewed even if there's no network connection. As the app can be used by different users on the same device, messages of multiple users may be cached. Therefore, for configentiality reasons, a user should only get access to his own messages. Unfortunately, this was not implemented correctly.
+
+**Goal:** Abuse the search field to get access to messages of other users on the same device.
