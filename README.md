@@ -45,7 +45,7 @@ All in all there are 24 vulnerabilities you can find. They can be grouped into t
 + Insecure Services
 + Weak JWT
 
-You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to fin vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
+You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to find vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
 
 Additionally we have written a solution document which describes all the vulnerabilities in detail with steps to exploit and how to fix them.
 
