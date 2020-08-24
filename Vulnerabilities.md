@@ -1,19 +1,16 @@
 # Vulnerabilities in DIBA
-### What is DIBA?
-At the core DIBA is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing.
-There are already a number of other intentionally vulnerable Android App projects out there (eg. [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
 
-## Features
-This project is split into two parts. The first part is the Banking App itself which provides the following features:
-+ A number of activities that are typical for a banking app, such as:
-	+ login screen
-	+ register for the service
-	+ account balance view
-	+ sending and receiving payments
-	+ loading a payslip from a file
-	+ investment area (separated by an additional paywall)
-	+ live-view on stock market
-	+ sending and receiving messages
-+ Modern look and feel thanks to Material Design
-+ Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find
-+ Metasettings that make it harder to crack some vulnerabilities
+This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
+
+### 1: Investments for free (easy)
+To do investments, a VIP access code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct access code without having to purchase it.
+
+**Goal:** Find out the valid VIP access code and get access to the Investstments functionality by entering the code.
+
+### 2: Don't forget me (medium)
+For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is very hard.
+
+**Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
+
+**Goal:** Get the password of *h@cker* from the device assuming you don't know it.
+
