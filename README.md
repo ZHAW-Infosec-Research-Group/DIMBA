@@ -1,4 +1,5 @@
-# DIBA
+# DIBA - Damn Insecure Banking App
+
 ## What is DIBA?
 At the core DIBA, is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing. There are also other intentionally vulnerable Android App projects out there (eg. [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
 
