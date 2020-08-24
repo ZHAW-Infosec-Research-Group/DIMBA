@@ -131,9 +131,9 @@ If you have feedback or suggestions for the project feel free to create an issue
 The app was mainly developed as part of student theses by
 + Benjamin Heusser, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
 + Savin Niederer, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
-+ Gregory Banfi, MSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
++ Gregory Banfi, MSc student at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
 
-Some further publishing work was done by
+Some further polishing work was done by
 + [Olivier Favre](https://www.zhaw.ch/en/about-us/person/favr/), research assistant at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
 
 Further review and guidance of the project was done by
