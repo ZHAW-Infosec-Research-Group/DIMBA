@@ -5,15 +5,7 @@ At the core DIBA, is a vulnerable Banking App that was designed to provide a rea
 
 ## Features
 This project is split into two parts. The first part is the Banking App itself which provides the following features:
-+ A number of activities that are typical for a banking app, such as:
-	+ login screen
-	+ register for the service
-	+ account balance view
-	+ sending and receiving payments
-	+ loading a payslip from a file
-	+ investment area (separated by an additional paywall)
-	+ live-view on stock market
-	+ sending and receiving messages
++ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, sending and receiving payments, loading a payslip from a file, investment area, live-view on stock market, and sending and receiving messages
 + Modern look and feel thanks to Material Design
 + Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find
 + Metasettings that make it harder to crack some vulnerabilities
