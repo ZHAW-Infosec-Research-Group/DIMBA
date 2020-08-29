@@ -1,19 +1,11 @@
-# DIBA
+# DIBA - Damn Insecure Banking App
+
 ## What is DIBA?
-At the core DIBA is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing.
-There are already a number of other intentionally vulnerable Android App projects out there (eg. [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
+At the core DIBA, is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing. There are also other intentionally vulnerable Android App projects out there (e.g., [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
 
 ## Features
 This project is split into two parts. The first part is the Banking App itself which provides the following features:
-+ A number of activities that are typical for a banking app, such as:
-	+ login screen
-	+ register for the service
-	+ account balance view
-	+ sending and receiving payments
-	+ loading a payslip from a file
-	+ investment area (separated by an additional paywall)
-	+ live-view on stock market
-	+ sending and receiving messages
++ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, sending and receiving payments, loading a payslip from a file, investment area, live-view on stock market, and sending and receiving messages
 + Modern look and feel thanks to Material Design
 + Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find
 + Metasettings that make it harder to crack some vulnerabilities
@@ -45,6 +37,8 @@ All in all there are 24 vulnerabilities you can find. They can be grouped into t
 + Fragment Injection
 + Insecure Services
 + Weak JWT
+
+You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to find vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
 
 Additionally we have written a solution document which describes all the vulnerabilities in detail with steps to exploit and how to fix them.
 
@@ -128,11 +122,12 @@ If you want to build the app and/or the server from scratch you can do so. The f
 If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. If you want to contribute you can do so by cloning the repository and creating a pull request with your changes. 
 
 ## Authors
-The app was mainly written as part of their bachelor thesis by
-+ Benjamin Heusser, student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
-+ Savin Niederer, student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
+The app was mainly developed as part of student theses by
++ Benjamin Heusser, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
++ Savin Niederer, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
++ Gregory Banfi, MSc student at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
 
-Some further publishing work was done by
+Some further polishing work was done by
 + [Olivier Favre](https://www.zhaw.ch/en/about-us/person/favr/), research assistant at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
 
 Further review and guidance of the project was done by
