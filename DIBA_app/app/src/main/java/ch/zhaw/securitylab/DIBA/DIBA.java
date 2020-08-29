@@ -198,7 +198,7 @@ public class DIBA extends Application {
             MetasettingsDao metasettingsDao = metasettingsDb.metasettingsDao();
             Metasettings metasettings = metasettingsDao.getSettings();
             if (metasettings == null) {
-                metasettings = new Metasettings("10.0.2.2", Difficulty.HARD, 50000);
+                metasettings = new Metasettings("10.0.2.2", Difficulty.LEVEL_3, 50000);
                 metasettings.setUid(1);
                 metasettingsDao.insert(metasettings);
                 Log.i(Extras.LOG_TAG, "Create Metasettings Entry");

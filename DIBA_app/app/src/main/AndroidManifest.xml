@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ch.zhaw.securitylab.DIBA">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -47,7 +48,6 @@
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockList"
             android:theme="@style/AppTheme.NoActionBar" />
 
-
         <activity android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivitySurvey" />
 
         <activity
@@ -87,6 +87,7 @@
             android:label="@string/title_activity_auth_pay_accept"
             android:permission="ch.zhaw.securitylab.DIBA.PayAccept"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPaySlip"
             android:label="Load a Payslip"

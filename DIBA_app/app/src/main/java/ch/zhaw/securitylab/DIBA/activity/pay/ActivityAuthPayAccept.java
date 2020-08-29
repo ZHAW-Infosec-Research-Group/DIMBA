@@ -92,12 +92,12 @@ public class ActivityAuthPayAccept extends ActivityDIBAAbstract {
 	
 	private OnClickListener onPayAccept(final Bundle bundle) {
 		return (View v) -> {
-			// Fetch data
-			String target = bundle.getString(Extras.TARGET);
-			String amount = bundle.getString(Extras.AMOUNT);
+			String target    = bundle.getString(Extras.TARGET);
+			String amount    = bundle.getString(Extras.AMOUNT);
 			String amountSFr = bundle.getString(Extras.AMOUNT_SFR);
 			String currency  = bundle.getString(Extras.CURRENCY);
 			String owner     = DIBA.get().getUserName();
+
 			Payment payment  = new Payment(owner, target, new BigDecimal(amount), new BigDecimal(amountSFr), currency);
 			EditText editText = findViewById(R.id.editOTP);
 			String code       = String.valueOf(editText.getText());

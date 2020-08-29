@@ -16,7 +16,10 @@ public class InHostnameVerifier implements HostnameVerifier {
 	public boolean verify(String hostname, SSLSession session) {
 		Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
 		String connectedIp = metasettings.getIp();
-		if(metasettings.getDifficulty() == Difficulty.SECURE || metasettings.getDifficulty() == Difficulty.ALMOST_SECURE){
+//		if(metasettings.getDifficulty() == Difficulty.LEVEL_5 || metasettings.getDifficulty() == Difficulty.LEVEL_4){
+		if(metasettings.getDifficulty() != Difficulty.LEVEL_1){
+			System.out.println(connectedIp);
+			System.out.println(hostname);
 			return connectedIp.equals(hostname);
 		}else{
 			return true;

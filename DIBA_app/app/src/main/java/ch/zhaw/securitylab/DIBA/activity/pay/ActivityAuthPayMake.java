@@ -117,20 +117,25 @@ public class ActivityAuthPayMake extends ActivityBoundAbstract {
 		String[] content = ProviderSettings.getContent();
 		String packageName = content[0];
 		String className   = content[1];
-		
+
+		System.out.println(packageName);
+		System.out.println(className);
+
 		// Make sure both fields are set
 		if (packageName == null || className == null) {
 			Toast.makeText(context, "An error occurred with sending the money.", Toast.LENGTH_SHORT).show();
 			return;
 		}
-		
+		System.out.println("Not null");
+
 		// Form Intent
 		Intent intentConfirm = new Intent();
 		intentConfirm.setClassName(packageName, className);
 		
 		// Put Extras
 		intentConfirm.putExtras(fieldData);
-		
+		System.out.println("Intent created with data");
+
 		// Check if was possible to resolve
 		ComponentName resolved = intentConfirm.getComponent();
 		if (resolved == null) {
@@ -140,10 +145,12 @@ public class ActivityAuthPayMake extends ActivityBoundAbstract {
 		
 		try {
 			startActivity(intentConfirm);
+			System.out.println("Activity Started1");
+
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			Toast.makeText(context, "An error occurred with sending the money.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, "An error occurred with requesting the OTP.", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
