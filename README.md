@@ -44,11 +44,11 @@ Additionally we have written a solution document which describes all the vulnera
 
 ## Usage
 ### Prerequisites
-If you want to run the app and the server on your machine you need the following prerequisites:
+To run the app and the server, the following is required:
 + Newest DIBA Release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4)
-+ ADB — Android Debug Bridge
++ Android Debug Bridge (adb)
 + Java Runtime Environment (Java 8 or higher)
-+ An Android Device or an Android Virtual Image
++ An Android device or a virtual machine running Android
 
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
@@ -56,9 +56,9 @@ For finding and exploiting the vulnerabilities you probably need a bunch of tool
 + [Drozer](https://labs.mwrinfosecurity.com/tools/drozer/)
 + [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
 
-### VM Setup
-If you want to run Android as a Virtual Machine a few additional steps are necessary. The following steps describe how to run Android as a VM with VirtualBox. It is possible to do the same procedure with a different Hypervisor like VmWare:
-1. Get the Android VM image from [OSBoxes](https://www.osboxes.org/android-x86/#android-x86-71-vbox) (Android-x86 7.1-RC1 Nougat, 64bit VDI Image)
+### Virtual Machine Setup
+To run Android as a virtual machine, some additional steps are necessary. The following steps describe how to do this with VirtualBox. It should also be possible to use different virtualization software such as VmWare:
+1. Get the Android VirtualBox image **Android-x86 9.0-R2 Pie** from [OSBoxes](https://www.osboxes.org/android-x86/). More recent versions may also work, but this is the version with which the app was successfully tested.
 2. Get [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads) if you don't have it already
 3. In VirtualBox, create a new VM
 4. Switch to Expert Mode
