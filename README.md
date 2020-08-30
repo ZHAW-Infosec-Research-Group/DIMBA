@@ -44,11 +44,11 @@ Additionally we have written a solution document which describes all the vulnera
 
 ## Usage
 ### Prerequisites
-If you want to run the app and the server on your machine you need the following prerequisites:
+To run the app and the server, the following is required:
 + Newest DIBA Release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4)
-+ ADB — Android Debug Bridge
++ Android Debug Bridge (adb)
 + Java Runtime Environment (Java 8 or higher)
-+ An Android Device or an Android Virtual Image
++ An Android device or a virtual machine running Android
 
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
@@ -56,24 +56,23 @@ For finding and exploiting the vulnerabilities you probably need a bunch of tool
 + [Drozer](https://labs.mwrinfosecurity.com/tools/drozer/)
 + [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
 
-### VM Setup
-If you want to run Android as a Virtual Machine a few additional steps are necessary. The following steps describe how to run Android as a VM with VirtualBox. It is possible to do the same procedure with a different Hypervisor like VmWare:
-1. Get the Android VM image from [OSBoxes](https://www.osboxes.org/android-x86/#android-x86-71-vbox) (Android-x86 7.1-RC1 Nougat, 64bit VDI Image)
-2. Get [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads) if you don't have it already
-3. In VirtualBox, create a new VM
-4. Switch to Expert Mode
-5. Choose a name, select the OS type as **Other** and the version as **Other/Unknown (64bit)**
-6. Select **Use an existing virtual hard disk file** and select the .vdi file you just downloaded
-7. Press **Create**
-8. Right click on the new instance and select **Settings -> Network -> Advanced -> Port Forwarding**
-9. Add a new Rule with Protocol: TCP; Host IP: leave empty; Host Port: 5555; Guest IP: leave empty; Guest Port: 5555
+### Virtual Machine Setup
+To run Android as a virtual machine, some additional steps are necessary. The following steps describe how to do this with VirtualBox. It should also be possible to use different virtualization software such as VmWare:
+1. Get the Android VirtualBox image **Android-x86 9.0-R2 Pie** (64bit version) from [OSBoxes](https://www.osboxes.org/android-x86/). More recent versions may also work, but this is the version with which the app was successfully tested.
+2. Get and install [VirtualBox](https://www.virtualbox.org) if you don't have it already.
+3. In VirtualBox, create a new virtual machine and switch to Expert Mode.
+4. Choose a name, select the OS type as **Other** and the version as **Other/Unknown (64bit)**.
+6. Select **Use an existing virtual hard disk file** and select the vdi file you just downloaded.
+7. Press **Create**.
+8. Right click on the new instance and select **Settings -> Network -> Advanced -> Port Forwarding**.
+9. Add a new Rule with Protocol: TCP; Host IP: leave empty; Host Port: 5555; Guest IP: leave empty; Guest Port: 5555.
 
-To make it easier to work with the VM it is recommended to activate the **Stay awake** option in the developer settings. To enable this follow these steps:
-1. Start the VM
-2. Open the Android Settings
-3. Open **About Phone/Tablet**
-4. Click 7 times on the build number, now you can see the developer settings when you go back to the android settings
-5. Enter the developer settings and enable **Stay awake**
+To make it easier to work with the virtual machine, it is recommended to activate the **Stay awake** option in the developer settings. To enable this, follow these steps:
+1. Start the virtual machine.
+2. Open the **Settings** app.
+3. Select **System -> About Tablet**.
+4. Click seven times on the build number to enable the developer settings.
+5. Go one step back to the **System** settings, select **Advanced -> Developer option** and enable **Stay awake**.
 
 ### Server
 The Banking App needs a server to communicate to. To make this possible we provide a Java server together with the app release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4). When extracting the jar, you need to make sure to also extract the keystore subdirectory with the keystore file in it. The keystore directory needs to be placed in the same folder as the jar file. You can then run the server locally on your machine with Java:
