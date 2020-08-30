@@ -58,15 +58,14 @@ For finding and exploiting the vulnerabilities you probably need a bunch of tool
 
 ### Virtual Machine Setup
 To run Android as a virtual machine, some additional steps are necessary. The following steps describe how to do this with VirtualBox. It should also be possible to use different virtualization software such as VmWare:
-1. Get the Android VirtualBox image **Android-x86 9.0-R2 Pie** from [OSBoxes](https://www.osboxes.org/android-x86/). More recent versions may also work, but this is the version with which the app was successfully tested.
-2. Get [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads) if you don't have it already
-3. In VirtualBox, create a new VM
-4. Switch to Expert Mode
-5. Choose a name, select the OS type as **Other** and the version as **Other/Unknown (64bit)**
-6. Select **Use an existing virtual hard disk file** and select the .vdi file you just downloaded
-7. Press **Create**
-8. Right click on the new instance and select **Settings -> Network -> Advanced -> Port Forwarding**
-9. Add a new Rule with Protocol: TCP; Host IP: leave empty; Host Port: 5555; Guest IP: leave empty; Guest Port: 5555
+1. Get the Android VirtualBox image **Android-x86 9.0-R2 Pie** (64bit version) from [OSBoxes](https://www.osboxes.org/android-x86/). More recent versions may also work, but this is the version with which the app was successfully tested.
+2. Get and install [VirtualBox](https://www.virtualbox.org) if you don't have it already.
+3. In VirtualBox, create a new VM and switch to Expert Mode.
+4. Choose a name, select the OS type as **Other** and the version as **Other/Unknown (64bit)**.
+6. Select **Use an existing virtual hard disk file** and select the vdi file you just downloaded.
+7. Press **Create**.
+8. Right click on the new instance and select **Settings -> Network -> Advanced -> Port Forwarding**.
+9. Add a new Rule with Protocol: TCP; Host IP: leave empty; Host Port: 5555; Guest IP: leave empty; Guest Port: 5555.
 
 To make it easier to work with the VM it is recommended to activate the **Stay awake** option in the developer settings. To enable this follow these steps:
 1. Start the VM
