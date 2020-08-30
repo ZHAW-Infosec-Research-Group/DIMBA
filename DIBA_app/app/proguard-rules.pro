@@ -16,8 +16,8 @@
 #   public *;
 #}
 
--keep class !ch.zhaw.securitylab.DIBA.report.** { *; }
--keep class net.sqlcipher.** { *; }
+-keep class !ch.zhaw.securitylab.DIBA.report.* { *; }
+-keep class net.sqlcipher.* { *; }
 -keep class net.sqlcipher.database.* { *; }
 # Uncomment this to preserve the line number information for
 # debugging stack traces.

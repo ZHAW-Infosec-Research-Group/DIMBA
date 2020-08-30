@@ -120,19 +120,23 @@
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentSignIn"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentRootDetection"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentChange"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentLogin"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- Messages -->
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" /> <!-- Messages -->
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMessages"
             android:exported="true"
