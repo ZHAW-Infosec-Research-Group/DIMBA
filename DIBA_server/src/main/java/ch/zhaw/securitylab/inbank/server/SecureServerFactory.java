@@ -21,7 +21,8 @@ public class SecureServerFactory {
 		//app.server(server -> {
 			Server server = new Server();
 			
-			File keystore = new File("keystore/keystore").getAbsoluteFile();
+			//File keystore = new File("keystore/keystore").getAbsoluteFile();
+			File keystore = new File("keystore/new/keystore.jks").getAbsoluteFile();
 			// Initialize SSL Context factory with keystore
 			SslContextFactory sslContextFactory = new SslContextFactory();
 			sslContextFactory.setKeyStorePath(keystore.toString());

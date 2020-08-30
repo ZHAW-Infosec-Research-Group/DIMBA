@@ -103,7 +103,8 @@ public class InHttpsStack extends HurlStack {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
-			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_cert);
+//			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_cert);
+			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.diba_cert);
 			Certificate ca = cf.generateCertificate(caInput);
 			caInput.close();
 			
@@ -114,7 +115,8 @@ public class InHttpsStack extends HurlStack {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
-			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_root_cert);
+//			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_root_cert);
+			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.ca_cert);
 			Certificate ca = cf.generateCertificate(caInput);
 			caInput.close();
 			
