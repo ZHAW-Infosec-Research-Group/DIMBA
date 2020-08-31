@@ -33,7 +33,7 @@ To do investments, a VIP access code is required that can be purchased from the 
 
 Works, but old solution description seems to be overly complicated.
 
-### 2: Don't forget me (medium)
+### 3: Don't forget me (medium)
 For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is very hard.
 
 Works.
@@ -42,11 +42,23 @@ Works.
 
 **Goal:** Get the password of *h@cker* from the device assuming you don't know it.
 
-### 3: SQL injection only happens server-side, right? (easy)
+### 4: SQL injection only happens server-side, right? (easy)
 The *Messages* functionality allows to send and receive messages to/from the bank. The messages are cached locally on the device so that they can be viewed even if there's no network connection. As the app can be used by different users on the same device, messages of multiple users may be cached. Therefore, for configentiality reasons, a user should only get access to his own messages. Unfortunately, this was not implemented correctly.
 
 **Goal:** Abuse the search field to get access to messages of other users on the same device.
 
 Works, but The five predefined messages should by form sender (Alice, right side) and from bank /Bob, left side).
 Also, formatting is not good.
+
+### 5: Clipboard danger
+
+Works
+
+### 6: Default exported content provider
+
+AUTO REDIRECT in Exploit App does not chenge settings
+
+### 7: Intent redirection
+
+
 
