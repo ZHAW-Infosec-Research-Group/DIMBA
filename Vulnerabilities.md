@@ -56,9 +56,42 @@ Works
 
 ### 6: Default exported content provider
 
-AUTO REDIRECT in Exploit App does not chenge settings
+Works (tested via AUTO REDIRECT in Exploit App)
 
 ### 7: Intent redirection
+
+TBD
+
+### 8: Loggiong Sensitive Information
+
+Works
+
+### 9: Aliases export activities
+
+Works
+
+But does this make sense? If the user is niot logged in, I'm not getting any inbestments. And if the user i slogged, I can simply access the investments by using the app.
+
+### 10: Directoty Traversal I - Load a Payslip
+
+Works
+
+Shouldn't the Load/Save Icons be swapped?
+
+### 11: Directory Traversal I - Save a Payslip
+
+Works
+
+Shouldn't the Load/Save Icons be swapped?
+
+### 12: Save on SD card
+
+Works
+
+### 13: Weak Report Encryption
+
+
+
 
 
 
