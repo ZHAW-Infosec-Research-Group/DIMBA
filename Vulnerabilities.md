@@ -90,6 +90,8 @@ Works
 
 ### 13: Weak Report Encryption
 
+Report is generated, decryption test TBD
+
 
 
 
