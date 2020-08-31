@@ -179,6 +179,16 @@ Works
 But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
 
 
+### 32: 2-Factor authentication
+
+Works
+
+The payment message (with the code) should also include the timestanp, the target account and the amount.
+
+### 33: 2-Factor authentication modify payment data
+
+TBD, as soon as Burp works
+
 
 
 
