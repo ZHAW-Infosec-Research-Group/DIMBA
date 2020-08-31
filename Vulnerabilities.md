@@ -16,20 +16,27 @@ The font is very "light-grey", shpuld be darker
 
 In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
 
+Make sure to adapt thje text in "About App".
 
+On the screen with Login & Create ACcount, the logo should be mor centered above the buttons.
 
+No Logo on the Main screen (The one with Fetch Balance) etc.
 
+### 1: Certificate Check Security
 
+TBD
 
-
-
-### 1: Investments for free (easy)
+### 2: Investments for free (easy)
 To do investments, a VIP access code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct access code without having to purchase it.
 
 **Goal:** Find out the valid VIP access code and get access to the Investstments functionality by entering the code.
 
+Works, but old solution description seems to be overly complicated.
+
 ### 2: Don't forget me (medium)
 For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is very hard.
+
+Works.
 
 **Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
 
@@ -39,3 +46,7 @@ For usabiliy reasons, DIBA provides a *Remember me* functionality so that during
 The *Messages* functionality allows to send and receive messages to/from the bank. The messages are cached locally on the device so that they can be viewed even if there's no network connection. As the app can be used by different users on the same device, messages of multiple users may be cached. Therefore, for configentiality reasons, a user should only get access to his own messages. Unfortunately, this was not implemented correctly.
 
 **Goal:** Abuse the search field to get access to messages of other users on the same device.
+
+Works, but The five predefined messages should by form sender (Alice, right side) and from bank /Bob, left side).
+Also, formatting is not good.
+
