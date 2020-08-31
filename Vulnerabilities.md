@@ -4,6 +4,8 @@ This document lists all vulnerabilities that are present in DIBA, including requ
 
 ### General issues
 
+Only Level 1 works right now. With Burp, no level works.
+
 Metasettings: Use LEVEL 1 etc, not LEVEL_1
 
 Use "Certificate Ckeck Security" instead of "Security of Certificate Check"
@@ -12,7 +14,7 @@ Ping Server does not do anything
 
 Courier Font in Buttons still looks a bit strange
 
-The font is very "light-grey", shpuld be darker
+The font is very "light-grey", should be darker
 
 In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
 
@@ -82,8 +84,6 @@ Shouldn't the Load/Save Icons be swapped?
 
 Works
 
-Shouldn't the Load/Save Icons be swapped?
-
 ### 12: Save on SD card
 
 Works
@@ -91,6 +91,62 @@ Works
 ### 13: Weak Report Encryption
 
 Report is generated, decryption test TBD
+
+### 14: Login Mimic
+
+TBD, needs proxy
+
+### 15: Recently Used Apps
+
+Works
+
+But is this reasonable? If I have access to the phone, I can simply navigate to that activity?
+
+### 16:
+
+This number is missing from the soplution chapter => not existing (?)
+
+### 17: Back button log clearing
+
+Works
+
+Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
+
+Does not work woth Log out button on home screen
+
+### 18: Input validate in make paymemnt activity
+
+TBD with Burp
+
+### 19: Developer entrance
+
+TBD
+
+### 20: App backup
+
+Works
+
+### 21: Fragment injection
+
+TBD
+
+### 22: Insecure services
+
+TBD
+
+### 23: Weak JWT MAC password
+
+Works, check available JWT crackers
+
+Use a simpler password
+
+Replace iss "InBank" with "DIBA"
+
+### 24: Exploitimg saved forign login credentials
+
+Works
+
+
 
 
 
