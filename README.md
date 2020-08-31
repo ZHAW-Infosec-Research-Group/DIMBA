@@ -86,7 +86,7 @@ Now that the Android VM is running you can install the app:
 3. Now you can install the APK by executing the following command: `adb install /path/to/DIBA.apk` 
 4. There might be a prompt in your Android VM you have to accept for the installation to complete
 5. Copy the rootCA.crt File to your device by using the adb command `adb push /path/to/rootCA.crt /sdcard`
-6. Install the certificate on your device. You can do this in the Settings under Security -> Install from SD card -> Select your certificate.
+6. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD cardTrusted credentials**. There select rootCA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
 
 ### App Configuration
 
