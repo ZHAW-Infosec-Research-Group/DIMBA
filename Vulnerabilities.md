@@ -164,6 +164,20 @@ Couldn't do this one. How can I access the survey at any time?
 
 ### 29: Cracking Weak Password
 
+Uses no salt, roght?
+
+What is the correct password?
+
+### 30: Root detection bypass
+
+TBD
+
+### 31: System command injection
+
+Works
+
+But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
+
 
 
 
