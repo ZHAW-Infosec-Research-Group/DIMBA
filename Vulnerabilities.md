@@ -146,6 +146,25 @@ Replace iss "InBank" with "DIBA"
 
 Works
 
+### 25: SQLite Database
+
+Works
+
+### 26: Native language library
+
+Works
+
+### 27: Encrypted AQLite database
+
+Could not test as I couldn't buils SQLCipher
+
+### 28: WebView XSS
+
+Couldn't do this one. How can I access the survey at any time?
+
+### 29: Cracking Weak Password
+
+
 
 
 
