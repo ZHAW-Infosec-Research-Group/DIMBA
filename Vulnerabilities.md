@@ -2,6 +2,27 @@
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
+### General issues
+
+Metasettings: Use LEVEL 1 etc, not LEVEL_1
+
+Use "Certificate Ckeck Security" instead of "Security of Certificate Check"
+
+Ping Server does not do anything
+
+Courier Font in Buttons still looks a bit strange
+
+The font is very "light-grey", shpuld be darker
+
+In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
+
+
+
+
+
+
+
+
 ### 1: Investments for free (easy)
 To do investments, a VIP access code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct access code without having to purchase it.
 
