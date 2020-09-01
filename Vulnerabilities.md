@@ -161,7 +161,7 @@ Check this out. A negative number cannot be entered and the effect of changing t
 
 TBD
 
-### 20: App backup (medium)
+### 20: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
@@ -176,9 +176,12 @@ TBD
 
 TBD
 
-### 23: Weak JWT MAC password
+### 23: Weak JWT MAC Secret (hard)
+The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
 
-Works, check available JWT crackers
+**Goal:** Get a JWT (e.g., by using an intercepor proxy) and crack the MAC password.
+
+**Check**: Works, check available JWT crackers
 
 Use a simpler password
 
