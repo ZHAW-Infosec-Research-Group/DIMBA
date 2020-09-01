@@ -2,15 +2,13 @@
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
-### General issues
+Different attackers, local, adb etc...
 
-Only Level 1 works right now. With Burp, no level works.
+### General issues
 
 Metasettings: Use LEVEL 1 etc, not LEVEL_1
 
 Use "Certificate Ckeck Security" instead of "Security of Certificate Check"
-
-Ping Server does not do anything
 
 Courier Font in Buttons still looks a bit strange
 
@@ -18,15 +16,15 @@ The font is very "light-grey", should be darker
 
 In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
 
-Make sure to adapt thje text in "About App".
+Make sure to adapt the text in "About App".
 
-On the screen with Login & Create ACcount, the logo should be mor centered above the buttons.
+On the screen with Login & Create Avcount, the logo should be mor centered above the buttons.
 
-No Logo on the Main screen (The one with Fetch Balance) etc.
+Remove Logo from  Home screen (The one with Fetch Balance) etc.
 
 ### 1: Certificate Check Security
 
-The DIBA server used a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
+The DIBA server uses a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
 
 In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the DIBA server certificate received during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
 
@@ -209,7 +207,7 @@ Couldn't do this one. How can I access the survey at any time?
 
 ### 29: Cracking Weak Password
 
-Uses no salt, roght?
+Uses no salt, right?
 
 What is the correct password?
 
