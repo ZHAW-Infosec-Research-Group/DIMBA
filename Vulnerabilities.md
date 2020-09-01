@@ -50,7 +50,7 @@ For usabiliy reasons, DIBA provides a *Remember me* functionality so that during
 
 **Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
 
-**Goal:** Get the password of *h@cker* from the device assuming you don't know it.
+**Goal:** Get the password of *h@cker* from the device assuming you don't know the password.
 
 **Check**: Works.
 
@@ -63,7 +63,7 @@ The *Messages* functionality allows to send and receive messages to/from the ban
 Also, formatting is not good.
 
 ### 5: Clipboard Danger (easy/medium)
-DIBA allows to load a payment slip from the SD-Card. You can assume that the user receives the payment slip by e-mail from where it can be copied to the SD-Card so it can be imported in DIBA. By selecting *Transfer Payment Slip*, one can copy data from the payment slip (e.g., the recipient) to the corresponding field of the payment using standard the standard Android copy-paste functionality. Assuming an attacker controls another app on the device, he can get access to possibly sensitive payment data copied by the user.
+During payment, DIBA allows to load a payment slip from the SD-Card. You can assume that the user receives the payment slip by e-mail from where it can be copied to the SD-Card so it can be imported in DIBA. By selecting *Transfer Payment Slip*, one can copy data from the payment slip (e.g., the recipient) to the corresponding field of the payment using standard the standard Android copy-paste functionality. Assuming an attacker controls another app on the device, he can get access to possibly sensitive payment data copied by the user.
 
 **Goal (easy):** As a proof of concept, try to get access to copied payment data by using any other of the apps available on the Android system.
 
@@ -89,27 +89,34 @@ Apps should never log sensitive data as this unnecessarily exposes this data so 
 
 **Check**: Works
 
-### 9: Aliases export activities
+### 9: Aliases Export Activities
 
 Works
 
 But does this make sense? If the user is niot logged in, I'm not getting any inbestments. And if the user i slogged, I can simply access the investments by using the app.
 
-### 10: Directoty Traversal I - Load a Payslip
+### 10: Directory Traversal I - Read (easy)
+During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows you to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
 
-Works
+**Goal:** Abuse this functionality to get access to the content of the file *loginPreferences.xml* in the shared preferences of the DIBA app.
+
+**Check**: Works
 
 Shouldn't the Load/Save Icons be swapped?
 
-### 11: Directory Traversal I - Save a Payslip
+### 11: Directory Traversal II - Read/Write (easy)
+During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app. This may allow a user to change settings of the app in a way as it was not intended by the app developers.
 
-Works
+**Goal:** Abuse this functionality to first read the contents of the file *ch.zhaw.securitylab.DIBA_preferences.xml* in the shared preferences of the DIBA app. The next steps depend on whethter you already have access to make investments (via the VIP code):
+* In case you don't have access to make investments yet, add the entry *<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments.
+* If you already have access to make investments, then set the value of the *VIP* attribute to *false* and overwrite the file with the new content. As a result of this, you no longer should have access to make investments.
 
-### 12: Save on SD card
+### 12: Directory Traversal III - Read/Write (easy)
+This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
 
-Works
+**Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g. using adb) whethter the file was indeed copied to the SD-Card.
 
-### 13: Weak Report Encryption
+### 13: Weak Report Encryption (hard)
 
 Report is generated, decryption test TBD
 
