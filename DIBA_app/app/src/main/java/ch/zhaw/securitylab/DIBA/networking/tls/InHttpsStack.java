@@ -84,8 +84,8 @@ public class InHttpsStack extends HurlStack {
 			return TrustManagerLevel2.getWrappedTrustManagers(tmf.getTrustManagers());
 		} else if (difficulty == Difficulty.LEVEL_1) {
 			return TrustManagerLevel1.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_3) {
-			return TrustManagerLevel3.getWrappedTrustManagers(tmf.getTrustManagers());
+//		} else if (difficulty == Difficulty.LEVEL_3) {
+//			return TrustManagerLevel3.getWrappedTrustManagers(tmf.getTrustManagers());
 		} else {
 			return tmf.getTrustManagers();
 		}
@@ -95,7 +95,8 @@ public class InHttpsStack extends HurlStack {
 	private KeyStore getKeyStore(Difficulty difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
 		KeyStore keyStore = null;
 
-		if (difficulty == Difficulty.LEVEL_5 || difficulty == Difficulty.LEVEL_3) {
+//		if (difficulty == Difficulty.LEVEL_5 || difficulty == Difficulty.LEVEL_3) {
+		if (difficulty == Difficulty.LEVEL_5) {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -118,7 +119,6 @@ public class InHttpsStack extends HurlStack {
 			keyStore.setCertificateEntry("ca", ca);
 
 		} else {
-			
 			keyStore = KeyStore.getInstance("AndroidCAStore");
 			keyStore.load(null);
 		}
