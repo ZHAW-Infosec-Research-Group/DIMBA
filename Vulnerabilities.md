@@ -26,23 +26,17 @@ No Logo on the Main screen (The one with Fetch Balance) etc.
 
 ### 1: Certificate Check Security
 
-The DIBA server used a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see 
+The DIBA server used a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
 
-In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the certificate received from the DIBA server during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
-
-The server uses 
-
+In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the DIBA server certificate received during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
 
 - **Level 1**: The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate (and corresponding private key) to intercept network communication.
-- **Level 2**: The app checks the identity (subject) of the certificate and whether the certificate has not expired yet. To intercept network communication, one can use any certificate that contains the correct subject and that has not yet expired.
-- **Level 3**: This inluces the checks from level 2 and in addition, it is checked that the certificate is signed by any one of the certificates in the Android trust store. To intercept network communication, one needs a certificate signed by any of the certificates in the Android trust store. Alternatively, one can create a certificate using an own root certifcate and installs this root certificate in the Android trust store.
-- **Level 4**: This includes the checks from level 3 and in addition, it is checked whether the certiticate is signed by the DIBA CA root certificate. This means the certificate is pinned to the issuing CA. To intercept network communication, one needs a certificate signed by the DIBA CA root certificate.
+- **Level 2**: The app checks the identity (subject) of the certificate and whether the certificate has not expired yet. To intercept network communication, one can use any certificate (and corresponding private key) that contains the correct subject and that has not yet expired.
+- **Level 3**: This inluces the checks from level 2 and in addition, it is checked that the certificate is signed by any one of the certificates in the Android trust store. To intercept network communication, one needs a certificate (and corresponding private key) signed by any of the certificates in the Android trust store. Alternatively, one can create a certificate using an own root certifcate and install this root certificate in the Android trust store.
+- **Level 4**: This includes the checks from level 3 and in addition, it is checked whether the certiticate is signed by the DIBA CA certificate. This means the certificate is pinned to the issuing CA. To intercept network communication, one needs a certificate (and corresponding private key) signed by the DIBA CA certificate.
+- **Level 5**: This includes the checks from level 3 and in addition, it is checked whether the certiticate corresponds exactly to the DIBA server certificate. This means the certificate is pinned to the server certificate. To intercept network communication, one needs to use the original DIBA server certificate (and corresponding private key).
 
-any of the certificates in the Android trust store.
-
-The identity corresponds  andThe The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate ti intercept network communication.
-
-TBD
+**Check**: TBD
 
 ### 2: Investments for free (easy)
 To do investments, a VIP access code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct access code without having to purchase it.
