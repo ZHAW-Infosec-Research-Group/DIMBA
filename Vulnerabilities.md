@@ -111,51 +111,62 @@ During payment, DIBA allows to load/save a payment slip from/to the SD-Card. Thi
 * In case you don't have access to make investments yet, add the entry *<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments.
 * If you already have access to make investments, then set the value of the *VIP* attribute to *false* and overwrite the file with the new content. As a result of this, you no longer should have access to make investments.
 
+**Check**: Works
+
 ### 12: Directory Traversal III - Read/Write (easy)
 This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
 
 **Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g. using adb) whethter the file was indeed copied to the SD-Card.
 
+**Check**: Works
+
 ### 13: Weak Report Encryption (hard)
 
 Report is generated, decryption test TBD
 
-### 14: Login Mimic
+### 14: Login Mimic (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
 **Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyse it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
-TBD, needs proxy
+**Check**: Works
 
-### 15: Recently Used Apps
+### 15: Recently Used Apps (easy)
+In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. As the DIBA app sometimes shows sensitive information, it has been implemented in a way to make sure that 
+Some screens of the DIBA app contain sensitive information. Therefore, the app was implemented so that no screenshot is taken when it leaves the foreground. As a result of this, no details are shown when viewing the currently running apps. However, in some places of the DIBA app, this was forgotten. 
 
-Works
+**Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are then shown when displaying the currently running apps.
 
-But is this reasonable? If I have access to the phone, I can simply navigate to that activity?
+**Check**: Works
 
 ### 16:
 
 This number is missing from the soplution chapter => not existing (?)
 
-### 17: Back button log clearing
+### 17: Back Button Log Clearing
+Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
 
-Works
+**Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
+
+**Check**: Works
 
 Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
 
-Does not work woth Log out button on home screen
 
 ### 18: Input validate in make paymemnt activity
 
-TBD with Burp
+Check this out. A negative number cannot be entered and the effect of changing this with Burp is unclear,
 
 ### 19: Developer entrance
 
 TBD
 
-### 20: App backup
+### 20: App backup (medium)
+In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
-Works
+**Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
+
+**Check**: Works
 
 ### 21: Fragment injection
 
