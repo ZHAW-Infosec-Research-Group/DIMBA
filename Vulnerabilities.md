@@ -26,7 +26,7 @@ No Logo on the Main screen (The one with Fetch Balance) etc.
 
 ### 1: Certificate Check Security
 
-The DIBA server used a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**.  
+The DIBA server used a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see 
 
 In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the certificate received from the DIBA server during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
 
