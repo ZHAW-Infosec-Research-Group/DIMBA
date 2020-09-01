@@ -71,17 +71,23 @@ DIBA allows to load a payment slip from the SD-Card. You can assume that the use
 
 **Check**: Works, replace Payslip => Payment Slip
 
-### 6: Default exported content provider
+### 6: Exported Content Provider (medium)
+The DIBA app contains an exported content provder that allows to change the app settings. One can assume that this was intentionally added during development so that settings can easily be changed using a separate app, but it was forgotten to remove this before publishing the app.
 
-Works (tested via AUTO REDIRECT in Exploit App)
+**Goal (medium):** Develop an app that allows to set some of the app settingslogs all data that is copied in other apps (which obviously includes copied payment data).
+
+**Check**: Works (tested via AUTO REDIRECT in Exploit App)
 
 ### 7: Intent redirection
 
 TBD
 
-### 8: Loggiong Sensitive Information
+### 8: Logging Sensitive Information (easy)
+Apps should never log sensitive data as this unnecessarily exposes this data so an attacker can possibly access it. The DIBA app, unfortunately, logs a lot of sensitive information to the central Android logging facility, probably as a leftover from development. If an attacker gets access to your device, he can use adb to get access to the logged data.
 
-Works
+**Goal:** Get access to logged credentials (email and password).
+
+**Check**: Works
 
 ### 9: Aliases export activities
 
