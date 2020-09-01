@@ -25,6 +25,13 @@ On the screen with Login & Create ACcount, the logo should be mor centered above
 No Logo on the Main screen (The one with Fetch Balance) etc.
 
 ### 1: Certificate Check Security
+In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the certificate received from the server during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
+
+- **Level 1**: The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate ti intercept network communication.
+- **Level 2**: The app checks the identity (subject) of the certificate and whether the certificate has not expired yet. To intercept network communication, one has can use any certificate that contains the correct subject and that has not yet exoired.
+- **Level 3**: This inluces the checks from level 2 and in addition, it is checked that the certificate is signed by any one of the certificates in the Android 
+
+The identity corresponds  andThe The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate ti intercept network communication.
 
 TBD
 
