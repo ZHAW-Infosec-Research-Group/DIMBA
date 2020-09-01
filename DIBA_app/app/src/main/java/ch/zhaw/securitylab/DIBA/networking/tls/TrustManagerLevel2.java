@@ -30,6 +30,8 @@ public class TrustManagerLevel2 implements X509TrustManager {
 	public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 		if (chain != null && chain.length > 0) {
 			chain[0].checkValidity();
+			String x500Principal = chain[0].getSubjectX500Principal().getName();
+			if (!x500Principal.equals("OU=DIBA,O=ZHAW DIBA,L=Winterthur,ST=Zuerich,C=CH")) throw new CertificateException("untrusted Certificate");
 		} else {
 			trustManager.checkServerTrusted(chain, authType);
 		}

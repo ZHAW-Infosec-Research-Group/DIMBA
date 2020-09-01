@@ -193,8 +193,7 @@ public class DIBA extends Application {
     }
 
     public void initMetasettingsDB() {
-        new Thread(() ->
-        {
+        new Thread(() -> {
             MetasettingsDao metasettingsDao = metasettingsDb.metasettingsDao();
             Metasettings metasettings = metasettingsDao.getSettings();
             if (metasettings == null) {

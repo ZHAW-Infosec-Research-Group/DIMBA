@@ -15,7 +15,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 
+import ch.zhaw.securitylab.DIBA.DIBA;
 import ch.zhaw.securitylab.DIBA.R;
+import ch.zhaw.securitylab.DIBA.data.metasettings.Metasettings;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -47,7 +49,8 @@ public class ActivitySurvey extends AppCompatActivity {
                 handler.proceed();
             }
         });
-        surveyView.loadUrl("https://10.0.2.2:8443/survey");
+        Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
+        surveyView.loadUrl("https://"+metasettings.getIp()+":8443/survey");
     }
     
     public class JavaScriptInterface {

@@ -17,7 +17,8 @@ public class InHostnameVerifier implements HostnameVerifier {
 		Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
 		String connectedIp = metasettings.getIp();
 //		if(metasettings.getDifficulty() == Difficulty.LEVEL_5 || metasettings.getDifficulty() == Difficulty.LEVEL_4){
-		if(metasettings.getDifficulty() != Difficulty.LEVEL_1){
+//		if(metasettings.getDifficulty() != Difficulty.LEVEL_1){
+		if(false){
 			System.out.println(connectedIp);
 			System.out.println(hostname);
 			return connectedIp.equals(hostname);

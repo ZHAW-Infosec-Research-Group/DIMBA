@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import ch.zhaw.securitylab.DIBA.DIBA;
 import ch.zhaw.securitylab.DIBA.data.list.DataCarrier;
+import ch.zhaw.securitylab.DIBA.data.metasettings.Metasettings;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ConnectionListener;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ConnectionListenerJSON;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ErrorListenerJSON;
@@ -67,7 +68,9 @@ public class ConnectionBuilder {
 	}
 	
 	public ConnectionBuilder url(String url) {
-		this.url = "https://10.0.2.2:8443"+url;
+//		Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
+//		this.url = "https://"+metasettings.getIp()+":8443"+url;
+		this.url = url;
 		return this;
 	}
 	
@@ -82,13 +85,13 @@ public class ConnectionBuilder {
 
 	public void buildJSON() {
 		if (!execute) return;
-		if (url == null || listenerJSON == null) throw new NullPointerException("Build incomplete");
+		if (this.url == null || listenerJSON == null) throw new NullPointerException("Build incomplete");
 		new Thread(() -> {
 			JsonObjectRequest req;
 			if (data.isEmpty()) {
-				req = new InRequestJSON(url, null, listenerJSON, new ErrorListenerJSON());
+				req = new InRequestJSON(this.url, null, listenerJSON, new ErrorListenerJSON());
 			} else {
-				req = new InRequestJSON(url, new JSONObject(data), listenerJSON, new ErrorListenerJSON());
+				req = new InRequestJSON(this.url, new JSONObject(data), listenerJSON, new ErrorListenerJSON());
 			}
 			DIBA.get().getQueue().add(req);
 		}).start();

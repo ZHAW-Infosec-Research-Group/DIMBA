@@ -45,8 +45,7 @@ public class InRequest extends Request<InResponse>
 		));
 	}
 	
-	private static String getBaseUrl()
-	{
+	private static String getBaseUrl() {
 		Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
 		return "https://" + metasettings.getIp() + ":8443";
 	}
