@@ -121,6 +121,9 @@ This uses the same vulnerability as vulnerability 11 and is only intended to sho
 Report is generated, decryption test TBD
 
 ### 14: Login Mimic
+If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
+
+**Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyse it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 TBD, needs proxy
 
