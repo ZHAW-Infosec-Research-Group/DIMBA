@@ -22,7 +22,7 @@ public class SecureServerFactory {
 			Server server = new Server();
 			
 			//File keystore = new File("keystore/keystore").getAbsoluteFile();
-			File keystore = new File("keystore/new/keystore.jks").getAbsoluteFile();
+			File keystore = new File("keystore/new/really/keystore.jks").getAbsoluteFile();
 			// Initialize SSL Context factory with keystore
 			SslContextFactory sslContextFactory = new SslContextFactory();
 			sslContextFactory.setKeyStorePath(keystore.toString());

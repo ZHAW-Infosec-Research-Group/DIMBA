@@ -37,8 +37,7 @@ public abstract class ActivityBoundAbstract extends ActivityDIBAAbstract
 	}
 	
 	@Override
-	protected void onStart()
-	{
+	protected void onStart() {
 		super.onStart();
 		
 		// Bind to LocalService

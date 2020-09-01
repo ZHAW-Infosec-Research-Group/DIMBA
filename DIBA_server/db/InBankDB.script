@@ -28,7 +28,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 6854
+SET FILES CHECK 6958
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -108,6 +108,12 @@ INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',123,'SFr',123)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','attacker@mail.com',4,'SFr',4)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','attacker@mail.com',5,'SFr',5)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',6,'SFr',6)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',111,'Eur',166)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'Eur',1)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'Eur',1)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'Eur',1)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'Eur',-1000)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',1,'SFr',-1000)
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')

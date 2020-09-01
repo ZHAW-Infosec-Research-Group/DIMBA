@@ -15,10 +15,9 @@ import java.math.BigDecimal;
 /**
  * The currency exchange service handles various tasks associated with currency, such as
  * fetching all currencies or doing the math to convert any amount of a foreign currency
- * into swiss francs.
+ * into swiss francs.zz
  */
-public class ServiceCurrencyExchange extends Service
-{
+public class ServiceCurrencyExchange extends Service {
 	// -------------------------------------------- //
 	// CONSTANTS
 	// -------------------------------------------- //

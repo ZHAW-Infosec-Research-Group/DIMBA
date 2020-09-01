@@ -30,6 +30,7 @@ public class TrustManagerLevel3 implements X509TrustManager {
 		System.out.println(trusted[0]);
 		System.out.println("Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....Otherwise....");
 		System.out.println(chain[0]);
+		System.out.println("Subject x500 Principal Name \n" +chain[0].getSubjectX500Principal().getName());
 		chain[0].checkValidity();
 		if (!trusted[0].equals(chain[0]))throw new CertificateException("untrusted Certificate");
 	}
