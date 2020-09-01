@@ -53,11 +53,12 @@ To run the app and the server, the following is required:
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
 + [Jadx](https://github.com/skylot/jadx)
-+ [Drozer](https://labs.mwrinfosecurity.com/tools/drozer/)
 + [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
 
-### Virtual Machine Setup
-To run Android as a virtual machine, some additional steps are necessary. The following steps describe how to do this with VirtualBox. It should also be possible to use different virtualization software such as VmWare:
+There are different ways to use DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
+
+### Android Virtual Machine Setup
+The following steps describe how to run Android as a virtual machine using VirtualBox. It should also be possible to use different virtualization software such as VmWare:
 1. Get the Android VirtualBox image **Android-x86 9.0-R2 Pie** (64bit version) from [OSBoxes](https://www.osboxes.org/android-x86/). More recent versions may also work, but this is the version with which the app was successfully tested.
 2. Get and install [VirtualBox](https://www.virtualbox.org) if you don't have it already.
 3. In VirtualBox, create a new virtual machine and switch to Expert Mode.
@@ -74,26 +75,24 @@ To make it easier to work with the virtual machine, it is recommended to activat
 4. Click seven times on the build number to enable the developer settings.
 5. Go one step back to the **System** settings, select **Advanced -> Developer option** and enable **Stay awake**.
 
-### Server
+### DIBA Server
 The Banking App needs a server to communicate to. To make this possible we provide a Java server together with the app release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4). When extracting the jar, you need to make sure to also extract the keystore subdirectory with the keystore file in it. The keystore directory needs to be placed in the same folder as the jar file. You can then run the server locally on your machine with Java:
 
 ``` java -jar DIBA.jar ```
 
-### App Installation
-Now that the Android VM is running you can install the app:
+### DIBA App Installation
+To install the DIBA app on the Android virtial machine, do the following:
 1. Check if adb is connected with your device by running the following command: `adb devices`
 2. If it is not connected you can establish a connection by running the command: `adb connect 127.0.0.1:5555`
 3. Now you can install the APK by executing the following command: `adb install /path/to/DIBA.apk` 
-4. There might be a prompt in your Android VM you have to accept for the installation to complete
-5. Copy the rootCA.crt File to your device by using the adb command `adb push /path/to/rootCA.crt /sdcard`
-6. Install the certificate on your device. You can do this in the Settings under Security -> Install from SD card -> Select your certificate.
+4. Copy the rootCA.crt File to the Android virtual machine by using the adb command: `adb push /path/to/rootCA.crt /sdcard`
+5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD cardTrusted credentials**. There select rootCA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
 
-### App Configuration
-
-1. Open the App
-2. Open the Metasettings
-3. If you do not use an Android Studio Emulator or the server is not running on the same device as your emulator, change the IP of the Server to the correct one.
-4. Change the communication difficulty to the difficulty of your choice
+### DIBA App Configuration
+1. Open the DIBA app.
+2. Open the Meta-Settings via the menu at the top left.
+3. Change the IP address of the server to IP address of your physical host (assuming the server is running on your host).
+4. Change the communication difficulty to the difficulty of your choice.
 
 ## Build it yourself
 
