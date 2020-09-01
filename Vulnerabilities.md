@@ -155,15 +155,18 @@ Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENT
 
 ### 18: Input validate in make paymemnt activity
 
-TBD with Burp
+Check this out. A negative number cannot be entered and the effect of changing this with Burp is unclear,
 
 ### 19: Developer entrance
 
 TBD
 
-### 20: App backup
+### 20: App backup (medium)
+In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
-Works
+**Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
+
+**Check**: Works
 
 ### 21: Fragment injection
 
