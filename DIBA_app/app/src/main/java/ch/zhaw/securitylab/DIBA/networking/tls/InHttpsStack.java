@@ -93,17 +93,12 @@ public class InHttpsStack extends HurlStack {
 	
 	@NonNull
 	private KeyStore getKeyStore(Difficulty difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
-		// Fetch and create certificate
-		
-		// Get and populate keystore
-		//KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
 		KeyStore keyStore = null;
-		
+
 		if (difficulty == Difficulty.LEVEL_5 || difficulty == Difficulty.LEVEL_3) {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
-//			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_cert);
 			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.diba_cert);
 			Certificate ca = cf.generateCertificate(caInput);
 			caInput.close();
@@ -115,7 +110,6 @@ public class InHttpsStack extends HurlStack {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
-//			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.in_bank_root_cert);
 			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.ca_cert);
 			Certificate ca = cf.generateCertificate(caInput);
 			caInput.close();

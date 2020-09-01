@@ -31,6 +31,7 @@ public class TrustManagerLevel3 implements X509TrustManager {
 //		System.out.println("Subject x500 Principal Name \n" +chain[0].getSubjectX500Principal().getName());
 		chain[0].checkValidity();
 		String x500Principal = chain[0].getSubjectX500Principal().getName();
+		System.out.println("Expected: OU=DIBA,O=ZHAW DIBA,L=Winterthur,ST=Zuerich,C=CH\n Received: "+x500Principal);
 		if (!x500Principal.equals("OU=DIBA,O=ZHAW DIBA,L=Winterthur,ST=Zuerich,C=CH")) throw new CertificateException("untrusted Certificate");
 		if (!trusted[0].equals(chain[0]))throw new CertificateException("untrusted Certificate");
 	}
