@@ -55,7 +55,7 @@ For finding and exploiting the vulnerabilities you probably need a bunch of tool
 + [Jadx](https://github.com/skylot/jadx)
 + [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
 
-There are different ways to use DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
+There are different ways to run DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
 
 ### Android Virtual Machine Setup
 The following steps describe how to run Android as a virtual machine using VirtualBox. It should also be possible to use different virtualization software such as VmWare:
