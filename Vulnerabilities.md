@@ -96,7 +96,7 @@ Works
 But does this make sense? If the user is niot logged in, I'm not getting any inbestments. And if the user i slogged, I can simply access the investments by using the app.
 
 ### 10: Directory Traversal I - Read (easy)
-During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows you to read the content of any file that is accessible by the permissions of the running DIBA app.
+During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows you to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
 
 **Goal:** Abuse this functionality to get access to the content of the file *loginPreferences.xml* in the shared preferences of the DIBA app.
 
@@ -104,18 +104,19 @@ During payment, DIBA allows to load a payment slip from the SD-Card. This is imp
 
 Shouldn't the Load/Save Icons be swapped?
 
-### 11: Directory Traversal II - Read/Write
-During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app.
+### 11: Directory Traversal II - Read/Write (easy)
+During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app. This may allow a user to change settings of the app in a way as it was not intended by the app developers.
 
 **Goal:** Abuse this functionality to first read the contents of the file *ch.zhaw.securitylab.DIBA_preferences.xml* in the shared preferences of the DIBA app. The next steps depend on whethter you already have access to make investments (via the VIP code):
 * In case you don't have access to make investments yet, add the entry *<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments.
 * If you already have access to make investments, then set the value of the *VIP* attribute to *false* and overwrite the file with the new content. As a result of this, you no longer should have access to make investments.
 
-### 12: Save on SD card
+### 12: Directory Traversal III - Read/Write (easy)
+This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
 
-Works
+**Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g. using adb) whethter the file was indeed copied to the SD-Card.
 
-### 13: Weak Report Encryption
+### 13: Weak Report Encryption (hard)
 
 Report is generated, decryption test TBD
 
