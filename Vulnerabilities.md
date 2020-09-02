@@ -2,9 +2,9 @@
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
-Most of the vulnerabilities are within the app. However, there are also a few vulnerabilities on the server-side. Also the requirements for an attacker to exploit the different vulnerabilities vary. In some cases, the attacker is the actual legitimate owner of the device the attacker has to get access to the ANdroid device
+Most of the vulnerabilities are within the app. However, there are also a few vulnerabilities on the server-side. Also the requirements for an attacker to exploit the different vulnerabilities vary. In some cases, the attacker is simply the user of the app, in other cases the attacker must get (temporarily) access to device of another user, sometimes the attacker must control another app on the device of another user, and in a few cases, the attacker even needs root access to the device.
 
-The vulnerabilites are rated as *easy*, *medium* and *hard*, reflecting the complexity of exploiting them. This complexity reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
+The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indication for the complexity of exploiting them. This complexity rating reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
 
 ### General issues
 
@@ -38,7 +38,7 @@ In the Meta-Settings, five different levels can be selected that specify the sec
 
 **Check**: TBD
 
-### 2: Investments VIP Code (easy)
+### 2: Investments VIP Code (medium)
 To do investments, a VIP code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct VIP code without having to purchase it.
 
 **Goal:** Find out the valid VIP access code and get access to the Investstments functionality by entering the code.
@@ -46,7 +46,7 @@ To do investments, a VIP code is required that can be purchased from the bank. H
 **Check**: Works, but old solution description seems to be overly complicated.
 
 ### 3: Remember Me (medium)
-For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is very hard.
+For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is hard.
 
 **Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
 
@@ -59,22 +59,22 @@ The *Messages* functionality allows to send and receive messages to/from the ban
 
 **Goal:** Abuse the search field to get access to messages of other users on the same device.
 
-**Check**: Works, but The five predefined messages should by form sender (Alice, right side) and from bank /Bob, left side).
-Also, formatting is not good.
+**Check**: Works, but The five predefined messages should by form sender (Alice, right side) and from bank (Bob, left side).
+Also, formatting is not good. Use same formatting as in version 1.4.
 
 ### 5: Clipboard Danger (easy/medium)
 During payment, DIBA allows to load a payment slip from the SD-Card. You can assume that the user receives the payment slip by e-mail from where it can be copied to the SD-Card so it can be imported in DIBA. By selecting *Transfer Payment Slip*, one can copy data from the payment slip (e.g., the recipient) to the corresponding field of the payment using standard the standard Android copy-paste functionality. Assuming an attacker controls another app on the device, he can get access to possibly sensitive payment data copied by the user.
 
 **Goal (easy):** As a proof of concept, try to get access to copied payment data by using any other of the apps available on the Android system.
 
-**Goal (medium):** Develop an app that logs all data that is copied in other apps (which obviously includes copied payment data).
+**Goal (medium):** Develop an app that logs all data that is copied in other apps (which obviously includes payment data copied in the DIBA app).
 
 **Check**: Works, replace Payslip => Payment Slip
 
 ### 6: Exported Content Provider (medium)
 The DIBA app contains an exported content provder that allows to change the app settings. One can assume that this was intentionally added during development so that settings can easily be changed using a separate app, but it was forgotten to remove this before publishing the app.
 
-**Goal (medium):** Develop an app that allows to set some of the app settingslogs all data that is copied in other apps (which obviously includes copied payment data).
+**Goal:** Develop an app that allows to set at least one of the DIBA app settings.
 
 **Check**: Works (tested via AUTO REDIRECT in Exploit App)
 
