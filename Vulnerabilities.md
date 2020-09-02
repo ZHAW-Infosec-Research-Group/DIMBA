@@ -93,10 +93,10 @@ Apps should never log sensitive data as this unnecessarily exposes this data so 
 
 Works
 
-But does this make sense? If the user is niot logged in, I'm not getting any inbestments. And if the user i slogged, I can simply access the investments by using the app.
+But does this make sense? If the user is niot logged in, I'm not getting any investments. And if the user i slogged, I can simply access the investments by using the app.
 
 ### 10: Directory Traversal I - Read (easy)
-During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows you to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
+During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
 
 **Goal:** Abuse this functionality to get access to the content of the file *loginPreferences.xml* in the shared preferences of the DIBA app.
 
@@ -121,8 +121,15 @@ This uses the same vulnerability as vulnerability 11 and is only intended to sho
 **Check**: Works
 
 ### 13: Weak Report Encryption (hard)
+At the top right of the *Home* screen, thers's a bug-shaped button. Clicking this button creates a report that contains sensitive information. Due to this sensitive information, the report is encrypted before it is stored on the SD-Card. From there, the user can send it to the DIBA bank, e.g., by mail.
 
-Report is generated, decryption test TBD
+**Goal:** Find out the encryption scheme and the key that is used to encrypt the bug report. Then, use this information to decrypt the report.
+
+**Check**: Works, can be decrypted using https://cryptii.com/pipes/vigenere-cipher
+
+TBD: enryption ciode must be adapted.
+
+Note: Code is obfuscated and hard to learn. However, looking at the encrypted report, one can also guess that a Vigenere cipher is used. So no need to analyze the obfuscated code to find out what is going on. This should also be stated in the solution chapter.
 
 ### 14: Login Mimic (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
