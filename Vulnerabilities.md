@@ -185,19 +185,36 @@ Use a simpler password
 
 Replace iss "InBank" with "DIBA"
 
-### 24: Exploitimg saved forign login credentials
+### 24: Exploitimg Saved Foreign Login Credentials (easy)
+The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
 
-Works
+**Goal:** Log in using the credentials that have been entered and stored before (using the *Remember Me* functionality) and use the app with identity of the corresponding user. Obviously, this is trivial to do.
 
-### 25: SQLite Database
+**Check**: Works
 
-Works
+### 25: SQLite Database (medium)
+Android apps can use internal SQlite databases. The DIBA app, for instance, uses such a database to store the made inbvestments for convenience so that they do not have to be read from the server whenever the user wants to view the made investments. If an attacker gets access to the device, however, he can get the database and read its potentially sensitive content.
 
-### 26: Native language library
+**Preparation:** Make at least one investment so that the database contains some content.
 
-Works
+**Goal:** Get access to the database that stores the investments and list the made investments.
 
-### 27: Encrypted AQLite database
+### 26: Native Language Library (medium)
+Vulnerability 27 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
+
+**Goal:** Find the key. When solving vulnerability 27, you'll learn whethter you have found the right key.
+
+Note: The solution contains 
+Find where the payment database is created.
+find . -type f -exec grep -i paymentdb {} +
+=> This is not so obvious. Why paymentdb?
+
+### 27: Encrypted SQLite database
+Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
+
+**Preparation:** Make at least one payment so that the database contains some content. Also, first exploit vulnerability 26 to get the hidden key.
+
+**Goal:** Get access to the database that stores the investments and list the made investments.
 
 Could not test as I couldn't buils SQLCipher
 
