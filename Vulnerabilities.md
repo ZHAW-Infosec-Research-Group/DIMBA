@@ -225,8 +225,9 @@ Just like with investments (see vulnerability 25), a local database is also used
 **Check**: Could not test as I couldn't build SQLCipher
 
 ### 28: WebView Cross-Site Scripting (medium)
+The DIBA app pwovides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView and contains a Cross-Site Scripting (XSS) vulnerability. As a result of this...
 
-Couldn't do this one. How can I access the survey at any time?
+Couldn't do this one. How can I access the survey at any time? And: Often, the survey crashes when it is accessed
 
 ### 29: Cracking Weak Password
 
@@ -234,22 +235,52 @@ Uses no salt, right?
 
 What is the correct password?
 
-### 30: Root detection bypass
+### 30: Root Detection Bypass (hard)
+The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
 
-TBD
+**Goal:** Adapt the app and remove the rooted detection check. As a result of this, the message after starting the app should no longer appear.
 
-### 31: System command injection
+**Check**: Couldn't do this, as apktool b inbank_deco -o malicious_inbank.apk creates errors.
 
-Works
+Note: Finding this in smali is very difficult. How can the user find the correct code location?
 
-But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
+Question: This is a real rooted detection check, right? So it runs only on truly rooted devices (or the VM, where su is available)
+
+Note: Rooted detection should be OFF in the settings per default. Also, it should be in the Meta-Setting, not the Settings?
+
+### 31: Local Command Injection
+In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
+
+**Goal:** Exploit the vulnerability so that the content of the file *loginPreferences.xml* in shared preferences of the DIBA app is written to the Android log.
+
+**Check**: Works
+
+Note: Missing / in solution: && cat data/data... should be && cat /data/data...
+
+Note: But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
+
+### 32: Two-Factor Authentication I - Replaying Codes (easy)
+To confirm a paymemnt, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments.
+
+**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confiorm anotehr payment. Obviously, this is trivial to do.
+
+**Check**: Works
+
+Note: The server output should be as follows:
+
+INFO ch.zhaw.securitylab.inbank.server.Server - SMS sent to user:
+INFO ch.zhaw.securitylab.inbank.server.Server - Payment date: 2020-00-02 09:12:42
+INFO ch.zhaw.securitylab.inbank.server.Server - Payment amount: 10
+INFO ch.zhaw.securitylab.inbank.server.Server - Payment recipient: target@bla.fasel
+INFO ch.zhaw.securitylab.inbank.server.Server - Confirmation code: a4f32a
+
+The text in the app should be:
+
+A confirmation code was sent to you by SMS (you can get it from to the server output).
+Enter the code to conform the payment.
+(To prove that you cracked the code generation algorithm, enter the code that will be used 2020-02-31 12:00:00. If the paymant is accepted, you have succeeded!)
 
 
-### 32: 2-Factor authentication
-
-Works
-
-The payment message (with the code) should also include the timestanp, the target account and the amount.
 
 ### 33: 2-Factor authentication modify payment data
 
