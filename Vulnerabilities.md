@@ -26,6 +26,10 @@ On the screen with Login & Create Avcount, the logo should be mor centered above
 
 Remove Logo from  Home screen (The one with Fetch Balance Button etc.).
 
+Meta Settings: Use "IP of DIBA Server" instead of "IP".
+
+Meta Settings: "IP" is red, "Security of..." is grey, "Timeout Ms" is a bit smaller. Make sure to use always the same font & color.
+
 ### 1: Certificate Check Security
 
 The DIBA server uses a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
