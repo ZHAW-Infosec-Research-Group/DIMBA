@@ -1,7 +1,7 @@
 # DIBA - Damn Insecure Banking App
 
 ## What is DIBA?
-At the core DIBA, is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing. There are also other intentionally vulnerable Android App projects out there (e.g., [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
+At the core DIBA, is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities. 
 
 ## Features
 This project is split into two parts. The first part is the DIBA app itself which provides the following features:
@@ -28,6 +28,7 @@ For finding and exploiting the vulnerabilities you probably need a bunch of tool
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
 + [Jadx](https://github.com/skylot/jadx)
 + [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
++ An imterceptor proxy of your choice, e.g., [Burp Suite](https://portswigger.net/burp) or [OWASP ZAP](https://owasp.org/www-project-zap/) .
 
 There are different ways to run DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Also, it provides root access to the device, which is needed or helpful to exploit some vulnerabilities. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
 
@@ -68,10 +69,14 @@ To install the DIBA app on the Android virtial machine, do the following:
 3. Change the IP address of the server to IP address of your physical host (assuming the server is running on your host).
 4. Change the communication difficulty to the difficulty of your choice.
 
-### Interceptor Proxy
+### Intercepting Network Communication
 To understand and exploit some vulnerabilities, access to the communication between app and server is required. This works best using an interceptor proxy. To do this, perform the following steps:
 1. On your physical host (where the DIBA server is running), use an interceptor proxy such as [Burp Suite](https://portswigger.net/burp), [OWASP ZAP](https://owasp.org/www-project-zap/) or some other tool.
 2. Make sure the interceptor proxy listens for incoming connections on the external IP address of your host and chek the port that it uses (often something like 8008 or 8080). (Note: For security reasons, make sure that the local firewall blocks access to this port from the external network.)
+3. Configure the Android device to use the interceptor proxy. In the case of the Android virtual machine, this works according to steps 4-6.
+4. Open the **Settings** app, select **Network & internet**, then **WiFi** and then **VirtWifi**.
+5. Next, select the pen icon at the top right and expand **Advanced options**.
+6. Here, specify **Proxy -> Manual**, enter the IP address of your physical host in the **Proxy hostname** field and the port used by your interceptor proxy in the **Proxy port** field. Finally, make sure to save the settings.
 
 ## Build it yourself
 
