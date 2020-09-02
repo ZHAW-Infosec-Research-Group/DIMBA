@@ -199,26 +199,32 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 
 **Goal:** Get access to the database that stores the investments and list the made investments.
 
-### 26: Native Language Library (medium)
+**Check**: Works
+
+### 26: Native Language Library (hard)
 Vulnerability 27 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
 
 **Goal:** Find the key. When solving vulnerability 27, you'll learn whethter you have found the right key.
+
+**Check**: Works
 
 Note: The solution contains 
 Find where the payment database is created.
 find . -type f -exec grep -i paymentdb {} +
 => This is not so obvious. Why paymentdb?
 
-### 27: Encrypted SQLite database
+### 27: Encrypted SQLite database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
 
 **Preparation:** Make at least one payment so that the database contains some content. Also, first exploit vulnerability 26 to get the hidden key.
 
-**Goal:** Get access to the database that stores the investments and list the made investments.
+**Goal:** Get access to the database that stores the paymants and list the made payments by using the correct key.
 
-Could not test as I couldn't buils SQLCipher
+**Hint:** In the DIBA app, encryption of the payment database is done using [SQLCipher](https://www.zetetic.net/sqlcipher/). Note that this vulnerability is not because a problem of SQLCipher, but because the attacker can get access to the encryption key.
 
-### 28: WebView XSS
+**Check**: Could not test as I couldn't build SQLCipher
+
+### 28: WebView Cross-Site Scripting (medium)
 
 Couldn't do this one. How can I access the survey at any time?
 
