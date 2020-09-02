@@ -65,7 +65,7 @@ To install the DIBA app on the Android virtial machine, do the following:
 
 ### DIBA App Configuration
 1. Open the DIBA app.
-2. Open the Meta-Settings via the menu at the top left.
+2. Open the meta settings via the menu at the top left.
 3. Change the IP address of the server to IP address of your physical host (assuming the server is running on your host).
 4. Change the communication difficulty to the difficulty of your choice.
 
@@ -77,6 +77,7 @@ To understand and exploit some vulnerabilities, access to the communication betw
 4. Open the **Settings** app, select **Network & internet**, then **WiFi** and then **VirtWifi**.
 5. Next, select the pen icon at the top right and expand **Advanced options**.
 6. Here, specify **Proxy -> Manual**, enter the IP address of your physical host in the **Proxy hostname** field and the port used by your interceptor proxy in the **Proxy port** field. Finally, make sure to save the settings.
+7. When using the interceptor proxy, it's easiest to use certificate check security **LEVEL 1** in the meta settings of the app to prevent problems. If you need a bit of a challenge, you can also use the higher levels (for more information about theses levels: see vulnerability 1 in [Vulnerabilities.md](Vulnerabilities.md)).
 
 ## Build it yourself
 
