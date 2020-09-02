@@ -2,7 +2,9 @@
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
-Different attackers, local, adb etc...
+Most of the vulnerabilities are within the app. However, there are also a few vulnerabilities on the server-side. Also the requirements for an attacker to exploit the different vulnerabilities vary. In some cases, the attacker is the actual legitimate owner of the device the attacker has to get access to the ANdroid device
+
+The vulnerabilites are rated as *easy*, *medium* and *hard*, reflecting the complexity of exploiting them. This complexity reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
 
 ### General issues
 
@@ -36,8 +38,8 @@ In the Meta-Settings, five different levels can be selected that specify the sec
 
 **Check**: TBD
 
-### 2: Investments for Free (easy)
-To do investments, a VIP access code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct access code without having to purchase it.
+### 2: Investments VIP Code (easy)
+To do investments, a VIP code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct VIP code without having to purchase it.
 
 **Goal:** Find out the valid VIP access code and get access to the Investstments functionality by entering the code.
 
