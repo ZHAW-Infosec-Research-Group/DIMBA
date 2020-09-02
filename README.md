@@ -27,8 +27,8 @@ To run the app and the server, the following is required:
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
 + [Jadx](https://github.com/skylot/jadx)
-+ [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
-+ An imterceptor proxy of your choice, e.g., [Burp Suite](https://portswigger.net/burp) or [OWASP ZAP](https://owasp.org/www-project-zap/) .
++ [Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
++ An imterceptor proxy of your choice, e.g., [Burp Suite](https://portswigger.net/burp) or [OWASP ZAP](https://owasp.org/www-project-zap/).
 
 There are different ways to run DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Also, it provides root access to the device, which is needed or helpful to exploit some vulnerabilities. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
 
