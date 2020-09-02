@@ -262,7 +262,7 @@ Note: But this means the meta ssettings are now exploitable, so the entry "Non-a
 ### 32: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a paymemnt, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments.
 
-**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confiorm anotehr payment. Obviously, this is trivial to do.
+**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm anotehr payment. Obviously, this is trivial to do.
 
 **Check**: Works
 
@@ -280,12 +280,17 @@ A confirmation code was sent to you by SMS (you can get it from to the server ou
 Enter the code to conform the payment.
 (To prove that you cracked the code generation algorithm, enter the code that will be used 2020-02-31 12:00:00. If the paymant is accepted, you have succeeded!)
 
+### 33: Two-Factor Authentication II (easy)
+
+Note: I wanted to add a vulnerability where a MITM modifies the payment when it is sent the second time (with the code). Bt it does not work as the server still uses the anount from the foirst payment. So why is the payment data sent a second time?
 
 
-### 33: 2-Factor authentication modify payment data
+### 34: Two-Factor Authentication III - Weak Code Generation (medium)
+Confirmation codes should be random so an attacker cannot predict them. n the case iof DIBA, however, they are not really created in a random way, although they appear quite random when looking at them.
 
-TBD, as soon as Burp works
+**Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
 
+**Check**: Works
 
 
 
