@@ -8,7 +8,7 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 ### General issues
 
-Metasettings: Use LEVEL 1 etc, not LEVEL_1
+Meta Settings: Use LEVEL 1 etc, not LEVEL_1
 
 Use "Certificate Ckeck Security" instead of "Security of Certificate Check"
 
@@ -18,17 +18,19 @@ The font is very "light-grey", should be darker
 
 In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
 
+Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen.
+
 Make sure to adapt the text in "About App".
 
 On the screen with Login & Create Avcount, the logo should be mor centered above the buttons.
 
-Remove Logo from  Home screen (The one with Fetch Balance) etc.
+Remove Logo from  Home screen (The one with Fetch Balance Button etc.).
 
 ### 1: Certificate Check Security
 
 The DIBA server uses a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
 
-In the Meta-Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the DIBA server certificate received during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
+In the Meta Settings, five different levels can be selected that specify the security of the check that is done by the app when verifying the DIBA server certificate received during the TLS handshake. Depending in the level, it is more or less difficult to intercept the network communication between app and server, either as a man in the middle (MITM) or when you are using an interceptor proxy to analyse and/or modify the exchanged data.
 
 - **Level 1**: The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate (and corresponding private key) to intercept network communication.
 - **Level 2**: The app checks the identity (subject) of the certificate and whether the certificate has not expired yet. To intercept network communication, one can use any certificate (and corresponding private key) that contains the correct subject and that has not yet expired.
