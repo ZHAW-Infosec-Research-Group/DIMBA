@@ -102,7 +102,9 @@ Apps should never log sensitive data as this unnecessarily exposes this data so 
 
 Works
 
-But does this make sense? If the user is niot logged in, I'm not getting any investments. And if the user i slogged, I can simply access the investments by using the app.
+But does this make sense? If the user is not logged in, I'm not getting any investments. And if the user i slogged, I can simply access the investments by using the app.
+
+Also: Now this requires exported=true, so it's not really different from a normal acivity. So it does not get exported automatically. Let's discuss, but maybe remove this one?
 
 ### 10: Directory Traversal I - Read (easy)
 During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
@@ -157,7 +159,7 @@ Some screens of the DIBA app contain sensitive information. Therefore, the app w
 
 ### 16:
 
-This number is missing from the soplution chapter => not existing (?)
+This number is missing from the solution chapter => not existing (?)
 
 ### 17: Back Button Log Clearing
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
@@ -169,9 +171,11 @@ Usually, the back button shows the previously used screen. This can be security 
 Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
 
 
-### 18: Input validate in make paymemnt activity
+### 18: Input validate in make payment activity
 
-Check this out. A negative number cannot be entered and the effect of changing this with Burp is unclear,
+Check this out. I also sent you a video as there's a strange behaviour with payments if the proxy is used. It may have to do with timeouts in the app?
+
+https://drive.switch.ch/index.php/s/av94lsXfhJkPjwX
 
 ### 19: Developer entrance
 
