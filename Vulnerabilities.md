@@ -84,9 +84,12 @@ The DIBA app contains an exported content provder that allows to change the app 
 
 **Check**: Works (tested via AUTO REDIRECT in Exploit App)
 
-### 7: Intent redirection
+### 7: Intent redirection (hard)
+In the settings, the developers forgot to remove a debugging setting that allows specifying the activity that is used to conform a payment. Per default, this is set to the payment confirmation activity of the DIBA app and therefore, everything works as intended. However, the values can be changed so they point to a another activity in another app and because of vulnerability 6, the settings can not only be changed within the DIBA app, but also by another app on the same device. Overall, this means an attacker that the attacker can redirect the payment conformation step to an app he is controlling and thereby interfere with the payment process.
 
-TBD
+**Goal:** Develop an app that provides an activity that looks like the legitimate payment confirmation activity and that will be invoked during the payment process and modifies the payment before final confirmation.
+
+Does not work yet. Should this work as explained above?
 
 ### 8: Logging Sensitive Information (easy)
 Apps should never log sensitive data as this unnecessarily exposes this data so an attacker can possibly access it. The DIBA app, unfortunately, logs a lot of sensitive information to the central Android logging facility, probably as a leftover from development. If an attacker gets access to your device, he can use adb to get access to the logged data.
