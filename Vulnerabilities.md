@@ -161,7 +161,7 @@ Some screens of the DIBA app contain sensitive information. Therefore, the app w
 
 This number is missing from the solution chapter => not existing (?)
 
-### 17: Back Button Log Clearing
+### 17: Back Button Log Clearing (easy)
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
