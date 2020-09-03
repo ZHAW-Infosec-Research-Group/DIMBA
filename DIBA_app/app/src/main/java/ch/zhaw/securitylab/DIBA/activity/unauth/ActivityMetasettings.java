@@ -63,8 +63,7 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 	}
 	
 	@Override
-	protected void onResume()
-	{
+	protected void onResume() {
 		super.onResume();
 		initializeFields();
 	}
@@ -73,10 +72,8 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 	// BUTTONS
 	// -------------------------------------------- //
 
-	private OnClickListener onTestServer()
-	{
-		return (View v) ->
-		{
+	private OnClickListener onTestServer() {
+		return (View v) -> {
 			// This reads the configured server IP from the settings
 			String server = fieldIp.getText().toString(); //getIPAddress();
 			System.out.println(server);
@@ -101,12 +98,9 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 		};
 	}
 
-	private OnClickListener onSaveMetasettings()
-	{
-		return (View v) ->
-		{
-			new Thread(() ->
-			{
+	private OnClickListener onSaveMetasettings() {
+		return (View v) -> {
+			new Thread(() -> {
 				MetasettingsDao metasettingsDao = DIBA.get().getMetasettingsDb().metasettingsDao();
 				final Metasettings metasettings = metasettingsDao.getSettings();
 				metasettings.setDifficulty(spinnerDifficulty.getSelectedItem().toString());
@@ -119,12 +113,9 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 		};
 	}
 	
-	private OnClickListener onResetApp()
-	{
-		return (View v) ->
-		{
-			new Thread(() ->
-			{
+	private OnClickListener onResetApp() {
+		return (View v) -> {
+			new Thread(() -> {
 				DIBA diba = DIBA.get();
 				diba.metaClearInvestments();
 				diba.metaClearMessages();
@@ -143,8 +134,7 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 		};
 	}
 	
-	private void resetCurrencyExchange()
-	{
+	private void resetCurrencyExchange() {
 		String[] currencies = {"SFr", "Eur", "$", "£"};
 		String preferenceName = "loginPreferences";
 		int preferenceMode = Context.MODE_PRIVATE;
@@ -165,16 +155,13 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 	// INITIALIZE
 	// -------------------------------------------- //
 	
-	private void initializeFields()
-	{
-		new Thread(() ->
-		{
+	private void initializeFields() {
+		new Thread(() -> {
 			MetasettingsDao metasettingsDao = DIBA.get().getMetasettingsDb().metasettingsDao();
 			final Metasettings metasettings = metasettingsDao.getSettings();
 			if (metasettings == null) return;
 			
-			runOnUiThread(() ->
-			{
+			runOnUiThread(() -> {
 				// Set Text
 				fieldIp.setText(metasettings.getIp());
 				ArrayAdapter<Difficulty> spinnerAdapter = new ArrayAdapter<>(ActivityMetasettings.this, R.layout.difficulty_entry);

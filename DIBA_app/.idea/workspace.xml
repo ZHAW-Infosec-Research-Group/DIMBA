@@ -26,8 +26,11 @@
       <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/DIBA_app.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/DIBA_app.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/app-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/DIBA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/DIBA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivitySurvey.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivitySurvey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityMetasettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityMetasettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/data/metasettings/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/data/metasettings/Difficulty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/ConnectionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/ConnectionBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/InRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/InRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/InRequestJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/InRequestJSON.java" afterDir="false" />
@@ -35,6 +38,35 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/InHttpsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/InHttpsStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/TrustManagerLevel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/TrustManagerLevel2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/TrustManagerLevel3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/networking/tls/TrustManagerLevel3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/font/inbank_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/font/diba_text.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/auth/layout/content_activity_auth_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/auth/layout/content_activity_auth_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest_wall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/content_activity_auth_invest_wall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/difficulty_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/difficulty_entry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/extra_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/extra_entry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_change.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_change.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_signin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_signin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/invest_entry.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/invest_entry.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/nav_header_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_accept.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_accept.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_make.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_make.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_slip.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_slip.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_slip_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/payment/layout/content_activity_auth_pay_slip_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/content_activity_auth_stock_wall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/content_activity_auth_stock_wall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_landing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_landing.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_auth_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_auth_main_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_landing_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_landing_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/ca_cert" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/ca_cert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/diba_cert" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/diba_cert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_server/db/InBankDB.lck" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/InBankDB.lck" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -381,22 +413,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1598786364884" />
-    <state width="1874" height="351" key="GridCell.Tab.0.bottom" timestamp="1598962126692">
+    <state width="1874" height="351" key="GridCell.Tab.0.bottom" timestamp="1599149434480">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="351" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1598962126692" />
-    <state width="1874" height="351" key="GridCell.Tab.0.center" timestamp="1598962126691">
+    <state width="1874" height="351" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599149434480" />
+    <state width="1874" height="351" key="GridCell.Tab.0.center" timestamp="1599149434479">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="351" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1598962126691" />
-    <state width="1874" height="351" key="GridCell.Tab.0.left" timestamp="1598962126690">
+    <state width="1874" height="351" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599149434479" />
+    <state width="1874" height="351" key="GridCell.Tab.0.left" timestamp="1599149434478">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="351" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1598962126690" />
-    <state width="1874" height="351" key="GridCell.Tab.0.right" timestamp="1598962126691">
+    <state width="1874" height="351" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599149434478" />
+    <state width="1874" height="351" key="GridCell.Tab.0.right" timestamp="1599149434479">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="351" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1598962126691" />
+    <state width="1874" height="351" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599149434479" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1596539660605">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -413,18 +445,18 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1596539660605" />
-    <state x="733" y="197" width="1022" height="737" key="SettingsEditor" timestamp="1598808017760">
+    <state x="733" y="197" width="1022" height="737" key="SettingsEditor" timestamp="1599138203551">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="733" y="197" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1598808017760" />
+    <state x="733" y="197" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1599138203550" />
     <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1596651136547">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1596651136547" />
-    <state x="602" y="285" width="905" height="536" key="find.popup" timestamp="1598953645980">
+    <state x="602" y="285" width="905" height="536" key="find.popup" timestamp="1599138058542">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="602" y="285" width="905" height="536" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1598953645980" />
+    <state x="602" y="285" width="905" height="536" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1599138058542" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1596538860594">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

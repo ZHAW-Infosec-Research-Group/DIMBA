@@ -4,4 +4,4 @@
           android:layout_height="wrap_content"
           android:textSize="10pt"
 
-          android:fontFamily="@font/inbank_text"/>
+          android:fontFamily="@font/diba_text"/>

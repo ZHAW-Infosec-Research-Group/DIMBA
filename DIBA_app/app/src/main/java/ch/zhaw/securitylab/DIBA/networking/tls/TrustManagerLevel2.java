@@ -31,7 +31,9 @@ public class TrustManagerLevel2 implements X509TrustManager {
 		if (chain != null && chain.length > 0) {
 			chain[0].checkValidity();
 			String x500Principal = chain[0].getSubjectX500Principal().getName();
-			if (!x500Principal.equals("OU=DIBA,O=ZHAW DIBA,L=Winterthur,ST=Zuerich,C=CH")) throw new CertificateException("untrusted Certificate");
+			String expected = "O=DIBA Server,L=Default City,C=XX";
+			System.out.println("Expected: "+expected+"\n Received: "+x500Principal);
+			if (!x500Principal.equals(expected)) throw new CertificateException("untrusted Certificate");
 		} else {
 			trustManager.checkServerTrusted(chain, authType);
 		}

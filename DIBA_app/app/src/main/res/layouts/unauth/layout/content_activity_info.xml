@@ -19,7 +19,7 @@
                 android:text="@string/about_the_app_subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoSubTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                 android:textSize="16sp" android:textStyle="bold" app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -27,7 +27,7 @@
                 android:text="@string/about_the_app_intention"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoIntention"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/infoSubTitle"/>
@@ -35,7 +35,7 @@
                 android:text="@string/about_the_app_training"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoTraining"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp" android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/infoIntention"/>
@@ -43,7 +43,7 @@
                 android:text="@string/about_the_app_attacks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoAttacks"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoTraining" android:layout_marginTop="8dp"/>
@@ -51,14 +51,14 @@
                 android:text="@string/about_the_app_runtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoRunTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 android:textSize="16sp" android:textStyle="bold" app:layout_constraintTop_toBottomOf="@+id/infoAttacks"
                 android:layout_marginTop="8dp"/>
         <TextView
                 android:text="@string/about_the_app_run_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoRunText"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoRunTitle" android:layout_marginTop="8dp"/>
@@ -66,7 +66,7 @@
                 android:text="@string/about_the_app_run_communication"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoRunCommunication"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoRunText" android:layout_marginTop="8dp"/>
@@ -74,7 +74,7 @@
                 android:text="@string/about_the_app_metatitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoMetaTitle"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 android:textSize="16sp" android:textStyle="bold"
                 app:layout_constraintTop_toBottomOf="@+id/infoRunCommunication"
                 android:layout_marginTop="8dp"/>
@@ -82,7 +82,7 @@
                 android:text="@string/about_the_app_meta_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoMetaText"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoMetaTitle" android:layout_marginTop="8dp"/>
@@ -97,7 +97,7 @@
                 android:text="@string/about_the_app_meta_text_ip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoMetaTextIP"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoMetaPictuture" android:layout_marginTop="0dp"/>
@@ -105,7 +105,7 @@
                 android:text="@string/about_the_app_meta_text_difficulty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoMetaTextDifficulty"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoMetaTextIP" android:layout_marginTop="0dp"/>
@@ -113,7 +113,7 @@
                 android:text="@string/about_the_app_meta_text_timeout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/infoMetaTextTimeout"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/inbank_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
                 app:layout_constraintStart_toStartOf="parent"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/infoMetaTextDifficulty" android:layout_marginTop="0dp"/>

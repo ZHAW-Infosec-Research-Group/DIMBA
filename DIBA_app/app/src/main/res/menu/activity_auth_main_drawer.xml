@@ -51,7 +51,7 @@
                 <item
                         android:id="@+id/nav_go_meta"
                         android:icon="@drawable/ic_settings_applications_black_24dp"
-                        android:title="Meta-Settings"/>
+                        android:title="Meta Settings"/>
             </group>
         </menu>
     </item>

@@ -110,7 +110,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityMetasettings"
-            android:label="Meta-Settings"
+            android:label="Meta Settings"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- Login/Sign up procedure -->
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityCredentials"

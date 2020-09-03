@@ -5,7 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="action_meta">Meta-Settings</string>
+    <string name="action_meta">Meta Settings</string>
     <string name="action_info">About the App</string>
     <string name="action_sign_in">Create Account</string>
     <string name="action_sign_cancel">Cancel</string>

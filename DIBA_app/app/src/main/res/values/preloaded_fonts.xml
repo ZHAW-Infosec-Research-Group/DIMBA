@@ -2,6 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/biorhyme_extralight</item>
-        <item>@font/inbank_text</item>
+        <item>@font/diba_text</item>
     </array>
 </resources>

@@ -50,7 +50,7 @@
             android:layout_height="50dp"
             android:id="@+id/payGoAccept" android:background="@drawable/button_background"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:fontFamily="@font/inbank_text" android:textSize="24sp" android:textStyle="bold"
+            android:fontFamily="@font/diba_text" android:textSize="24sp" android:textStyle="bold"
             android:textColor="@android:color/background_light" android:textAllCaps="false"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
