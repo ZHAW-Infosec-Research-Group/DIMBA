@@ -1,46 +1,20 @@
 # DIBA - Damn Insecure Banking App
 
 ## What is DIBA?
-At the core DIBA, is a vulnerable Banking App that was designed to provide a realistic training ground for Android Penetration Testing. There are also other intentionally vulnerable Android App projects out there (e.g., [DIVA](https://github.com/payatu/diva-android) or [InsecureBankV2](https://github.com/dineshshetty/Android-InsecureBankv2)), however either they are no longer maintained or they are not up to date with the current Android Design Guidelines.
+At the core DIBA, is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities. 
 
 ## Features
-This project is split into two parts. The first part is the Banking App itself which provides the following features:
-+ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, sending and receiving payments, loading a payslip from a file, investment area, live-view on stock market, and sending and receiving messages
-+ Modern look and feel thanks to Material Design
-+ Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find
-+ Metasettings that make it harder to crack some vulnerabilities
+This project is split into two parts. The first part is the DIBA app itself which provides the following features:
++ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, sending and receiving payments, loading a payment slip from a file, investment area, live-view of stock market, and sending and receiving messages.
++ Modern look and feel thanks to Material Design.
++ Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find.
 
-The second part is the server component with which the app communicates. For the training app to be realistic such a component needs to exist since most app nowadays make use of a backend to implement most of their business logic and only use the app as a presentation layer. In the case of this project the backend has the following features:
+The second part is the DIBA server with which the DIBA app communicates. For the training app to be realisticm such a component needs to exist since most app nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server the following features:
 + REST API
-+ Inmemory storage for persisting transactions/activities during a training session
-+ Authentication via JWT
-+ Different implementations of the communication between app and server, some are more secure than others
-
-All in all there are 24 vulnerabilities you can find. They can be grouped into the following categories:
-+ Network communication
-+ Hardcoded Credentials
-+ SQL Injection
-+ Clipboard Danger
-+ Exported Content Provider
-+ Intent Redirection
-+ Logging
-+ Aliases Export Activities
-+ Directory Traversal
-+ Weak Encryption
-+ Authentication 
-+ Information Leakage
-+ Insufficient Protection Level
-+ Back Button Log Clearing
-+ Input Validation
-+ Developer Entrance
-+ App Backup
-+ Fragment Injection
-+ Insecure Services
-+ Weak JWT
++ An integrated database for persisting transactions/activities during a training session
++ Authentication via JSON Web Tokens (JWT)
 
 You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to find vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
-
-Additionally we have written a solution document which describes all the vulnerabilities in detail with steps to exploit and how to fix them.
 
 ## Usage
 ### Prerequisites
@@ -53,9 +27,10 @@ To run the app and the server, the following is required:
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
 + [Apktool](https://ibotpeaches.github.io/Apktool/)
 + [Jadx](https://github.com/skylot/jadx)
-+ [ABE — Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
++ [Android Backup Extractor](https://github.com/nelenkov/android-backup-extractor)
++ An imterceptor proxy of your choice, e.g., [Burp Suite](https://portswigger.net/burp) or [OWASP ZAP](https://owasp.org/www-project-zap/).
 
-There are different ways to use DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
+There are different ways to run DIBA. The following description assumes that the DIBA server is run on your physical host and that the DIBA app is is run within an Android virtual machine. This should work without any problems with most common operating systems (e.g., Windows, macOS, Linux) and does not require a physical Android device. Also, it provides root access to the device, which is needed or helpful to exploit some vulnerabilities. Based on the following description, it should also be possible to derive the required set up steps in case you are planning to use DIBA in another way. In general, only use a physical Android device if you really know what you are doing to avoid negative side effects.
 
 ### Android Virtual Machine Setup
 The following steps describe how to run Android as a virtual machine using VirtualBox. It should also be possible to use different virtualization software such as VmWare:
@@ -90,13 +65,23 @@ To install the DIBA app on the Android virtial machine, do the following:
 
 ### DIBA App Configuration
 1. Open the DIBA app.
-2. Open the Meta-Settings via the menu at the top left.
+2. Open the meta settings via the menu at the top left.
 3. Change the IP address of the server to IP address of your physical host (assuming the server is running on your host).
 4. Change the communication difficulty to the difficulty of your choice.
 
+### Intercepting Network Communication
+To understand and exploit some vulnerabilities, access to the communication between app and server is required. This works best using an interceptor proxy. To do this, perform the following steps:
+1. On your physical host (where the DIBA server is running), use an interceptor proxy such as [Burp Suite](https://portswigger.net/burp), [OWASP ZAP](https://owasp.org/www-project-zap/) or some other tool.
+2. Make sure the interceptor proxy listens for incoming connections on the external IP address of your host and chek the port that it uses (often something like 8008 or 8080). (Note: For security reasons, make sure that the local firewall blocks access to this port from the external network.)
+3. Configure the Android device to use the interceptor proxy. In the case of the Android virtual machine, this works according to steps 4-6.
+4. Open the **Settings** app, select **Network & internet**, then **WiFi** and then **VirtWifi**.
+5. Next, select the pen icon at the top right and expand **Advanced options**.
+6. Here, specify **Proxy -> Manual**, enter the IP address of your physical host in the **Proxy hostname** field and the port used by your interceptor proxy in the **Proxy port** field. Finally, make sure to save the settings.
+7. When using the interceptor proxy, it's easiest to use certificate check security **LEVEL 1** in the meta settings of the app to prevent problems. If you need a bit of a challenge, you can also use the higher levels (for more information about theses levels: see vulnerability 1 in [Vulnerabilities.md](Vulnerabilities.md)).
+
 ## Build it yourself
 
-If you want to build the app and/or the server from scratch you can do so. The following steps should give you an overview how to achieve this. If you have build an app or a Java application before you should be familiar with most of this procedure.
+If you want to build the app and/or the server from scratch, you can do so. The following steps should give you an overview how to achieve this. If you have built an app or a Java application before, you should be familiar with most of this procedure.
 
 ### Building the app
 1. Clone the code from GitHub
@@ -109,7 +94,6 @@ If you want to build the app and/or the server from scratch you can do so. The f
 8. Click **Finnish**. You should now have a signed APK in your chosen destination folder. You can now install the APK as described in the **App Installation** Section.
 
 ### Building the server
-
 1. Install Maven
 2. Check out the DIBA Repository
 3. Go to the root folder of the repository you just cloned
