@@ -177,9 +177,18 @@ Check this out. I also sent you a video as there's a strange behaviour with paym
 
 https://drive.switch.ch/index.php/s/av94lsXfhJkPjwX
 
-### 19: Developer entrance
+### 19: Developer entrance (medium)
+As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
 
-TBD
+**Goal:** Adapt the app so that the backdoor is working again so the logo can be tapped to enter the authenticated are.
+
+**Hint:** To do this, you have to decompile the app using *apktool*, adapt a specific setting, recompile the code again using *apktool* and sign it with *apksigner*.
+
+**Remark**: Of course, being in the authenticated area of the app without having logged in (and having received a JWT) does not really provide access to sensitive information. Therefore, this vulnerability mainly serves to demonstrate how easy it is to re-activate code that was "deactivated" by the developers with a simpkle setting. And also, an attacker can of course always adapt the code to add functionality at will (in this case, getting directly to the authenticated area), but in that case, he has at least adapt the code of the app, whoch can be made more difficult using code obfuscation. 
+
+**Check**: Works
+
+Todo: We should change "is_2" to something easier to find, maybe "developer_entrance"?
 
 ### 20: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
@@ -262,13 +271,15 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 **Goal:** Adapt the app and remove the rooted detection check. As a result of this, the message after starting the app should no longer appear.
 
-**Check**: Couldn't do this, as apktool b inbank_deco -o malicious_inbank.apk creates errors.
+**Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *apksigner*.
+
+**Check**: Works
 
 Note: Finding this in smali is very difficult. How can the user find the correct code location?
 
 Question: This is a real rooted detection check, right? So it runs only on truly rooted devices (or the VM, where su is available)
 
-Note: Rooted detection should be OFF in the settings per default. Also, it should be in the Meta-Setting, not the Settings?
+Note: Rooted detection should be OFF in the settings per default. Also, it should be in the Meta-Setting, not the Settings (?)
 
 ### 31: Local Command Injection
 In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
