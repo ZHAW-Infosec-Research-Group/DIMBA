@@ -10,25 +10,16 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 Meta Settings: Use LEVEL 1 etc, not LEVEL_1
 
-Use "Certificate Ckeck Security" instead of "Security of Certificate Check"
+Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen. And also use this everywehere else where there is currently "Meta-Settings" or "Metasettings".
 
-Courier Font in Buttons still looks a bit strange
-
-The font is very "light-grey", should be darker
-
-In the Meta-Settings, there's "Meta settings" written at the top roght. This is not needed.
-
-Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen.
-
-Make sure to adapt the text in "About App".
+Make sure to adapt the text in "About App". And also the screenshot.
 
 On the screen with Login & Create Avcount, the logo should be mor centered above the buttons.
 
-Remove Logo from  Home screen (The one with Fetch Balance Button etc.).
+On the home screen, move the buttons up to remove free space.
 
-Meta Settings: Use "IP of DIBA Server" instead of "IP".
 
-Meta Settings: "IP" is red, "Security of..." is grey, "Timeout Ms" is a bit smaller. Make sure to use always the same font & color.
+Meta Settings: "IP" is red, "Security of..." is grey, "Timeout Ms" is a bit smaller. Make sure to use always the same font & color. Use font of "Certifcate Check Security" for all the settings.
 
 ### 1: Certificate Check Security
 
