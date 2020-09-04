@@ -39,7 +39,7 @@
             app:layout_constraintStart_toEndOf="@+id/payImageGoList" android:layout_marginStart="16dp"/>
 
     <Button
-            android:text="Load Payslip"
+            android:text="Load Payment Slip"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:id="@+id/payGoPayslip" android:background="@drawable/button_background"

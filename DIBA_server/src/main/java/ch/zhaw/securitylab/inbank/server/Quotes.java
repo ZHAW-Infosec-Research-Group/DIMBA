@@ -34,7 +34,7 @@ public class Quotes {
 				"We are happy, that you try to hack our app.\n" +
 				"If you need help, send the message 'hint' to the server\n\n" +
 				"Best Regards\n" +
-				"The InBank developer team",
+				"The DIBA developer team",
 				VIEW_TYPE, System.currentTimeMillis()
 		);
 	}

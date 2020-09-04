@@ -184,7 +184,7 @@ public class ActivityAuthPaySlip extends ActivityDIBAAbstract {
 			pw.flush();
 			pw.close();
 			
-			Toasty.longCenterToast("Successfully saved the payslip with name " + fileName + ".");
+			Toasty.longCenterToast("Successfully saved the payment slip with name " + fileName + ".");
 			
 			paySlip.setText("");
 		}

@@ -45,14 +45,13 @@ public class ActivityAuthMessages extends ActivityDIBAAbstract
 	public ActivityAuthMessages() { super(R.layout.activity_auth_messages, ToolbarMode.NAV_AUTH, R.id.nav_go_Messages, false); }
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		diba = DIBA.get();
 		messageDB = diba.getMessageDB();
 		searchTextField = findViewById(R.id.searchChatboxEdittext);
-		chatTextField = findViewById(R.id.messagesChatboxEdittext);
+		chatTextField   = findViewById(R.id.messagesChatboxEdittext);
 		messageRecycler = findViewById(R.id.messagesReyclerviewList);
 		
 		button(onMessageSend(), R.id.messagesChatboxButtonSend);
@@ -67,20 +66,16 @@ public class ActivityAuthMessages extends ActivityDIBAAbstract
 	// BUTTONS
 	// -------------------------------------------- //
 	
-	private OnClickListener onMessageSend()
-	{
-		return (View v) ->
-		{
+	private OnClickListener onMessageSend() {
+		return (View v) -> {
 			sendMessage(chatTextField.getText().toString());
 			chatTextField.setText("");
 			removeKeyboard();
 		};
 	}
 	
-	private OnClickListener onSearch()
-	{
-		return (View v) ->
-		{
+	private OnClickListener onSearch() {
+		return (View v) -> {
 			searchMessages(searchTextField.getText().toString());
 			removeKeyboard();
 		};
@@ -102,28 +97,24 @@ public class ActivityAuthMessages extends ActivityDIBAAbstract
 	// INITIALIZE
 	// -------------------------------------------- //
 	
-	private void initMessageRecycler()
-	{
+	private void initMessageRecycler() {
 		List<Message> messageList = messageDB.getAllMessagesOfUser(diba.getUserName());
 		messageAdapter = new MessageListAdapter(messageList);
 		messageRecycler.setLayoutManager(new LinearLayoutManager(this));
 		messageRecycler.setAdapter(messageAdapter);
 		
-		if (messageList.isEmpty())
-		{
+		if (messageList.isEmpty()) {
 			clearAndShowMessages(Collections.singletonList(new Message("Please update to receive the messages", Message.VIEW_TYPE_MESSAGE_RECEIVED)));
 		}
 	}
 	
-	private void searchMessages(String searchString)
-	{
+	private void searchMessages(String searchString) {
 		List<Message> messages = messageDB.searchMessage(searchString, diba.getUserName());
 		messageAdapter.removeAll();
 		messageAdapter.addAllMessages(messages);
 	}
 	
-	private void removeKeyboard()
-	{
+	private void removeKeyboard() {
 		View view = this.getCurrentFocus();
 		if (view != null)
 		{

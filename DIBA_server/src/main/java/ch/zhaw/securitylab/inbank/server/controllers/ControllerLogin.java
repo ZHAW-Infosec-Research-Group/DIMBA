@@ -116,14 +116,17 @@ public class ControllerLogin extends ControllerParent {
 		// Send sms to emulator
 		try {
 			String code = ControllerUser.get().generateCode();
-			Server.logger.info("SMS CODE --->>>  "+code);
 			String dt   = ControllerUser.get().getDatetimeFromCode(code);
-			//Process process = Runtime.getRuntime().exec("adb emu sms send 0041793332211 Payment received at "+otp+"\n");
+			Server.logger.info("SMS sent to user:  "+owner);
+			Server.logger.info("Payment date:      "+dt);
+			Server.logger.info("Payment amount:    "+amountString);
+			Server.logger.info("Payment recipient: "+target);
+			Server.logger.info("Confirmation code: "+code);
 
-			String message = "Payment received at "+dt+"\n" +
-							"Recipient: "+target+"\n" +
-							"Amount: "+amountString+" "+currency+"\n\n" +
-							"Confirmation code: " + code;
+			String message = "Payment date:      "+dt+"\n" +
+							 "Payment amount:    "+amountString+"\n" +
+							 "Payment recipient: "+target+"\n" +
+							 "Confirmation code: "+code;
 
 			Process process = Runtime.getRuntime().exec("adb emu sms send 0041793332211 "+message);
 			StringResponse sRes = new StringResponse("OTP sent");

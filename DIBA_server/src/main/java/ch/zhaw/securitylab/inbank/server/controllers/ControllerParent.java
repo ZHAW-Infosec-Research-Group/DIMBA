@@ -21,8 +21,8 @@ public class ControllerParent {
 	// CONSTANTS
 	// -------------------------------------------- //
 	
-	private static final String ISSUER = "InBank";
-	private static final String PASSWORD = "Security15";
+	private static final String ISSUER = "DIBA";
+	private static final String PASSWORD = "nogood";
 	
 	// -------------------------------------------- //
 	// VARIOUS

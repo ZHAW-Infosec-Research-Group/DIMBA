@@ -98,7 +98,7 @@ public class ActivityLanding extends ActivityDIBAAbstract {
 				intent.putExtra(Extras.FRAGMENT, Extras.FRAGMENT_SIGNIN);
 				break;
 			case R.id.landingLogo:
-				if (!getResources().getBoolean(R.bool.is_2)) return;
+				if (!getResources().getBoolean(R.bool.developer_entrance)) return;
 				clazz = ActivityAuthMain.class;
 				break;
 			case R.id.landingGoAbout:

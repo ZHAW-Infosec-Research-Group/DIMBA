@@ -52,7 +52,7 @@
         "The Meta Settings are not part of the attackable app itself. Feel free to try, but there is no weakness
         there.\n\n"
     </string>
-    <bool name="is_2">false</bool>
+    <bool name="developer_entrance">false</bool>
     <string name="about_the_app_subtitle">Insecure Banking, done the right way.</string>
     <string name="about_the_app_intention">DIBA was created with the intention of feeling like any other banking app
         you could find on the playstore,

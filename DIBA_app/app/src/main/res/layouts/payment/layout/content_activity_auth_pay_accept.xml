@@ -16,7 +16,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginRight="8dp"
         android:fontFamily="@font/diba_text"
-        android:text="We sent a SMS code to your phone. The code is only valid for 1 hour.\n To confirm the payment insert the code and accept."
+        android:text="A confirmation code was sent to you by SMS (you can get it from to the server output). Enter the code to conform the payment. (To prove that you cracked the code generation algorithm, enter the code that will be used 2020-02-31 12:00:00. If the paymant is accepted, you have succeeded!)"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"

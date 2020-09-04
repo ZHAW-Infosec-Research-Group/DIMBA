@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="32dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:textStyle="bold"
             android:textAlignment="center" android:fontFamily="@font/diba_text"
-            android:textColor="@android:color/background_light" app:srcCompat="@drawable/ic_file_download_black_24dp"/>
+            android:textColor="@android:color/background_light" app:srcCompat="@drawable/ic_file_upload_black_24dp"/>
     <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/paySlipButtonLoad"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" android:fontFamily="@font/diba_text"
             android:textColor="@android:color/background_light" android:textStyle="bold"
-            app:srcCompat="@drawable/ic_file_upload_black_24dp"/>
+            app:srcCompat="@drawable/ic_file_download_black_24dp"/>
     <Button
             android:text="Load Sample"
             android:layout_width="0dp"
@@ -69,7 +69,7 @@
             android:textAlignment="center" android:elevation="@dimen/text_margin"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"/>
     <Button
-            android:text="Transfer Payslip"
+            android:text="Transfer Payment Slip"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:background="@drawable/button_background"

@@ -136,10 +136,8 @@ public class MessageDB
 	
 	public void insertIfNotExists(List<Message> messages, String user)
 	{
-		for (Message message : messages)
-		{
-			if (!messageExists(message, user))
-			{
+		for (Message message : messages) {
+			if (!messageExists(message, user)) {
 				addMessage(message, user);
 			}
 		}
@@ -162,7 +160,7 @@ public class MessageDB
 				"Alice: Great, thanks and bye!"
 		};
 		
-		String arthur = "Arthur";
+		String alice = "Alice";
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/M/d/H");
 		List<Message> messages = new LinkedList<>();
 		
@@ -176,7 +174,7 @@ public class MessageDB
 			String quote = hiddenMessage[i];
 			int viewType;
 			
-			if(quote.startsWith(arthur) || quote.contains("quote")) {
+			if(quote.startsWith(alice) || quote.contains("quote")) {
 				viewType = Message.VIEW_TYPE_MESSAGE_SENT;
 			} else {
 				viewType = Message.VIEW_TYPE_MESSAGE_RECEIVED;
@@ -184,7 +182,7 @@ public class MessageDB
 			
 			messages.add(new Message(quote, viewType, date));
 		}
-		insertIfNotExists(messages, arthur);
+		insertIfNotExists(messages, alice);
 	}
 	
 	// -------------------------------------------- //

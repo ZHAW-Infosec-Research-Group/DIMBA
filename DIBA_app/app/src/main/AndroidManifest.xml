@@ -90,7 +90,7 @@
 
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPaySlip"
-            android:label="Load a Payslip"
+            android:label="Load a Payment Slip"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPaySlipInfo"

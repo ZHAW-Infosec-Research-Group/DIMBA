@@ -51,48 +51,49 @@ public class InCipher {
 		StringBuilder cipher = new StringBuilder();
 		int len = plainText.length();
 		String key = createKey(len, keyword);
-		
+		int pos = 0;
+
 		for (int i = 0; i < len; i++) {
 			char row = plainText.charAt(i);
-			char col = key.charAt(i);
-			
+			char col = key.charAt(pos);
+
 			if (alphabet.contains("" + row)) {
 				int indexCol = alphabet.indexOf("" + col);
 				int indexRow = alphabet.indexOf("" + row);
 				cipher.append(vigenere[indexCol][indexRow]);
+				pos++;
 			} else {
 				cipher.append(row);
 			}
 		}
 		return cipher.toString();
 	}
-	
-	/*
-	public String decrypt(String cipherText, String keyword)
-	{
-		StringBuilder message = new StringBuilder();
-		int len = cipherText.length();
-		String key = createKey(len, keyword);
-		
-		for (int i = 0; i < len; i++)
-		{
-			char rowIndicator = cipherText.charAt(i);
-			char col = key.charAt(i);
-			
-			if (alphabet.contains("" + rowIndicator))
-			{
-				int indexCol = alphabet.indexOf("" + col);
-				char[] row = vigenere[indexCol];
-				int indexRow = new String(row).indexOf(rowIndicator);
-				message.append(alphabet.charAt(indexRow));
-			}
-			else
-			{
-				message.append(rowIndicator);
-			}
-		}
-		return message.toString();
-	}
-	*/
+
+//	public String decrypt(String cipherText, String keyword) {
+//		StringBuilder message = new StringBuilder();
+//		int len = cipherText.length();
+//		String key = createKey(len, keyword);
+//		int pos = 0;
+//
+//		for (int i = 0; i < len; i++)
+//		{
+//			char rowIndicator = cipherText.charAt(i);
+//			char col = key.charAt(pos);
+//
+//			if (alphabet.contains("" + rowIndicator))
+//			{
+//				int indexCol = alphabet.indexOf("" + col);
+//				char[] row = vigenere[indexCol];
+//				int indexRow = new String(row).indexOf(rowIndicator);
+//				message.append(alphabet.charAt(indexRow));
+//				pos++;
+//			}
+//			else
+//			{
+//				message.append(rowIndicator);
+//			}
+//		}
+//		return message.toString();
+//	}
 	
 }

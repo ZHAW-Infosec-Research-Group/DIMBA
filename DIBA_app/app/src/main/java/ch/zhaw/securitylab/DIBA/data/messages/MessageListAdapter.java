@@ -42,10 +42,8 @@ public class MessageListAdapter extends RecyclerView.Adapter
 	
 	// Inflates the appropriate layout according to the ViewType.
 	@Override
-	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
-	{
-		if (viewType != VIEW_TYPE_MESSAGE_SENT && viewType != VIEW_TYPE_MESSAGE_RECEIVED)
-		{
+	public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+		if (viewType != VIEW_TYPE_MESSAGE_SENT && viewType != VIEW_TYPE_MESSAGE_RECEIVED) {
 			throw new RuntimeException("ViewType must be either MESSAGE_SENT (1) or MESSAGE_RECEIVED (2).");
 		}
 		
@@ -56,10 +54,8 @@ public class MessageListAdapter extends RecyclerView.Adapter
 	
 	// Passes the message object to a ViewHolder so that the contents can be bound to UI.
 	@Override
-	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position)
-	{
-		if (!(holder instanceof MessageHolder))
-		{
+	public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+		if (!(holder instanceof MessageHolder)) {
 			throw new RuntimeException("Holder must be MessageHolder, was " + holder.getClass().getSimpleName());
 		}
 		
@@ -67,8 +63,7 @@ public class MessageListAdapter extends RecyclerView.Adapter
 		((MessageHolder) holder).bind(message);
 	}
 	
-	public void removeAll()
-	{
+	public void removeAll() {
 		int max = messageList.size();
 		messageList.clear();
 		notifyItemRangeRemoved(0, max);

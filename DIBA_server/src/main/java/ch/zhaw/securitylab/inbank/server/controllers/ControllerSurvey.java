@@ -83,46 +83,18 @@ public class ControllerSurvey extends ControllerParent {
 
 	//public static Handler handleLoginPost = context -> {
 	public static Handler handleSurveyGet = context -> {
-
 		Server.logger.info("Survey started");
-
-		//MySQLHelper db = new MySQLHelper();
 		MySQLHelper.getDatabaseConnection();
 		ArrayList<String> comments = MySQLHelper.get_comments();
 		String surveyHtml = buildHtml(comments);
 		context.html(surveyHtml);
 		
-		//ControllerUser controller = ControllerUser.get();
-		//
-		//// Try it trough jwt and credentials
-		//boolean loginJwt = loginWithJWT(context, controller);
-		//boolean loginCredentials = loginCredentials(context, controller);
-		//if (!loginJwt && !loginCredentials) return;
-		
-		// Redirect if login successful
-		//String contentRedirect = getQueryLoginRedirect(context);
-		//if (contentRedirect != null) context.redirect(contentRedirect);
 	};
 
 	public static Handler handleSurveyGetAction = context -> {
 		String m = fetchJSON(context,"comment");
-
-		//MySQLHelper db = new MySQLHelper();
-		//db.getDatabaseConnection();
 		MySQLHelper.add_comment(m);
 		context.html("<h1>Your comment was posted!</h1><p>"+m+"</p>");
 		Server.logger.info("Comment added "+m);
-
-		//String  q = context.queryParamMap().toString();
-		//int     b = q.indexOf("comment");
-		//String  c = q.substring(b+9,q.length()-2);
-		//if (b>=0) {
-		//	Server.logger.info("Comment added "+c);
-		//	context.html("<h1>Your comment was posted!</h1><p>"+c+"</p>");
-		//} else {
-		//	Server.logger.info("No comment found ..  ");
-		//	context.html("<h1>No comment found ..");
-		//}
-		
 	};
 }
