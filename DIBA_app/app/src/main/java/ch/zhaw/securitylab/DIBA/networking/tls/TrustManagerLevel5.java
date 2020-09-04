@@ -1,28 +1,28 @@
 package ch.zhaw.securitylab.DIBA.networking.tls;
 
 
-
 import android.util.Log;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
 import ch.zhaw.securitylab.DIBA.helpers.Extras;
 
-public class TrustManagerLevel3 implements X509TrustManager {
+public class TrustManagerLevel5 implements X509TrustManager {
 
 	private X509TrustManager trustManager;
 
 
-	private TrustManagerLevel3(TrustManager[] trustManagers) {
+	private TrustManagerLevel5(TrustManager[] trustManagers) {
 		super();
 		this.trustManager = (X509TrustManager) trustManagers[0];
 	}
 
 	public static TrustManager[] getWrappedTrustManagers(TrustManager[] trustManagers) {
-		return new TrustManager[]{new TrustManagerLevel3(trustManagers)};
+		return new TrustManager[]{new TrustManagerLevel5(trustManagers)};
 	}
 
 	@Override
@@ -37,9 +37,9 @@ public class TrustManagerLevel3 implements X509TrustManager {
 		String issuer = receivedCertificate.getIssuerDN().getName();
 		String expectedOwner  = "O=DIBA Server,L=Default City,C=XX";
 		String expectedIssuer = "O=DIBA CA,L=Default City,C=XX";
-		Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 3\n Check the certificate dates validity, the owner, the issuer and if certificate is signed by a trusted CA.\n");
+		Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 5\n Check the certificate dates validity, the owner, the issuer and the issuer pinned public key.\n");
 		Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +
-													"\n Not After: "+receivedCertificate.getNotAfter().toString());
+				"\n Not After: "+receivedCertificate.getNotAfter().toString());
 		receivedCertificate.checkValidity();
 
 		Log.println(Log.INFO, Extras.LOG_TAG, "Expected owner: "+expectedOwner+"\n Received owner: "+owner);

@@ -82,12 +82,16 @@ public class InHttpsStack extends HurlStack {
 	
 	@NonNull
 	private TrustManager[] getTrustManagers(TrustManagerFactory tmf, Difficulty difficulty) {
-		if (difficulty == Difficulty.LEVEL_2) {
-			return TrustManagerLevel2.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_1) {
+		if (difficulty == Difficulty.LEVEL_1) {
 			return TrustManagerLevel1.getWrappedTrustManagers(tmf.getTrustManagers());
-//		} else if (difficulty == Difficulty.LEVEL_3) {
-//			return TrustManagerLevel3.getWrappedTrustManagers(tmf.getTrustManagers());
+		} else if (difficulty == Difficulty.LEVEL_2) {
+			return TrustManagerLevel2.getWrappedTrustManagers(tmf.getTrustManagers());
+		} else if (difficulty == Difficulty.LEVEL_3) {
+			return TrustManagerLevel3.getWrappedTrustManagers(tmf.getTrustManagers());
+		} else if (difficulty == Difficulty.LEVEL_4) {
+			return TrustManagerLevel4.getWrappedTrustManagers(tmf.getTrustManagers());
+		} else if (difficulty == Difficulty.LEVEL_5) {
+			return TrustManagerLevel5.getWrappedTrustManagers(tmf.getTrustManagers());
 		} else {
 			return tmf.getTrustManagers();
 		}
@@ -97,19 +101,7 @@ public class InHttpsStack extends HurlStack {
 	private KeyStore getKeyStore(Difficulty difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
 		KeyStore keyStore = null;
 
-//		if (difficulty == Difficulty.LEVEL_5 || difficulty == Difficulty.LEVEL_3) {
-		if (difficulty == Difficulty.LEVEL_5) {
-			keyStore = KeyStore.getInstance("BKS");
-			
-			CertificateFactory cf = CertificateFactory.getInstance("X.509");
-			InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.diba_cert);
-			Certificate ca = cf.generateCertificate(caInput);
-			caInput.close();
-			
-			keyStore.load(null, null);
-			keyStore.setCertificateEntry("ca", ca);
-
-		} else if (difficulty == Difficulty.LEVEL_4) {
+		if (difficulty == Difficulty.LEVEL_4) {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -119,6 +111,17 @@ public class InHttpsStack extends HurlStack {
 			
 			keyStore.load(null, null);
 			keyStore.setCertificateEntry("ca", ca);
+
+		} else if (difficulty == Difficulty.LEVEL_5) {
+				keyStore = KeyStore.getInstance("BKS");
+
+				CertificateFactory cf = CertificateFactory.getInstance("X.509");
+				InputStream caInput = DIBA.get().getResources().openRawResource(R.raw.diba_cert);
+				Certificate ca = cf.generateCertificate(caInput);
+				caInput.close();
+
+				keyStore.load(null, null);
+				keyStore.setCertificateEntry("ca", ca);
 
 		} else {
 			keyStore = KeyStore.getInstance("AndroidCAStore");

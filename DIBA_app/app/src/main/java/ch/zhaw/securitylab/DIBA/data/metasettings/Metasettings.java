@@ -5,11 +5,7 @@ import androidx.room.PrimaryKey;
 import android.text.TextUtils;
 
 @Entity
-public class Metasettings
-{
-	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
+public class Metasettings {
 	
 	@PrimaryKey()
 	private int uid;
@@ -34,25 +30,15 @@ public class Metasettings
 		this.timeout = timeout;
 	}
 	
-	// -------------------------------------------- //
-	// CONSTRUCT
-	// -------------------------------------------- //
-	
-	public Metasettings(String ip, Difficulty difficulty, int timeout)
-	{
+	public Metasettings(String ip, Difficulty difficulty, int timeout) {
 		this.ip = ip;
 		this.difficulty = difficulty;
 		this.timeout = timeout;
 	}
 	
-	// -------------------------------------------- //
-	// CONSTRUCT
-	// -------------------------------------------- //
-	
-	public void setDifficulty(String difficulty)
-	{
+	public void setDifficulty(String difficulty) {
 		if (TextUtils.isEmpty(difficulty)) throw new RuntimeException("difficulty must be !empty, was " + difficulty);
-		setDifficulty(Difficulty.valueOf(difficulty));
+		setDifficulty(Difficulty.fromString(difficulty));
 	}
 	
 }

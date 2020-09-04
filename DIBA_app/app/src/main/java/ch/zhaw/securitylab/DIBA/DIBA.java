@@ -150,8 +150,7 @@ public class DIBA extends Application {
     // -------------------------------------------- //
 
     private static DIBA i;
-
-    public static DIBA get() {
+    public  static DIBA get() {
         return i;
     }
 
@@ -175,13 +174,6 @@ public class DIBA extends Application {
         initMetasettingsDB();
         initRequestQueue();
         i = this;
-
-        // SKIP LOGIN
-//		Intent intent = new Intent(this, ActivitySurvey.class);
-//		TaskStackBuilder.create(this)
-//				.addNextIntent(intent)
-//				.startActivities();
-
     }
 
     // -------------------------------------------- //

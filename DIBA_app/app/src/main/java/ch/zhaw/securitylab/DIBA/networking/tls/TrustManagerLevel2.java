@@ -1,9 +1,13 @@
 package ch.zhaw.securitylab.DIBA.networking.tls;
 
+import android.util.Log;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+
+import ch.zhaw.securitylab.DIBA.helpers.Extras;
 
 public class TrustManagerLevel2 implements X509TrustManager {
 
@@ -29,11 +33,17 @@ public class TrustManagerLevel2 implements X509TrustManager {
 	@Override
 	public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 		if (chain != null && chain.length > 0) {
-			chain[0].checkValidity();
-			String x500Principal = chain[0].getSubjectX500Principal().getName();
-			String expected = "O=DIBA Server,L=Default City,C=XX";
-			System.out.println("Expected: "+expected+"\n Received: "+x500Principal);
-			if (!x500Principal.equals(expected)) throw new CertificateException("untrusted Certificate");
+			X509Certificate receivedCertificate = chain[0];
+			String owner = chain[0].getSubjectX500Principal().getName();
+			String expectedOwner = "O=DIBA Server,L=Default City,C=XX";
+
+			Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 2\n Check the certificate dates validity and owner.\n");
+			Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +
+					"\n Not After: "+receivedCertificate.getNotAfter().toString());
+			receivedCertificate.checkValidity();
+
+			Log.println(Log.INFO, Extras.LOG_TAG, "Expected owner: "+expectedOwner+"\n Received owner: "+owner);
+			if (!owner.equals(expectedOwner)) throw new CertificateException("Untrusted owner");
 		} else {
 			trustManager.checkServerTrusted(chain, authType);
 		}

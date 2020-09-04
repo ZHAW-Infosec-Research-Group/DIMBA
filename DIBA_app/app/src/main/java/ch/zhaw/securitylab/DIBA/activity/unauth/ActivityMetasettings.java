@@ -162,7 +162,6 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 			if (metasettings == null) return;
 			
 			runOnUiThread(() -> {
-				// Set Text
 				fieldIp.setText(metasettings.getIp());
 				ArrayAdapter<Difficulty> spinnerAdapter = new ArrayAdapter<>(ActivityMetasettings.this, R.layout.difficulty_entry);
 				spinnerAdapter.addAll(Difficulty.values());

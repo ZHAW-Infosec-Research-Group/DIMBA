@@ -1,10 +1,14 @@
 package ch.zhaw.securitylab.DIBA.networking.tls;
 
 
+import android.util.Log;
+
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+
+import ch.zhaw.securitylab.DIBA.helpers.Extras;
 
 public class TrustManagerLevel1 implements X509TrustManager {
 
@@ -22,7 +26,9 @@ public class TrustManagerLevel1 implements X509TrustManager {
     public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
 
     @Override
-    public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
+    public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
+        Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 1\n No checks.");
+    }
 
     @Override
     public X509Certificate[] getAcceptedIssuers()
