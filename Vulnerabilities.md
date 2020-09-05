@@ -8,13 +8,14 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 ### General issues
 
-Meta Settings: Use LEVEL 1 etc, not LEVEL_1
+In the menu and on the home screen, use "Payments" (not Payment and "Investments" (not Investment).
 
+On the Investments screen, use "Investments" in the title.
 Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen. And also use this everywehere else where there is currently "Meta-Settings" or "Metasettings".
 
-Make sure to adapt the text in "About App". And also the screenshot.
+Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
 
-On the screen with Login & Create Avcount, the logo should be mor centered above the buttons.
+On the screen with Login & Create Account, the logo should be mor centered above the buttons.
 
 On the home screen, move the buttons up to remove free space.
 
@@ -30,10 +31,10 @@ In the Meta Settings, five different levels can be selected that specify the sec
 - **Level 1**: The certificate is not checked at all. This implies that a MITM or interceptor proxy can use any certificate (and corresponding private key) to intercept network communication.
 - **Level 2**: The app checks the identity (subject) of the certificate and whether the certificate has not expired yet. To intercept network communication, one can use any certificate (and corresponding private key) that contains the correct subject and that has not yet expired.
 - **Level 3**: This inluces the checks from level 2 and in addition, it is checked that the certificate is signed by any one of the certificates in the Android trust store. To intercept network communication, one needs a certificate (and corresponding private key) signed by any of the certificates in the Android trust store. Alternatively, one can create a certificate using an own root certifcate and install this root certificate in the Android trust store.
-- **Level 4**: This includes the checks from level 3 and in addition, it is checked whether the certiticate is signed by the DIBA CA certificate. This means the certificate is pinned to the issuing CA. To intercept network communication, one needs a certificate (and corresponding private key) signed by the DIBA CA certificate.
-- **Level 5**: This includes the checks from level 3 and in addition, it is checked whether the certiticate corresponds exactly to the DIBA server certificate. This means the certificate is pinned to the server certificate. To intercept network communication, one needs to use the original DIBA server certificate (and corresponding private key).
+- **Level 4**: This includes the checks from level 2 and in addition, it is checked whether the certiticate is signed by the DIBA CA certificate. This means the certificate is pinned to the issuing CA. To intercept network communication, one needs a certificate (and corresponding private key) signed by the DIBA CA certificate.
+- **Level 5**: This includes the checks from level 2 and in addition, it is checked whether the certiticate corresponds exactly to the DIBA server certificate. This means the certificate is pinned to the server certificate. To intercept network communication, one needs to use the original DIBA server certificate (and corresponding private key).
 
-**Check**: TBD
+**Check**: Works
 
 ### 2: Investments VIP Code (medium)
 To do investments, a VIP code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct VIP code without having to purchase it.
@@ -129,8 +130,6 @@ At the top right of the *Home* screen, thers's a bug-shaped button. Clicking thi
 
 **Check**: Works, can be decrypted using https://cryptii.com/pipes/vigenere-cipher
 
-TBD: enryption ciode must be adapted.
-
 Note: Code is obfuscated and hard to learn. However, looking at the encrypted report, one can also guess that a Vigenere cipher is used. So no need to analyze the obfuscated code to find out what is going on. This should also be stated in the solution chapter.
 
 ### 14: Login Mimic (easy)
@@ -179,8 +178,6 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Check**: Works
 
-Todo: We should change "is_2" to something easier to find, maybe "developer_entrance"?
-
 ### 20: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
@@ -196,16 +193,12 @@ TBD
 
 TBD
 
-### 23: Weak JWT MAC Secret (hard)
+### 23: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
 
 **Goal:** Get a JWT (e.g., by using an intercepor proxy) and crack the MAC password.
 
-**Check**: Works, check available JWT crackers
-
-Use a simpler password
-
-Replace iss "InBank" with "DIBA"
+**Check**: Works
 
 ### 24: Exploitimg Saved Foreign Login Credentials (easy)
 The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
@@ -290,13 +283,7 @@ To confirm a paymemnt, the user gets a payment confirmation code by SMS. Note th
 
 **Check**: Works
 
-Note: The server output should be as follows:
-
-INFO ch.zhaw.securitylab.inbank.server.Server - SMS sent to user:
-INFO ch.zhaw.securitylab.inbank.server.Server - Payment date: 2020-00-02 09:12:42
-INFO ch.zhaw.securitylab.inbank.server.Server - Payment amount: 10
-INFO ch.zhaw.securitylab.inbank.server.Server - Payment recipient: target@bla.fasel
-INFO ch.zhaw.securitylab.inbank.server.Server - Confirmation code: a4f32a
+Addd "stars" in the server log before and after the SMS content
 
 The text in the app should be:
 
