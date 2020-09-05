@@ -146,7 +146,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvest"
-            android:label="Investment"
+            android:label="Investments"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

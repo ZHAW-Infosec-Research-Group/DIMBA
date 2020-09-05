@@ -16,8 +16,7 @@ import ch.zhaw.securitylab.DIBA.R;
 /**
  * The drawer for all authenticated activities of InBank.
  */
-public class NavigationAuth extends InNavigation
-{
+public class NavigationAuth extends InNavigation {
 	// -------------------------------------------- //
 	// CONSTRUCT
 	// -------------------------------------------- //
@@ -32,8 +31,7 @@ public class NavigationAuth extends InNavigation
 	// -------------------------------------------- //
 	
 	@Override
-	protected Class<?> getClassForId(int viewID)
-	{
+	protected Class<?> getClassForId(int viewID) {
 		switch (viewID)
 		{
 			case R.id.nav_go_home:

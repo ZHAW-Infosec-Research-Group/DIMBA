@@ -3,8 +3,7 @@ package ch.zhaw.securitylab.DIBA.activity;
 /**
  * Represents, how or if the toolbar should be used in an activity
  */
-public enum ToolbarMode
-{
+public enum ToolbarMode {
 	// -------------------------------------------- //
 	// ENUM
 	// -------------------------------------------- //

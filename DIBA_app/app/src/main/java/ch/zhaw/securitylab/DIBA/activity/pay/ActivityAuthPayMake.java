@@ -157,21 +157,19 @@ public class ActivityAuthPayMake extends ActivityBoundAbstract {
 	private Bundle fetchFieldData() {
 		// Create
 		Bundle bundle = new Bundle();
-		
-		// Fill
-		EditText fieldAmount = findViewById(R.id.payAmount);
-		String amount = fieldAmount.getText().toString();
-		bundle.putString(Extras.AMOUNT, amount);
-		
+
 		EditText fieldTarget = findViewById(R.id.payTarget);
 		String target = fieldTarget.getText().toString();
 		bundle.putString(Extras.TARGET, target);
-		
+
 		String currency = getCurrency(pickerCurrency);
 		bundle.putString(Extras.CURRENCY, currency);
-		
+
+		EditText fieldAmount = findViewById(R.id.payAmount);
+		String amount = fieldAmount.getText().toString();
 		bundle.putString(Extras.AMOUNT_SFR, getAmountInSfr(amount, currency));
-		
+		bundle.putString(Extras.AMOUNT, amount);
+
 		// Return
 		return bundle;
 	}

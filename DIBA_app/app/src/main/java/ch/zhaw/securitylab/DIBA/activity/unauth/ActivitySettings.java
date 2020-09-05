@@ -49,19 +49,19 @@ public class ActivitySettings extends ActivityDIBAAbstract {
 
 		super.onCreate(savedInstanceState);
 		
-		fieldRemember = findViewById(R.id.settingsRememberCheck);
-		fieldAuto     = findViewById(R.id.settingsAutoUpdate);
-		fieldPackage  = findViewById(R.id.settingsDebugPackage);
+		fieldRemember      = findViewById(R.id.settingsRememberCheck);
+		fieldAuto          = findViewById(R.id.settingsAutoUpdate);
+		fieldPackage       = findViewById(R.id.settingsDebugPackage);
 		fieldRootDetection = findViewById(R.id.settingsRootDetectionBox);
-		fieldClass = findViewById(R.id.settingsDebugClass);
+		fieldClass         = findViewById(R.id.settingsDebugClass);
 
 		loginPreferences   = getSharedPreferences(PREFERENCE_NAME, PREFERENCE_MODE);
 		rootDetPreferences = getSharedPreferences("rootDetPreferences", PREFERENCE_MODE);
 
-		button(onRememberMe(), R.id.settingsRememberCheck);
-		button(onAutoUpdate(), R.id.settingsAutoUpdate);
+		button(onRememberMe(),     R.id.settingsRememberCheck);
+		button(onAutoUpdate(),     R.id.settingsAutoUpdate);
 		button(onDisableRootDet(), R.id.settingsRootDetectionBox);
-		button(onResetDefault(), R.id.settingsResetDefault);
+		button(onResetDefault(),   R.id.settingsResetDefault);
 
 		initFields();
 		initTextListeners();

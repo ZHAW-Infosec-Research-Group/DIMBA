@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ch.zhaw.securitylab.inbank</groupId>
+    <groupId>ch.zhaw.securitylab.diba</groupId>
     <artifactId>server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -100,7 +100,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ch.zhaw.securitylab.inbank.server.Server</mainClass>
+                            <mainClass>ch.zhaw.securitylab.diba.server.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -114,7 +114,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>ch.zhaw.securitylab.inbank.server.Server</mainClass>
+                            <mainClass>ch.zhaw.securitylab.diba.server.Server</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

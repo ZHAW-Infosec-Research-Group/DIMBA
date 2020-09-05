@@ -33,8 +33,7 @@ import java.util.Date;
 /**
  * The main investment activity handles making investments and routing to the invest list activity.
  */
-public class ActivityAuthInvest extends ActivityBoundAbstract
-{
+public class ActivityAuthInvest extends ActivityBoundAbstract {
 	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //

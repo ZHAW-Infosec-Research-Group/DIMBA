@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="InBankServer">
-    <output-path>$PROJECT_DIR$/out/artifacts/InBankServer</output-path>
-    <root id="archive" name="InBankServer.jar">
-      <element id="module-output" name="InBankServer" />
+  <artifact type="jar" name="dibaServer">
+    <output-path>$PROJECT_DIR$/out/artifacts/dibaServer</output-path>
+    <root id="archive" name="dibaServer.jar">
+      <element id="module-output" name="dibaServer" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-servlet/9.4.8.v20171121/websocket-servlet-9.4.8.v20171121.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-stdlib/1.2.21/kotlin-stdlib-1.2.21.jar" path-in-jar="/" />
