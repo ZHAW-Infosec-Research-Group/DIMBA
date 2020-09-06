@@ -1,7 +1,4 @@
-/*C1*/SET SCHEMA SYSTEM_LOBS
-INSERT INTO BLOCKS VALUES(0,2147483647,0)
-COMMIT
-/*C2*/SET SCHEMA PUBLIC
+/*C4*/SET SCHEMA PUBLIC
 CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255))
 CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))
 CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)

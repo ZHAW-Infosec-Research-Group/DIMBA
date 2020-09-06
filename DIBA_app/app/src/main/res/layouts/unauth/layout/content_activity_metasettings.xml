@@ -24,6 +24,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/diba_text"
             android:hint="DIBA Server IP"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText"
             android:inputType="text|textVisiblePassword"
             android:textSize="8pt" />
     </com.google.android.material.textfield.TextInputLayout>

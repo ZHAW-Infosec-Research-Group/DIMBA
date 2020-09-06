@@ -67,27 +67,26 @@
         your own malicious app.
     </string>
     <string name="about_the_app_runtitle">How to use the app.</string>
-    <string name="about_the_app_run_text">Run an instance of the DIBAServer on your PC, as long as it has internet
+    <string name="about_the_app_run_text">Run an instance of the DIBA Server on your PC, as long as it has internet
         connectivity
         you should be fine. Be aware that if your cellphone and server are not in the same network, you might have to
         port forward
         the port 8443 for it to work. Now you must fetch the ip address of your server with ifconfig (or simmilar) and
-        adjust IP in the metasettings of DIBA.
+        adjust IP in the meta settings of DIBA.
     </string>
     <string name="about_the_app_run_communication">
         While the communication between the client (app) and server are not the main focus of DIBAs security, you can
         adjust the difficulty level of the communication security to test your knowledge in ssl/tls and certificates.
     </string>
     <string name="about_the_app_metatitle">About the Metasettings</string>
-    <string name="about_the_app_meta_text">The Metasettings screen is not ment to be attacked.
+    <string name="about_the_app_meta_text">The Meta settings screen is not ment to be attacked.
         Currently there are three settings you can change to your liking:
     </string>
-    <string name="about_the_app_meta_text_ip">1) IP, change this field to the IP of your DIBAServer to make the app
+    <string name="about_the_app_meta_text_ip">1) IP, change this field to the IP of your DIBA Server to make the app
         functional.
     </string>
     <string name="about_the_app_meta_text_difficulty">2) Difficulty, as mentioned above, change to see if you could
-        break
-        the communication even on different levels. Note that Difficulty REALLY_HARD has no known weakness.
+        break the communication even on different levels. Note that Difficulty level 5 has no known weakness.
     </string>
     <string name="about_the_app_meta_text_timeout">3) Timeout, the amount of milliseconds till the connection times
         out.

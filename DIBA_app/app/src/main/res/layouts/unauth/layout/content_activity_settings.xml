@@ -15,6 +15,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="216dp"
         android:fontFamily="@font/diba_text"
+        android:textColor="@color/colorText"
         android:text="Login settings"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textSize="24sp"
@@ -29,6 +30,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="140dp"
+        android:textColor="@color/colorText"
         android:fontFamily="@font/diba_text"
         android:text="Connection settings"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -45,6 +47,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="208dp"
+        android:textColor="@color/colorText"
         android:fontFamily="@font/diba_text"
         android:text="Debug settings"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -54,31 +57,40 @@
         app:layout_constraintTop_toBottomOf="@+id/settingsRootDetection" />
 
     <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/settingsBoxPackage" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/settingsDebugText" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp">
-
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorText"
+        android:id="@+id/settingsBoxPackage"
+        android:layout_marginTop="16dp"
+        app:hintTextAppearance="@style/hint_style"
+        app:layout_constraintTop_toBottomOf="@+id/settingsDebugText" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp">
         <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Package" android:id="@+id/settingsDebugPackage"
-                android:text="ch.zhaw.securitylab.DIBA"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText"
+            android:hint="Package" android:id="@+id/settingsDebugPackage"
+            android:text="ch.zhaw.securitylab.DIBA"/>
     </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/settingsBoxClass"
-            app:layout_constraintTop_toBottomOf="@+id/settingsBoxPackage" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
-            android:layout_marginTop="8dp">
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:textColor="@color/colorText"
+        app:hintTextAppearance="@style/hint_style"
+        android:layout_height="wrap_content"
+        android:id="@+id/settingsBoxClass"
+        app:layout_constraintTop_toBottomOf="@+id/settingsBoxPackage" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp">
         <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Class" android:id="@+id/settingsDebugClass"
-                android:text="ch.zhaw.securitylab.DIBA.ActivityAuthPayAccept"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:textColorHint="@color/colorText"
+            android:hint="Class" android:id="@+id/settingsDebugClass"
+            android:text="ch.zhaw.securitylab.DIBA.ActivityAuthPayAccept"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -129,6 +141,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="204dp"
+        android:textColor="@color/colorText"
         android:fontFamily="@font/diba_text"
         android:text="Root Detection"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"

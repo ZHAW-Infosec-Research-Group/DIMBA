@@ -31,7 +31,7 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_activity_metasettings"
+        <include layout="@layout/content_activity_metasettings2"
                  android:layout_marginTop="?attr/actionBarSize"
                  android:layout_width="match_parent"
                  android:layout_height="match_parent"/>
