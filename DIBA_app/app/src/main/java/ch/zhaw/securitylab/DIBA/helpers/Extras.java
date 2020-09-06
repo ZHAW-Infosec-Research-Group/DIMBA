@@ -25,5 +25,4 @@ public class Extras
 	public static final String FRAGMENT = "credentials_fragment";
 	public static final String FRAGMENT_LOGIN = "ch.zhaw.securitylab.DIBA.activity.unauth.FragmentLogin";
 	public static final String FRAGMENT_SIGNIN = "ch.zhaw.securitylab.DIBA.activity.unauth.FragmentSignIn";
-	public static final String FRAGMENT_ROOT_DETECTION = "ch.zhaw.securitylab.DIBA.activity.unauth.FragmentRootDetection";
 }

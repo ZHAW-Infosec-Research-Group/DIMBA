@@ -77,7 +77,12 @@ public abstract class ActivityDIBAAbstract extends AppCompatActivity {
 		buttons = new Buttons(this);
 		context = this;
 	}
-	
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+	}
+
 	@Override
 	protected void onPostResume() {
 		super.onPostResume();

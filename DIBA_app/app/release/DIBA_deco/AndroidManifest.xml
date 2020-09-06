@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="ch.zhaw.securitylab.DIBA" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <permission android:name="ch.zhaw.securitylab.DIBA.permission.READ"/>
+    <permission android:description="@string/permission_description__accept_payment" android:label="@string/permission_lable_accept_payment" android:name="ch.zhaw.securitylab.DIBA.PayAccept" android:protectionLevel="normal"/>
+    <permission android:description="@string/permission_description_messages" android:label="@string/permission_lable_messages" android:name="ch.zhaw.securitylab.DIBA.Messages" android:protectionLevel="dangerous"/>
+    <uses-permission android:name="ch.zhaw.securitylab.DIBA.PayAccept"/>
+    <uses-permission android:name="ch.zhaw.securitylab.DIBA.Messages"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="ch.zhaw.securitylab.DIBA.DIBA" android:requestLegacyExternalStorage="true" android:roundIcon="@mipmap/ic_launcher" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:label="Access Stock Market Wall" android:name="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockWall" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Stock Market Wall" android:name="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockList" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockWall" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Real-time stock market data" android:name="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStock" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockList" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivitySurvey"/>
+        <activity android:label="@string/app_name" android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_info" android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityInfo" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Manage your Payments" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPay" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Make a Payment" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPayMake" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Transactions" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPayList" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:exported="true" android:label="@string/title_activity_auth_pay_accept" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPayAccept" android:permission="ch.zhaw.securitylab.DIBA.PayAccept" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Load a Payment Slip" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPaySlip" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_auth_pay_slip_info" android:name="ch.zhaw.securitylab.DIBA.activity.pay.ActivityAuthPaySlipInfo" android:theme="@style/AppTheme.NoActionBar"/>
+        <provider android:authorities="ch.zhaw.securitylab.DIBA.settings" android:enabled="true" android:exported="true" android:grantUriPermissions="true" android:name="ch.zhaw.securitylab.DIBA.ProviderSettings" android:readPermission="ch.zhaw.securitylab.DIBA.permission.READ"/>
+        <activity android:label="@string/title_activity_settings" android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivitySettings" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Meta Settings" android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityMetasettings" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:exported="true" android:name="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityCredentials" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentSignIn" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentRootDetection" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentChange" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="ch.zhaw.securitylab.DIBA.activity.unauth.FragmentLogin" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.unauth.ActivityLanding" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:exported="true" android:label="Messages" android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMessages" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:permission="ch.zhaw.securitylab.DIBA.Messages" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="Investments" android:name="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvest" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_auth_invest_wall" android:name="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvestWall" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_auth_invest_list" android:name="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvestList" android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvest" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity-alias android:exported="true" android:name="ch.zhaw.securitylab.DIBA.SeeInvest" android:targetActivity="ch.zhaw.securitylab.DIBA.activity.invest.ActivityAuthInvestList"/>
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+        <service android:enabled="true" android:exported="true" android:name="ch.zhaw.securitylab.DIBA.service.ServiceCurrencyExchange"/>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <provider android:authorities="ch.zhaw.securitylab.DIBA.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+    </application>
+</manifest>

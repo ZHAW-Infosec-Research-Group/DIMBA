@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -23,7 +24,10 @@ import ch.zhaw.securitylab.DIBA.activity.ToolbarMode;
 import ch.zhaw.securitylab.DIBA.data.metasettings.Difficulty;
 import ch.zhaw.securitylab.DIBA.data.metasettings.Metasettings;
 import ch.zhaw.securitylab.DIBA.data.metasettings.MetasettingsDao;
+import ch.zhaw.securitylab.DIBA.helpers.Extras;
 import ch.zhaw.securitylab.DIBA.helpers.Toasty;
+
+import static ch.zhaw.securitylab.DIBA.activity.unauth.FragmentLogin.PREFERENCE_MODE;
 
 /**
  * The metasettings activity manages the ip, difficulty and timeout settings of the app.
@@ -31,35 +35,29 @@ import ch.zhaw.securitylab.DIBA.helpers.Toasty;
  */
 public class ActivityMetasettings extends ActivityDIBAAbstract {
 
-	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
-	
 	private EditText fieldIp;
 	private Spinner spinnerDifficulty;
 	private EditText timeout;
-	private Button testServerButton;
+	private CheckBox fieldRootDetection;
+	private SharedPreferences rootDetPreferences;
 
 
-	// -------------------------------------------- //
-	// CONSTRUCT & CREATE
-	// -------------------------------------------- //
-	
 	public ActivityMetasettings() { super(R.layout.activity_metasettings, ToolbarMode.NAV_AUTH, R.id.nav_go_meta); }
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		fieldIp = findViewById(R.id.metasettingsIp);
 		spinnerDifficulty = findViewById(R.id.metasettingsSpinnerDifficulty);
 		timeout = findViewById(R.id.metasettingsTimeout);
-		
+		fieldRootDetection = findViewById(R.id.settingsRootDetectionBox);
+		rootDetPreferences = getSharedPreferences("rootDetPreferences", PREFERENCE_MODE);
+
 		button(onSaveMetasettings(), R.id.metasettingsButtonSave);
 		button(onResetApp(), R.id.metasettingsButtonReset);
 		button(onTestServer(), R.id.metasettingsButtonTest);
-
+		button(onEnableRootDet(), R.id.settingsRootDetectionBox);
 	}
 	
 	@Override
@@ -67,10 +65,14 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 		super.onResume();
 		initializeFields();
 	}
-	
-	// -------------------------------------------- //
-	// BUTTONS
-	// -------------------------------------------- //
+
+	private OnClickListener onEnableRootDet() {
+		return (View v) -> {
+			Editor editor = rootDetPreferences.edit();
+			editor.putBoolean(Extras.ROOT_DET_DISABLE, fieldRootDetection.isChecked());
+			editor.apply();
+		};
+	}
 
 	private OnClickListener onTestServer() {
 		return (View v) -> {
@@ -127,7 +129,12 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 				preferences.edit().clear().apply();
 				preferences = PreferenceManager.getDefaultSharedPreferences(DIBA.get());
 				preferences.edit().clear().apply();
-				
+
+				// Root Detection preferences
+				Editor editor = rootDetPreferences.edit();
+				editor.putBoolean(Extras.ROOT_DET_DISABLE, true);
+				editor.apply();
+
 				resetCurrencyExchange();
 			}).start();
 			Toasty.longCenterToast("Successfully reset all resources in the app.");
@@ -170,6 +177,8 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 				spinnerDifficulty.setSelection(metasettings.getDifficulty().ordinal());
 				spinnerAdapter.notifyDataSetChanged();
 				timeout.setText(String.valueOf(metasettings.getTimeout()));
+
+				fieldRootDetection.setChecked(rootDetPreferences.getBoolean(Extras.ROOT_DET_DISABLE, true));
 			});
 		}).start();
 	}

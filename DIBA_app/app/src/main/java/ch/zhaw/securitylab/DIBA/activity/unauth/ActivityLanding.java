@@ -38,7 +38,25 @@ public class ActivityLanding extends ActivityDIBAAbstract {
 
 		// Root detection
 		preferences = context.getSharedPreferences("rootDetPreferences", Context.MODE_PRIVATE);
-		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, false)) {
+		System.out.println("preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)");
+		System.out.println(preferences.getBoolean(Extras.ROOT_DET_DISABLE, true));
+		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)) {
+			boolean rooted = rootedDevice();
+			FragmentManager fm = getSupportFragmentManager();
+			FragmentRootDetection alertDialog = FragmentRootDetection.newInstance(rooted);
+			alertDialog.show(fm, "fragment_alert");
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		// Root detection
+		preferences = context.getSharedPreferences("rootDetPreferences", Context.MODE_PRIVATE);
+		System.out.println("preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)");
+		System.out.println(preferences.getBoolean(Extras.ROOT_DET_DISABLE, true));
+		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)) {
 			boolean rooted = rootedDevice();
 			FragmentManager fm = getSupportFragmentManager();
 			FragmentRootDetection alertDialog = FragmentRootDetection.newInstance(rooted);
@@ -48,20 +66,20 @@ public class ActivityLanding extends ActivityDIBAAbstract {
 
 	public boolean rootedDevice() {
 		boolean rooted = false;
-		// 1st check
+		// 1st check if it exists su command
 		for (String file : System.getenv("PATH").split(":")) {
 			if (new File(file, "su").exists()) {
 				rooted = true;
 				Log.i(Extras.LOG_TAG, "Detected Rooted Device!");
 			}
 		}
-		// 2nd check
+		// 2nd check if test-keys is in the build tags
 		String str = Build.TAGS;
 		if (str != null && str.contains("test-keys")) {
 			rooted = true;
 			Log.i(Extras.LOG_TAG, "Detected Rooted Device!");
 		}
-		// 3rd check
+		// 3rd check if known root files exist
 		for (String file : new String[]{"/system/app/Superuser.apk", "/system/xbin/daemonsu", "/system/etc/init.d/99SuperSUDaemon",
 				"/system/bin/.ext/.su", "/system/etc/.has_su_daemon", "/system/etc/.installed_su_daemon",
 				"/dev/com.koushikdutta.superuser.daemon/", "/system/app/Superuser/Superuser.apk", "/system/app/Superuser.apk",

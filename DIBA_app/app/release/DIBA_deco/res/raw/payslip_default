@@ -1,0 +1,6 @@
+<payslip>
+    target = max.mueller@example.com
+    amount = 335.50
+    ref-nr = 123 345 567 789
+    currency = Sfr
+</payslip>

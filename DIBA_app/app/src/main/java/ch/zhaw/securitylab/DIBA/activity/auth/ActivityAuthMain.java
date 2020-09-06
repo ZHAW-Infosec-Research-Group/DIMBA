@@ -48,9 +48,9 @@ public class ActivityAuthMain extends ActivityDIBAAbstract {
 		button(onFetchBalance(), R.id.mainBalanceFetch, R.id.mainImageBalance);
 		button(ActivityAuthPay.class, R.id.mainGoPayment, R.id.mainImagePay);
 		button(ActivityAuthInvestWall.class, R.id.mainGoInvestment, R.id.mainImageInvest);
-		button(ActivityAuthMessages.class, R.id.mainGoMessages, R.id.mainImageMessage);
 		button(ActivityAuthStockWall.class, R.id.mainStockMarket, R.id.mainImageStockMarket);
-
+		button(ActivityAuthMessages.class, R.id.mainGoMessages, R.id.mainImageMessage);
+		button(ActivitySurvey.class, R.id.mainGoSurvey, R.id.mainImageSurvey);
 		button(onLogout(), R.id.mainGoLogout, R.id.mainImageLogout);
 	}
 	

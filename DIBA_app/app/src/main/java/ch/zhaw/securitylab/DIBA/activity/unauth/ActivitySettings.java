@@ -24,23 +24,13 @@ import static ch.zhaw.securitylab.DIBA.activity.unauth.FragmentLogin.PREFERENCE_
  * The settings activity manages all settings of the app, that the actual user of the app should have control over.
  */
 public class ActivitySettings extends ActivityDIBAAbstract {
-
-	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
 	
 	private CheckBox fieldRemember;
 	private CheckBox fieldAuto;
-	private CheckBox fieldRootDetection;
 	private EditText fieldPackage;
 	private EditText fieldClass;
 
 	private SharedPreferences loginPreferences;
-	private SharedPreferences rootDetPreferences;
-
-	// -------------------------------------------- //
-	// CONSTRUCT & CREATE
-	// -------------------------------------------- //
 	
 	public ActivitySettings() { super(R.layout.activity_settings, ToolbarMode.NAV_AUTH, R.id.nav_go_settings); }
 	
@@ -52,15 +42,12 @@ public class ActivitySettings extends ActivityDIBAAbstract {
 		fieldRemember      = findViewById(R.id.settingsRememberCheck);
 		fieldAuto          = findViewById(R.id.settingsAutoUpdate);
 		fieldPackage       = findViewById(R.id.settingsDebugPackage);
-		fieldRootDetection = findViewById(R.id.settingsRootDetectionBox);
 		fieldClass         = findViewById(R.id.settingsDebugClass);
 
 		loginPreferences   = getSharedPreferences(PREFERENCE_NAME, PREFERENCE_MODE);
-		rootDetPreferences = getSharedPreferences("rootDetPreferences", PREFERENCE_MODE);
 
 		button(onRememberMe(),     R.id.settingsRememberCheck);
 		button(onAutoUpdate(),     R.id.settingsAutoUpdate);
-		button(onDisableRootDet(), R.id.settingsRootDetectionBox);
 		button(onResetDefault(),   R.id.settingsResetDefault);
 
 		initFields();
@@ -88,16 +75,6 @@ public class ActivitySettings extends ActivityDIBAAbstract {
 			int rows = getContentResolver().update(ProviderSettings.CONTENT_URI, values, "_id=1", null);
 		};
 	}
-
-	private OnClickListener onDisableRootDet()
-	{
-		return (View v) ->
-		{
-			Editor editor = rootDetPreferences.edit();
-			editor.putBoolean(Extras.ROOT_DET_DISABLE, fieldRootDetection.isChecked());
-			editor.apply();
-		};
-	}
 	
 	private OnClickListener onResetDefault() {
 		return (View v) -> {
@@ -122,11 +99,6 @@ public class ActivitySettings extends ActivityDIBAAbstract {
 			Editor editor = loginPreferences.edit();
 			editor.putBoolean(Extras.SHARED_REMEMBER, true);
 			editor.apply();
-
-			// Root Detection preferences
-			editor = rootDetPreferences.edit();
-			editor.putBoolean(Extras.ROOT_DET_DISABLE, false);
-			editor.apply();
 		};
 	}
 	
@@ -146,7 +118,6 @@ public class ActivitySettings extends ActivityDIBAAbstract {
 		
 		// Set Checkboxes
 		fieldRemember.setChecked(loginPreferences.getBoolean(Extras.SHARED_REMEMBER, false));
-		fieldRootDetection.setChecked(rootDetPreferences.getBoolean(Extras.ROOT_DET_DISABLE, false));
 		fieldAuto.setChecked("1".equals(autoUpdate));
 	}
 	

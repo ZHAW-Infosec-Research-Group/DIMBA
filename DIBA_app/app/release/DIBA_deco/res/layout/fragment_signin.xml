@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/login_form" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/email_login_form" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <AutoCompleteTextView android:id="@id/signEmail" android:layout_width="fill_parent" android:layout_height="50.0dip" android:hint="@string/prompt_email" android:maxLines="1" android:singleLine="true" android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <EditText android:id="@id/signPassword" android:layout_width="fill_parent" android:layout_height="50.0dip" android:hint="@string/prompt_password" android:maxLines="1" android:singleLine="true" android:inputType="textPassword" android:imeOptions="actionUnspecified|normal" android:imeActionLabel="@string/action_sign_in_short" android:imeActionId="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button android:textSize="24.0sp" android:textStyle="bold" android:textColor="@android:color/background_light" android:id="@id/signButtonIn" android:background="@drawable/button_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="16.0dip" android:text="@string/action_sign_in" android:textAllCaps="false" android:fontFamily="@font/diba_text" android:textAlignment="center" style="?android:textAppearanceSmall" />
+            <Button android:textSize="24.0sp" android:textStyle="bold" android:textColor="@android:color/background_light" android:id="@id/signButtonCancel" android:background="@drawable/button_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="16.0dip" android:text="@string/action_sign_cancel" android:textAllCaps="false" android:fontFamily="@font/diba_text" android:textAlignment="center" style="?android:textAppearanceSmall" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -27,9 +27,7 @@ public class ActivitySurvey extends AppCompatActivity {
 
     WebView surveyView;
 
-//    public ActivitySurvey() { super(R.layout.activity_survey, ToolbarMode.NAV_AUTH, R.id.nav_go_home); }
     public ActivitySurvey() {}
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +49,7 @@ public class ActivitySurvey extends AppCompatActivity {
         });
         Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
         surveyView.loadUrl("https://"+metasettings.getIp()+":8443/survey");
+//        surveyView.loadUrl("https://10.0.2.2:8443/survey");
     }
     
     public class JavaScriptInterface {

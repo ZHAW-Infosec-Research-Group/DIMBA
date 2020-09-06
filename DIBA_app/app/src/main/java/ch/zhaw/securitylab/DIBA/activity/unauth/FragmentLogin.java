@@ -31,7 +31,7 @@ public class FragmentLogin extends FragmentDIBAAbstract {
 	
 	protected static final String PREFERENCE_NAME = "loginPreferences";
 	@SuppressWarnings("deprecation")
-	protected static final int PREFERENCE_MODE = Context.MODE_PRIVATE; // Debug: Change later
+	protected static final int PREFERENCE_MODE = Context.MODE_PRIVATE;
 	
 	// -------------------------------------------- //
 	// FIELDS

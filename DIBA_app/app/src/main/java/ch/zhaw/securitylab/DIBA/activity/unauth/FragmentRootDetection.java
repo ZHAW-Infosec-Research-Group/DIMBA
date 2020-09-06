@@ -27,7 +27,7 @@ public class FragmentRootDetection extends DialogFragment {
         FragmentRootDetection fragment = new FragmentRootDetection();
         Bundle args = new Bundle();
         String r = rooted ? "Rooted Device Detected!" : "Device Okay!";
-        String m = rooted ? "DIBA will automatically uninstall for security reason.\n You can disable this message in the settings." : "Trusted Device, no root found.";
+        String m = rooted ? "DIBA will automatically uninstall for security reason.\n You can disable this message in the meta settings." : "Trusted Device, no root found.";
         args.putString("ROOTED", r);;
         args.putString("MESSAGE", m);;
         fragment.setArguments(args);
