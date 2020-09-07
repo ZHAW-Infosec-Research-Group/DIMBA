@@ -1,8 +1,18 @@
+# Create openssl policy that only needs the organization name
+[ policy_organization_name ]
+countryName             = optional
+stateOrProvinceName     = optional
+localityName            = optional
+organizationName        = supplied
+organizationalUnitName  = optional
+commonName              = optional
+emailAddress            = optional
+
 # Generate DIBA CA private key
 openssl genrsa -out DIBA_CA.key 2048
 
-# Generate DIBA CA certificate (25 years validity)
-openssl req -x509 -new -key DIBA_CA.key -sha256 -days 9125 -out DIBA_CA.pem
+# Generate DIBA CA certificate (15 years validity)
+openssl req -x509 -new -key DIBA_CA.key -sha256 -days 5475 -out DIBA_CA.pem
 
 # Generate DIBA Server private key
 openssl genrsa -out DIBA_Server.key 2048
@@ -24,3 +34,6 @@ openssl pkcs12 -export -in DIBA_Server.crt -inkey DIBA_Server.key -out DIBA_Serv
 
 # Import p12 to keystore
 keytool -importkeystore -srckeystore DIBA_Server.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
+
+# List keystore entries
+keytool -list -v -keystore keystore.jks
