@@ -13,50 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36f345ca-1f8a-4add-8e87-63903ed34f0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/app-release.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/output-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/output-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/DIBA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/DIBA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/ActivityDIBAAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/ActivityDIBAAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivityAuthMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivityAuthMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivitySurvey.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/auth/ActivitySurvey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityLanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityLanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityMetasettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivityMetasettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivitySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/ActivitySettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/FragmentLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/FragmentLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/FragmentRootDetection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/activity/unauth/FragmentRootDetection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/helpers/Extras.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ch/zhaw/securitylab/DIBA/helpers/Extras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/auth/layout/content_activity_auth_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/auth/layout/content_activity_auth_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/other/layout/fragment_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/paging/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/paging/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/recyclerview/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/androidx/recyclerview/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/lint-cache/maven.google/master-index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.lck" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.lck" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.script" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/controllers/ControllerSurvey.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/controllers/ControllerSurvey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/classes/ch/zhaw/securitylab/diba/server/controllers/ControllerSurvey.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/target/classes/ch/zhaw/securitylab/diba/server/controllers/ControllerSurvey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT-jar-with-dependencies.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.lck" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +90,7 @@
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layouts/other/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../InBankExploit" />
     <property name="project.structure.last.edited" value="Suggestions" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -402,26 +363,26 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="311" width="824" height="491" key="AndroidCreateResourceFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1598727074656" />
-    <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl" timestamp="1599316195258">
+    <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl" timestamp="1599481978710">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599316195258" />
-    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1599414447401">
+    <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599481978710" />
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1599464422184">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599414447401" />
-    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1599414447400">
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1599464422184" />
+    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1599464422184">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599414447400" />
-    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1599414447400">
+    <state width="1874" height="271" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1599464422184" />
+    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1599464422184">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599414447400" />
-    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1599414447401">
+    <state width="1874" height="271" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1599464422184" />
+    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1599464422184">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599414447401" />
+    <state width="1874" height="271" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1599464422184" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1596539660605">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
