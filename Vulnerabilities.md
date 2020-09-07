@@ -12,18 +12,14 @@ Investments: The text "Manage your investments!" can be removed.
 
 Investments: "Amount:" should be "Amount".
 
-Meta Settings: Save Button is under the Reste App button.
-
-Use "Meta Settings" instead of "Meta-Settings" in the menu and at the very top of the corresponding screen. And also use this everywehere else where there is currently "Meta-Settings" or "Metasettings".
+Meta Settings: Save Button is hidden under the Reset App button.
 
 Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
 
-On the screen with Login & Create Account, the logo should be mor centered above the buttons.
+On the screen with Login & Create Account, the logo should be mor centered above the buttons. Not so critical...
 
-On the home screen, move the buttons up to remove free space.
+Settings screen needs better formatting.
 
-
-Meta Settings: "IP" is red, "Security of..." is grey, "Timeout Ms" is a bit smaller. Make sure to use always the same font & color. Use font of "Certifcate Check Security" for all the settings.
 
 ### 1: Certificate Check Security
 
@@ -190,7 +186,10 @@ In the file *AndroidManifest.xml* that is part of every app, the developer can s
 
 ### 21: Fragment injection
 
-TBD
+I don't undersdtand this one.
+
+Using the followong when not being logged in crashes the app:
+am start -n "ch.zhaw.securitylab.dibach.zhaw.securitylab.diba.activity.unauth.ActivityCredentials" -e credentials_fragment ch.zhaw.securitylab.diba.activity.unauth.FragmentChange
 
 ### 22: Insecure services
 
