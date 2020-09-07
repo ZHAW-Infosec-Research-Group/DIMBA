@@ -81,16 +81,16 @@ public class InHttpsStack extends HurlStack {
 	}
 	
 	@NonNull
-	private TrustManager[] getTrustManagers(TrustManagerFactory tmf, Difficulty difficulty) {
-		if (difficulty == Difficulty.LEVEL_1) {
+	private TrustManager[] getTrustManagers(TrustManagerFactory tmf, int difficulty) {
+		if (difficulty == 1) {
 			return TrustManagerLevel1.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_2) {
+		} else if (difficulty == 2) {
 			return TrustManagerLevel2.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_3) {
+		} else if (difficulty == 3) {
 			return TrustManagerLevel3.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_4) {
+		} else if (difficulty == 4) {
 			return TrustManagerLevel4.getWrappedTrustManagers(tmf.getTrustManagers());
-		} else if (difficulty == Difficulty.LEVEL_5) {
+		} else if (difficulty == 5) {
 			return TrustManagerLevel5.getWrappedTrustManagers(tmf.getTrustManagers());
 		} else {
 			return tmf.getTrustManagers();
@@ -98,10 +98,11 @@ public class InHttpsStack extends HurlStack {
 	}
 	
 	@NonNull
-	private KeyStore getKeyStore(Difficulty difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
+//	private KeyStore getKeyStore(Difficulty difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
+	private KeyStore getKeyStore(int difficulty) throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException {
 		KeyStore keyStore = null;
 
-		if (difficulty == Difficulty.LEVEL_4) {
+		if (difficulty == 4) {
 			keyStore = KeyStore.getInstance("BKS");
 			
 			CertificateFactory cf = CertificateFactory.getInstance("X.509");
@@ -112,7 +113,7 @@ public class InHttpsStack extends HurlStack {
 			keyStore.load(null, null);
 			keyStore.setCertificateEntry("ca", ca);
 
-		} else if (difficulty == Difficulty.LEVEL_5) {
+		} else if (difficulty == 5) {
 				keyStore = KeyStore.getInstance("BKS");
 
 				CertificateFactory cf = CertificateFactory.getInstance("X.509");

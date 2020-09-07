@@ -124,13 +124,6 @@ public class DIBA extends Application {
         this.jwtToken = jwt;
     }
 
-    public String getJwtOrThrow() {
-        if (jwtToken == null) {
-            throw new RuntimeException("No jwt was set.");
-        }
-        return jwtToken;
-    }
-
     public void resetJwt() {
         this.setJwt(null);
     }
@@ -189,7 +182,7 @@ public class DIBA extends Application {
             MetasettingsDao metasettingsDao = metasettingsDb.metasettingsDao();
             Metasettings metasettings = metasettingsDao.getSettings();
             if (metasettings == null) {
-                metasettings = new Metasettings("10.0.2.2", Difficulty.LEVEL_3, 50000);
+                metasettings = new Metasettings("10.0.2.2", 3, 50000);
                 metasettings.setUid(1);
                 metasettingsDao.insert(metasettings);
                 Log.i(Extras.LOG_TAG, "Create Metasettings Entry");

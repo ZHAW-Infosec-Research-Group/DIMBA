@@ -8,11 +8,11 @@ public enum Difficulty {
 //	LEVEL_4,
 //	LEVEL_5
 
-	LEVEL_1("LEVEL 1"),
-	LEVEL_2("LEVEL 2"),
-	LEVEL_3("LEVEL 3"),
-	LEVEL_4("LEVEL 4"),
-	LEVEL_5("LEVEL 5");
+	LEVEL_1("1"),
+	LEVEL_2("2"),
+	LEVEL_3("3"),
+	LEVEL_4("4"),
+	LEVEL_5("5");
 
 	private final String text;
 
@@ -23,6 +23,15 @@ public enum Difficulty {
 	@Override
 	public String toString() {
 		return text;
+	}
+
+	public static int toInt(String text) {
+		if (text.equals("1")) return 1;
+		if (text.equals("2")) return 2;
+		if (text.equals("3")) return 3;
+		if (text.equals("4")) return 4;
+		if (text.equals("5")) return 5;
+		return 0;
 	}
 
 	public static Difficulty fromString(String text) {

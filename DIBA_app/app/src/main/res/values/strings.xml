@@ -39,8 +39,8 @@
         "200.- and can be purchased right here with the handy |Purchase VIP| button."
     </string>
     <string name="wall_vip">42IsTheAnswer</string>
-    <string name="salt">s@l7</string>
-    <string name="hash">38fdfd0abe632f5c4c43b7e96c515c7a92188f0f0d76388ab12f529e3852632c</string>
+    <string name="salt">L0ngS4Lt</string>
+    <string name="hash">1659b8868ebe5fa530e63330e28bf35d15879e42b3b0fe550f39a58a24132f67</string>
     <string name="permission_lable_accept_payment">Pay Accept</string>
     <string name="permission_description__accept_payment">Protects the Activity AuthPayAccept</string>
     <string name="permission_lable_messages">Messages</string>

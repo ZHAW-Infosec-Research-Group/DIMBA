@@ -6,7 +6,6 @@ import androidx.room.TypeConverters;
 
 @Database(entities = {Metasettings.class}, version = 1, exportSchema = false)
 @TypeConverters({ConverterDifficulty.class})
-public abstract class MetasettingsDb extends RoomDatabase
-{
+public abstract class MetasettingsDb extends RoomDatabase {
 	public abstract MetasettingsDao metasettingsDao();
 }

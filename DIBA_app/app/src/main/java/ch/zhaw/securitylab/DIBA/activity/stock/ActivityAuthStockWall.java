@@ -38,17 +38,7 @@ public class ActivityAuthStockWall extends ActivityBoundAbstract {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_auth_stock_wall);
-
         defaultPreferences = PreferenceManager.getDefaultSharedPreferences(DIBA.get());
-
-//        // If already VIP, skip wall
-//        if (isVip())
-//        {
-//            startActivityWithCustomBackStack();
-//        }
-
-//        button(onVipCheck(), R.id.wallButtonSubscribe);
         button(accessStockMarket(), R.id.wallButtonStock);
     }
 

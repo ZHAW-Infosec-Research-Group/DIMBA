@@ -41,9 +41,7 @@
         android:id="@+id/landingGoLogin"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="55dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/diba_text"
         android:onClick="buttonLanding"
@@ -55,10 +53,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
         app:layout_constraintStart_toEndOf="@+id/landingImageLogin"
         app:layout_constraintTop_toBottomOf="@+id/landingLogo" />
-
     <ImageButton
         android:id="@+id/landingImageLogin"
         android:layout_width="50dp"
@@ -75,9 +71,7 @@
         android:id="@+id/landingGoSignIn"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="55dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/diba_text"
         android:onClick="buttonLanding"
@@ -90,11 +84,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/landingGoAbout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/landingImageSignin"
         app:layout_constraintTop_toBottomOf="@+id/landingGoLogin"
         app:layout_constraintVertical_bias="0.107" />
-
     <ImageButton
         android:id="@+id/landingImageSignin"
         android:layout_width="50dp"

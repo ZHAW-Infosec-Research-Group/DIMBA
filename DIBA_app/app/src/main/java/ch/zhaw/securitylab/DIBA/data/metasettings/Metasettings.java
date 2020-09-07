@@ -16,10 +16,13 @@ public class Metasettings {
 	public String getIp() { return this.ip; }
 	public void setIp(String ip) { this.ip = ip; }
 	
-	private Difficulty difficulty;
-	public Difficulty getDifficulty() { return this.difficulty; }
-	public void setDifficulty(Difficulty difficulty) { this.difficulty = difficulty; }
-	
+//	private Difficulty difficulty;
+	private int difficulty;
+//	public Difficulty getDifficulty() { return this.difficulty; }
+	public int getDifficulty() { return this.difficulty; }
+//	public void setDifficulty(Difficulty difficulty) { this.difficulty = difficulty; }
+	public void setDifficulty(int difficulty) { this.difficulty = difficulty; }
+
 	private int timeout;
 	public int getTimeout()
 	{
@@ -30,7 +33,7 @@ public class Metasettings {
 		this.timeout = timeout;
 	}
 	
-	public Metasettings(String ip, Difficulty difficulty, int timeout) {
+	public Metasettings(String ip, int difficulty, int timeout) {
 		this.ip = ip;
 		this.difficulty = difficulty;
 		this.timeout = timeout;
@@ -38,7 +41,7 @@ public class Metasettings {
 	
 	public void setDifficulty(String difficulty) {
 		if (TextUtils.isEmpty(difficulty)) throw new RuntimeException("difficulty must be !empty, was " + difficulty);
-		setDifficulty(Difficulty.fromString(difficulty));
+		setDifficulty(Difficulty.toInt(difficulty));
 	}
 	
 }

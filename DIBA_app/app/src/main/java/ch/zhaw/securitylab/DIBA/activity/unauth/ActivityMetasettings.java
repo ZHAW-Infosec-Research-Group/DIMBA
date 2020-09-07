@@ -92,11 +92,19 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 				e.printStackTrace();
 			}
 			Scanner reader = new Scanner(proc.getInputStream());
+			String output = "";
 			while (reader.hasNextLine()) {
 				// Show the result of the command on screen
-				System.out.println(reader.nextLine());
+				String line = reader.nextLine();
+				output += line;
+				System.out.println(line);
 			}
+			if (output.matches("100% packet loss")) {
+				Toasty.longCenterToast("PING FAILED");
+			} else {
+				Toasty.longCenterToast("PING SUCCESS.");
 
+			}
 		};
 	}
 
@@ -172,9 +180,9 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 				fieldIp.setText(metasettings.getIp());
 				ArrayAdapter<Difficulty> spinnerAdapter = new ArrayAdapter<>(ActivityMetasettings.this, R.layout.difficulty_entry);
 				spinnerAdapter.addAll(Difficulty.values());
-//				spinnerAdapter.setDropDownViewResource(R.layout.item_spinner);
 				spinnerDifficulty.setAdapter(spinnerAdapter);
-				spinnerDifficulty.setSelection(metasettings.getDifficulty().ordinal());
+//				spinnerDifficulty.setSelection(metasettings.getDifficulty().ordinal());
+				spinnerDifficulty.setSelection(metasettings.getDifficulty() -1);
 				spinnerAdapter.notifyDataSetChanged();
 				timeout.setText(String.valueOf(metasettings.getTimeout()));
 

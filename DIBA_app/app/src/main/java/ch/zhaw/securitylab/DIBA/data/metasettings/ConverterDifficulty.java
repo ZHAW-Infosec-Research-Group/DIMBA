@@ -6,11 +6,11 @@ public class ConverterDifficulty {
 	
 	@TypeConverter
 	public static String toString(Difficulty difficulty) {
-		return difficulty == null ? null : difficulty.toString();
+		return difficulty.toString();
 	}
 	
 	@TypeConverter
-	public static Difficulty toDifficulty(String difficulty) {
-		return difficulty == null ? null : Difficulty.fromString(difficulty);
+	public static int toInt(String difficulty) {
+		return difficulty == null ? null : Difficulty.toInt(difficulty);
 	}
 }

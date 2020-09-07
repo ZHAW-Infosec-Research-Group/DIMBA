@@ -38,8 +38,6 @@ public class ActivityLanding extends ActivityDIBAAbstract {
 
 		// Root detection
 		preferences = context.getSharedPreferences("rootDetPreferences", Context.MODE_PRIVATE);
-		System.out.println("preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)");
-		System.out.println(preferences.getBoolean(Extras.ROOT_DET_DISABLE, true));
 		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)) {
 			boolean rooted = rootedDevice();
 			FragmentManager fm = getSupportFragmentManager();
@@ -54,8 +52,6 @@ public class ActivityLanding extends ActivityDIBAAbstract {
 
 		// Root detection
 		preferences = context.getSharedPreferences("rootDetPreferences", Context.MODE_PRIVATE);
-		System.out.println("preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)");
-		System.out.println(preferences.getBoolean(Extras.ROOT_DET_DISABLE, true));
 		if (! preferences.getBoolean(Extras.ROOT_DET_DISABLE, true)) {
 			boolean rooted = rootedDevice();
 			FragmentManager fm = getSupportFragmentManager();
