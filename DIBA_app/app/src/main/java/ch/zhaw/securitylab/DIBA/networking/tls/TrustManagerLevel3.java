@@ -35,8 +35,8 @@ public class TrustManagerLevel3 implements X509TrustManager {
 		X509Certificate receivedCertificate = chain[0];
 		String owner = receivedCertificate.getSubjectX500Principal().getName();
 		String issuer = receivedCertificate.getIssuerDN().getName();
-		String expectedOwner  = "O=DIBA Server,L=Default City,C=XX";
-		String expectedIssuer = "O=DIBA CA,L=Default City,C=XX";
+		String expectedOwner  = "O=DIBA Server";
+		String expectedIssuer = "O=DIBA CA";
 		Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 3\n Check the certificate dates validity, the owner, the issuer and if certificate is signed by a trusted CA.\n");
 		Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +
 													"\n Not After: "+receivedCertificate.getNotAfter().toString());

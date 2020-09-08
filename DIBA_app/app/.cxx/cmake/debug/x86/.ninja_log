@@ -1,3 +1,6 @@
 # ninja log v5
 1	293	1599409928	CMakeFiles/native-lib.dir/native.c.o	d3fc0ab17395efef
 293	361	1599409928	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so	d8c1d39ade4801e4
+0	4	0	clean	938589ca09c5945f
+0	283	1599575056	CMakeFiles/native-lib.dir/native.c.o	d3fc0ab17395efef
+284	349	1599575056	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so	d8c1d39ade4801e4

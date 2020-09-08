@@ -35,7 +35,7 @@ public class TrustManagerLevel2 implements X509TrustManager {
 		if (chain != null && chain.length > 0) {
 			X509Certificate receivedCertificate = chain[0];
 			String owner = chain[0].getSubjectX500Principal().getName();
-			String expectedOwner = "O=DIBA Server,L=Default City,C=XX";
+			String expectedOwner = "O=DIBA Server";
 
 			Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 2\n Check the certificate dates validity and owner.\n");
 			Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +

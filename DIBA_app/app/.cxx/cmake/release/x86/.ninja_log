@@ -6,3 +6,6 @@
 0	7	0	clean	938589ca09c5945f
 0	37	1598787457	CMakeFiles/native-lib.dir/native.c.o	a25c058833727bf2
 37	52	1598787457	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	1a2546722a7dbdf
+0	10	0	clean	938589ca09c5945f
+1	49	1599575807	CMakeFiles/native-lib.dir/native.c.o	a25c058833727bf2
+49	96	1599575807	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	1a2546722a7dbdf
