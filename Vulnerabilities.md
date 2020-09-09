@@ -198,7 +198,7 @@ The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret f
 
 **Check**: Works
 
-### 23: Exploitimg Someone Elses Stored Login Credentials (easy)
+### 23: Exploiting Someone Elses Stored Login Credentials (easy)
 The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
 
 **Goal:** Log in using the credentials that have been entered and stored before (using the *Remember Me* functionality) and use the app with identity of the corresponding user. Obviously, this is trivial to do.
