@@ -8,15 +8,9 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 ### General issues
 
-Investments: The text "Manage your investments!" can be removed.
-
 Investments: "Amount:" should be "Amount".
 
-Meta Settings: Save Button is hidden under the Reset App button.
-
 Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
-
-On the screen with Login & Create Account, the logo should be mor centered above the buttons. Not so critical...
 
 Settings screen needs better formatting.
 
@@ -73,14 +67,16 @@ The DIBA app contains an exported content provder that allows to change the app 
 
 **Goal:** Develop an app that allows to set at least one of the DIBA app settings.
 
-**Check**: Works (tested via AUTO REDIRECT in Exploit App)
+**Check**: Works
 
-### 7: Intent redirection (hard)
-In the settings, the developers forgot to remove a debugging setting that allows specifying the activity that is used to conform a payment. Per default, this is set to the payment confirmation activity of the DIBA app and therefore, everything works as intended. However, the values can be changed so they point to a another activity in another app and because of vulnerability 6, the settings can not only be changed within the DIBA app, but also by another app on the same device. Overall, this means an attacker that the attacker can redirect the payment conformation step to an app he is controlling and thereby interfere with the payment process.
+### 7: Intent Redirection (hard)
+In the settings, the developers forgot to remove a debugging setting that allows specifying the activity that is used to confirm a payment. Per default, this is set to the payment confirmation activity of the DIBA app and therefore, everything works as intended. However, the values can be changed so they point to a another activity in another app and because of vulnerability 6, the settings can not only be changed within the DIBA app, but also by another app on the same device. Overall, this means that an attacker, assuming he controls an app on the device, can interfere with the payment data that is sent (in an intent) from the *Make a Payment* activity to the *Accept the Payment* activity.
 
-**Goal:** Develop an app that provides an activity that looks like the legitimate payment confirmation activity and that will be invoked during the payment process and modifies the payment before final confirmation.
+**Goal:** Develop an app that provides an activity that can receive the intent sent from the *Make a Payment* activity, that canges the recipient of a payment to *attacker@mail.com*, and that forwards the modified intent to the *Accept the Payment* activity. When tapping on *Show Details*, you should then see the modified payment data.
 
-Does not work yet. Should this work as explained above?
+**Check**: Works
+
+Note: Make sure solution chapter describes exploitation assuming the attacker only has the DIBA apk file, not the source code.
 
 ### 8: Logging Sensitive Information (easy)
 Apps should never log sensitive data as this unnecessarily exposes this data so an attacker can possibly access it. The DIBA app, unfortunately, logs a lot of sensitive information to the central Android logging facility, probably as a leftover from development. If an attacker gets access to your device, he can use adb to get access to the logged data.
