@@ -5,14 +5,15 @@ At the core DIBA, is an intentionally vulnerable banking app that was designed t
 
 ## Features
 This project is split into two parts. The first part is the DIBA app itself which provides the following features:
-+ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, sending and receiving payments, loading a payment slip from a file, investment area, live-view of stock market, and sending and receiving messages.
++ A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, doing payments, loading a payment slip from a file, investment area, live-view of stock market, and sending and receiving messages.
 + Modern look and feel thanks to Material Design.
 + Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find.
 
-The second part is the DIBA server with which the DIBA app communicates. For the training app to be realisticm such a component needs to exist since most app nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server the following features:
+The second part is the DIBA server with which the DIBA app communicates. For the training app to be realisticm such a component needs to exist since most apps nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server the following features:
 + REST API
 + An integrated database for persisting transactions/activities during a training session
 + Authentication via JSON Web Tokens (JWT)
++ SMS message with confirmation code that must be entered by the app user to authorize a payment. Note that the SMS message is simulated and written to the server output.
 
 You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to find vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
 
