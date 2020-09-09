@@ -1,4 +1,4 @@
-# Vulnerabilities in DIBA
+a# Vulnerabilities in DIBA
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
@@ -60,7 +60,7 @@ During payment, DIBA allows to load a payment slip from the SD-Card. You can ass
 
 **Goal (medium):** Develop an app that logs all data that is copied in other apps (which obviously includes payment data copied in the DIBA app).
 
-**Check**: Works, replace Payslip => Payment Slip
+**Check**: Works
 
 ### 6: Exported Content Provider (medium)
 The DIBA app contains an exported content provder that allows to change the app settings. One can assume that this was intentionally added during development so that settings can easily be changed using a separate app, but it was forgotten to remove this before publishing the app.
@@ -85,13 +85,16 @@ Apps should never log sensitive data as this unnecessarily exposes this data so 
 
 **Check**: Works
 
-### 9: Aliases Export Activities
+### 9: Exported Activity Alias (easy/medium)
+The activity to view the investments in not exported. However, there's an alias for this activity, which is exported, and as a result of this, the original activity also gets exported. This means that it can be directly accessed without following the user interface of the app, i.e., without logging in. Note that in this case, assming an attacker gets temporary access to the device of a DIBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way. 
 
-Works
+**Goal (easy):** Without being logged into the DIBA app, use adb to directly start and access the activity to view the investments.
 
-But does this make sense? If the user is not logged in, I'm not getting any investments. And if the user i slogged, I can simply access the investments by using the app.
+**Goal (medium):** Develop an app that starts the investment activity without being logged into the DIBA app.
 
-Also: Now this requires exported=true, so it's not really different from a normal acivity. So it does not get exported automatically. Let's discuss, but maybe remove this one?
+**Check**: Works
+
+Note: Explot app still uses path to inbank, not DIBA.
 
 ### 10: Directory Traversal I - Read (easy)
 During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
