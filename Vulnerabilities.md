@@ -1,4 +1,4 @@
-a# Vulnerabilities in DIBA
+# Vulnerabilities in DIBA
 
 This document lists all vulnerabilities that are present in DIBA, including required preparations, the goals that should be achieved to demonstrate successful exploitation, and some helpful hints.
 
