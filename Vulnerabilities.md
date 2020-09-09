@@ -50,8 +50,7 @@ The *Messages* functionality allows to send and receive messages to/from the ban
 
 **Goal:** Abuse the search field to get access to messages of other users on the same device.
 
-**Check**: Works, but The five predefined messages should by form sender (Alice, right side) and from bank (Bob, left side).
-Also, formatting is not good. Use same formatting as in version 1.4.
+**Check**: Works.
 
 ### 5: Clipboard Danger (easy/medium)
 During payment, DIBA allows to load a payment slip from the SD-Card. You can assume that the user receives the payment slip by e-mail from where it can be copied to the SD-Card so it can be imported in DIBA. By selecting *Transfer Payment Slip*, one can copy data from the payment slip (e.g., the recipient) to the corresponding field of the payment using standard the standard Android copy-paste functionality. Assuming an attacker controls another app on the device, he can get access to possibly sensitive payment data copied by the user.
