@@ -13,7 +13,7 @@ openssl genrsa -out DIBA_Server.key 2048
 # Generate DIBA Server CSR
 openssl req -new -key DIBA_Server.key -out DIBA_Server.csr
 
-# Generate certificate from CSR (14 years validity)
+# Sign CSR from DIBA Server with DIBA CA (14 years validity)
 openssl x509 -req -in DIBA_Server.csr -CA DIBA_CA.pem -CAkey DIBA_CA.key -CAcreateserial -out DIBA_Server.crt -days 5110 -sha256
 
 # Generate pkcs12 certificate from DIBA CA private key and DIBA CA certificate. To be imported in keystore
@@ -22,7 +22,7 @@ openssl pkcs12 -export -in DIBA_CA.pem -inkey DIBA_CA.key -out DIBA_CA.p12
 # Create keystore from CA p12 
 keytool -importkeystore -srckeystore DIBA_CA.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
 
-# Convert the x.509 cert and key to a pkcs12 file
+# Generate pkcs12 certificate from DIBA Server private key and DIBA Server certificate. To be imported in keystore
 openssl pkcs12 -export -in DIBA_Server.crt -inkey DIBA_Server.key -out DIBA_Server.p12
 
 # Import p12 to keystore

@@ -30,15 +30,8 @@ import java.math.BigDecimal;
  * a transaction is made to the server.
  */
 public class ActivityAuthPayAccept extends ActivityDIBAAbstract {
-	// -------------------------------------------- //
-	// FIELDS
-	// -------------------------------------------- //
 	
 	private ListView listExtras;
-	
-	// -------------------------------------------- //
-	// CONSTRUCT & CREATE
-	// -------------------------------------------- //
 	
 	public ActivityAuthPayAccept() { super(R.layout.activity_auth_pay_accept, ToolbarMode.NAV_AUTH, R.id.nav_go_pay, false); }
 	

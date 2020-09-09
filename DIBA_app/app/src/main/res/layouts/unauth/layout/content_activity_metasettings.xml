@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/diba_text"
             android:textColor="@color/colorText"
-            android:text="DIBA Server"
+            android:text="DIBA Server IP"
             android:textSize="10pt" />
         <EditText
             android:id="@+id/metasettingsIp"
@@ -131,32 +131,11 @@
 </LinearLayout>
 
     <Button
-        android:id="@+id/metasettingsButtonTest"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/diba_text"
-        android:text="Ping Server"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/background_light"
-        android:textSize="12pt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metasettingsBoxRootDetection" />
-
-
-    <Button
         android:id="@+id/metasettingsButtonSave"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/diba_text"
@@ -169,7 +148,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metasettingsButtonTest" />
+        app:layout_constraintTop_toBottomOf="@+id/metasettingsBoxRootDetection" />
+
+    <Button
+        android:id="@+id/metasettingsButtonTest"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_background"
+        android:fontFamily="@font/diba_text"
+        android:text="Ping Server"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        android:textSize="12pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/metasettingsButtonSave" />
+
 
     <Button
         android:id="@+id/metasettingsButtonReset"
@@ -187,7 +187,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
         android:textSize="12pt"
-        app:layout_constraintTop_toBottomOf="@+id/metasettingsButtonSave"
+        app:layout_constraintTop_toBottomOf="@+id/metasettingsButtonTest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />

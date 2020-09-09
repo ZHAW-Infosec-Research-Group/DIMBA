@@ -49,8 +49,7 @@
         "Meta Settings:\n"
         "The communication difficulty level and the ip address of the server can (and has to) be changed in this menu "
         "reachable from the landing activity.\n"
-        "The Meta Settings are not part of the attackable app itself. Feel free to try, but there is no weakness
-        there.\n\n"
+        "There is also a vulnerability in the Meta Settings try to find it out.\n\n"
     </string>
     <bool name="developer_entrance">false</bool>
     <string name="about_the_app_subtitle">Insecure Banking, done the right way.</string>

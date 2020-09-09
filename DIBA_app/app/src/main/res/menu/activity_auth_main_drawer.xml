@@ -37,13 +37,13 @@
                         android:id="@+id/nav_go_settings"
                         android:icon="@drawable/ic_settings_black_24dp"
                         android:title="Settings"/>
-            </group>
-        </menu>
-    </item>
+<!--            </group>-->
+<!--        </menu>-->
+<!--    </item>-->
 
-    <item android:title="Non-attackable screens">
-        <menu>
-            <group android:checkableBehavior="single">
+<!--    <item android:title="Non-attackable screens">-->
+<!--        <menu>-->
+<!--            <group android:checkableBehavior="single">-->
                 <item
                         android:id="@+id/nav_go_about"
                         android:icon="@drawable/ic_info_black_24dp"

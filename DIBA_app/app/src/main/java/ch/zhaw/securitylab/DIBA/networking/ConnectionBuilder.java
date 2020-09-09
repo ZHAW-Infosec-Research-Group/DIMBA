@@ -8,7 +8,6 @@ import org.json.JSONObject;
 
 import ch.zhaw.securitylab.DIBA.DIBA;
 import ch.zhaw.securitylab.DIBA.data.list.DataCarrier;
-import ch.zhaw.securitylab.DIBA.data.metasettings.Metasettings;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ConnectionListener;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ConnectionListenerJSON;
 import ch.zhaw.securitylab.DIBA.networking.listeners.ErrorListenerJSON;
@@ -42,10 +41,10 @@ public class ConnectionBuilder {
 		return this;
 	}
 
-	public ConnectionBuilder method(int m) {
-		this.method = m;
-		return this;
-	}
+//	public ConnectionBuilder method(int m) {
+//		this.method = m;
+//		return this;
+//	}
 	
 	public ConnectionBuilder dataRaw(String key, String value) {
 		this.data.put(key, value);
@@ -56,11 +55,11 @@ public class ConnectionBuilder {
 		this.data.putAll(dataCarrier.toConnectionData());
 		return this;
 	}
-	
-	public ConnectionBuilder listener(ConnectionListener listener) {
-		this.listener = listener;
-		return this;
-	}
+
+//	public ConnectionBuilder listener(ConnectionListener listener) {
+//		this.listener = listener;
+//		return this;
+//	}
 
 	public ConnectionBuilder listenerJSON(ConnectionListenerJSON listenerJSON) {
 		this.listenerJSON = listenerJSON;
@@ -68,8 +67,6 @@ public class ConnectionBuilder {
 	}
 	
 	public ConnectionBuilder url(String url) {
-//		Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
-//		this.url = "https://"+metasettings.getIp()+":8443"+url;
 		this.url = url;
 		return this;
 	}
@@ -96,21 +93,4 @@ public class ConnectionBuilder {
 			DIBA.get().getQueue().add(req);
 		}).start();
 	}
-	
-//	public ConnectionBuilder dataJwt(Activity activity) {
-//		try {
-////			return this.data("jwt", InBank.get().getJwtOrThrow());
-//			return this.data("jwt", InBank.get().getJwt());
-//		} catch (Exception e) {
-//			Log.e(Extras.LOG_TAG, e.getMessage());
-//			Toast.makeText(activity, "You were not logged in. Please log in to execute this action.", Toast.LENGTH_LONG).show();
-//			Intent intent = new Intent(activity, ActivityLanding.class);
-//			TaskStackBuilder.create(activity)
-//				.addNextIntent(intent)
-//				.startActivities();
-//			execute = false;
-//			return this;
-//		}
-//	}
-	
 }

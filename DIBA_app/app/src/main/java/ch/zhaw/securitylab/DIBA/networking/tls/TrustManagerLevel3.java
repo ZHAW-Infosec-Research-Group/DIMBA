@@ -47,7 +47,7 @@ public class TrustManagerLevel3 implements X509TrustManager {
 
 		Log.println(Log.INFO, Extras.LOG_TAG, "Expected issuer: "+expectedIssuer+"\n Received issuer: "+issuer);
 		if(!expectedIssuer.equals(issuer)) throw new CertificateException("Untrusted issuer");
-		// Check that issuer certificate is trusted
+		// Check certificate chain
 		this.trustManager.checkServerTrusted(chain, authType);
 	}
 	
