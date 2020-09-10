@@ -7,7 +7,7 @@ DIBA is an intentionally vulnerable banking app that was designed to provide a r
 This project is split into two parts. The first part is the DIBA app itself which provides the following features:
 + A number of activities that are typical for a banking app, such as login screen, registering for the service, account balance view, doing payments, loading a payment slip from a file, investment area, live-view of stock market, and sending and receiving messages.
 + Modern look and feel thanks to Material Design.
-+ Plenty of vulnerabilities to discover, currently there are 24 vulnerabilities to find.
++ Plenty of vulnerabilities to discover, currently there are 33 vulnerabilities to find.
 
 The second part is the DIBA server with which the DIBA app communicates. For the training app to be realisticm such a component needs to exist since most apps nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server the following features:
 + REST API
