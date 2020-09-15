@@ -24,8 +24,7 @@ import java.math.BigDecimal;
  * The Invest wall activity serves as a paywall to the investment activity. It collects money or routes to
  * the main investment activity if a VIP-passcode can be named.
  */
-public class ActivityAuthInvestWall extends ActivityBoundAbstract
-{
+public class ActivityAuthInvestWall extends ActivityBoundAbstract {
 	// -------------------------------------------- //
 	// FIELDS
 	// -------------------------------------------- //
