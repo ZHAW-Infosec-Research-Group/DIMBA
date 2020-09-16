@@ -10,9 +10,41 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 Investments: "Amount:" should be "Amount".
 
-Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
-
 Settings screen needs better formatting.
+
+Add license files & information.
+
+Replace "please update to receive the messages" with a text that tells the user what to do.
+
+Use DIBA logo also for the exploit ab, but with a little difference to the real app.
+
+Menu should be:
+
+Settings
+   App Settings
+   Meta Settings
+About
+   About the App
+
+Accept the payment activity, use this text:
+
+An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output). Enter the code to confirm the payment.
+
+(Or to prove that you managed to crack the code generation algorithm: Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)
+
+New content for "About the App":
+
+Insecure Banking, done the right way
+
+DIBA is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities.
+
+How to use DIBA
+
+All information about how to use DIBA and descriptions of the included vulnerabilities can be found at https://github.zhaw.ch/Security/DIBA.
+
+Authors
+
+DIBA was developed as part of student theses at the Institute of Applied Information Technology (www.zhaw.ch/init) of the Zurich University of Applied Sciences (www.zhaw.ch).
 
 
 ### 1: Certificate Check Security
@@ -180,16 +212,23 @@ In the file *AndroidManifest.xml* that is part of every app, the developer can s
 
 **Check**: Works
 
-### 20: Fragment injection
+### 20: Fragment injection (easy/medium)
+The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
 
-I don't undersdtand this one.
+**Goal (easy):** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*.
 
-Using the followong when not being logged in crashes the app:
-am start -n "ch.zhaw.securitylab.dibach.zhaw.securitylab.diba.activity.unauth.ActivityCredentials" -e credentials_fragment ch.zhaw.securitylab.diba.activity.unauth.FragmentChange
+**Goal (medium):** Do basically the same as in the *easy* case above, but instead of using adb develop an app that starts the fragment activity.
 
-### 21: Insecure services
+**Remark**: Similar as with vulnerability 9, the attack as demonstrated here is not really beneficial as there are no interesting fragment to be accessed. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that fragment injection is possible, if the fragment activity is exported.
 
-TBD
+**Check**: Works
+
+### 21: Insecure Service (medium)
+DIBA uses a service to modify currency exchange rates. As this service is exported, it can be used by any other app on the same device. 
+
+**Goal:** Develop an app that uses the service to modify the exchange rates to any values you like. You can inspect the *currencyPreferences.xml* in the shared preferences of the DIBA app to check whether the attack worked.
+
+**Check**: Works
 
 ### 22: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
