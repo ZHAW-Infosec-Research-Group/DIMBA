@@ -14,6 +14,25 @@ Make sure to adapt the text in "About App". And also the screenshot. => Marc wil
 
 Settings screen needs better formatting.
 
+Add license files & information.
+
+Replace "please update to receive the messages" with a text that tells the user what to do.
+
+Use DIBA logo also for the exploit ab, but with a little difference to the real app.
+
+Menu should be:
+
+Settings
+   App Settings
+   Meta Settings
+About
+   About the App
+
+Accept the payment activity, use this text:
+
+An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output). Enter the code to confirm the payment.
+
+(Or to prove that you managed to crack the code generation algorithm: Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)
 
 ### 1: Certificate Check Security
 
