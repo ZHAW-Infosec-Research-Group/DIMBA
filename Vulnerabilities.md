@@ -10,8 +10,6 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 Investments: "Amount:" should be "Amount".
 
-Make sure to adapt the text in "About App". And also the screenshot. => Marc will do this
-
 Settings screen needs better formatting.
 
 Add license files & information.
@@ -33,6 +31,21 @@ Accept the payment activity, use this text:
 An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output). Enter the code to confirm the payment.
 
 (Or to prove that you managed to crack the code generation algorithm: Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)
+
+New content for "About the App":
+
+Insecure Banking, done the right way
+
+DIBA is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities.
+
+How to use DIBA
+
+All information about how to use DIBA and descriptions of the included vulnerabilities can be found at https://github.zhaw.ch/Security/DIBA.
+
+Authors
+
+DIBA was developed as part of student theses at the Institute of Applied Information Technology (www.zhaw.ch/init) of the Zurich University of Applied Sciences (www.zhaw.ch).
+
 
 ### 1: Certificate Check Security
 
