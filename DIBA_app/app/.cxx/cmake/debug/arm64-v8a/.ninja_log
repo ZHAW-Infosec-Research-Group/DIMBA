@@ -11,3 +11,9 @@
 0	36	1598787351	CMakeFiles/native-lib.dir/native.c.o	b707af083d20518d
 36	58	1598787351	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	48b89be4c31192c6
 0	21	0	clean	938589ca09c5945f
+0	5	0	clean	938589ca09c5945f
+0	16	0	clean	938589ca09c5945f
+0	7	0	clean	938589ca09c5945f
+0	5	0	clean	938589ca09c5945f
+1	71	1600270173	CMakeFiles/native-lib.dir/native.c.o	b707af083d20518d
+71	124	1600270173	/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	48b89be4c31192c6

@@ -52,27 +52,21 @@
         "There is also a vulnerability in the Meta Settings try to find it out.\n\n"
     </string>
     <bool name="developer_entrance">false</bool>
-    <string name="about_the_app_subtitle">Insecure Banking, done the right way.</string>
-    <string name="about_the_app_intention">DIBA was created with the intention of feeling like any other banking app
-        you could find on the playstore,
-        with the key difference being that it is intentionally weak in its security.
+    <string name="about_the_app_subtitle">Insecure Banking, done the right way</string>
+    <string name="about_the_app_intention">DIBA is an intentionally vulnerable banking app that was
+        designed to provide a realistic training ground for Android penetration testing and to learn in
+        general about different things that can go wrong in apps with respect to security. Two main
+        properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario
+        and that it contains a wide range of different vulnerabilities.
     </string>
-    <string name="about_the_app_training">In junction with the DIBAServer, it is a training opportunity for mobile
-        penetration testers that contains many android specific weaknesses in varying difficulty.
-        It can furthermore serve as a tool for educators, who want to create a curriculum for their students.
-    </string>
-    <string name="about_the_app_attacks">Most if not all parts of the app are attackable in some way, shape or form.
-        While some vulnerabilities might be exploitable from within the app, others need you to use tools or even write
-        your own malicious app.
-    </string>
-    <string name="about_the_app_runtitle">How to use the app.</string>
-    <string name="about_the_app_run_text">Run an instance of the DIBA Server on your PC, as long as it has internet
-        connectivity
-        you should be fine. Be aware that if your cellphone and server are not in the same network, you might have to
-        port forward
-        the port 8443 for it to work. Now you must fetch the ip address of your server with ifconfig (or simmilar) and
-        adjust IP in the meta settings of DIBA.
-    </string>
+    <string name="about_the_app_howto_subtitle">How to use DIBA</string>
+    <string name="about_the_app_howto_text">All information about how to use DIBA and descriptions of
+        the included vulnerabilities can be found at https://github.zhaw.ch/Security/DIBA.</string>
+
+    <string name="about_the_app_authors">Authors</string>
+    <string name="about_the_app_authors_text">DIBA was developed as part of student theses at the
+        Institute of Applied Information Technology (www.zhaw.ch/init) of the Zurich University
+        of Applied Sciences (www.zhaw.ch).</string>
     <string name="about_the_app_run_communication">
         While the communication between the client (app) and server are not the main focus of DIBAs security, you can
         adjust the difficulty level of the communication security to test your knowledge in ssl/tls and certificates.
