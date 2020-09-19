@@ -18,7 +18,7 @@
     <string name="title_activity_change">Change</string>
     <string name="title_activity_auth_pay">Make a Payment</string>
     <string name="title_activity_auth_pay_accept">Accept the Payment</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_settings">App Settings</string>
     <string name="title_activity_auth_invest_list">Investments</string>
     <string name="title_activity_auth_invest_wall">Pay for VIP package</string>
     <string name="title_activity_auth_pay_slip_info">Payslip information</string>

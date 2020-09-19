@@ -18,13 +18,13 @@
                 android:title="Create Account"/>
     </group>
 
-    <item android:title="App Settings">
+    <item android:title="Settings">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                         android:id="@+id/nav_go_settings"
                         android:icon="@drawable/ic_settings_black_24dp"
-                        android:title="Settings"/>
+                        android:title="App Settings"/>
                 <item
                     android:id="@+id/nav_go_meta"
                     android:icon="@drawable/ic_settings_applications_black_24dp"
