@@ -1,5 +1,11 @@
 # DIBA - Damn Insecure Banking App
 
+TODO:
+
+Write that DB files can be deleted to reset the server.
+
+Chek the Build it yourself section below to make sur it ist completely correct.
+
 ## What is DIBA?
 DIBA is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities. 
 
