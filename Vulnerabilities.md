@@ -125,8 +125,6 @@ During payment, DIBA allows to load a payment slip from the SD-Card. This is imp
 
 **Check**: Works
 
-Shouldn't the Load/Save Icons be swapped?
-
 ### 11: Directory Traversal II - Read/Write (easy)
 During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app. This may allow a user to change settings of the app in a way as it was not intended by the app developers.
 
