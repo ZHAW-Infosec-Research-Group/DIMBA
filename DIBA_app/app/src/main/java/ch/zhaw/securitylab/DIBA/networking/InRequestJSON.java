@@ -1,5 +1,6 @@
 package ch.zhaw.securitylab.DIBA.networking;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Response;
 import com.android.volley.toolbox.JsonObjectRequest;
 
@@ -13,9 +14,18 @@ import ch.zhaw.securitylab.DIBA.data.metasettings.Metasettings;
 
 public class InRequestJSON extends JsonObjectRequest {
 
+    private final Object mLock = new Object();
+    private Response.Listener<InResponse> listener;
 
-    public InRequestJSON(String url, JSONObject jsonRequest, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(getBaseUrl() + url, jsonRequest, listener, errorListener);
+    public InRequestJSON(String url, JSONObject json, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        super(getBaseUrl() + url, json, listener, errorListener);
+
+        int timeout = DIBA.get().getMetasettingsDao().getSettings().getTimeout();
+        this.setRetryPolicy(new DefaultRetryPolicy(
+                timeout,
+                2,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
     }
 
     private static String getBaseUrl() {

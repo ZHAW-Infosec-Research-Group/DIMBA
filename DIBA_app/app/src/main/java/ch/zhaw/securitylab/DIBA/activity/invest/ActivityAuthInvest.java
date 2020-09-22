@@ -64,20 +64,23 @@ public class ActivityAuthInvest extends ActivityBoundAbstract {
 
 		// LOAD EXTERNAL .jar VERIFY PERMISSIONS
 		verifyStoragePermissions();
-//		ch.DIBA.Investment i = new ch.DIBA.Investment();
-//		i.buy();
-//		static val requestLegacyExternalStorage = true;
 		String externalStorage = Environment.getExternalStorageDirectory().getAbsolutePath()+ File.separator ;
 		System.out.println("externalStorage");
 		System.out.println(externalStorage);
 		File file = new File(externalStorage + "investments.jar");
+		System.out.println("file.getAbsolutePath()");
+		System.out.println(file.getAbsolutePath());
 		DexClassLoader dexClassLoader = new DexClassLoader(file.getAbsolutePath(), "/tmp", null, getClassLoader());
 		try {
 			Class c = dexClassLoader.loadClass("ch.inbank.Investment");
+			Method[] ms = c.getMethods();
+			for (Method m : ms) {
+				System.out.println(m.getName());
+			}
 			Method method = c.getMethod("buy");
 			Object obj = c.newInstance();
-			String object = (String) method.invoke(obj);
-			Toast.makeText(getApplicationContext(), "jar method called!", Toast.LENGTH_SHORT).show();
+			String result = (String) method.invoke(obj);
+			Toast.makeText(getApplicationContext(), "jar method called!\n"+result, Toast.LENGTH_SHORT).show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

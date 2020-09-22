@@ -49,7 +49,6 @@ public class ActivitySurvey extends AppCompatActivity {
         });
         Metasettings metasettings = DIBA.get().getMetasettingsDao().getSettings();
         surveyView.loadUrl("https://"+metasettings.getIp()+":8443/survey");
-//        surveyView.loadUrl("https://10.0.2.2:8443/survey");
     }
     
     public class JavaScriptInterface {
@@ -62,14 +61,14 @@ public class ActivitySurvey extends AppCompatActivity {
         @JavascriptInterface
         public void post_comment(String host, String comment) throws Exception {
             System.out.println("From post_comment\n Host:" + host + ", comment: " + comment);
-            Request request = new Request.Builder()
-                    .url(host + "?comment=" + comment)
-                    .header("Host", "postb.in")
-                    .build();
-
-            OkHttpClient client = new OkHttpClient();
-            Response response = client.newCall(request).execute();
-            System.out.println(response.body().string());
+//            Request request = new Request.Builder()
+//                    .url(host + "?comment=" + comment)
+//                    .header("Host", "postb.in")
+//                    .build();
+//
+//            OkHttpClient client = new OkHttpClient();
+//            Response response = client.newCall(request).execute();
+//            System.out.println(response.body().string());
         }
     }
     @Override

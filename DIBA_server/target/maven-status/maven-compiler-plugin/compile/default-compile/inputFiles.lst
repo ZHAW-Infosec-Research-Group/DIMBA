@@ -22,4 +22,5 @@
 /home/gregory/Documents/vt2/DIBA/DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/responses/MessageResponse.java
 /home/gregory/Documents/vt2/DIBA/DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/responses/ListResponse.java
 /home/gregory/Documents/vt2/DIBA/DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/responses/StringResponse.java
+/home/gregory/Documents/vt2/DIBA/DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/user/Comment.java
 /home/gregory/Documents/vt2/DIBA/DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/controllers/ControllerInvestment.java

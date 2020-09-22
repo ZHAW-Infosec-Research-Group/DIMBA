@@ -104,7 +104,8 @@ public class ActivityAuthMessages extends ActivityDIBAAbstract
 		messageRecycler.setAdapter(messageAdapter);
 		
 		if (messageList.isEmpty()) {
-			clearAndShowMessages(Collections.singletonList(new Message("Please update to receive the messages", Message.VIEW_TYPE_MESSAGE_RECEIVED)));
+			String text = "Greetings User\n\nWe are happy that you try to hack our app. If you need help, send the message 'hint' to the server.\n\nBest regards,\nThe DIBA developer team.";
+			clearAndShowMessages(Collections.singletonList(new Message(text, Message.VIEW_TYPE_MESSAGE_RECEIVED)));
 		}
 	}
 	

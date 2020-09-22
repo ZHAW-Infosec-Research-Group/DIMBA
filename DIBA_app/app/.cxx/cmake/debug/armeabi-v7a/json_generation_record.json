@@ -19,6 +19,126 @@
   },
   {
     "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/build-tools/27.0.3/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/build-tools/29.0.2/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/build-tools/29.0.3/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/build-tools/30.0.0-rc4/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/cmake/3.10.2.4988404/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/cmdline-tools/latest/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/emulator/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/ndk/20.0.5594570/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/ndk/21.0.6113669/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/ndk/21.1.6352462/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/patcher/v4/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/platform-tools/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/platforms/android-27/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/platforms/android-29/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/sources/android-29/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/system-images/android-16/google_apis/x86/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/system-images/android-27/google_apis/x86/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/system-images/android-29/google_apis/x86/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/system-images/android-29/google_apis/x86_64/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
+    "message": "Parsing /home/gregory/Android/Sdk/tools/package.xml",
+    "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+    "tag": "debug|armeabi-v7a"
+  },
+  {
+    "level": "INFO",
     "message": "- CMake found in SDK at \u0027/home/gregory/Android/Sdk/cmake/3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
     "file": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
     "tag": "debug|armeabi-v7a"

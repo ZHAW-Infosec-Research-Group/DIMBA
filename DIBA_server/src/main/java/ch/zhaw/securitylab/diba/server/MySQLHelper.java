@@ -4,6 +4,7 @@ import ch.zhaw.securitylab.diba.server.Server;
 import ch.zhaw.securitylab.diba.server.user.Payment;
 import ch.zhaw.securitylab.diba.server.user.Investment;
 import ch.zhaw.securitylab.diba.server.user.User;
+import ch.zhaw.securitylab.diba.server.user.Comment;
 
 import java.util.ArrayList;
 import java.math.BigDecimal;
@@ -25,7 +26,7 @@ public class MySQLHelper {
 	public static void getDatabaseConnection() throws SQLException {
 		try {
 			Connection con = DriverManager.getConnection(url, "SA", "");
-			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255))");
+			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255), date varchar(10), score varchar(1))");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))");
@@ -38,12 +39,14 @@ public class MySQLHelper {
 	////////////////////////////////////////////////////////////////////
 	/////////////          COMMENTS       //////////////////////////////
 	////////////////////////////////////////////////////////////////////
-	public static void add_comment(String comment) throws SQLException {
+	public static void add_comment(String comment, String date, String score) throws SQLException {
 		Connection con = DriverManager.getConnection(url, "SA", "");
 		try {
-            PreparedStatement pst = con.prepareStatement("INSERT INTO Comment (comment) VALUES (?)");
+            PreparedStatement pst = con.prepareStatement("INSERT INTO Comment (comment,date,score) VALUES (?,?,?)");
             pst.clearParameters();
             pst.setString(1, comment);
+            pst.setString(2, date);
+            pst.setString(3, score);
             int i = pst.executeUpdate();
 			Server.logger.info("Comment inserted, "+comment);
         } catch (SQLException e) {
@@ -51,20 +54,23 @@ public class MySQLHelper {
         }
 	}
 	
-	public static ArrayList<String> get_comments() throws SQLException {
+	public static ArrayList<Comment> get_comments() throws SQLException {
 		Connection con = DriverManager.getConnection(url, "SA", "");
 		try {
             PreparedStatement pst = con.prepareStatement("SELECT * FROM Comment");
             pst.clearParameters();
 			ResultSet rs = pst.executeQuery();
-			ArrayList<String> comments = new ArrayList();
+			ArrayList<Comment> comments = new ArrayList();
 			while ( rs.next() ) {
     		  Server.logger.info( rs.getString("comment") );
-			  comments.add(rs.getString("comment"));
+			  String c = rs.getString("comment");
+			  String d = rs.getString("date");
+			  String s = rs.getString("score");
+			  comments.add(new Comment(c,d,s));
     		}
     		rs.close();
     		pst.close();
-			Server.logger.info(" records read, View Comments");
+			Server.logger.info("Records read, View Comments");
 			return comments;
         } catch (SQLException e) {
             e.printStackTrace(System.out);

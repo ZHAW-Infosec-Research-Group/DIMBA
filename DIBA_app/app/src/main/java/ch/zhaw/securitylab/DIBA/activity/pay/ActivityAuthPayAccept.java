@@ -53,7 +53,10 @@ public class ActivityAuthPayAccept extends ActivityDIBAAbstract {
 
 		listExtras = findViewById(R.id.payListExtras);
 		TextView textView = findViewById(R.id.payTextComplete);
-		String text = "We sent a SMS code to your phone. The code is very secure, it changes every second and it expires after 5 minutes. \n Enter the code to confirm the payment. \n Or enter the code for 2030-01-31 12:00:00 if you know how to get it.";
+		String text = "An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output).\n" +
+				"Enter the code to confirm the payment.\n\n" +
+				"(Or to prove that you managed to crack the code generation algorithm:\n" +
+				"Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)";
 		textView.setText(text);
 
 		// Get Intent bundle

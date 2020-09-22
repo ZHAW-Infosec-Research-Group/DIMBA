@@ -8,6 +8,7 @@ ch/zhaw/securitylab/diba/server/responses/ListResponse.class
 ch/zhaw/securitylab/diba/server/responses/MessageResponse.class
 ch/zhaw/securitylab/diba/server/controllers/ControllerUser.class
 ch/zhaw/securitylab/diba/server/util/Decode.class
+ch/zhaw/securitylab/diba/server/user/Comment.class
 ch/zhaw/securitylab/diba/server/user/Payment.class
 ch/zhaw/securitylab/diba/server/user/User.class
 ch/zhaw/securitylab/diba/server/util/UtilJavalin.class

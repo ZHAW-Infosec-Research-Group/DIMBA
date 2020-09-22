@@ -1,3 +1,2 @@
 ninja: Entering directory `/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/x86_64'
-[1/2] Building C object CMakeFiles/native-lib.dir/native.c.o
-[2/2] Linking C shared library /home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj/x86_64/libnative-lib.so
+ninja: no work to do.
