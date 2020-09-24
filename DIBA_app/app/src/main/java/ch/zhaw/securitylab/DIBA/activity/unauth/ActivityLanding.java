@@ -23,7 +23,7 @@ import ch.zhaw.securitylab.DIBA.helpers.Extras;
 
 
 /**
- * The landing activity routes to all un-authenticated activities in InBank.
+ * The landing activity routes to all un-authenticated activities in DIBA.
  */
 public class ActivityLanding extends ActivityDIBAAbstract {
 	private SharedPreferences preferences;

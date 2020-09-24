@@ -7,3 +7,24 @@ CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
 /*C7*/SET SCHEMA PUBLIC
 INSERT INTO PAYMENT VALUES('greg@gmail.com','marina@mail.com',2000,'SFr',-2000)
 COMMIT
+/*C9*/SET SCHEMA PUBLIC
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1057008019,'150','SFr','150')
+COMMIT
+/*C10*/SET SCHEMA PUBLIC
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1056919739,'500','SFr','500')
+COMMIT
+/*C11*/SET SCHEMA PUBLIC
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1056908749,'400','$','360.0')
+COMMIT
+/*C12*/SET SCHEMA PUBLIC
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1056898421,'99','\u00a3','173.25')
+COMMIT
+/*C14*/SET SCHEMA PUBLIC
+CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255), date varchar(10), score varchar(1))
+CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))
+CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)
+CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))
+CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))
+/*C16*/SET SCHEMA PUBLIC
+INSERT INTO COMMENT VALUES('Best service ever! :P','24-09-2020','5')
+COMMIT

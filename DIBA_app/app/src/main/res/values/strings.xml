@@ -39,8 +39,6 @@
         "200.- and can be purchased right here with the handy |Purchase VIP| button."
     </string>
     <string name="wall_vip">42IsTheAnswer</string>
-    <string name="salt">L0ngS4Lt</string>
-    <string name="hash">1659b8868ebe5fa530e63330e28bf35d15879e42b3b0fe550f39a58a24132f67</string>
     <string name="permission_lable_accept_payment">Pay Accept</string>
     <string name="permission_description__accept_payment">Protects the Activity AuthPayAccept</string>
     <string name="permission_lable_messages">Messages</string>
@@ -100,6 +98,8 @@
     <string name="payslip_info_back">
         "When returning to the payment screen and a payslip was loaded, the text will appear on that screen as well."
     </string>
+    <string name="salt">L0ngS4Lt</string>
+    <string name="hash">223a26118434575d33c36102b45bed6aaa701eb3f1042a147503af704f883a9a</string>
     <string name="alphabet">abcdefghijklmnopqrstuvwxyz</string>
     <string name="title_activity_auth_stock">Sign in</string>
     <string name="welcome">"Welcome !"</string>
