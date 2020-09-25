@@ -312,7 +312,7 @@ To get access to stock market data, an access code must be entered. Due to a vul
 
 **Goal:** Find out the correct access code and get access to the stock matket functionality by entering the code.
 
-**Hint:** The code is based on a common wird and additionally uses letter capitalization and digits.
+**Hint:** The code is based on a common word and additionally uses letter capitalization and digits.
 
 **Check**: Works. But the solution should be adapted:
 
@@ -337,10 +337,6 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 Note: Finding this in smali is very difficult. How can the user find the correct code location?
 
-Question: This is a real rooted detection check, right? So it runs only on truly rooted devices (or the VM, where su is available)
-
-Note: Rooted detection should be OFF in the settings per default. Also, it should be in the Meta-Setting, not the Settings (?)
-
 ### 30: Local Command Injection
 In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
 
@@ -348,24 +344,15 @@ In the Meta-Settings, there's a *Ping Server* functionality to ping the server u
 
 **Check**: Works
 
-Note: Missing / in solution: && cat data/data... should be && cat /data/data...
 
-Note: But this means the meta ssettings are now exploitable, so the entry "Non-attackable screens" is no lomger correct.
 
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
-To confirm a paymemnt, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments.
+To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments - so it's not a one time payment code as it is supposed to be. This means that, e.g., a 
 
-**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm anotehr payment. Obviously, this is trivial to do.
+**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm another payment. Obviously, this is trivial to do.
 
 **Check**: Works
 
-Addd "stars" in the server log before and after the SMS content
-
-The text in the app should be:
-
-A confirmation code was sent to you by SMS (you can get it from to the server output).
-Enter the code to conform the payment.
-(To prove that you cracked the code generation algorithm, enter the code that will be used 2020-02-31 12:00:00. If the paymant is accepted, you have succeeded!)
 
 ### 32: Two-Factor Authentication II (easy)
 
