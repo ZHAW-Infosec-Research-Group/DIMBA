@@ -260,12 +260,18 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 
 **Check**: Works
 
+OK, one small mistake in solution: Missing s
+
+sqlite3 investments
+
 ### 25: Native Language Library (hard)
 Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
 
 **Goal:** Find the key. When solving vulnerability 26, you'll learn whether you have found the right key.
 
 **Check**: Works
+
+OK, add to solution why you are searching for "*.so"
 
 ### 26: Encrypted SQLite Database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
@@ -277,6 +283,14 @@ Just like with investments (see vulnerability 25), a local database is also used
 **Hint:** In the DIBA app, encryption of the payment database is done using [SQLCipher](https://www.zetetic.net/sqlcipher/). Note that this vulnerability is not because a problem of SQLCipher, but because the attacker can get access to the encryption key.
 
 **Check**: Could not test as I couldn't build SQLCipher
+Add to solution how we can found out that sqlcipher is used.
+
+This does not work:
+marc@clt-mob-t-6316 Desktop % adb shell "run-as ch.zhaw.securitylab.DIBA cat databases/payments" > payments.db
+run-as: package not debuggable: ch.zhaw.securitylab.DIBA
+
+As an alternative, use adb shell, then su. The copy the db to, e.g., /sdcard and from there, copy it to the local system with adb pull
+
 
 ### 27: WebView Cross-Site Scripting (medium)
 The DIBA app provides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView that contains a stored Cross-Site Scripting (XSS) vulnerability.
@@ -335,6 +349,8 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 **Check**: Works
 
+Check again with updated solution.
+
 Note: Finding this in smali is very difficult. How can the user find the correct code location?
 
 ### 30: Local Command Injection
@@ -344,14 +360,18 @@ In the Meta-Settings, there's a *Ping Server* functionality to ping the server u
 
 **Check**: Works
 
+Write in the solution to use adb logcat to see the logs.
 
+And a problem in my VM: When entering the command, the PING button is no longer on the screen (I can go down with "Tab", but it’s of course not ideal… Maybe we can add the PING button next to the IP address?
 
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments until it expires (which is after 5 minutes) - so it's not a one time confirmation code as it is supposed to be. This means that, e.g., a MITM can wait until the user has made and confirmed one payment. Based on this, the MITM can then make several additional payments using this code while the code is valid.
 
 **Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm another payment. Obviously, this is trivial to do.
 
-**Check**: Works
+**Check**: Works. But the solution should be adapted. Write that a code is valid for 5 minutes and during this time, can be used for any payment, also several times (it could even be used by other users).
+
+I also adapted the text in Vulnerabilities.md to give a realistic attack scenario with an MITM. In the solution, you are currently writing "Device Holder", but I’m not sure that makes sense?
 
 ### 32: Two-Factor Authentication II - Code not Bound to Payment (easy)
 Assume that the confirmation code can be used only once to confirm a payment (that's not the case, see vulnerability 31, but let's assume here it can only be used once). But it's still not bound to a specific payment. Try to exploit this by changing - as a MITM -  both the payment recipient and the payment amount that was originally entered by the user so that the payment with the changed amount and to a different recipient is executed. Note that the SMS message must appear harmless to the user, i.e., it must contain the originally entered payment amount and recipient.
@@ -360,6 +380,12 @@ Assume that the confirmation code can be used only once to confirm a payment (th
 
 **Check**: Works
 
+Actually, I think it works. I mean, it’s (almost) the same as is done by intent redirection, but here the modification is done as a MITM and not between the two app activities.. Please check the description I added to Vulnerabilities.md. It works, correct?
+
+In the made transactions list, there’s still the original recipient, but that’s because this takes the local information in the app, so it does not get the change done by the MITM. Correct?
+
+Please adapt solution accordingly. The problem here is of course, that the payment is included at all in the request with the code. This shouldn’t be done, so changing this after entering the code is not possible. Something like this should also be in the solution as a fix to the issue (and it’s basically also the solution to fix Vulnerability 31).
+
 ### 33: Two-Factor Authentication III - Weak Code Generation (medium)
 Confirmation codes should be random so an attacker cannot predict them. In the case of DIBA, however, they are not really created in a random way, although they appear to be quite random when looking at them.
 
@@ -367,4 +393,7 @@ Confirmation codes should be random so an attacker cannot predict them. In the c
 
 **Hint:** Code generation is based on a hash function.
 
-**Check**: Works
+**Check**: Works, code 65a0be
+
+Adapt solution. Steps should show full solution, including solution. Here the attacker has "to guess" that SHA256 is used, right? But that’s OK, as it’s such a common hash function. I added a little hint.
+
