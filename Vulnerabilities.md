@@ -175,11 +175,10 @@ Usually, the back button shows the previously used screen. This can be security 
 Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
 
 
-### 17: Payment Input Validation (easy)
+OK ### 17: Payment Input Validation (easy)
+When doing a payment, the amount can only be entered as a positive number. However, there's a vulnerability that allows you to make payemnts with negative amounts, which will increase your balance.
 
-Check this out. I also sent you a video as there's a strange behaviour with payments if the proxy is used. It may have to do with timeouts in the app?
-
-https://drive.switch.ch/index.php/s/av94lsXfhJkPjwX
+**Goal:** Make a payment that uses a negative amount so the balance of your account is increased accordingly.
 
 ### 18: Developer Entrance (medium)
 As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
