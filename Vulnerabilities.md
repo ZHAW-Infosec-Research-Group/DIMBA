@@ -174,11 +174,12 @@ Usually, the back button shows the previously used screen. This can be security 
 
 Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
 
-
-OK ### 17: Payment Input Validation (easy)
+### 17: Payment Input Validation (easy)
 When doing a payment, the amount can only be entered as a positive number. However, there's a vulnerability that allows you to make payemnts with negative amounts, which will increase your balance.
 
 **Goal:** Make a payment that uses a negative amount so the balance of your account is increased accordingly.
+
+**Check**: Works
 
 ### 18: Developer Entrance (medium)
 As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
@@ -334,10 +335,3 @@ Confirmation codes should be random so an attacker cannot predict them. n the ca
 **Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
 
 **Check**: Works
-
-
-
-
-
-
-
