@@ -34,29 +34,23 @@ public class RememberMe
 		return convert(string, Cipher.DECRYPT_MODE);
 	}
 	
-	private static String convert(String string, int mode)
-	{
+	private static String convert(String string, int mode) {
 		// Create
 		String afterText = null;
 		SecretKey secretKey = getSecretKey();
 		Cipher cipher = getCipher(mode, secretKey);
 		
 		byte[] bytes = string.getBytes();
-		if (mode == Cipher.DECRYPT_MODE)
-		{
+		if (mode == Cipher.DECRYPT_MODE) {
 			bytes = Base64.decode(string, Base64.DEFAULT);
 		}
 		
-		try
-		{
+		try {
 			// Decrypt
 			byte[] afterBytes = cipher.doFinal(bytes);
-			if (mode == Cipher.ENCRYPT_MODE)
-			{
+			if (mode == Cipher.ENCRYPT_MODE) {
 				afterText = Base64.encodeToString(afterBytes, Base64.NO_WRAP);
-			}
-			else
-			{
+			} else {
 				afterText = new String(afterBytes);
 			}
 		}

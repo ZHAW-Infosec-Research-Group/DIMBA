@@ -30,13 +30,9 @@ public class Quotes {
 	}
 
 	public static Message getStartMessage() {
-		return new Message("Greetings User\n\n" +
-				"We are happy, that you try to hack our app.\n" +
-				"If you need help, send the message 'hint' to the server\n\n" +
-				"Best Regards\n" +
-				"The DIBA developer team",
-				VIEW_TYPE, System.currentTimeMillis()
-		);
+		return new Message(
+				"Here you can send messages to the bank. You can also search for messages you sent and received before.", 
+				VIEW_TYPE, System.currentTimeMillis());
 	}
 
 

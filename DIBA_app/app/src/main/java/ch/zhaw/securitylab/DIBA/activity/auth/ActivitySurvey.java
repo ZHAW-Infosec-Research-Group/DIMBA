@@ -22,7 +22,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-//public class ActivitySurvey extends ActivityInBankAbstract {
 public class ActivitySurvey extends AppCompatActivity {
 
     WebView surveyView;

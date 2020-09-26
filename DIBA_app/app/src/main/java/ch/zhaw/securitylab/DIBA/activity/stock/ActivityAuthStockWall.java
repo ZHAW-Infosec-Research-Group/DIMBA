@@ -65,7 +65,7 @@ public class ActivityAuthStockWall extends ActivityBoundAbstract {
             String userhash = computeHash(usercode);
             System.out.println(userhash);
             String code = getStockMarketHash();
-            if (userhash.equals(code) || 1==1) {
+            if (userhash.equals(code)) {
                 access = true;
             }
             if (access) {

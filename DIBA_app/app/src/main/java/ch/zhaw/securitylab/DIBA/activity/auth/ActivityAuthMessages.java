@@ -104,7 +104,7 @@ public class ActivityAuthMessages extends ActivityDIBAAbstract
 		messageRecycler.setAdapter(messageAdapter);
 		
 		if (messageList.isEmpty()) {
-			String text = "Greetings User\n\nWe are happy that you try to hack our app. If you need help, send the message 'hint' to the server.\n\nBest regards,\nThe DIBA developer team.";
+			String text = "Here you can send messages to the bank. You can also search for messages you sent and received before.";
 			clearAndShowMessages(Collections.singletonList(new Message(text, Message.VIEW_TYPE_MESSAGE_RECEIVED)));
 		}
 	}
