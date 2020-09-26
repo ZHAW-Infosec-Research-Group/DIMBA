@@ -2,9 +2,11 @@
 
 TODO:
 
-Write that DB files can be deleted to reset the server.
+Just one jar for server would be good.
 
 Check the Build it yourself section below to make sure it ist completely correct.
+
+Make sure to adapt "Build it yourself" so everything works.
 
 ## What is DIBA?
 DIBA is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities. 
@@ -85,6 +87,9 @@ To understand and exploit some vulnerabilities, access to the communication betw
 5. Next, select the pen icon at the top right and expand **Advanced options**.
 6. Here, specify **Proxy -> Manual**, enter the IP address of your physical host in the **Proxy hostname** field and the port used by your interceptor proxy in the **Proxy port** field. Finally, make sure to save the settings.
 7. When using the interceptor proxy, it's easiest to use certificate check security **LEVEL 1** in the meta settings of the app to prevent problems. If you need a bit of a challenge, you can also use the higher levels (for more information about theses levels: see vulnerability 1 in [Vulnerabilities.md](Vulnerabilities.md)).
+
+### Resetting App and Server
+T reset the app, tap on *Reset App* in the *Meta Settings*. To reset the server, delete all files in folder *db*.
 
 ## Build it yourself
 
