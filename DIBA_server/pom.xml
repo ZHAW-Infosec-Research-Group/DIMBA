@@ -85,6 +85,7 @@
 
     <!-- All configuration for the self contained jar -->
     <build>
+		<finalName>DIBA_server</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>

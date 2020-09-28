@@ -1,2 +1,2 @@
 
-java -classpath lib/hsqldb.jar:target/server-1.0-SNAPSHOT-jar-with-dependencies.jar ch.zhaw.securitylab.diba.server.Server
+java -classpath lib/hsqldb.jar:target/DIBA_server-jar-with-dependencies.jar ch.zhaw.securitylab.diba.server.Server

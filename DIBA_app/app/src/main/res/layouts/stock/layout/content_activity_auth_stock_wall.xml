@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="80dp"
-        android:text="Insert the access code here"
+        android:text="To access live stock market data, enter the required access code and tap on the Stock Market button."
         app:layout_constraintTop_toTopOf="parent"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:fontFamily="@font/diba_text" android:textSize="10pt"/>
@@ -51,25 +51,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputStockSecret" />
-
-    <Button
-        android:text="Subscribe"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button_background"
-        android:id="@+id/wallButtonSubscribe"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:fontFamily="@font/diba_text"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wallButtonStock" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

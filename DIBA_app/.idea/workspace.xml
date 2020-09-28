@@ -13,38 +13,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36f345ca-1f8a-4add-8e87-63903ed34f0b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_2_5_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_migration_2_2_5_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/DIBA_app-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/DIBA_app-app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/DIBA-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/DIBA-release.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/content_activity_auth_stock_wall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/content_activity_auth_stock_wall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/activity_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_metasettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/unauth/layout/content_activity_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/release/exploit-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/release/exploit-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/ActivityClipboardLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/ActivityClipboardLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/ActivityIntentRedirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/ActivityIntentRedirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/MainExploitActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/MainExploitActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/java/ch/zhaw/securitylab/DIBA_exploit/RememberMe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/layout/activity_clipboard_log.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/layout/activity_clipboard_log.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/layout/content_clipboard_log.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/layout/content_clipboard_log.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/menu/activity_main_exploit_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/app/src/main/res/menu/activity_main_exploit_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.log" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.script" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docs/Gregory_Banfi_vt2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Gregory_Banfi_vt2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payments.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/start_server" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/start_server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/server-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -394,22 +394,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="737" y="315" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599481978710" />
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1601133864417">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom" timestamp="1601296433321">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1601133864417" />
-    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1601133864417">
+    <state width="1874" height="276" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1601296433321" />
+    <state width="1874" height="276" key="GridCell.Tab.0.center" timestamp="1601296433321">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="276" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1601133864417" />
-    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1601133864416">
+    <state width="1874" height="276" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1601296433321" />
+    <state width="1874" height="276" key="GridCell.Tab.0.left" timestamp="1601296433321">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="276" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1601133864416" />
-    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1601133864417">
+    <state width="1874" height="276" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1601296433321" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right" timestamp="1601296433321">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="276" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1601133864417" />
+    <state width="1874" height="276" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1601296433321" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1596539660605">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

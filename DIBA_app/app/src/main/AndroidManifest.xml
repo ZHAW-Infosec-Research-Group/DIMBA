@@ -32,7 +32,7 @@
 
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.stock.ActivityAuthStockWall"
-            android:label="Access Stock Market Wall"
+            android:label="Stock Market Wall"
             android:parentActivityName="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain"
             android:theme="@style/AppTheme.NoActionBar" />
 
