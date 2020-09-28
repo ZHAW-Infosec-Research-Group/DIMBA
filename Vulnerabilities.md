@@ -59,8 +59,8 @@ DIBA exploit was developed by the DIBA team. It allows to exploit some of the vu
 
 Complete:
 
-1: solution adaptations
-2: ok
+- 1: solution adaptations
+- 2: ok
 3: solution adaptation
 4: solution adaptation
 5: solution adaptation
@@ -150,8 +150,6 @@ During payment, DIBA allows to load/save a payment slip from/to the SD-Card. Thi
 **Goal:** Abuse this functionality to first read the contents of the file *ch.zhaw.securitylab.DIBA_preferences.xml* in the shared preferences of the DIBA app. The next steps depend on whethter you already have access to make investments (via the VIP code):
 * In case you don't have access to make investments yet, add the entry *<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments.
 * If you already have access to make investments, then set the value of the *VIP* attribute to *false* and overwrite the file with the new content. As a result of this, you no longer should have access to make investments.
-
-**Check**: Works
 
 ### 12: Directory Traversal III - Read/Write (easy)
 This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
