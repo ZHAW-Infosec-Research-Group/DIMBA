@@ -59,16 +59,18 @@ DIBA exploit was developed by the DIBA team. It allows to exploit some of the vu
 
 Complete:
 
-* 1: solution adaptations
-* 2: ok
-3: solution adaptation
-4: solution adaptation
-5: solution adaptation
-6: solution adaptation
-7: solution adaptation
-8: solution adaptation
-9: solution adaptation
-10: ok
+- 1: solution adaptations
+- 2: ok
+- 3: solution adaptation
+- 4: solution adaptation
+- 5: solution adaptation
+- 6: solution adaptation
+- 7: solution adaptation
+- 8: solution adaptation
+- 9: solution adaptation
+- 10: ok
+- 11: solution adaptation
+- 12: solution adaptation
 
 
 
@@ -102,8 +104,6 @@ The *Messages* functionality allows to send and receive messages to/from the ban
 
 **Goal:** Abuse the search field to get access to all messages that were sent and received by other users of the same device. If successful, this should allow to get access to a brief exchange of messages between Alice and Bob.
 
-**Check**: Works.
-
 ### 5: Clipboard Danger (easy/medium)
 During payment, DIBA allows to load a payment slip from the SD-Card. You can assume that the user receives the payment slip by e-mail from where it can be copied to the SD-Card so it can be imported in DIBA. By selecting *Transfer Payment Slip*, one can copy data from the payment slip (e.g., the recipient) to the corresponding field of the payment using standard the standard Android copy-paste functionality. Assuming an attacker controls another app on the device, he can get access to possibly sensitive payment data copied by the user.
 
@@ -135,10 +135,6 @@ The activity to view the investments in not exported. However, there's an alias 
 
 **Remark**: Note that in this case, assming an attacker gets temporary access to the device of a DIBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way.
 
-**Check**: Works
-
-Note: Explot app still uses path to inbank, not DIBA.
-
 ### 10: Directory Traversal I - Read (easy)
 During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
 
@@ -155,8 +151,6 @@ During payment, DIBA allows to load/save a payment slip from/to the SD-Card. Thi
 This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
 
 **Goal:** Abuse the load/save payment slip functionality to copy any file from the shared preferences to the SD-Card. Once this has been done, check (e.g., using adb) whether the file was indeed copied to the SD-Card.
-
-**Check**: Works
 
 ### 13: Weak Report Encryption (hard)
 At the top right of the *Home* screen, thers's a bug-shaped button. Clicking this button creates a report that contains sensitive information. Due to this sensitive information, the report is encrypted before it is stored on the SD-Card. From there, the user can send it to the DIBA bank, e.g., by mail.
