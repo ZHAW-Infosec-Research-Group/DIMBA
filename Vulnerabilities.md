@@ -57,6 +57,21 @@ Use this welcome text:
 
 DIBA exploit was developed by the DIBA team. It allows to exploit some of the vulnerabilities in DIBA. You can select the vulnerability to exploit in the menu.
 
+Complete:
+
+1: solution adaptations
+2: ok
+3: solution adaptation
+4: solution adaptation
+5: solution adaptation
+6: solution adaptation
+7: solution adaptation
+8: solution adaptation
+9: solution adaptation
+10: ok
+
+
+
 
 ### 1: Certificate Check Security
 
@@ -70,23 +85,17 @@ In the Meta Settings, five different levels can be selected that specify the sec
 - **Level 4**: This includes the checks from level 2 and in addition, it is checked whether the certiticate is signed by the DIBA CA certificate. This means the certificate is pinned to the issuing CA. To intercept network communication, one needs a certificate (and corresponding private key) signed by the DIBA CA certificate.
 - **Level 5**: This includes the checks from level 2 and in addition, it is checked whether the certiticate corresponds exactly to the DIBA server certificate. This means the certificate is pinned to the server certificate. To intercept network communication, one needs to use the original DIBA server certificate (and corresponding private key).
 
-**Check**: Works
-
 ### 2: Investments VIP Code (medium)
 To do investments, a VIP code is required that can be purchased from the bank. However, due to a vulnerability, it is possible to find out the correct VIP code without having to purchase it.
 
 **Goal:** Find out the valid VIP access code and get access to the Investstments functionality by entering the code.
 
-**Check**: Works, but old solution description seems to be overly complicated.
-
-### 3: Remember Me (medium)
+### 3: Remember Me (hard)
 For usabiliy reasons, DIBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is hard.
 
 **Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
 
 **Goal:** Get the password of *h@cker* from the device assuming you don't know the password.
-
-**Check**: Works.
 
 ### 4: SQL Injection (easy)
 The *Messages* functionality allows to send and receive messages to/from the bank. The messages are cached locally on the device so that they can be viewed even if there's no network connection. As the app can be used by different users on the same device, messages of multiple users may be cached. Therefore, for confidentiality reasons, a user should only get access to his own messages. Unfortunately, this was not implemented correctly.
@@ -102,30 +111,20 @@ During payment, DIBA allows to load a payment slip from the SD-Card. You can ass
 
 **Goal (medium):** Develop an app that logs all data that is copied in other apps (which obviously includes payment data copied in the DIBA app).
 
-**Check**: Works
-
 ### 6: Exported Content Provider (medium)
 The DIBA app contains an exported content provder that allows to change the app settings. One can assume that this was intentionally added during development so that settings can easily be changed using a separate app, but it was forgotten to remove this before publishing the app.
 
 **Goal:** Develop an app that allows to set at least one of the DIBA app settings.
-
-**Check**: Works
 
 ### 7: Intent Redirection (hard)
 In the settings, the developers forgot to remove a debugging setting that allows specifying the activity that is used to confirm a payment. Per default, this is set to the payment confirmation activity of the DIBA app and therefore, everything works as intended. However, the values can be changed so they point to a another activity in another app and because of vulnerability 6, the settings can not only be changed within the DIBA app, but also by another app on the same device. Overall, this means that an attacker, assuming he controls an app on the device, can interfere with the payment data that is sent (in an intent) from the *Make a Payment* activity to the *Accept the Payment* activity.
 
 **Goal:** Develop an app that provides an activity that can receive the intent sent from the *Make a Payment* activity, that canges the recipient of a payment to *attacker@mail.com*, and that forwards the modified intent to the *Accept the Payment* activity. When tapping on *Show Details*, you should then see the modified payment data.
 
-**Check**: Works
-
-Note: Make sure solution chapter describes exploitation assuming the attacker only has the DIBA apk file, not the source code.
-
 ### 8: Logging Sensitive Information (easy)
 Apps should never log sensitive data as this unnecessarily exposes this data so an attacker can possibly access it. The DIBA app, unfortunately, logs a lot of sensitive information to the central Android logging facility, probably as a leftover from development. If an attacker gets access to your device, he can use adb to get access to the logged data.
 
 **Goal:** Get access to logged credentials (email and password).
-
-**Check**: Works
 
 ### 9: Exported Activity Alias (easy/medium)
 The activity to view the investments in not exported. However, there's an alias for this activity, which is exported, and as a result of this, the original activity also gets exported. This means that it can be directly accessed without following the user interface of the app, i.e., without logging in. 
@@ -144,8 +143,6 @@ Note: Explot app still uses path to inbank, not DIBA.
 During payment, DIBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
 
 **Goal:** Abuse this functionality to get access to the content of the file *loginPreferences.xml* in the shared preferences of the DIBA app.
-
-**Check**: Works
 
 ### 11: Directory Traversal II - Read/Write (easy)
 During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app. This may allow a user to change settings of the app in a way as it was not intended by the app developers.
