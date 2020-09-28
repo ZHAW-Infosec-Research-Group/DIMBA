@@ -59,8 +59,8 @@ DIBA exploit was developed by the DIBA team. It allows to exploit some of the vu
 
 Complete:
 
-- 1: solution adaptations
-- 2: ok
+* 1: solution adaptations
+* 2: ok
 3: solution adaptation
 4: solution adaptation
 5: solution adaptation
