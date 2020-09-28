@@ -10,52 +10,13 @@ The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indicatio
 
 The "Reset App" button resets a lot, but it does not reset the list of payments. Could you add this? It also does not reset the currency exchamnge rates.
 
-App Settings screen needs better formatting.
-
 Add license files & information.
-
-Replace "please update to receive the messages" with a text that tells the user what to do.
 
 Use DIBA logo also for the exploit ab, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
-Menu should be:
-
-Intend redirection attack: value "1000" is set to wrong Extra.
-You changed the wrong value: You must set the amountSFr to 1000, not the amount, because this is the actual money that is transferred.
-
-DIBA-Exploit Logo
-
 How to reset server?
 
-And can you rename the REDIRECT button to CHANGE DEBUG SETTINGS?
-
-WebView:
-
-Works. Use the following text on the servey page:
-
-Your recently opened account IBAN:
-
-Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
-
-And make sure to us good comments already in there, so use the following 3 examples:
-
-5: Very good service, thank you!
-
-3:  It’s OK, but I’ve seen better apps.
-
-2: Not happy, I’m thinking about using another bank. 
-
-Messages:
-
-I don’t think these hints are very good so if used, we would have to adapt them. We leave the feature with "hint" in the app, but we shouldn’t tell the user about it. Let’s just use this welcome message:
-
-"Here you can send messages to the bank. You can also search for messages you sent and received before."
-
-Exploit App:
-
-Use this welcome text:
-
-DIBA exploit was developed by the DIBA team. It allows to exploit some of the vulnerabilities in DIBA. You can select the vulnerability to exploit in the menu.
+Check that wne cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
 
 Complete:
 
