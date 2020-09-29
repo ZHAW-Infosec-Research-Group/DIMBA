@@ -6,7 +6,7 @@ Most of the vulnerabilities are within the app. However, there are also a few vu
 
 The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indication for the complexity of exploiting them. This complexity rating reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
 
-### General issues
+TODO:
 
 The "Reset App" button resets a lot, but it does not reset the list of payments. Could you add this? It also does not reset the currency exchamnge rates.
 
