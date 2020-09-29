@@ -257,7 +257,7 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 **Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *apksigner*.
 
-### 30: Local Command Injection
+### 30: Local Command Injection (easy)
 In the Meta-Settings, there's a *Ping* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
 
 **Goal:** Exploit the vulnerability so that the content of the file *loginPreferences.xml* in shared preferences of the DIBA app is written to the Android log.
