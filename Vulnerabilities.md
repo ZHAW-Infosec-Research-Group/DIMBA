@@ -12,11 +12,9 @@ The "Reset App" button resets a lot, but it does not reset the list of payments.
 
 Add license files & information.
 
-Use DIBA logo also for the exploit ab, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
+Use DIBA logo also for the exploit app, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
-How to reset server?
-
-Check that wne cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
+Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
 
 Complete:
 
@@ -41,6 +39,8 @@ Complete:
 - 29: solution does not work for me
 - 30: ok
 - 31: solution adaptation
+- 32: solution adaptation
+- 33: solution adaptation
 
 
 
