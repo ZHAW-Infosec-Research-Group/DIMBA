@@ -40,6 +40,7 @@ Complete:
 - 28: solution adaptation
 - 29: solution does not work for me
 - 30: ok
+- 31: solution adaptation
 
 
 
@@ -264,24 +265,12 @@ In the Meta-Settings, there's a *Ping* functionality to ping the server using th
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments until it expires (which is after 5 minutes) - so it's not a one time confirmation code as it is supposed to be. This means that, e.g., a MITM can wait until the user has made and confirmed one payment. Based on this, the MITM can then make several additional payments using this code while the code is valid.
 
-**Goal:** Exploit the vulnerability by reusing the payment code of a previous payment to confirm another payment. Obviously, this is trivial to do.
-
-**Check**: Works. But the solution should be adapted. Write that a code is valid for 5 minutes and during this time, can be used for any payment, also several times (it could even be used by other users).
-
-I also adapted the text in Vulnerabilities.md to give a realistic attack scenario with an MITM. In the solution, you are currently writing "Device Holder", but I’m not sure that makes sense?
+**Goal:** Act as a MITM using an interceptor proxy. Do a payment as the user of the app and learn (as the MITM) the payment confirmation code. Then, do another payment as the MITM by replaying the two original requests that were used during the payment, but change both the payment amount and the recipient of the payment in bith requests. Use the payment confirmation code you observed. The payment should be accepted by the server. You can verify successful exploitation by comparing the account balance before and after the payment.
 
 ### 32: Two-Factor Authentication II - Code not Bound to Payment (easy)
 Assume that the confirmation code can be used only once to confirm a payment (that's not the case, see vulnerability 31, but let's assume here it can only be used once). But it's still not bound to a specific payment. Try to exploit this by changing - as a MITM -  both the payment recipient and the payment amount that was originally entered by the user so that the payment with the changed amount and to a different recipient is executed. Note that the SMS message must appear harmless to the user, i.e., it must contain the originally entered payment amount and recipient.
 
 **Goal:** Exploit the vulnerability by successfully modifying a payment so that the payment amount is larger than originally entered by the user and that the payment goes to a different recipient. You can verify successful exploitation by comparing the account balance before and after the payment.
-
-**Check**: Works
-
-Actually, I think it works. I mean, it’s (almost) the same as is done by intent redirection, but here the modification is done as a MITM and not between the two app activities.. Please check the description I added to Vulnerabilities.md. It works, correct?
-
-In the made transactions list, there’s still the original recipient, but that’s because this takes the local information in the app, so it does not get the change done by the MITM. Correct?
-
-Please adapt solution accordingly. The problem here is of course, that the payment is included at all in the request with the code. This shouldn’t be done, so changing this after entering the code is not possible. Something like this should also be in the solution as a fix to the issue (and it’s basically also the solution to fix Vulnerability 31).
 
 ### 33: Two-Factor Authentication III - Weak Code Generation (medium)
 Confirmation codes should be random so an attacker cannot predict them. In the case of DIBA, however, they are not really created in a random way, although they appear to be quite random when looking at them.
@@ -289,8 +278,3 @@ Confirmation codes should be random so an attacker cannot predict them. In the c
 **Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
 
 **Hint:** Code generation is based on a hash function.
-
-**Check**: Works, code 65a0be
-
-Adapt solution. Steps should show full solution, including solution. Here the attacker has "to guess" that SHA256 is used, right? But that’s OK, as it’s such a common hash function. I added a little hint.
-
