@@ -23,15 +23,7 @@ import ch.zhaw.securitylab.DIBA.activity.ToolbarMode;
 
 public class ActivityAuthStockWall extends ActivityBoundAbstract {
 
-    // -------------------------------------------- //
-    // FIELDS
-    // -------------------------------------------- //
-
     private SharedPreferences defaultPreferences;
-
-    // -------------------------------------------- //
-    // CONSTRUCT & CREATE
-    // -------------------------------------------- //
 
     public ActivityAuthStockWall() { super(R.layout.activity_auth_stock_wall, ToolbarMode.NAV_AUTH, R.id.nav_go_Stock); }
 
@@ -42,7 +34,6 @@ public class ActivityAuthStockWall extends ActivityBoundAbstract {
         button(accessStockMarket(), R.id.wallButtonStock);
     }
 
-
     private void startActivityWithCustomBackStack() {
         Class clazz = ActivityAuthStockList.class;
 
@@ -52,10 +43,6 @@ public class ActivityAuthStockWall extends ActivityBoundAbstract {
                 .startActivities();
     }
 
-    // -------------------------------------------- //
-    // BUTTONS
-    // -------------------------------------------- //
-//
     private View.OnClickListener accessStockMarket()
     {
         return (View v) ->

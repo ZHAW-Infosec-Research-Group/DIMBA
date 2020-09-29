@@ -94,6 +94,7 @@
         android:checked="false"
         android:fontFamily="@font/diba_text"
         android:text="Details"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
         android:textOff="Show Details"

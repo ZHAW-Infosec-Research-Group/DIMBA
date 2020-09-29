@@ -19,8 +19,8 @@
                 android:textAlignment="center"
                 android:layout_marginTop="16dp"
                 android:text="Change later"
-                android:textStyle="bold" app:layout_constraintTop_toTopOf="parent"
-        />
+                android:textStyle="bold" app:layout_constraintTop_toTopOf="parent" />
+
         <Button
                 android:id="@+id/changeButtonDefaultTwo"
                 style="?android:textAppearanceSmall"

