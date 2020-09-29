@@ -31,6 +31,10 @@ Complete:
 - 11: solution adaptation
 - 12: solution adaptation
 
+- 13: solution adaptation
+- 14: solution adaptation
+- 15: solution adaptation
+
 - 24: ok
 - 25: ok
 - 26: solution adaptation (?), as not working on Ubuntu
@@ -136,9 +140,7 @@ Note: Code is obfuscated and hard to learn. However, looking at the encrypted re
 ### 14: JWT Validity (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
-**Goal:** Get a JWT (e.g., by using an intercepor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
-
-**Check**: Works
+**Goal:** Get a JWT (e.g., by using an interceptor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 ### 15: Recently Used Apps (easy)
 In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. As the DIBA app sometimes shows sensitive information, it has been implemented in a way to make sure that 
