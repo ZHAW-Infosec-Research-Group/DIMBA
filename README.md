@@ -61,14 +61,14 @@ To make it easier to work with the virtual machine, it is recommended to activat
 ### DIBA Server
 The DIBA app needs a server to communicate to. To make this possible we provide a Java server together with the app release. The DIBA server (/DIBA\_server/DIBA\_server.jar), needs also the keystore directory (DIBA\_server/keystore) with the keystore.jks file in it. You can then run the server locally on your machine with Java:
 
-``` java -jar DIBA\_server.jar ```
+``` java -jar DIBA_server.jar ```
 
 ### DIBA App Installation
 To install the DIBA app on the Android virtial machine, do the following:
 1. Check if adb is connected with your device by running the following command: `adb devices`
 2. If it is not connected you can establish a connection by running the command: `adb connect 127.0.0.1:5555`
-3. Now you can install the APK by executing the following command: `adb install /path/to/DIBA.apk` 
-4. Copy the DIBA\_CA.pem file to the Android virtual machine by using the adb command: `adb push DIBA\_server/keystore/certificates/DIBA\_CA.pem /sdcard`
+3. Now you can install the APK by executing the following command: `adb install /DIBA_app/app/release/DIBA.apk` 
+4. Copy the DIBA\_CA.pem file to the Android virtual machine by using the adb command: `adb push DIBA_server/keystore/certificates/DIBA_CA.pem /sdcard`
 5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD card** There select DIBA\_CA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
 6. To verify that the certificate is installed, open **Security & location -> Encryption & credentials -> Trusted credentials**. 
 
@@ -102,8 +102,10 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 4. In Android Studio click on **Build** -> **Generate Signed APK** -> **Select APK**
 5. When getting asked for a keystore either point to an existing one you are already using for your signing keys or create a new one including a new certificate to go along
 6. Click **Next**
-7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V2** 
+7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V1** 
 8. Click **Finish**. You should now have a signed APK in /DIBA\_app/app/release/. You can now install the APK as described in the **App Installation** Section.
+
+Note: the same instructions can be used to build DIBA\_exploit app.
 
 ### Building the server
 1. Install Maven (version 3.5.4)
