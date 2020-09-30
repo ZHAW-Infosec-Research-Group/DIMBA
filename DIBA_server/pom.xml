@@ -110,9 +110,10 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
+                    <!-- <descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs> -->
+			        <outputDirectory>./</outputDirectory>
                     <archive>
                         <manifest>
                             <mainClass>ch.zhaw.securitylab.diba.server.Server</mainClass>
@@ -126,6 +127,15 @@
                         <goals>
                             <goal>single</goal>
                         </goals>
+
+						<configuration>
+					        <descriptorRefs>
+					        	<descriptorRef>jar-with-dependencies</descriptorRef>
+					        </descriptorRefs>
+							<finalName>DIBA_server</finalName>
+							<appendAssemblyId>false</appendAssemblyId>
+						</configuration>
+
                     </execution>
                 </executions>
             </plugin>

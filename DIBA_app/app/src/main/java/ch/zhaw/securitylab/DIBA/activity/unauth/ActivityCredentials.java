@@ -83,7 +83,7 @@ public class ActivityCredentials extends ActivityDIBAAbstract
 	
 	private void errorInIntent()
 	{
-		Toast.makeText(this, "Something wrong has happened, please send your log "
+		Toast.makeText(this, "Something wrong has happened, please send your leg :) log"
 			+ "to the developers.", Toast.LENGTH_LONG).show();
 		startActivity(new Intent(this, ActivityLanding.class));
 	}

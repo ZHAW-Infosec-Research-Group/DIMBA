@@ -128,6 +128,7 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 			new Thread(() -> {
 				DIBA diba = DIBA.get();
 				diba.metaClearInvestments();
+				diba.metaClearPayments();
 				diba.metaClearMessages();
 				diba.metaClearMetasettings();
 				diba.initMetasettingsDB();
@@ -151,13 +152,16 @@ public class ActivityMetasettings extends ActivityDIBAAbstract {
 	
 	private void resetCurrencyExchange() {
 		String[] currencies = {"SFr", "Eur", "$", "£"};
-		String preferenceName = "loginPreferences";
+		String preferenceName = "currencyPreferences";
 		int preferenceMode = Context.MODE_PRIVATE;
 		String alreadyFilled = "already filled";
 		Editor editor = getSharedPreferences(preferenceName, preferenceMode).edit();
-		editor.putString(currencies[0], "1").putString(currencies[1], "1.5");
-		editor.putString(currencies[2], "0.9").putString(currencies[3], "1.75");
-		editor.putBoolean(alreadyFilled, true).apply();
+		editor.putString(currencies[0], "1");
+		editor.putString(currencies[1], "1.5");
+		editor.putString(currencies[2], "0.9");
+		editor.putString(currencies[3], "1.75");
+		editor.putBoolean(alreadyFilled, true);
+		editor.apply();
 	}
 	
 	@Override

@@ -15,10 +15,18 @@ android {
     }
     buildTypes {
         release {
-            setProperty("archivesBaseName", "DIBA")
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             proguardFile 'app/proguard-rules.pro'
+
+//            signingConfig getSigningConfig()
+//            applicationVariants.all { variant ->
+//                variant.outputs.each { output ->
+//                    output.outputFileName = new File(output.outputFile.parent,
+//                            output.outputFileName.replace("-release", "")
+//                    )
+//                }
+//            }
         }
         debug {
             minifyEnabled true
@@ -49,6 +57,11 @@ android {
                             'src/main/res/layouts/',
                             'src/main/res/',
                     ]
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "DIBA_app.apk"
         }
     }
     lintOptions {

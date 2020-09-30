@@ -20,21 +20,37 @@ import java.sql.PreparedStatement;
 public class MySQLHelper {
 
 	private static String databaseName = "dibaDB";
-	private static String url = "jdbc:hsqldb:db/"+databaseName;
+	private static String url = "jdbc:hsqldb:hsql://localhost/xdb";
 
-	//public MySQLHelper() {}
+	private static String location = "./db/dibaDB";
+
 	public static void getDatabaseConnection() throws SQLException {
+
+		org.hsqldb.Server sonicServer;
+	    org.hsqldb.persist.HsqlProperties props = new org.hsqldb.persist.HsqlProperties();
+	    props.setProperty("server.database.0", "file:" + location + ";");
+	    props.setProperty("server.dbname.0", "xdb");
+	    sonicServer = new org.hsqldb.Server();
+	    try {
+	        sonicServer.setProperties(props);
+	    } catch (Exception e) {
+	        return;
+	    }
+	    sonicServer.start();
+
 		try {
+			Class.forName("org.hsqldb.jdbcDriver");
 			Connection con = DriverManager.getConnection(url, "SA", "");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Comment    (comment varchar(255), date varchar(10), score varchar(1))");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Investment (owner varchar(50), date int, amount varchar(50), currency varchar(10), amountSFr varchar(50))");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Payment    (owner varchar(50), target varchar(50), amount int, currency varchar(10), amountSFr int)");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS Message    (owner varchar(50), date int, viewType int, message varchar(255))");
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS User       (email varchar(50), password varchar(100))");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace(System.out);
         }
 	}
+
 
 	////////////////////////////////////////////////////////////////////
 	/////////////          COMMENTS       //////////////////////////////
@@ -126,6 +142,7 @@ public class MySQLHelper {
 			return null;
         }
 	}
+
 	////////////////////////////////////////////////////////////////////
 	/////////////          INVESTMENTS    //////////////////////////////
 	////////////////////////////////////////////////////////////////////
@@ -193,9 +210,6 @@ public class MySQLHelper {
 	
 	}
 	
-	////////////////////////////////////////////////////////////////////
-	/////////////          SELECT USERa        /////////////////////////
-	////////////////////////////////////////////////////////////////////
 	public static String select_user(String email) throws SQLException {
 		Connection con = DriverManager.getConnection(url, "SA", "");
 		try {

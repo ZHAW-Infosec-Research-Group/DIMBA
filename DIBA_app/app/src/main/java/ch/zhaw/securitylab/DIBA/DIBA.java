@@ -45,52 +45,27 @@ public class DIBA extends Application {
 
     // Databases
     private InvestmentDb investmentDb;
+    public InvestmentDao getInvestmentDao() { return investmentDb == null ? null : investmentDb.investmentDao(); }
+    public void metaClearInvestments() { if (getInvestmentDao() != null) getInvestmentDao().metaReset(); }
 
-    public InvestmentDao getInvestmentDao() {
-        return investmentDb == null ? null : investmentDb.investmentDao();
-    }
-
-    public void metaClearInvestments() {
-        if (getInvestmentDao() != null) getInvestmentDao().metaReset();
-    }
+    private PaymentDb paymentDb;
+    public PaymentDao getPaymentDao() { return paymentDb == null ? null : paymentDb.paymentDao(); }
+    public void metaClearPayments() { if (getPaymentDao() != null) getPaymentDao().metaReset(); }
 
     private MessageDB messageDB;
-
     public MessageDB getMessageDB() {
         return this.messageDB;
     }
-
     public void metaClearMessages() {
         if (messageDB != null) messageDB.metaResetAllMessages();
     }
 
     private MetasettingsDb metasettingsDb;
-
     public MetasettingsDb getMetasettingsDb() {
         return this.metasettingsDb;
     }
-
-    public MetasettingsDao getMetasettingsDao() {
-        return metasettingsDb == null ? null : metasettingsDb.metasettingsDao();
-    }
-
-    public void metaClearMetasettings() {
-        if (getMetasettingsDao() != null) getMetasettingsDao().metaReset();
-    }
-
-    private PaymentDb paymentDb;
-
-    public PaymentDb getPaymentDb() {
-        return paymentDb;
-    }
-
-    public PaymentDao getPaymentDao() {
-        return paymentDb == null ? null : paymentDb.paymentDao();
-    }
-
-    public void metaClearPayments() {
-        if (getPaymentDao() != null) getPaymentDao().metaReset();
-    }
+    public MetasettingsDao getMetasettingsDao() { return metasettingsDb == null ? null : metasettingsDb.metasettingsDao(); }
+    public void metaClearMetasettings() { if (getMetasettingsDao() != null) getMetasettingsDao().metaReset(); }
 
     // Connection
     private RequestQueue queue;

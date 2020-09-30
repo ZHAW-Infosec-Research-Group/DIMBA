@@ -16,9 +16,9 @@ This project is split into two parts. The first part is the DIBA app itself whic
 + Modern look and feel thanks to Material Design.
 + Plenty of vulnerabilities to discover, currently there are 33 vulnerabilities to find.
 
-The second part is the DIBA server with which the DIBA app communicates. For the training app to be realisticm such a component needs to exist since most apps nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server the following features:
+The second part is the DIBA server with which the DIBA app communicates. For the training app to be realistic such a component needs to exist since most apps nowadays make use of a backend to implement most of the business logic and only use the app as a presentation layer. The DIBA server provides the following features:
 + REST API
-+ An integrated database for persisting transactions/activities during a training session
++ An integrated database for persisting transactions/activities during training sessions
 + Authentication via JSON Web Tokens (JWT)
 + SMS message with confirmation code that must be entered by the app user to authorize a payment. Note that the SMS message is simulated and written to the server output.
 
@@ -27,7 +27,7 @@ You can use DIBA in two ways. One way is to simply use and analyse the app with 
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
-+ Newest DIBA Release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4)
++ Newest DIBA Release (https://github.zhaw.ch/Security/DIBA/releases)
 + Android Debug Bridge (adb)
 + Java Runtime Environment (Java 8 or higher)
 + An Android device or a virtual machine running Android
@@ -59,17 +59,18 @@ To make it easier to work with the virtual machine, it is recommended to activat
 5. Go one step back to the **System** settings, select **Advanced -> Developer option** and enable **Stay awake**.
 
 ### DIBA Server
-The Banking App needs a server to communicate to. To make this possible we provide a Java server together with the app release (https://github.engineering.zhaw.ch/InsecureBanking/DIBA/releases/tag/1.4). When extracting the jar, you need to make sure to also extract the keystore subdirectory with the keystore file in it. The keystore directory needs to be placed in the same folder as the jar file. You can then run the server locally on your machine with Java:
+The DIBA app needs a server to communicate to. To make this possible we provide a Java server together with the app release. The DIBA server (/DIBA\_server/DIBA\_server.jar), needs also the keystore directory (DIBA\_server/keystore) with the keystore.jks file in it. You can then run the server locally on your machine with Java:
 
-``` java -jar DIBA.jar ```
+``` java -jar DIBA\_server.jar ```
 
 ### DIBA App Installation
 To install the DIBA app on the Android virtial machine, do the following:
 1. Check if adb is connected with your device by running the following command: `adb devices`
 2. If it is not connected you can establish a connection by running the command: `adb connect 127.0.0.1:5555`
 3. Now you can install the APK by executing the following command: `adb install /path/to/DIBA.apk` 
-4. Copy the rootCA.crt File to the Android virtual machine by using the adb command: `adb push /path/to/rootCA.crt /sdcard`
-5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD cardTrusted credentials**. There select rootCA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
+4. Copy the DIBA\_CA.pem file to the Android virtual machine by using the adb command: `adb push DIBA\_server/keystore/certificates/DIBA\_CA.pem /sdcard`
+5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD card** There select DIBA\_CA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
+6. To verify that the certificate is installed, open **Security & location -> Encryption & credentials -> Trusted credentials**. 
 
 ### DIBA App Configuration
 1. Open the DIBA app.
@@ -85,10 +86,10 @@ To understand and exploit some vulnerabilities, access to the communication betw
 4. Open the **Settings** app, select **Network & internet**, then **WiFi** and then **VirtWifi**.
 5. Next, select the pen icon at the top right and expand **Advanced options**.
 6. Here, specify **Proxy -> Manual**, enter the IP address of your physical host in the **Proxy hostname** field and the port used by your interceptor proxy in the **Proxy port** field. Finally, make sure to save the settings.
-7. When using the interceptor proxy, it's easiest to use certificate check security **LEVEL 1** in the meta settings of the app to prevent problems. If you need a bit of a challenge, you can also use the higher levels (for more information about theses levels: see vulnerability 1 in [Vulnerabilities.md](Vulnerabilities.md)).
+7. When using the interceptor proxy, it's easiest to use certificate check security **LEVEL 1** in the meta settings of the app to prevent problems. If you need a bit of a challenge, you can also use the higher levels (for more information about these levels: see vulnerability 1 in [Vulnerabilities.md](Vulnerabilities.md)).
 
 ### Resetting App and Server
-T reset the app, tap on *Reset App* in the *Meta Settings*. To reset the server, delete all files in folder *db*.
+To reset the app, tap on *Reset App* in the *Meta Settings*. To reset the server, delete all files in folder *db*.
 
 ## Build it yourself
 
@@ -96,20 +97,20 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 
 ### Building the app
 1. Clone the code from GitHub
-2. Open Android Studio
-3. Choose **Open an existing Android Studio Project** -> Select the Directory where you cloned the repository into
-4. In Android Studio click on **Build** -> **Generate Signed APK**
+2. Open Android Studio (version 4)
+3. Choose **Open an existing Android Studio Project** -> Select the /DIBA\_app directory 
+4. In Android Studio click on **Build** -> **Generate Signed APK** -> **Select APK**
 5. When getting asked for a keystore either point to an existing one you are already using for your signing keys or create a new one including a new certificate to go along
 6. Click **Next**
-7. Choose a **APK Destination Folder**. The **Build Type** should be set to **Debug**. You can set the **Signature Version** to **V2** 
-8. Click **Finnish**. You should now have a signed APK in your chosen destination folder. You can now install the APK as described in the **App Installation** Section.
+7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V2** 
+8. Click **Finish**. You should now have a signed APK in /DIBA\_app/app/release/. You can now install the APK as described in the **App Installation** Section.
 
 ### Building the server
-1. Install Maven
+1. Install Maven (version 3.5.4)
 2. Check out the DIBA Repository
-3. Go to the root folder of the repository you just cloned
+3. Go to the server folder /DIBA\_server of the repository you just cloned
 4. Execute the following command: `mvn clean install`
-5. You should now have two jar-files in the target-folder, one with dependencies and one without. You can now use the jar to start the server as described in the **Usage** section.
+5. You can now use the jar to start the server as described in the **Usage** section.
 
 ## Feedback / Contributions
 If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. If you want to contribute you can do so by cloning the repository and creating a pull request with your changes. 
