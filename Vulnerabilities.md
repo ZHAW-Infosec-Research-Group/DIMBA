@@ -18,6 +18,8 @@ Check that when cloning the server and starting it for the first time, no server
 
 Likewise, when starting the app on a "fresh system", check that the files in shared_prefs are really there when one wants to exploit the vulnerabilities that are based on the shared prefs files.
 
+There is still an inbank folder in the app.
+
 The name of the release apps should be:
 
 - DIBA.apk
