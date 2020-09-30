@@ -39,6 +39,9 @@ Complete:
 - 18: solution adaptation
 - 19: solution adaptation
 - 20: solution adaptation
+- 21: solution adaptation
+- 22: solution adaptation
+- 23: ok
 
 - 24: ok
 - 25: ok
@@ -182,28 +185,20 @@ The screens for login and account creation are similar in structure. To make thi
 
 **Remark**: Similar as with vulnerability 9, the attack as demonstrated here is not really beneficial as there are no interesting fragment to be accessed. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that fragment injection is possible, if the fragment activity is exported.
 
-**Check**: Works
-
 ### 21: Insecure Service (medium)
 DIBA uses a service to modify currency exchange rates. As this service is exported, it can be used by any other app on the same device. 
 
 **Goal:** Develop an app that uses the service to modify the exchange rates to any values you like. You can inspect the *currencyPreferences.xml* in the shared preferences of the DIBA app to check whether the attack worked.
-
-**Check**: Works
 
 ### 22: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
 
 **Goal:** Get a JWT (e.g., by using an intercepor proxy) and crack the MAC password.
 
-**Check**: Works
-
 ### 23: Exploiting Someone Elses Stored Login Credentials (easy)
 The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
 
 **Goal:** Log in using the credentials that have been entered and stored before (using the *Remember Me* functionality) and use the app with identity of the corresponding user. Obviously, this is trivial to do.
-
-**Check**: Works
 
 ### 24: SQLite Database (medium)
 Android apps can use internal SQlite databases. The DIBA app, for instance, uses such a database to store the made inbvestments for convenience so that they do not have to be read from the server whenever the user wants to view the made investments. If an attacker gets access to the device, however, he can get the database and read its potentially sensitive content.
