@@ -14,9 +14,18 @@ Add license files & information.
 
 Use DIBA logo also for the exploit app, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
-Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
+Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to the survey and there were more than the three standard messahes listed (?)
 
-Complete:
+Likewise, when starting the app on a "fresh system", check that the files in shared_prefs are really there when one wants to exploit the vulnerabilities that are based on the shared prefs files.
+
+There is still an inbank folder in the app.
+
+The name of the release apps should be:
+
+- DIBA.apk
+- DIBA-exploit.apk
+
+Log (Marc):
 
 - 1: solution adaptations
 - 2: ok
@@ -34,6 +43,14 @@ Complete:
 - 13: solution adaptation
 - 14: solution adaptation
 - 15: solution adaptation
+- 16: solution adaptation
+- 17: solution adaptation
+- 18: solution adaptation
+- 19: solution adaptation
+- 20: solution adaptation
+- 21: solution adaptation
+- 22: solution adaptation
+- 23: ok
 
 - 24: ok
 - 25: ok
@@ -133,10 +150,6 @@ At the top right of the *Home* screen, thers's a bug-shaped button. Clicking thi
 
 **Goal:** Find out the encryption scheme and the key that is used to encrypt the bug report. Then, use this information to decrypt the report.
 
-**Check**: Works, can be decrypted using https://cryptii.com/pipes/vigenere-cipher
-
-Note: Code is obfuscated and hard to learn. However, looking at the encrypted report, one can also guess that a Vigenere cipher is used. So no need to analyze the obfuscated code to find out what is going on. This should also be stated in the solution chapter.
-
 ### 14: JWT Validity (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
@@ -148,23 +161,15 @@ Some screens of the DIBA app contain sensitive information. Therefore, the app w
 
 **Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are then shown when displaying the currently running apps.
 
-**Check**: Works
-
 ### 16: Back Stack Clearing (easy)
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
 
-**Check**: Works
-
-Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
-
 ### 17: Payment Input Validation (easy)
 When doing a payment, the amount can only be entered as a positive number. However, there's a vulnerability that allows you to make payemnts with negative amounts, which will increase your balance.
 
 **Goal:** Make a payment that uses a negative amount so the balance of your account is increased accordingly.
-
-**Check**: Works
 
 ### 18: Developer Entrance (medium)
 As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
@@ -175,14 +180,10 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Remark**: Of course, being in the authenticated area of the app without having logged in (and having received a JWT) does not really provide access to sensitive information. Therefore, this vulnerability mainly serves to demonstrate how easy it is to re-activate code that was "deactivated" by the developers with a simpkle setting. And also, an attacker can of course always adapt the code to add functionality at will (in this case, getting directly to the authenticated area), but in that case, he has at least adapt the code of the app, whoch can be made more difficult using code obfuscation. 
 
-**Check**: Works
-
 ### 19: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
-
-**Check**: Works
 
 ### 20: Fragment Injection (easy/medium)
 The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
@@ -193,28 +194,20 @@ The screens for login and account creation are similar in structure. To make thi
 
 **Remark**: Similar as with vulnerability 9, the attack as demonstrated here is not really beneficial as there are no interesting fragment to be accessed. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that fragment injection is possible, if the fragment activity is exported.
 
-**Check**: Works
-
 ### 21: Insecure Service (medium)
 DIBA uses a service to modify currency exchange rates. As this service is exported, it can be used by any other app on the same device. 
 
 **Goal:** Develop an app that uses the service to modify the exchange rates to any values you like. You can inspect the *currencyPreferences.xml* in the shared preferences of the DIBA app to check whether the attack worked.
-
-**Check**: Works
 
 ### 22: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIBA.
 
 **Goal:** Get a JWT (e.g., by using an intercepor proxy) and crack the MAC password.
 
-**Check**: Works
-
 ### 23: Exploiting Someone Elses Stored Login Credentials (easy)
 The DIBA app allows to store the credentials using the *Remember Me* functionality. This directly implies that if a user stores the credentials and if an attacker gets access to the device, the attacker can log in and can use the app with the identity of the user.
 
 **Goal:** Log in using the credentials that have been entered and stored before (using the *Remember Me* functionality) and use the app with identity of the corresponding user. Obviously, this is trivial to do.
-
-**Check**: Works
 
 ### 24: SQLite Database (medium)
 Android apps can use internal SQlite databases. The DIBA app, for instance, uses such a database to store the made inbvestments for convenience so that they do not have to be read from the server whenever the user wants to view the made investments. If an attacker gets access to the device, however, he can get the database and read its potentially sensitive content.
