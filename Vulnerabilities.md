@@ -36,6 +36,9 @@ Complete:
 - 15: solution adaptation
 - 16: solution adaptation
 - 17: solution adaptation
+- 18: solution adaptation
+- 19: solution adaptation
+- 20: solution adaptation
 
 - 24: ok
 - 25: ok
@@ -135,10 +138,6 @@ At the top right of the *Home* screen, thers's a bug-shaped button. Clicking thi
 
 **Goal:** Find out the encryption scheme and the key that is used to encrypt the bug report. Then, use this information to decrypt the report.
 
-**Check**: Works, can be decrypted using https://cryptii.com/pipes/vigenere-cipher
-
-Note: Code is obfuscated and hard to learn. However, looking at the encrypted report, one can also guess that a Vigenere cipher is used. So no need to analyze the obfuscated code to find out what is going on. This should also be stated in the solution chapter.
-
 ### 14: JWT Validity (easy)
 If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app, which is then included in every subsequent request by the app to link the request to the authenticated user. While JWTs in general are considered secure assuming they are used correctly, it's also possible to use them in an insecure way - which is what happened in DIBA.
 
@@ -169,14 +168,10 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Remark**: Of course, being in the authenticated area of the app without having logged in (and having received a JWT) does not really provide access to sensitive information. Therefore, this vulnerability mainly serves to demonstrate how easy it is to re-activate code that was "deactivated" by the developers with a simpkle setting. And also, an attacker can of course always adapt the code to add functionality at will (in this case, getting directly to the authenticated area), but in that case, he has at least adapt the code of the app, whoch can be made more difficult using code obfuscation. 
 
-**Check**: Works
-
 ### 19: App Backup (medium)
 In the file *AndroidManifest.xml* that is part of every app, the developer can specify whether backups via adb are allowed. In the case of the DIBA apps, backups are permitted. This is convenient, but introduces risks, as it allows the user to easily change some setting that shouldn't directly be accessible to the user and if an attacker manages to get access to a backup, he may get access to sensitive information.
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
-
-**Check**: Works
 
 ### 20: Fragment Injection (easy/medium)
 The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
