@@ -14,9 +14,16 @@ Add license files & information.
 
 Use DIBA logo also for the exploit app, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
 
-Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to teh survey and there were more than the three standard messahes listed (?)
+Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to the survey and there were more than the three standard messahes listed (?)
 
-Complete:
+Likewise, when starting the app on a "fresh system", check that the files in shared_prefs are really there when one wants to exploit the vulnerabilities that are based on the shared prefs files.
+
+The name of the release apps should be:
+
+- DIBA.apk
+- DIBA-exploit.apk
+
+Log (Marc):
 
 - 1: solution adaptations
 - 2: ok
