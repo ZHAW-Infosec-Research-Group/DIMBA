@@ -34,6 +34,8 @@ Complete:
 - 13: solution adaptation
 - 14: solution adaptation
 - 15: solution adaptation
+- 16: solution adaptation
+- 17: solution adaptation
 
 - 24: ok
 - 25: ok
@@ -148,23 +150,15 @@ Some screens of the DIBA app contain sensitive information. Therefore, the app w
 
 **Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are then shown when displaying the currently running apps.
 
-**Check**: Works
-
 ### 16: Back Stack Clearing (easy)
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
 
-**Check**: Works
-
-Sequence: Login - Payments - Home - Log-out/Side Drawer - back - back => PAYMENTS!
-
 ### 17: Payment Input Validation (easy)
 When doing a payment, the amount can only be entered as a positive number. However, there's a vulnerability that allows you to make payemnts with negative amounts, which will increase your balance.
 
 **Goal:** Make a payment that uses a negative amount so the balance of your account is increased accordingly.
-
-**Check**: Works
 
 ### 18: Developer Entrance (medium)
 As a leftover from development to make testing easier, a backdoor was added to the login screen that allows to tap on the DIBA logo to get access to the authenticated area without having to log in. The developers deactivated the backdoor, but it was simply deactivated using a flag in the code and the actual code was left in. This means an attacker can easily reactivate the backdoor.
