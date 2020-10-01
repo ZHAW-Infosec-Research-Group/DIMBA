@@ -64,13 +64,15 @@ The DIBA app needs a server to communicate to. To make this possible we provide 
 ``` java -jar DIBA_server.jar ```
 
 ### DIBA App Installation
-To install the DIBA app on the Android virtial machine, do the following:
+To install the DIBA app on the Android virtual machine, do the following:
 1. Check if adb is connected with your device by running the following command: `adb devices`
 2. If it is not connected you can establish a connection by running the command: `adb connect 127.0.0.1:5555`
 3. Now you can install the APK by executing the following command: `adb install /DIBA_app/app/release/DIBA.apk` 
 4. Copy the DIBA\_CA.pem file to the Android virtual machine by using the adb command: `adb push DIBA_server/keystore/certificates/DIBA_CA.pem /sdcard`
 5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD card** There select DIBA\_CA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
 6. To verify that the certificate is installed, open **Security & location -> Encryption & credentials -> Trusted credentials**. 
+
+Note: the same instructions can be used to install DIBA\_exploit app. No need to install the certificate.
 
 ### DIBA App Configuration
 1. Open the DIBA app.
@@ -97,7 +99,7 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 
 ### Building the app
 1. Clone the code from GitHub
-2. Open Android Studio (version 4)
+2. Open Android Studio (suggested version 4)
 3. Choose **Open an existing Android Studio Project** -> Select the /DIBA\_app directory 
 4. In Android Studio click on **Build** -> **Generate Signed APK** -> **Select APK**
 5. When getting asked for a keystore either point to an existing one you are already using for your signing keys or create a new one including a new certificate to go along
@@ -108,7 +110,7 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 Note: the same instructions can be used to build DIBA\_exploit app.
 
 ### Building the server
-1. Install Maven (version 3.5.4)
+1. Install Maven (suggested version 3.5.4)
 2. Check out the DIBA Repository
 3. Go to the server folder /DIBA\_server of the repository you just cloned
 4. Execute the following command: `mvn clean install`

@@ -21,9 +21,6 @@ public class ControllerRegister extends ControllerParent {
 
 		String email     = getQueryEmail(context);
 		String password  = getQueryPassword(context);
-		//String sha256hex = Hashing.sha256()
-		//					.hashString(password, Charsets.UTF_8)
-  		//					.toString();
 
 		User user = ControllerUser.get().registerUser(email, password);
 		if (user == null || MySQLHelper.select_user(email) != null) {
@@ -34,7 +31,6 @@ public class ControllerRegister extends ControllerParent {
 		Server.logger.info("User created: " + user.toString());
 
 		String token = user.getJsonWebToken();
-		//MySQLHelper.getDatabaseConnection();
 		MySQLHelper.add_user(user);
 
 		StringResponse sRes = new StringResponse(token);
