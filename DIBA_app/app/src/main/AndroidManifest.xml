@@ -49,7 +49,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivitySurvey" />
-        <activity android:name="ch.inbank.Investment" />
 
         <activity
             android:name="ch.zhaw.securitylab.DIBA.activity.auth.ActivityAuthMain"

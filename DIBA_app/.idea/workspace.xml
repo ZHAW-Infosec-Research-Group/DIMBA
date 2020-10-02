@@ -20,27 +20,24 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/debug/DIBA.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/debug/output-metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/DIBA_server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/DIBA_server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/db/dibaDB.script" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/lib/hsqldb.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/controllers/ControllerRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/controllers/ControllerRegister.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/src/main/java/ch/zhaw/securitylab/diba/server/user/.User.java.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/DIBA_server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/target/DIBA_server.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIBA_server/target/classes/ch/zhaw/securitylab/diba/server/controllers/ControllerRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_server/target/classes/ch/zhaw/securitylab/diba/server/controllers/ControllerRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../License.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.cxx/cmake/debug/x86/build_model.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/DIBA.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/release/DIBA.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/app_bar_activity_auth_invest_wall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/investment/layout/app_bar_activity_auth_invest_wall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/app_bar_activity_auth_stock_wall.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layouts/stock/layout/app_bar_activity_auth_stock_wall.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/build/intermediates/lint-cache/maven.google/com/google/android/material/group-index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIBA_exploit/build/intermediates/lint-cache/maven.google/master-index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DIBA_exploit/build/intermediates/lint-cache/maven.google/master-index.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="TEST_Pixel_3a_XL_API_29" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -423,14 +420,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="732" y="333" width="446" height="448" key="chooseDestDirectoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1599393822597" />
-    <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1601562460956">
+    <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1601641199968">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1601562460956" />
-    <state x="383" y="212" width="1189" height="718" key="find.popup" timestamp="1601501490504">
+    <state x="100" y="127" width="1720" height="853" key="com.android.tools.idea.avdmanager.AvdListDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1601641199968" />
+    <state x="383" y="212" width="1189" height="718" key="find.popup" timestamp="1601653748987">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="383" y="212" width="1189" height="718" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1601501490504" />
+    <state x="383" y="212" width="1189" height="718" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1601653748987" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1596538860594">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
