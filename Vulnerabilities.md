@@ -156,10 +156,9 @@ If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app,
 **Goal:** Get a JWT (e.g., by using an interceptor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 ### 15: Recently Used Apps (easy)
-In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. As the DIBA app sometimes shows sensitive information, it has been implemented in a way to make sure that 
-Some screens of the DIBA app contain sensitive information. Therefore, the app was implemented so that no screenshot is taken when it leaves the foreground. As a result of this, no details are shown when viewing the currently running apps. However, in some places of the DIBA app, this was forgotten. 
+In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. These screenshots are stored somewhere in the system, which potentially exposes them to attackers. As the DIBA app sometimes shows sensitive information, it was implemented so that no screenshot is taken when it leaves the foreground. As a result of this, no details are shown when viewing the currently running apps. However, in some places of the DIBA app, this was forgotten. 
 
-**Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are then shown when displaying the currently running apps.
+**Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are shown when displaying the currently running apps.
 
 ### 16: Back Stack Clearing (easy)
 Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
