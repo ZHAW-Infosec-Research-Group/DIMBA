@@ -161,7 +161,7 @@ In Android, when displaying the currently running apps, screenshots are displaye
 **Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are shown when displaying the currently running apps.
 
 ### 16: Back Stack Clearing (easy)
-Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
+Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to another user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of them is implemented in a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
 
@@ -175,7 +175,7 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Goal:** Adapt the app so that the backdoor is working again so the logo can be tapped to enter the authenticated are.
 
-**Hint:** To do this, you have to decompile the app using *apktool*, adapt a specific setting, recompile the code again using *apktool* and sign it with *apksigner*.
+**Hint:** To do this, you have to decompile the app using *apktool*, adapt a specific setting, recompile the code again using *apktool* and sign it with *jarsigner*.
 
 **Remark**: Of course, being in the authenticated area of the app without having logged in (and having received a JWT) does not really provide access to sensitive information. Therefore, this vulnerability mainly serves to demonstrate how easy it is to re-activate code that was "deactivated" by the developers with a simpkle setting. And also, an attacker can of course always adapt the code to add functionality at will (in this case, getting directly to the authenticated area), but in that case, he has at least adapt the code of the app, whoch can be made more difficult using code obfuscation. 
 
@@ -184,12 +184,10 @@ In the file *AndroidManifest.xml* that is part of every app, the developer can s
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
 
-### 20: Fragment Injection (easy/medium)
+### 20: Fragment Injection (medium)
 The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
 
-**Goal (easy):** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*.
-
-**Goal (medium):** Do basically the same as in the *easy* case above, but instead of using adb develop an app that starts the fragment activity.
+**Goal:** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*. As an optional step, instead of using adb, you can also develop an app that starts the fragment activity.
 
 **Remark**: Similar as with vulnerability 9, the attack as demonstrated here is not really beneficial as there are no interesting fragment to be accessed. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that fragment injection is possible, if the fragment activity is exported.
 
