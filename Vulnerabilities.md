@@ -137,8 +137,8 @@ During payment, DIBA allows to load a payment slip from the SD-Card. This is imp
 During payment, DIBA allows to load/save a payment slip from/to the SD-Card. This is implemented in an insecure way that allows you to read and write the content of any file that is accessible by the permissions of the running DIBA app. This may allow a user to change settings of the app in a way as it was not intended by the app developers.
 
 **Goal:** Abuse this functionality to first read the contents of the file *ch.zhaw.securitylab.DIBA_preferences.xml* in the shared preferences of the DIBA app. The next steps depend on whethter you already have access to make investments (via the VIP code):
-* In case you don't have access to make investments yet, add the entry *<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments.
-* If you already have access to make investments, then set the value of the *VIP* attribute to *false* and overwrite the file with the new content. As a result of this, you no longer should have access to make investments.
+* In case you don't have access to make investments yet, add the entry *\<boolean name="VIP" value="true" />* to the *map* element and overwrite the file with the new content. This should grant you access to make investments after restarting the app.
+* If you already have access to make investments, then remove the entry *\<boolean name="VIP" value="true" />* from the *map* element and overwrite the file with the new content. As a result of this, you no longer should have access to make investments after restarting the app.
 
 ### 12: Directory Traversal III - Read/Write (easy)
 This uses the same vulnerability as vulnerability 11 and is only intended to show that data can also be copied to locations so it can be access by other apps.
@@ -156,13 +156,12 @@ If login is successful, the DIBA server sends a JSON Web Token (JWT) to the app,
 **Goal:** Get a JWT (e.g., by using an interceptor proxy) and analyze it's content (e.g., by using https://jwt.io). Identify one major problem with the content of the token and what the security implications are.
 
 ### 15: Recently Used Apps (easy)
-In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. As the DIBA app sometimes shows sensitive information, it has been implemented in a way to make sure that 
-Some screens of the DIBA app contain sensitive information. Therefore, the app was implemented so that no screenshot is taken when it leaves the foreground. As a result of this, no details are shown when viewing the currently running apps. However, in some places of the DIBA app, this was forgotten. 
+In Android, when displaying the currently running apps, screenshots are displayed that are taken when an app leaves the foreground. These screenshots are stored somewhere in the system, which potentially exposes them to attackers. As the DIBA app sometimes shows sensitive information, it was implemented so that no screenshot is taken when it leaves the foreground. As a result of this, no details are shown when viewing the currently running apps. However, in some places of the DIBA app, this was forgotten. 
 
-**Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are then shown when displaying the currently running apps.
+**Goal:** Find two screens with possibly sensitive information where screenshots are taken when the app leaves the foreground in the sense that the screenshots are shown when displaying the currently running apps.
 
 ### 16: Back Stack Clearing (easy)
-Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to anotehr user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of the is implemented ion a secure way.
+Usually, the back button shows the previously used screen. This can be security critical in some situation. E.g., in the DIBA app, after a user has logged out, it should not be possible to use the back button to get access to previously used screens as they may reveal sensitive information to another user who gets access to the device. The DIBA app has two log out functionalitis, one via the menu on the top left and the other via the home screen. Only one of them is implemented in a secure way.
 
 **Goal:** Find a way such that - after logging out - sensitive information can be accessed by using the back button.
 
@@ -176,7 +175,7 @@ As a leftover from development to make testing easier, a backdoor was added to t
 
 **Goal:** Adapt the app so that the backdoor is working again so the logo can be tapped to enter the authenticated are.
 
-**Hint:** To do this, you have to decompile the app using *apktool*, adapt a specific setting, recompile the code again using *apktool* and sign it with *apksigner*.
+**Hint:** To do this, you have to decompile the app using *apktool*, adapt a specific setting, recompile the code again using *apktool* and sign it with *jarsigner*.
 
 **Remark**: Of course, being in the authenticated area of the app without having logged in (and having received a JWT) does not really provide access to sensitive information. Therefore, this vulnerability mainly serves to demonstrate how easy it is to re-activate code that was "deactivated" by the developers with a simpkle setting. And also, an attacker can of course always adapt the code to add functionality at will (in this case, getting directly to the authenticated area), but in that case, he has at least adapt the code of the app, whoch can be made more difficult using code obfuscation. 
 
@@ -185,12 +184,10 @@ In the file *AndroidManifest.xml* that is part of every app, the developer can s
 
 **Goal:** Do a backup of the DIBA app via adb and inspect the backed up data to learn what it contains in general and whether it contains sensitive data.
 
-### 20: Fragment Injection (easy/medium)
+### 20: Fragment Injection (medium)
 The screens for login and account creation are similar in structure. To make things a bit easier, the developer therefore decided to use a fragment activity to implement this. This means the activity can be started with an argument that specifies the fragment to be loaded. However, as the activity is exported, this implies that an attacker can start this activity as well while specifying any fragment that is part of the app. If this fragment should only be accessible in the authenticated patr of the app, an attacker may get access to information and functionality that shouldn't be accessible to him.
 
-**Goal (easy):** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*.
-
-**Goal (medium):** Do basically the same as in the *easy* case above, but instead of using adb develop an app that starts the fragment activity.
+**Goal:** Use adb to directly start the fragment activity while specifying that the fragment with the name *FragmantChange* should be used (this fragment only exists to be used in a proof of concept to exploit the vulnerability). As a result, you should see a fragment with four buttons with the label *Change later*. As an optional step, instead of using adb, you can also develop an app that starts the fragment activity.
 
 **Remark**: Similar as with vulnerability 9, the attack as demonstrated here is not really beneficial as there are no interesting fragment to be accessed. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that fragment injection is possible, if the fragment activity is exported.
 
@@ -260,7 +257,7 @@ In the Meta-Settings, there's a *Ping* functionality to ping the server using th
 ### 31: Two-Factor Authentication I - Replaying Codes (easy)
 To confirm a payment, the user gets a payment confirmation code by SMS. Note that the SMS is simulated and written to the server output. This code is generated and used in an insecure way. A first problem is that it is not bound to a specific payment and that it can be used for multiple payments until it expires (which is after 5 minutes) - so it's not a one time confirmation code as it is supposed to be. This means that, e.g., a MITM can wait until the user has made and confirmed one payment. Based on this, the MITM can then make several additional payments using this code while the code is valid.
 
-**Goal:** Act as a MITM using an interceptor proxy. Do a payment as the user of the app and learn (as the MITM) the payment confirmation code. Then, do another payment as the MITM by replaying the two original requests that were used during the payment, but change both the payment amount and the recipient of the payment in bith requests. Use the payment confirmation code you observed. The payment should be accepted by the server. You can verify successful exploitation by comparing the account balance before and after the payment.
+**Goal:** Act as a MITM using an interceptor proxy. Do a payment as the user of the app and learn (as the MITM) the payment confirmation code. Then, do another payment as the MITM by replaying the two original requests that were used during the payment, but change both the payment amount and the recipient of the payment in both requests. Use the payment confirmation code you observed. The payment should be accepted by the server. You can verify successful exploitation by comparing the account balance before and after the payment.
 
 ### 32: Two-Factor Authentication II - Code not Bound to Payment (easy)
 Assume that the confirmation code can be used only once to confirm a payment (that's not the case, see vulnerability 31, but let's assume here it can only be used once). But it's still not bound to a specific payment. Try to exploit this by changing - as a MITM -  both the payment recipient and the payment amount that was originally entered by the user so that the payment with the changed amount and to a different recipient is executed. Note that the SMS message must appear harmless to the user, i.e., it must contain the originally entered payment amount and recipient.
