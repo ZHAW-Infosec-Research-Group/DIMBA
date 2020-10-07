@@ -5,9 +5,9 @@
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
-    "cmakeServerLogFile": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cxx/release/arm64-v8a",
+    "cmakeArtifactsBaseFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
+    "cmakeServerLogFile": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a/cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cxx/release/arm64-v8a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,13 +15,13 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
+      "buildRoot": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
       "cmakeToolchain": "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake",
       "cmakeExecutable": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/cmake",
       "variables": [
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab/arm64-v8a/prefab"
+          "value": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab/arm64-v8a/prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -57,7 +57,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a"
+          "value": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -74,14 +74,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
+  "cxxBuildFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
   "info": {
     "abi": "ARM64_V8A",
     "bitness": 64,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
+  "originalCxxBuildFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a",
   "variant": {
     "buildSystemArgumentList": [],
     "buildTargetSet": [],
@@ -97,12 +97,12 @@
         "ninjaExe": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja"
       },
       "cmakeToolchainFile": "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake",
-      "cxxFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx",
+      "cxxFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates",
-      "makeFile": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
-      "moduleBuildFile": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build.gradle",
-      "moduleRootFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app",
+      "intermediatesFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/build/intermediates",
+      "makeFile": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/src/main/jni/CMakeLists.txt",
+      "moduleBuildFile": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/build.gradle",
+      "moduleRootFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -166,12 +166,12 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "20.0.5594570",
       "project": {
-        "compilerSettingsCacheFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/.cxx",
-        "cxxFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/.cxx",
+        "compilerSettingsCacheFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/.cxx",
+        "cxxFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app",
+        "rootBuildGradleFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app",
         "sdkFolder": "/home/gregory/Android/Sdk",
         "isPrefabEnabled": false
       },
@@ -188,7 +188,7 @@
         "SYSTEM": {}
       }
     },
-    "objFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj",
+    "objFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/build/intermediates/cmake/release/obj",
     "variantName": "release",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -196,8 +196,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab",
+    "prefabDirectory": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab/arm64-v8a"
+  "prefabFolder": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/prefab/arm64-v8a"
 }

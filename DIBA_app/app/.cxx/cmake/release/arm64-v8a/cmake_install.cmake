@@ -1,4 +1,4 @@
-# Install script for directory: /home/gregory/Documents/vt2/DIBA/DIBA_app/app/src/main/jni
+# Install script for directory: /home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/src/main/jni
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gregory/Documents/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

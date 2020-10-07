@@ -56,7 +56,7 @@ public class ActivityAuthPayAccept extends ActivityDIBAAbstract {
 		String text = "An SMS message with a code to confirm the payment was sent to your phone (the SMS message is simulated and you can get the code from the server output).\n" +
 				"Enter the code to confirm the payment.\n\n" +
 				"(Or to prove that you managed to crack the code generation algorithm:\n" +
-				"Enter the code that would be used if the payment were done at 2020-01-31 12:00:00)";
+				"Enter the code that would be used if the payment were done at 2030-01-31 12:00:00)";
 		textView.setText(text);
 
 		// Get Intent bundle
