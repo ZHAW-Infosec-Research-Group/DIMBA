@@ -1,12 +1,5 @@
 # DIBA - Damn Insecure Banking App
 
-TODO:
-
-Add correct command to start server
-
-Check the Build it yourself section below to make sure it is completely correct
-
-
 ## What is DIBA?
 DIBA is an intentionally vulnerable banking app that was designed to provide a realistic training ground for Android penetration testing and to learn in general about different things that can go wrong in apps with respect to security. Two main properties of DIBA are that it provides a simplified but still somewhat realistic banking scenario and that it contains a wide range of different vulnerabilities. 
 
@@ -97,7 +90,7 @@ To reset the app, tap on *Reset App* in the *Meta Settings*. To reset the server
 
 If you want to build the app and/or the server from scratch, you can do so. The following steps should give you an overview how to achieve this. If you have built an app or a Java application before, you should be familiar with most of this procedure.
 
-### Building the app
+### Building the DIBA app
 1. Clone the code from GitHub
 2. Open Android Studio (suggested version 4)
 3. Choose **Open an existing Android Studio Project** -> Select the /DIBA\_app directory 
@@ -107,7 +100,7 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V1** 
 8. Click **Finish**. You should now have a signed APK in /DIBA\_app/app/release/. You can now install the APK as described in the **App Installation** Section.
 
-Note: the same instructions can be used to build DIBA\_exploit app.
+Note: he same instructions can be used to build DIBA\_exploit app.
 
 ### Building the server
 1. Install Maven (suggested version 3.5.4)
