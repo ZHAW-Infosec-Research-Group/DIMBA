@@ -20,7 +20,7 @@ You can use DIBA in two ways. One way is to simply use and analyse the app with 
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
-+ Latest release of DIBA app and server. Download it from https://github.zhaw.ch/Security/DIBA/releases/tag/v1.2/DIBA.zip and unzip the downloaded zip file, which results in a directory *DIBA*.
++ Latest release of DIBA app and server. Download it (https://github.zhaw.ch/Security/DIBA/releases/tag/v1.2/DIBA.zip) and unzip the downloaded file *DIBA.zip*, which results in a directory *DIBA*.
 + Android Debug Bridge (adb)
 + Java runtime environment (Java 8 or higher)
 + An Android device or a virtual machine running Android
@@ -52,7 +52,7 @@ To make it easier to work with the virtual machine, it is recommended to activat
 5. Go one step back to the **System** settings, select **Advanced -> Developer option** and enable **Stay awake**.
 
 ### DIBA Server
-The DIBA app needs a server to communicate to. To make this possible we provide a Java server together with the app release. The DIBA server (/DIBA\_server/DIBA\_server.jar), needs also the keystore directory (DIBA\_server/keystore) with the keystore.jks file in it. You can then run the server locally on your machine with Java:
+To run the DIBA server, change to directory *DIBA/DIBA_Server* and execute the following command:
 
 ``` java -jar DIBA_server.jar ```
 
@@ -60,7 +60,7 @@ The DIBA app needs a server to communicate to. To make this possible we provide 
 To install the DIBA app on the Android virtual machine, do the following:
 1. Check if adb is connected with your device by running the following command: `adb devices`
 2. If it is not connected you can establish a connection by running the command: `adb connect 127.0.0.1:5555`
-3. Now you can install the APK by executing the following command: `adb install /DIBA_app/app/release/DIBA.apk` 
+3. Now you can install the APK by executing the following command: `adb install DIBA/DIBA_app/app/release/DIBA.apk` 
 4. Copy the DIBA\_CA.pem file to the Android virtual machine by using the adb command: `adb push DIBA_server/keystore/certificates/DIBA_CA.pem /sdcard`
 5. Install the certificate on your device. To do this, open the **Settings** app and select **Security & location -> Encryption & credentials -> Install from SD card** There select DIBA\_CA.pem to install it. You will also have to select a screen lock; it's easiest to do this with a simple PIN.
 6. To verify that the certificate is installed, open **Security & location -> Encryption & credentials -> Trusted credentials**. 
