@@ -6,68 +6,6 @@ Most of the vulnerabilities are within the app. However, there are also a few vu
 
 The vulnerabilites are rated as *easy*, *medium* and *hard*, giving an indication for the complexity of exploiting them. This complexity rating reflects the general effort and knowledge (also of helpful tools) required for exploitation. 
 
-TODO:
-
-The "Reset App" button resets a lot, but it does not reset the list of payments. Could you add this? It also does not reset the currency exchamnge rates.
-
-Add license files & information.
-
-Use DIBA logo also for the exploit app, but with a little difference to the real app. As the logo looks similar to the one of DIBA: An alternative would be to use the same logo as the bank, but with a big red E in the top right corner?
-
-Check that when cloning the server and starting it for the first time, no server-side data is there. I think I just downloaded the server, started it, and went to the survey and there were more than the three standard messahes listed (?)
-
-Likewise, when starting the app on a "fresh system", check that the files in shared_prefs are really there when one wants to exploit the vulnerabilities that are based on the shared prefs files.
-
-There is still an inbank folder in the app.
-
-The name of the release apps should be:
-
-- DIBA.apk
-- DIBA-exploit.apk
-
-Log (Marc):
-
-- 1: solution adaptations
-- 2: ok
-- 3: solution adaptation
-- 4: solution adaptation
-- 5: solution adaptation
-- 6: solution adaptation
-- 7: solution adaptation
-- 8: solution adaptation
-- 9: solution adaptation
-- 10: ok
-- 11: solution adaptation
-- 12: solution adaptation
-
-- 13: solution adaptation
-- 14: solution adaptation
-- 15: solution adaptation
-- 16: solution adaptation
-- 17: solution adaptation
-- 18: solution adaptation
-- 19: solution adaptation
-- 20: solution adaptation
-- 21: solution adaptation
-- 22: solution adaptation
-- 23: ok
-
-- 24: ok
-- 25: ok
-- 26: solution adaptation (?), as not working on Ubuntu
-- 27: solution adaptation
-- 28: solution adaptation
-- 29: solution does not work for me
-- 30: ok
-- 31: solution adaptation
-- 32: solution adaptation
-- 33: solution adaptation
-
-
-
-
-
-
 ### 1: Certificate Check Security
 
 The DIBA server uses a certificate (and corresponding private key) to authenticate itself during the TLS handshake performed between the DIBA app and the DIBA server. This certificate is identified as **DIBA server certificate**. The certificate is issued (signed) by a custom root CA certificate identified as **DIBA CA certificate**. The latter is the one you have to install in the Android trust store (see [README](README.md)) so that DIBA server certificate is considered trustworthy. 
@@ -245,9 +183,11 @@ To get access to stock market data, an access code must be entered. Due to a vul
 ### 29: Root Detection Bypass (hard)
 The DIBA app cointains a simple root detection mechanism. Whenever the app is started, it checks whether the Android device is rooted and displays a message if this is the case. In reality, the app would be now terminated to prevent its usage on rooted (and therefore less secure) devices. However, as a user has full control over the app, he can adapt it by removing the root detection check and as a result of this, the app can also be used on rooted devices.
 
-**Goal:** Adapt the app and remove the rooted detection check. As a result of this, the message after starting the app should no longer appear.
+**Preparation:** In the meta settings, uncheck the *Disable" checkbox under "Root Detection* so that root detection is enabled. Restart the app and you should now see a message that a rooted device is detected.
 
-**Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *apksigner*.
+**Goal:** Adapt the app and remove the rooted detection check. As a result of this, the message after starting the app should say *Device Okay!*.
+
+**Hint:** To do this, you have to decompile the app using *apktool*, adapt the code, recompile the app again using *apktool* and sign it with *jarsigner*.
 
 ### 30: Local Command Injection (easy)
 In the Meta-Settings, there's a *Ping* functionality to ping the server using the configured IP address. This uses the *ping* command in the Android operating system. The output of the ping command can be seen in the Android log. This functionality contains a command injection vulnerability that allows an attacker to execute arbitrary command in the Android system.
