@@ -87,18 +87,17 @@ To understand and exploit some vulnerabilities, access to the communication betw
 To reset the app, tap on *Reset App* in the *Meta Settings*. To reset the server, delete all files in folder *db*.
 
 ## Build it yourself
-
 If you want to build the app and/or the server from scratch, you can do so. The following steps should give you an overview how to achieve this. If you have built an app or a Java application before, you should be familiar with most of this procedure.
 
 ### Building the DIBA app
 1. Clone the code from GitHub
 2. Open Android Studio (suggested version 4)
-3. Choose **Open an existing Android Studio Project** -> Select the DIBA\_app directory 
+3. Choose **Open an existing Android Studio Project** -> select directory *DIBA\_app* 
 4. In Android Studio click on **Build** -> **Generate Signed APK** -> **Select APK**
 5. When getting asked for a keystore either point to an existing one you are already using for your signing keys or create a new one including a new certificate to go along
 6. Click **Next**
 7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V1** 
-8. Click **Finish**. You should now have a signed APK *DIBA.apk* in folder DIBA\_app/app/release/. You can now install the APK as described in section **App Installation**.
+8. Click **Finish**. You should now have a signed APK *DIBA.apk* in folder *DIBA\_app/app/release/*. You can now install the APK as described in section **App Installation**.
 
 Note: he same instructions can be used to build DIBA\_exploit app.
 
