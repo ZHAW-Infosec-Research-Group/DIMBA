@@ -17,6 +17,8 @@ The second part is the DIBA server with which the DIBA app communicates. For the
 
 You can use DIBA in two ways. One way is to simply use and analyse the app with the goal to find vulnerabilities. Alternatively, you can use [Vulnerabilities.md](Vulnerabilities.md), which provides some guidance for all the vulnerabilities and corresponding exploitation goals to achieve.
 
+The full source code is made available here. But to simulate a realistic setting, you should not look at the source code of the app or the server and you should consider the server as a black-box component (i.e., you can interact with it over the network but otherwise, it's out of reach for you). There's also an exploit app available which can exploit some of the vulernerabilities, but this should also not be used in a realistic setting (but you are invited to develop such an app on your own). So ideally, assume that only the APK file of the DIBA app is directly available to you whan trying to find and exploit vulnerabilities.
+
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
