@@ -20,8 +20,7 @@ You can use DIBA in two ways. One way is to simply use and analyse the app with 
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
-+ Current version of the DIBA app: https://github.zhaw.ch/Security/DIBA/blob/master/DIBA_app/app/release/DIBA.apk
-+ Current version of the DIBA server: https://github.zhaw.ch/Security/DIBA/blob/master/DIBA_server/DIBA_server.jar
++ Latest release of DIBA app and server: https://github.zhaw.ch/Security/DIBA/releases/tag/v1.2/DIBA.zip
 + Android Debug Bridge (adb)
 + Java Runtime Environment (Java 8 or higher)
 + An Android device or a virtual machine running Android
