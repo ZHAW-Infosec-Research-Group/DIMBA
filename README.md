@@ -106,9 +106,6 @@ Note: he same instructions can be used to build DIBA\_exploit app.
 4. Execute the following command: `mvn clean install`
 5. This creates *DIBA_server.jar* in directory *DIBA\_server*. You can now use the jar to start the server as described in section **Usage**.
 
-## Feedback / Contributions
-If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. 
-
 ## Authors
 The app was mainly developed as part of student theses by
 + Benjamin Heusser, BSc student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
