@@ -93,24 +93,24 @@ If you want to build the app and/or the server from scratch, you can do so. The 
 ### Building the DIBA app
 1. Clone the code from GitHub
 2. Open Android Studio (suggested version 4)
-3. Choose **Open an existing Android Studio Project** -> Select the /DIBA\_app directory 
+3. Choose **Open an existing Android Studio Project** -> Select the DIBA\_app directory 
 4. In Android Studio click on **Build** -> **Generate Signed APK** -> **Select APK**
 5. When getting asked for a keystore either point to an existing one you are already using for your signing keys or create a new one including a new certificate to go along
 6. Click **Next**
 7. Choose a **APK Destination Folder**. The **Build Type** should be set to **release**. You can set the **Signature Version** to **V1** 
-8. Click **Finish**. You should now have a signed APK in /DIBA\_app/app/release/. You can now install the APK as described in the **App Installation** Section.
+8. Click **Finish**. You should now have a signed APK *DIBA.apk* in folder DIBA\_app/app/release/. You can now install the APK as described in section **App Installation**.
 
 Note: he same instructions can be used to build DIBA\_exploit app.
 
 ### Building the server
 1. Install Maven (suggested version 3.5.4)
 2. Check out the DIBA Repository
-3. Go to the server folder /DIBA\_server of the repository you just cloned
+3. Go to folder *DIBA\_server* of the repository you just cloned
 4. Execute the following command: `mvn clean install`
-5. You can now use the jar to start the server as described in the **Usage** section.
+5. This creates *DIBA_server.jar* in directory *DIBA\_server*. You can now use the jar to start the server as described in section **Usage**.
 
 ## Feedback / Contributions
-If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. If you want to contribute you can do so by cloning the repository and creating a pull request with your changes. 
+If you have feedback or suggestions for the project feel free to create an issue and we will have a look at it. 
 
 ## Authors
 The app was mainly developed as part of student theses by
