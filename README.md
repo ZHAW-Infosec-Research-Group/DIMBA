@@ -20,9 +20,9 @@ You can use DIBA in two ways. One way is to simply use and analyse the app with 
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
-+ Latest release of DIBA app and server: https://github.zhaw.ch/Security/DIBA/releases/tag/v1.2/DIBA.zip
++ Latest release of DIBA app and server. Download it from https://github.zhaw.ch/Security/DIBA/releases/tag/v1.2/DIBA.zip and unzip the downloaded zip file, which results in a directory *DIBA*.
 + Android Debug Bridge (adb)
-+ Java Runtime Environment (Java 8 or higher)
++ Java runtime environment (Java 8 or higher)
 + An Android device or a virtual machine running Android
 
 For finding and exploiting the vulnerabilities you probably need a bunch of tools:
