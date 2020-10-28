@@ -1,0 +1,85 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentLogin">
+    <!-- Login progress -->
+    <ScrollView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/loginForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                        android:id="@+id/loginFormEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:singleLine="true"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/loginFormPassword"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_password"
+                        android:imeActionId="6"
+                        android:imeActionLabel="@string/action_sign_in_short"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:singleLine="true" android:layout_width="match_parent"/>
+                <CheckBox
+                        android:text="Remember me"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/loginFormRemember"
+                        android:layout_weight="1"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                    android:id="@+id/loginFormButton"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_background"
+                    android:textColor="@android:color/background_light"
+                    android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:layout_marginTop="36dp"
+                    android:text="Log in"
+                    android:textStyle="bold"/>
+            <Button
+                    android:id="@+id/loginButtonCancel"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_background"
+                    android:textColor="@android:color/background_light"
+                    android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                    android:textAllCaps="false"
+                    android:textAlignment="center"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/action_sign_cancel"
+                    android:textStyle="bold"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

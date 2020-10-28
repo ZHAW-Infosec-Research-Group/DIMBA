@@ -1,0 +1,12 @@
+# ninja log v5
+0	69	1603803051	CMakeFiles/native-lib.dir/native.c.o	42ec416d3fdaad0
+69	89	1603803051	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	57bee1d17d7e1677
+0	16	0	clean	938589ca09c5945f
+0	4	0	clean	938589ca09c5945f
+0	10	0	clean	938589ca09c5945f
+1	48	1603805127	CMakeFiles/native-lib.dir/native.c.o	42ec416d3fdaad0
+48	100	1603805127	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	57bee1d17d7e1677
+1	4	0	clean	938589ca09c5945f
+0	5	0	clean	938589ca09c5945f
+0	4	0	clean	938589ca09c5945f
+0	4	0	clean	938589ca09c5945f

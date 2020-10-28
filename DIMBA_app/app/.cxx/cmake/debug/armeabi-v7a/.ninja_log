@@ -1,0 +1,18 @@
+# ninja log v5
+0	43	1603802903	CMakeFiles/native-lib.dir/native.c.o	5ecc94434935cecc
+43	70	1603802903	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	defc2f33db5ec355
+1	129	0	clean	938589ca09c5945f
+10	299	1603803937	CMakeFiles/native-lib.dir/native.c.o	5ecc94434935cecc
+299	356	1603803937	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	defc2f33db5ec355
+1	77	0	clean	938589ca09c5945f
+0	9	0	clean	938589ca09c5945f
+9	292	1603804453	CMakeFiles/native-lib.dir/native.c.o	5ecc94434935cecc
+292	432	1603804453	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	defc2f33db5ec355
+0	20	0	clean	938589ca09c5945f
+0	8	0	clean	938589ca09c5945f
+0	4	0	clean	938589ca09c5945f
+1	112	1603886222	CMakeFiles/native-lib.dir/native.c.o	5ecc94434935cecc
+112	186	1603886222	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	defc2f33db5ec355
+0	6	0	clean	938589ca09c5945f
+1	59	1603886311	CMakeFiles/native-lib.dir/native.c.o	5ecc94434935cecc
+59	84	1603886311	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	defc2f33db5ec355

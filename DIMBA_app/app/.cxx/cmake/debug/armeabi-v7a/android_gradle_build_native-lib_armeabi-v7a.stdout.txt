@@ -1,0 +1,3 @@
+ninja: Entering directory `/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/debug/armeabi-v7a'
+[1/2] Building C object CMakeFiles/native-lib.dir/native.c.o
+[2/2] Linking C shared library /home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so

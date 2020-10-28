@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ch.zhaw.securitylab.DIMBA">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission
+        android:name="ch.zhaw.securitylab.DIMBA.permission.READ"/>
+    <permission
+        android:name="ch.zhaw.securitylab.DIMBA.PayAccept"
+        android:description="@string/permission_description__accept_payment"
+        android:label="@string/permission_lable_accept_payment"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="ch.zhaw.securitylab.DIMBA.Messages"
+        android:description="@string/permission_description_messages"
+        android:label="@string/permission_lable_messages"
+        android:protectionLevel="dangerous" /> <!-- PERMISSIONS -->
+    <uses-permission android:name="ch.zhaw.securitylab.DIMBA.PayAccept" />
+    <uses-permission android:name="ch.zhaw.securitylab.DIMBA.Messages" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name="ch.zhaw.securitylab.DIMBA.DIMBA"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.stock.ActivityAuthStockWall"
+            android:label="Stock Market Wall"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.stock.ActivityAuthStockList"
+            android:label="Stock Market Wall"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.stock.ActivityAuthStockWall"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.stock.ActivityAuthStock"
+            android:label="Real-time stock market data"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.stock.ActivityAuthStockList"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="ch.zhaw.securitylab.DIMBA.activity.auth.ActivitySurvey" />
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityInfo"
+            android:label="@string/title_activity_info"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- Payment procedure -->
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPay"
+            android:label="Manage your Payments"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPayMake"
+            android:label="Make a Payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPayList"
+            android:label="Transactions"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPayAccept"
+            android:exported="true"
+            android:label="@string/title_activity_auth_pay_accept"
+            android:permission="ch.zhaw.securitylab.DIMBA.PayAccept"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPaySlip"
+            android:label="Load a Payment Slip"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.pay.ActivityAuthPaySlipInfo"
+            android:label="@string/title_activity_auth_pay_slip_info"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- Settings -->
+        <provider
+            android:name="ch.zhaw.securitylab.DIMBA.ProviderSettings"
+            android:authorities="ch.zhaw.securitylab.DIMBA.settings"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="ch.zhaw.securitylab.DIMBA.permission.READ"
+            android:grantUriPermissions="true" />
+
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivitySettings"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityMetasettings"
+            android:label="Meta Settings"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- Login/Sign up procedure -->
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityCredentials"
+            android:exported="true"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentSignIn"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentRootDetection"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentChange"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentLogin"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.unauth.ActivityLanding"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="Instantiatable" /> <!-- Messages -->
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMessages"
+            android:exported="true"
+            android:label="Messages"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:permission="ch.zhaw.securitylab.DIMBA.Messages"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.invest.ActivityAuthInvest"
+            android:label="Investments"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.invest.ActivityAuthInvestWall"
+            android:label="@string/title_activity_auth_invest_wall"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.auth.ActivityAuthMain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="ch.zhaw.securitylab.DIMBA.activity.invest.ActivityAuthInvestList"
+            android:label="@string/title_activity_auth_invest_list"
+            android:parentActivityName="ch.zhaw.securitylab.DIMBA.activity.invest.ActivityAuthInvest"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity-alias
+            android:name=".SeeInvest"
+            android:exported="true"
+            android:targetActivity="ch.zhaw.securitylab.DIMBA.activity.invest.ActivityAuthInvestList" /> <!-- Fonts -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="ch.zhaw.securitylab.DIMBA.service.ServiceCurrencyExchange"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

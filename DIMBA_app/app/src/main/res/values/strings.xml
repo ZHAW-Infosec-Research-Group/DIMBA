@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">DIMBA</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_meta">Meta Settings</string>
+    <string name="action_info">About the App</string>
+    <string name="action_sign_in">Create Account</string>
+    <string name="action_sign_cancel">Cancel</string>
+    <string name="action_sign_in_short">Create Account</string>
+
+    <string name="title_activity_landing">Landing Screen</string>
+    <string name="title_activity_login">Login</string>
+    <string name="root_detection">Root Detection</string>
+    <string name="title_activity_sign_in">Create Account</string>
+    <string name="title_activity_change">Change</string>
+    <string name="title_activity_auth_pay">Make a Payment</string>
+    <string name="title_activity_auth_pay_accept">Accept the Payment</string>
+    <string name="title_activity_settings">App Settings</string>
+    <string name="title_activity_auth_invest_list">Investments</string>
+    <string name="title_activity_auth_invest_wall">Pay for VIP package</string>
+    <string name="title_activity_auth_pay_slip_info">Payslip information</string>
+    <string name="title_activity_info">About the App</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="wall_text">
+        "To access this premium feature of DIMBA, you have to become VIP. This will cost you only "
+        "200.- and can be purchased right here with the handy |Purchase VIP| button."
+    </string>
+    <string name="wall_vip">42IsTheAnswer</string>
+    <string name="permission_lable_accept_payment">Pay Accept</string>
+    <string name="permission_description__accept_payment">Protects the Activity AuthPayAccept</string>
+    <string name="permission_lable_messages">Messages</string>
+    <string name="permission_description_messages">accesses the Message Screen of the APP DIMBA</string>
+    <string name="about_the_app">
+        "Meta Settings:\n"
+        "The communication difficulty level and the ip address of the server can (and has to) be changed in this menu "
+        "reachable from the landing activity.\n"
+        "There is also a vulnerability in the Meta Settings try to find it out.\n\n"
+    </string>
+    <bool name="developer_entrance">false</bool>
+    <string name="about_the_app_subtitle">Insecure Banking, done the right way</string>
+    <string name="about_the_app_intention">DIMBA is an intentionally vulnerable banking app that was
+        designed to provide a realistic training ground for Android penetration testing and to learn in
+        general about different things that can go wrong in apps with respect to security. Two main
+        properties of DIMBA are that it provides a simplified but still somewhat realistic banking scenario
+        and that it contains a wide range of different vulnerabilities.
+    </string>
+    <string name="about_the_app_howto_subtitle">How to use DIMBA</string>
+    <string name="about_the_app_howto_text">All information about how to use DIMBA and descriptions of
+        the included vulnerabilities can be found at https://github.zhaw.ch/Security/DIMBA.</string>
+
+    <string name="about_the_app_authors">Authors</string>
+    <string name="about_the_app_authors_text">DIMBA was developed as part of student theses at the
+        Institute of Applied Information Technology (www.zhaw.ch/init) of the Zurich University
+        of Applied Sciences (www.zhaw.ch).</string>
+    <string name="about_the_app_run_communication">
+        While the communication between the client (app) and server are not the main focus of DIMBAs security, you can
+        adjust the difficulty level of the communication security to test your knowledge in ssl/tls and certificates.
+    </string>
+    <string name="about_the_app_metatitle">About the Metasettings</string>
+    <string name="about_the_app_meta_text">The Meta settings screen is not ment to be attacked.
+        Currently there are three settings you can change to your liking:
+    </string>
+    <string name="about_the_app_meta_text_ip">1) IP, change this field to the IP of your DIMBA Server to make the app
+        functional.
+    </string>
+    <string name="about_the_app_meta_text_difficulty">2) Difficulty, as mentioned above, change to see if you could
+        break the communication even on different levels. Note that Difficulty level 5 has no known weakness.
+    </string>
+    <string name="about_the_app_meta_text_timeout">3) Timeout, the amount of milliseconds till the connection times
+        out.
+    </string>
+
+    <string name="payslip_info_load">
+        "Next to the load button, there is a field where you can enter the name or path of the file to load "
+        "from the SD-Card. The base path is the root folder of your SD-Card. This is the folder that is shown "
+        "when you connect your phone to the PC or use the SD-Card directly with a device."
+    </string>
+    <string name="payslip_info_save">
+        "Next to the save button, there is a field where you can enter the name or path of the file to save "
+        "to the SD-Card. The base path is the same as when loading a file."
+    </string>
+    <string name="payslip_info_sample">
+        "The Load Sample button needs little description, it loads a payslip that can be adjusted and saved."
+    </string>
+    <string name="payslip_info_back">
+        "When returning to the payment screen and a payslip was loaded, the text will appear on that screen as well."
+    </string>
+    <string name="salt">L0ngS4Lt</string>
+    <string name="hash">223a26118434575d33c36102b45bed6aaa701eb3f1042a147503af704f883a9a</string>
+    <string name="alphabet">abcdefghijklmnopqrstuvwxyz</string>
+    <string name="title_activity_auth_stock">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+</resources>

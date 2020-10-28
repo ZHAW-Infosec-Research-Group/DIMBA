@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="ch.zhaw.securitylab.DIMBA.activity.unauth.FragmentChange">
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:id="@+id/changeButtonDefaultOne"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:layout_marginTop="16dp"
+                android:text="Change later"
+                android:textStyle="bold" app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+                android:id="@+id/changeButtonDefaultTwo"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:text="Change later"
+                android:textStyle="bold" android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/changeButtonDefaultOne"/>
+        <Button
+                android:id="@+id/changeButtonDefaultThree"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:layout_marginTop="32dp"
+                android:text="Change later"
+                android:textStyle="bold" app:layout_constraintTop_toBottomOf="@+id/changeButtonDefaultTwo"/>
+        <Button
+                android:id="@+id/changeButtonDefaultFour"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/background_light"
+                android:fontFamily="@font/dimba_text" android:textSize="24sp"
+                android:textAllCaps="false"
+                android:textAlignment="center"
+                android:layout_marginTop="32dp"
+                android:text="Change later"
+                android:textStyle="bold" app:layout_constraintTop_toBottomOf="@+id/changeButtonDefaultThree"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

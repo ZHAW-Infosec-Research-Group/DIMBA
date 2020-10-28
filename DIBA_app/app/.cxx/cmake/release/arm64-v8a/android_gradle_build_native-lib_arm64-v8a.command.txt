@@ -1,7 +1,0 @@
-Executable : /home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja
-arguments : 
--C
-/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIBA_app/app/.cxx/cmake/release/arm64-v8a
-native-lib
-jvmArgs : 
-

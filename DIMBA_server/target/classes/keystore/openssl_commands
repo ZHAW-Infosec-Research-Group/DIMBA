@@ -1,0 +1,42 @@
+# Update openssl default values
+sudo vim /etc/pki/tls/openssl.cnf
+
+# Generate DIMBA CA private key
+openssl genrsa -out DIMBA_CA.key 2048
+
+# Generate DIMBA CA certificate (15 years validity)
+openssl req -x509 -new -key DIMBA_CA.key -sha256 -days 5475 -out DIMBA_CA.pem
+
+# Generate DIMBA Server private key
+openssl genrsa -out DIMBA_Server.key 2048
+
+# Generate DIMBA Server CSR
+openssl req -new -key DIMBA_Server.key -out DIMBA_Server.csr
+
+# Sign CSR from DIMBA Server with DIMBA CA (14 years validity)
+openssl x509 -req -in DIMBA_Server.csr -CA DIMBA_CA.pem -CAkey DIMBA_CA.key -CAcreateserial -out DIMBA_Server.crt -days 5110 -sha256
+
+# Generate pkcs12 certificate from DIMBA CA private key and DIMBA CA certificate. To be imported in keystore
+openssl pkcs12 -export -in DIMBA_CA.pem -inkey DIMBA_CA.key -out DIMBA_CA.p12
+
+# Create keystore from CA p12 
+keytool -importkeystore -srckeystore DIMBA_CA.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
+
+# Generate pkcs12 certificate from DIMBA Server private key and DIMBA Server certificate. To be imported in keystore
+openssl pkcs12 -export -in DIMBA_Server.crt -inkey DIMBA_Server.key -out DIMBA_Server.p12
+
+# Import p12 to keystore
+keytool -importkeystore -srckeystore DIMBA_Server.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
+
+# List keystore entries
+keytool -list -v -keystore keystore.jks
+
+# Pinning DIMBA CA public key to application
+cp DIMBA_CA.pem DIMBA/DIMBA_app/app/src/main/res/raw/ca_cert
+# Pinning DIMBA Server public key to application
+cp DIMBA_Server.crt DIMBA/DIMBA_app/app/src/main/res/raw/dimba_cert
+
+# Install CA public key in trusted CA of device
+adb push DIMBA_CA.pem /sdcard/
+Settings -> Security -> Encryption & Credentials -> Install from SD card -> Select DIMBA_CA.pem
+
