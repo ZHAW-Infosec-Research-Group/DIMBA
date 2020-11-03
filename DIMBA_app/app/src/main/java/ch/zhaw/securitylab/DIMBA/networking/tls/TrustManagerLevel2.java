@@ -37,7 +37,7 @@ public class TrustManagerLevel2 implements X509TrustManager {
 			String owner = chain[0].getSubjectX500Principal().getName();
 			String expectedOwner = "O=DIMBA Server";
 
-			Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 2\n Check the certificate dates validity and owner.\n");
+			Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 2\n Check the certificate dates validity and owner field value.\n");
 			Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +
 					"\n Not After: "+receivedCertificate.getNotAfter().toString());
 			receivedCertificate.checkValidity();

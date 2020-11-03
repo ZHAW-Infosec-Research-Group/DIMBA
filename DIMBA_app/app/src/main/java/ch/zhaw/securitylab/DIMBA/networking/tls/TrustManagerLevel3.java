@@ -33,21 +33,11 @@ public class TrustManagerLevel3 implements X509TrustManager {
 	@Override
 	public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 		X509Certificate receivedCertificate = chain[0];
-		String owner = receivedCertificate.getSubjectX500Principal().getName();
-		String issuer = receivedCertificate.getIssuerDN().getName();
-		String expectedOwner  = "O=DIMBA Server";
-		String expectedIssuer = "O=DIMBA CA";
-		Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 3\n Check the certificate dates validity, the owner, the issuer and if certificate is signed by a trusted CA.\n");
+		Log.println(Log.INFO, Extras.LOG_TAG, "Certificate Check Security - Level 3\n Check the certificate dates validity, and if certificate is signed by a trusted CA.\n");
 		Log.println(Log.INFO, Extras.LOG_TAG, "Dates: \n Not Before: " + receivedCertificate.getNotBefore().toString() +
 													"\n Not After: "+receivedCertificate.getNotAfter().toString());
 		receivedCertificate.checkValidity();
-
-		Log.println(Log.INFO, Extras.LOG_TAG, "Expected owner: "+expectedOwner+"\n Received owner: "+owner);
-		if (!owner.equals(expectedOwner)) throw new CertificateException("Untrusted owner");
-
-		Log.println(Log.INFO, Extras.LOG_TAG, "Expected issuer: "+expectedIssuer+"\n Received issuer: "+issuer);
-		if(!expectedIssuer.equals(issuer)) throw new CertificateException("Untrusted issuer");
-		// Check certificate chain
+		// Check certificate chain trusted
 		this.trustManager.checkServerTrusted(chain, authType);
 	}
 	
