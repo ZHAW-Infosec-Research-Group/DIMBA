@@ -47,3 +47,20 @@ GRANT USAGE ON DOMAIN INFORMATION_SCHEMA.CHARACTER_DATA TO PUBLIC
 GRANT DBA TO SA
 SET SCHEMA SYSTEM_LOBS
 INSERT INTO BLOCKS VALUES(0,2147483647,0)
+SET SCHEMA PUBLIC
+INSERT INTO COMMENT VALUES('Beh, not sure :S','03-11-2020','4')
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1906277923,'22','SFr','22')
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1557804205,'199','SFr','199')
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1557791218,'99','Eur','148.5')
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1557781794,'55','$','49.5')
+INSERT INTO INVESTMENT VALUES('greg@gmail.com',-1557769246,'700','\u00a3','1225.00')
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',123,'SFr',123)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',500,'SFr',500)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',99,'SFr',99)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',-100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',-100,'SFr',100)
+INSERT INTO PAYMENT VALUES('greg@gmail.com','target@mail.com',100,'SFr',-100)
+INSERT INTO USER VALUES('greg@gmail.com','bb6679bd15b7f000a63a68cc289e8be1b7dd36710be46dffac38962a7e9a54b0')

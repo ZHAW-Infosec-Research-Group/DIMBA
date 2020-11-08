@@ -145,10 +145,8 @@ public class ActivityAuthPayMake extends ActivityBoundAbstract {
 		
 		try {
 			startActivity(intentConfirm);
-			System.out.println("Activity Started1");
-
-		}
-		catch (Exception e) {
+			System.out.println("Activity Started");
+		} catch (Exception e) {
 			e.printStackTrace();
 			Toast.makeText(context, "An error occurred with requesting the OTP.", Toast.LENGTH_SHORT).show();
 		}

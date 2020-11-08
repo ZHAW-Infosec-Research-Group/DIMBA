@@ -1,20 +1,2 @@
 # ninja log v5
-0	37	1603803051	CMakeFiles/native-lib.dir/native.c.o	bccfe6673fb7d3b7
-38	56	1603803051	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	c588d233166a890
-0	5	0	clean	938589ca09c5945f
-0	8	0	clean	938589ca09c5945f
 0	4	0	clean	938589ca09c5945f
-1	37	1603805126	CMakeFiles/native-lib.dir/native.c.o	bccfe6673fb7d3b7
-37	82	1603805127	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	c588d233166a890
-0	4	0	clean	938589ca09c5945f
-0	6	0	clean	938589ca09c5945f
-0	5	0	clean	938589ca09c5945f
-0	4	0	clean	938589ca09c5945f
-0	69	1603890693	CMakeFiles/native-lib.dir/native.c.o	bccfe6673fb7d3b7
-69	107	1603890693	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	c588d233166a890
-0	21	0	clean	938589ca09c5945f
-0	5	0	clean	938589ca09c5945f
-0	4	0	clean	938589ca09c5945f
-0	40	1604408264	CMakeFiles/native-lib.dir/native.c.o	bccfe6673fb7d3b7
-40	74	1604408264	/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libnative-lib.so	c588d233166a890
-0	9	0	clean	938589ca09c5945f

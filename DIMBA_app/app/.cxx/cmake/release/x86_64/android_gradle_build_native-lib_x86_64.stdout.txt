@@ -1,2 +1,0 @@
-ninja: Entering directory `/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/x86_64'
-ninja: no work to do.

@@ -1,2 +1,0 @@
-ninja: Entering directory `/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/armeabi-v7a'
-ninja: no work to do.

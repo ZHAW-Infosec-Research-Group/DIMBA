@@ -1,33 +1,33 @@
 {
   "stringTable": {
-    "0": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/x86",
+    "0": "/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/.cxx/cmake/release/x86",
     "1": "--target=i686-none-linux-android19 --gcc-toolchain=/home/gregory/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/gregory/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -O2 -DNDEBUG -fPIC"
   },
   "buildFiles": [
     "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/platforms.cmake",
-    "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/src/main/jni/CMakeLists.txt",
+    "/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/src/main/jni/CMakeLists.txt",
     "/home/gregory/Android/Sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake"
   ],
   "cleanCommands": [
-    "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/x86\" clean"
+    "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/.cxx/cmake/release/x86\" clean"
   ],
-  "buildTargetsCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/.cxx/cmake/release/x86\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native-lib-Release-x86": {
-      "buildCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/.cxx/cmake/release/x86\" native-lib",
+      "buildCommand": "/home/gregory/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/.cxx/cmake/release/x86\" native-lib",
       "buildType": "release",
       "toolchain": "90592615",
       "abi": "x86",
       "artifactName": "native-lib",
       "files": [
         {
-          "src": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/src/main/jni/native.c",
+          "src": "/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/src/main/jni/native.c",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "/home/gregory/Documents/zhawFS2020/vt2/DIBA/DIMBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so",
+      "output": "/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so",
       "runtimeFiles": []
     }
   },
