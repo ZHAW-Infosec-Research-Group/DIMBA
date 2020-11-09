@@ -135,6 +135,7 @@ The app was mainly written as part of their bachelor thesis by
 
 Some further publishing work was done by
 + [Olivier Favre](https://www.zhaw.ch/en/about-us/person/favr/), research assistant at [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)
++ Gregory Banfi, student at [ZHAW School of Engineering](https://www.zhaw.ch/en/school-of-engineering/)
 
 Further review and guidance of the project was done by
 + [Prof. Dr. Marc Rennhard](https://www.zhaw.ch/en/about-us/person/rema), head of [InIT](https://www.zhaw.ch/en/engineering/institutes-centres/init/)

@@ -1,6 +1,17 @@
 # Update openssl default values
 sudo vim /etc/pki/tls/openssl.cnf
 
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#!! ALL passwords are set to: !! ALSO TRUE for apk keystores passwords
+#!!         password          !!
+#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+ 
+
+###################
+#   CERTIFICATES
+###################
+ 
 # Generate DIMBA CA private key
 openssl genrsa -out DIMBA_CA.key 2048
 
@@ -19,17 +30,31 @@ openssl x509 -req -in DIMBA_Server.csr -CA DIMBA_CA.pem -CAkey DIMBA_CA.key -CAc
 # Generate pkcs12 certificate from DIMBA CA private key and DIMBA CA certificate. To be imported in keystore
 openssl pkcs12 -export -in DIMBA_CA.pem -inkey DIMBA_CA.key -out DIMBA_CA.p12
 
-# Create keystore from CA p12 
-keytool -importkeystore -srckeystore DIMBA_CA.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
-
 # Generate pkcs12 certificate from DIMBA Server private key and DIMBA Server certificate. To be imported in keystore
 openssl pkcs12 -export -in DIMBA_Server.crt -inkey DIMBA_Server.key -out DIMBA_Server.p12
 
-# Import p12 to keystore
+
+
+
+###################
+#   KEYSTORE
+###################
+
+# Import DIMBA Server p12 to keystore
 keytool -importkeystore -srckeystore DIMBA_Server.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
+
+# Import DIMBA CA p12, you should probably give an alias name to the entry. You can use 'ca'
+keytool -importkeystore -srckeystore DIMBA_CA.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype pkcs12
 
 # List keystore entries
 keytool -list -v -keystore keystore.jks
+
+
+
+
+###################
+#   INSTALL
+###################
 
 # Pinning DIMBA CA public key to application
 cp DIMBA_CA.pem DIMBA/DIMBA_app/app/src/main/res/raw/ca_cert

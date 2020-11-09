@@ -40,18 +40,9 @@ public class Server {
 		
 		Javalin app = Javalin.create(config -> {
             config.server(SecureServerFactory::makeSecure);
-            //config.addStaticFiles("public/index.html",Location.EXTERNAL);
-            //config.addStaticFiles("public/style.css", Location.EXTERNAL);
-            //config.addStaticFiles("public/main.js",   Location.EXTERNAL);
-
         }).start();
 
-		// Add SSL context and HTTP configurations
-		//SecureServerFactory.makeSecure(app);
-		
-		//app.start();
 		app.routes(() -> {
-			//post(Path.BALANCE,         ControllerUser.handleBalance);
 			get("/test",         ctx -> ctx.json("Hello World!"));
 			get("/survey",       ControllerSurvey.handleSurveyGet);
 			post("/comment",     ControllerSurvey.handleSurveyGetAction);

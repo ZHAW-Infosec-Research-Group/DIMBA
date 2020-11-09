@@ -1,2 +1,4 @@
 # ninja log v5
 0	4	0	clean	938589ca09c5945f
+0	63	1604921019	CMakeFiles/native-lib.dir/native.c.o	3b783c35200695b2
+63	157	1604921019	/home/gregory/Documents/zhawFS2020/vt2/DIMBA/DIMBA_app/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	662150efb08569ba
