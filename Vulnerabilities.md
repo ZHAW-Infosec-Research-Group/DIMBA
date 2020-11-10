@@ -132,7 +132,7 @@ The screens for login and account creation are similar in structure. To make thi
 ### 21: Insecure Service (medium)
 DIMBA uses a service to modify currency exchange rates. As this service is exported, it can be used by any other app on the same device. 
 
-**Goal:** Develop an app that uses the service to modify the exchange rates to any values you like. You can inspect the *currencyPreferences.xml* in the shared preferences of the DIBA app to check whether the attack worked.
+**Goal:** Develop an app that uses the service to modify the exchange rates to any values you like. You can inspect the *currencyPreferences.xml* in the shared preferences of the DIMBA app to check whether the attack worked.
 
 ### 22: Weak JWT MAC Secret (medium)
 The JSON Web Token (JWT) that is created by the DIMBA server uses a weak secret for the MAC. If an attacker manages to find this secret, he can create valid JWTs for DIMBA.
@@ -205,7 +205,7 @@ Assume that the confirmation code can be used only once to confirm a payment (th
 **Goal:** Exploit the vulnerability by successfully modifying a payment so that the payment amount is larger than originally entered by the user and that the payment goes to a different recipient. You can verify successful exploitation by comparing the account balance before and after the payment.
 
 ### 33: Two-Factor Authentication III - Weak Code Generation (medium)
-Confirmation codes should be random so an attacker cannot predict them. In the case of DIBA, however, they are not really created in a random way, although they appear to be quite random when looking at them.
+Confirmation codes should be random so an attacker cannot predict them. In the case of DIMBA, however, they are not really created in a random way, although they appear to be quite random when looking at them.
 
 **Goal:** Crack the confirmation code generation algorithm. If you think you have cracked it, enter the confirmation code that would be used at 2030-01-31 12:00:00 in the code field and accept the payment. If the payment is accepted, you have successfully cracked the code generation algorithm.
 
