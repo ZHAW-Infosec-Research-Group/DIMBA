@@ -26,7 +26,7 @@ To do investments, a VIP code is required that can be purchased from the bank. H
 ### 3: Remember Me (hard)
 For usabiliy reasons, DIMBA provides a *Remember me* functionality so that during the next login, the credentails are already pre-filled. Obviously, these credentials must be stored somewhere on the device and doing this in a secure way is hard.
 
-**Preparation:** Login with email *h@cker* and password *damninsecure* and check the *Remember me* checkbox.
+**Preparation:** Create an account for a user with email *h@cker* and password *damninsecure*. Then. log in with this user and check the *Remember me* checkbox.
 
 **Goal:** Get the password of *h@cker* from the device assuming you don't know the password.
 
