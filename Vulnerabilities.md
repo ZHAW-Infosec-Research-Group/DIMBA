@@ -64,7 +64,7 @@ The activity to view the investments in not exported. However, there's an alias 
 
 **Goal (medium):** Develop an app that starts the investment activity without being logged into the DIMBA app.
 
-**Remark**: Note that in this case, assming an attacker gets temporary access to the device of a DINBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way.
+**Remark**: Note that in this case, assming an attacker gets temporary access to the device of a DIMBA user that is currently not logged is not really beneficial as no investments will be shown. However, there are certainly apps where such a vulnerability may provide access to more interesting functionality or data and the main intention of the vulnerability is to demonstrate that an activity can be unintentionally made exportable if the developer uses activity aliases in a wrong way.
 
 ### 10: Directory Traversal I - Read (easy)
 During payment, DIMBA allows to load a payment slip from the SD-Card. This is implemented in an insecure way that allows to read the content of any file that is accessible by the permissions of the running DIMBA app. If an attacker gets (temporarily) access to your device, this may allow him to access sensitive information.
