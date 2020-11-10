@@ -22,7 +22,7 @@ The full source code is made available here. But to simulate a realistic setting
 ## Usage
 ### Prerequisites
 To run the app and the server, the following is required:
-+ Latest release of DIMBA app and server. Download it (https://github.zhaw.ch/Security/DIMBA/releases/download/v1.2/DIMBA.zip) and unzip the downloaded file *DIMBA.zip*, which results in a directory *DIMBA*.
++ Latest release of DIMBA app and server. Download it (https://github.zhaw.ch/Security/DIMBA/releases/download/v1.3/DIMBA.zip) and unzip the downloaded file *DIMBA.zip*, which results in a directory *DIMBA*.
 + Android Debug Bridge (adb)
 + Java runtime environment (Java 8 or higher)
 + An Android device or a virtual machine running Android
